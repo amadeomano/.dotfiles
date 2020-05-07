@@ -1,1 +1,5 @@
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+### Plugins
+source $HOME/.zshrc-modules/.oh-my-zsh.zsh
+
+### Aliases
+source $HOME/.zshrc-modules/.aliases.zsh
