@@ -1,0 +1,24 @@
+{
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Fira Code iScript",
+    "editor.fontSize": 15,
+    "editor.lineHeight": 25,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                  "comment",
+                  "keyword", //import, export, return…
+                  "storage.type.js", //let & const keyword
+                  "storage.type.class.js", //class keyword
+                  "variable.language.this.js", // js this keyword
+                ],
+                "settings": {
+                  "fontStyle": "italic"
+                }
+              }
+        ]
+    },
+    "workbench.iconTheme": "file-icons",
+    "workbench.colorTheme": "One Dark Pro"
+}

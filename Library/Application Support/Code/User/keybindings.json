@@ -1,0 +1,8 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+cmd+a",
+        "command": "wwm.aligncode",
+        "when": "editorTextFocus && !editorReadonly"
+    }
+]
