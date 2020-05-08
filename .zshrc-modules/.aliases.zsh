@@ -6,7 +6,7 @@ alias pi='python3 -m pip install --user $@'
 
 # Git related aliases
 alias gs='git status'
-alias ga='git add %@'
-alias gc='git commit %@'
-alias gp='git push %@'
-alias gr='git rebase %@'
+alias ga='git add $@'
+alias gc='git commit $@'
+alias gp='git push $@'
+alias gr='git rebase $@'
