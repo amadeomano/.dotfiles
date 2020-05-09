@@ -8,7 +8,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Space separated plugins
-plugins=(git zsh-autosuggestions)
+plugins=(
+  git
+  zsh-autosuggestions
+  docker
+  docker-compose
+)
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
