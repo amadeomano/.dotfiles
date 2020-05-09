@@ -12,6 +12,7 @@
                   "storage.type.js", //let & const keyword
                   "storage.type.class.js", //class keyword
                   "variable.language.this.js", // js this keyword
+                  "support.function.js", // js CommonJS require keyword
                 ],
                 "settings": {
                   "fontStyle": "italic"
@@ -20,5 +21,6 @@
         ]
     },
     "workbench.iconTheme": "file-icons",
-    "workbench.colorTheme": "One Dark Pro"
+    "workbench.colorTheme": "One Dark Pro",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font"
 }
