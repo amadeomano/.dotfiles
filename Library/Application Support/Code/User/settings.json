@@ -11,6 +11,7 @@
                   "keyword", //import, export, return…
                   "storage.type.js", //let & const keyword
                   "storage.type.class.js", //class keyword
+                  "storage.type.function.js", // function keyword
                   "variable.language.this.js", // js this keyword
                   "support.function.js", // js CommonJS require keyword
                 ],
@@ -22,5 +23,18 @@
     },
     "workbench.iconTheme": "file-icons",
     "workbench.colorTheme": "One Dark Pro",
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font"
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    // Map VIM u|^r to vscode default behavior
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": ["u"],
+        "after": [],
+        "commands": [ { "command": "undo", "args": [] } ]
+      },
+      {
+        "before": ["<C-r>"],
+        "after": [],
+        "commands": [ { "command": "redo", "args": [] } ]
+      }
+    ]
 }
