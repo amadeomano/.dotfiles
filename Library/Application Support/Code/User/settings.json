@@ -36,5 +36,7 @@
         "after": [],
         "commands": [ { "command": "redo", "args": [] } ]
       }
-    ]
+    ],
+    "editor.lineNumbers": "relative",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
 }
