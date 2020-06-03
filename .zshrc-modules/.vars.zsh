@@ -7,3 +7,6 @@ export PATH=$PATH:/Users/ahmad.manouchehri/Library/Python/3.7/bin/
 
 # Support tty for gnupg
 export GPG_TTY="$(tty)"
+
+# Add sbin for Brew
+export PATH="/usr/local/sbin:$PATH"
