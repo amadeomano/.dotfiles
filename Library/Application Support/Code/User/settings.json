@@ -6,19 +6,27 @@
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
-                "scope": [
-                  "comment",
-                  "keyword", //import, export, return…
-                  "storage.type.js", //let & const keyword
-                  "storage.type.class.js", //class keyword
-                  "storage.type.function.js", // function keyword
-                  "variable.language.this.js", // js this keyword
-                  "support.function.js", // js CommonJS require keyword
-                ],
-                "settings": {
-                  "fontStyle": "italic"
-                }
+              "scope": [
+                "comment",
+                "keyword", //import, export, return…
+                "storage.type.js", //let & const keyword
+                "storage.type.class.js", //class keyword
+                "storage.type.function.js", // function keyword
+                "variable.language.this.js", // js this keyword
+                "support.function.js", // js CommonJS require keyword
+              ],
+              "settings": {
+                "fontStyle": "italic"
               }
+            },
+            {
+              "scope": [
+                "keyword.operator.comparison" // <>!===
+              ],
+              "settings": {
+                "fontStyle": ""
+              }
+            }
         ]
     },
     "workbench.iconTheme": "file-icons",

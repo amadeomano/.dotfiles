@@ -8,9 +8,8 @@ alias pi='python3 -m pip install --user $@'
 alias gs='git status'
 alias ga='git add $@'
 alias gc='git commit $@'
-alias gp='git push $@'
-alias gl='git pull $@'
-alias gr='git rebase $@'
+alias gp='git pull'
+alias gd='git diff $@'
 
 # Personio CLI
 alias pc='$HOME/personio/perctl'
