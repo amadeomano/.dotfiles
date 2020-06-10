@@ -10,6 +10,8 @@ alias ga='git add $@'
 alias gc='git commit $@'
 alias gp='git pull'
 alias gd='git diff $@'
+alias gco='git checkout $@'
+alias gb='git branch $@'
 
 # Personio CLI
 alias pc='$HOME/personio/perctl'
