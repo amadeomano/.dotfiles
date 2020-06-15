@@ -15,3 +15,7 @@ alias gb='git branch $@'
 
 # Personio CLI
 alias pc='$HOME/personio/perctl'
+
+# Aria2 Downloader
+alias down='aria2c -x 16 -c $@'
+alias downl='down -i $@'
