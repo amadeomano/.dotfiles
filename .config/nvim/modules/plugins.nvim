@@ -1,0 +1,7 @@
+call plug#begin('~/.local/share/nvim/plugged')
+
+  Plug 'mxw/vim-jsx'			" jsx syntax highlighting
+  Plug 'pangloss/vim-javascript'	" js syntax highlighting
+  Plug 'joshdick/onedark.vim'		" one-dark color scheme
+
+call plug#end()
