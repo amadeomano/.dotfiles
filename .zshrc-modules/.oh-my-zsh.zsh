@@ -20,3 +20,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Load zsh-syntax-highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Load fzf fuzzy search app plugin
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
