@@ -29,7 +29,6 @@
             }
         ]
     },
-    "workbench.iconTheme": "file-icons",
     "workbench.colorTheme": "One Dark Pro",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font",
     // Map VIM u|^r to vscode default behavior
@@ -49,6 +48,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,
     "files.exclude": {
-      "node_modules": true
+      "**/node_modules": true
     },
+    "window.zoomLevel": 0,
+    "go.formatTool": "goimports",
+    "diffEditor.renderSideBySide": false,
+    "workbench.iconTheme": "file-icons",
 }

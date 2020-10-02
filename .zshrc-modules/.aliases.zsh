@@ -19,3 +19,6 @@ alias pc='$HOME/personio/perctl'
 # Aria2 Downloader
 alias down='aria2c -x 16 -c $@'
 alias downl='down -i $@'
+
+# Yarn shortcut
+alias y='yarn $@'

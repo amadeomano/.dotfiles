@@ -1,6 +1,7 @@
 " fzf
 nnoremap <C-p>       :Files<CR>
 nnoremap <C-b>       :Buffers<CR>
+nnoremap <C-a>       :Ag<CR>|" needs brew-the_silver_searcher
 
 " coc
 function! s:check_back_space() abort
