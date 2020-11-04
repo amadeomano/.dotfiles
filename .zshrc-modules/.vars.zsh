@@ -2,8 +2,9 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Load Python3 sites
-export PATH=$PATH:/Users/ahmad.manouchehri/Library/Python/3.7/bin/
+# Load Python3 sites - automatically from the latest version
+export PYTHONPATH=$(python3 -c "import site, os; print(site.USER_BASE)")
+export PATH=$PATH:"$PYTHONPATH/bin"
 
 # Support tty for gnupg
 export GPG_TTY="$(tty)"
