@@ -1,57 +1,64 @@
 {
-    "editor.fontLigatures": true,
-    "editor.fontFamily": "Fira Code iScript",
-    "editor.fontSize": 15,
-    "editor.lineHeight": 25,
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-              "scope": [
-                "comment",
-                "keyword", //import, export, return…
-                "storage.type.js", //let & const keyword
-                "storage.type.class.js", //class keyword
-                "storage.type.function.js", // function keyword
-                "variable.language.this.js", // js this keyword
-                "support.function.js", // js CommonJS require keyword
-              ],
-              "settings": {
-                "fontStyle": "italic"
-              }
-            },
-            {
-              "scope": [
-                "keyword.operator.comparison" // <>!===
-              ],
-              "settings": {
-                "fontStyle": ""
-              }
-            }
-        ]
-    },
-    "workbench.colorTheme": "One Dark Pro",
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-    // Map VIM u|^r to vscode default behavior
-    "vim.normalModeKeyBindingsNonRecursive": [
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Fira Code iScript",
+  "editor.fontSize": 15,
+  "editor.lineHeight": 25,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
       {
-        "before": ["u"],
-        "after": [],
-        "commands": [ { "command": "undo", "args": [] } ]
+        "scope": [
+          "comment",
+          "keyword", //import, export, return…
+          "storage.type.js", //let & const keyword
+          "storage.type.class.js", //class keyword
+          "storage.type.function.js", // function keyword
+          "variable.language.this.js", // js this keyword
+          "support.function.js" // js CommonJS require keyword
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
       },
       {
-        "before": ["<C-r>"],
-        "after": [],
-        "commands": [ { "command": "redo", "args": [] } ]
+        "scope": [
+          "keyword.operator.comparison" // <>!===
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
       }
-    ],
-    "editor.lineNumbers": "relative",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2,
-    "files.exclude": {
-      "**/node_modules": true
+    ]
+  },
+  "workbench.colorTheme": "One Dark Pro",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  // Map VIM u|^r to vscode default behavior
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["u"],
+      "after": [],
+      "commands": [{ "command": "undo", "args": [] }]
     },
-    "window.zoomLevel": 0,
-    "go.formatTool": "goimports",
-    "diffEditor.renderSideBySide": false,
-    "workbench.iconTheme": "file-icons",
+    {
+      "before": ["<C-r>"],
+      "after": [],
+      "commands": [{ "command": "redo", "args": [] }]
+    }
+  ],
+  "editor.lineNumbers": "relative",
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/node_modules": true
+  },
+  "window.zoomLevel": 0,
+  "go.formatTool": "goimports",
+  "diffEditor.renderSideBySide": false,
+  "workbench.iconTheme": "file-icons",
+  "vim.easymotion": true,
+
+  // auto Formating
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

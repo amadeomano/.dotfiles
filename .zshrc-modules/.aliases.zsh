@@ -22,3 +22,6 @@ alias downl='down -i $@'
 
 # Yarn shortcut
 alias y='yarn $@'
+
+# Googler alias
+alias gg='googler $@'
