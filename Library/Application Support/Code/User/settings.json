@@ -47,18 +47,25 @@
   "editor.lineNumbers": "relative",
   "editor.tabSize": 2,
   "files.exclude": {
-    "**/node_modules": true
+    "**/node_modules": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
   },
   "window.zoomLevel": 0,
   "go.formatTool": "goimports",
   "diffEditor.renderSideBySide": false,
   "workbench.iconTheme": "file-icons",
-  "vim.easymotion": true,
+  "vim.sneak": true,
 
   // auto Formating
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "go.toolsManagement.autoUpdate": true
 }
