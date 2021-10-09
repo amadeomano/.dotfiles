@@ -1,0 +1,21 @@
+font:
+  normal:
+    family: FiraCode Nerd Font
+    style: Light
+  size: 15
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "source ~/.zshrc; tmux attach -t base || tmux new -s base"
+
+window:
+  decorations: buttonless
+
+background_opacity: 0.9
+
+key_bindings:
+  - { key: Q,        mods: Command, action: Hide }
+  - { key: W,        mods: Command, action: Hide }

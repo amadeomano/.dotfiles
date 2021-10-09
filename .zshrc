@@ -10,3 +10,6 @@ source $HOME/.zshrc-modules/.aliases.zsh
 
 ### Functions
 source $HOME/.zshrc-modules/.funcs.zsh
+
+### Key bindings
+source $HOME/.zshrc-modules/.bindings.zsh

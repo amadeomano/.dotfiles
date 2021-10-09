@@ -8,3 +8,6 @@ set tabstop=2
 set shiftwidth=2
 
 set number relativenumber
+
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
