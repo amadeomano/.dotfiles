@@ -25,3 +25,8 @@ alias y='yarn $@'
 
 # Googler alias
 alias gg='googler $@'
+
+# Quick reminder add
+alias a='reminders add Inbox $@'
+
+alias ls='logo-ls $@'
