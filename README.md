@@ -5,22 +5,22 @@
 Adopting the dotfiles all together is feasible with the following steps:
 
 ```sh
-#1 create a git alias with preconfigured revision and woking tree dirs
+# 1 create a git alias with preconfigured revision and woking tree dirs
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-#2 prevent bare recursion problems
+# 2 prevent bare recursion problems
 echo ".dotfiles" >> .gitignore
 
-#3 bare-clone the repo in the ignored dir
+# 3 bare-clone the repo in the ignored dir
 git clone --bare git@github.com:amadeomano/.dotfiles.git $HOME/.dotfiles
 
-#4 double-check existance of the `dot` alias
+# 4 double-check existance of the `dot` alias
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-#5 checkout to the version-controlled working tree
+# 5 checkout to the version-controlled working tree
 dot checkout
 
-#6 clean up the `dot status`
+# 6 clean up the `dot status`
 dot config --local status.showUntrackedFiles no
 ```
 
