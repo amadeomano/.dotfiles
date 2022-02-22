@@ -23,10 +23,5 @@ alias downl='down -i $@'
 # Yarn shortcut
 alias y='yarn $@'
 
-# Googler alias
-alias gg='googler $@'
-
-# Quick reminder add
-alias a='reminders add Inbox $@'
-
+# Replace ls wih Logo ls
 alias ls='logo-ls $@'
