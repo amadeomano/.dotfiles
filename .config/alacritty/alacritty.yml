@@ -12,9 +12,10 @@ shell:
     - "source ~/.zshrc; tmux attach -t 'ﱦ AM' || tmux new -s 'ﱦ AM'"
 
 window:
-  decorations: buttonless
+  decorations: Buttonless
+  rs: false
 
-background_opacity: 0.65
+background_opacity: 0.8
 
 key_bindings:
   - { key: Q,        mods: Command, action: Hide }

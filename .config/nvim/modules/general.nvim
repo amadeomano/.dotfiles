@@ -11,3 +11,5 @@ set number relativenumber
 
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
+
+set dictionary+=/usr/share/dict/words

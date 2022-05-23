@@ -69,5 +69,12 @@
   "go.toolsManagement.autoUpdate": true,
   "terminal.integrated.tabs.enabled": true,
   "eslint.migration.2_x": "off",
-  "jira-plugin.workingProject": ""
+  "jira-plugin.workingProject": "",
+  "cssVariables.lookupFiles": [
+    "**/node_modules/@highlight-ui/tokens/dist/tokens.css"
+  ],
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.accessibilitySupport": "off"
 }

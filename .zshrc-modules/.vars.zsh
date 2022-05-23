@@ -14,3 +14,4 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Add JAVA_HOME
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+

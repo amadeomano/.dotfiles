@@ -25,3 +25,6 @@ alias y='yarn $@'
 
 # Replace ls wih Logo ls
 alias ls='logo-ls $@'
+
+# Tmux shortcut
+alias t='tmux attach -t "ﱦ AM" || tmux new -s "ﱦ AM"'

@@ -37,6 +37,7 @@ The following tools are being used and configured by my setup
 * [powerline](https://powerline.readthedocs.io/en/latest/installation.html#pip-installation)
 * [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
 * [skhd](https://github.com/koekeishiya/skhd#install)
+* [fzf](https://github.com/junegunn/fzf)
 
 ### Apps
 
@@ -45,6 +46,14 @@ The following tools are being used and configured by my setup
 * [neovim](https://formulae.brew.sh/formula/neovim)
 * [aria2](https://formulae.brew.sh/formula/aria2)
 * [logo-ls](https://github.com/Yash-Handa/logo-ls#macos-darwin)
+
+### NVIM Plugins
+
+* [vim-plug](https://github.com/junegunn/vim-plug)
+* [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+* [onedark.vim](https://github.com/joshdick/onedark.vim)
+* [fzf.vim](https://github.com/junegunn/fzf.vim)
+* [coc.nvim](https://github.com/neoclide/coc.nvim)
 
 ### VS Code extensions
 
