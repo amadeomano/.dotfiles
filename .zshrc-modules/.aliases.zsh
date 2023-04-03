@@ -28,3 +28,7 @@ alias ls='logo-ls $@'
 
 # Tmux shortcut
 alias t='tmux attach -t "ﱦ AM" || tmux new -s "ﱦ AM"'
+
+# Todoist CLI
+# Using https://github.com/sachaos/todoist
+alias ta='todoist add "$@"'

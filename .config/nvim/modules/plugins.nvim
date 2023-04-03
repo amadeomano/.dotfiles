@@ -1,9 +1,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-  Plug 'sheerun/vim-polyglot'                           " syntax highlighting lib
-  Plug 'joshdick/onedark.vim'				" one-dark color scheme
+  Plug 'sheerun/vim-polyglot'                         " syntax highlighting lib
+  Plug 'joshdick/onedark.vim', {'branch': 'main'}     " one-dark color scheme
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }	" fzf fuzzy search plugin
-  Plug 'junegunn/fzf.vim'				" fzf additional commands
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}       " coc auto-completion
+  Plug 'junegunn/fzf.vim'				                      " fzf additional commands
+  Plug 'neoclide/coc.nvim'                            " autocompletion
+  Plug 'kylechui/nvim-surround', {'branch': 'main'}   " crud surroundings
 
 call plug#end()
