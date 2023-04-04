@@ -57,9 +57,12 @@ sketchybar --default "${defaults[@]}"
 # Left
 source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
 
 # Right
 source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/brew.sh"
+source "$ITEM_DIR/battery.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
