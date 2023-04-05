@@ -28,6 +28,11 @@ dot config --local status.showUntrackedFiles no
 
 The following tools are being used and configured by my setup
 
+### OS Utilities
+* [skhd](https://github.com/koekeishiya/skhd#install)
+* [yabai](https://github.com/koekeishiya/yabai#install)
+* [SketchyBar](https://github.com/FelixKratz/SketchyBar)
+
 ### Terminal Utilities
 
 * [zsh](https://formulae.brew.sh/formula/zsh)
@@ -36,7 +41,6 @@ The following tools are being used and configured by my setup
 * [tmux](https://formulae.brew.sh/formula/tmux)
 * [powerline](https://powerline.readthedocs.io/en/latest/installation.html#pip-installation)
 * [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
-* [skhd](https://github.com/koekeishiya/skhd#install)
 * [fzf](https://github.com/junegunn/fzf)
 
 ### Apps

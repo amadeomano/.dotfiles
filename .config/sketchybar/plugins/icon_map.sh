@@ -377,6 +377,9 @@ case $@ in
 "Sequel Ace")
   icon_result=":sequel_ace:"
   ;;
+"Kindle")
+  icon_result=":book:"
+  ;;
 *)
   icon_result=":default:"
   ;;
