@@ -16,6 +16,7 @@ fn - b       : open -a '/Applications/Brave Browser.app'
 fn - o       : open -a '/Applications/Obsidian.app'
 fn - s       : open -a '/Applications/Slack.app'
 fn - c       : open -a '/Applications/Visual Studio Code.app'
+fn - z       : open -a '/Applications/zoom.us.app'
 
 # Toggle sketchybar
 shift + lalt - space : sketchybar --bar hidden=toggle
