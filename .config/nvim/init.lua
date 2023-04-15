@@ -1,3 +1,5 @@
+-- Highly inspired by: https://github.com/nvim-lua/kickstart.nvim
+
 local bindings = require('.modules.bindings')
 local utils    = require('.modules.utils')
 
