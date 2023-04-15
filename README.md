@@ -49,6 +49,7 @@ The following tools are being used and configured by my setup
 
 ### Apps
 
+- [Kitty](https://formulae.brew.sh/cask/kitty)
 - [Alacritty](https://github.com/alacritty/alacritty#installation)
 - [mpv](https://formulae.brew.sh/formula/mpv)
 - [neovim](https://formulae.brew.sh/formula/neovim)
