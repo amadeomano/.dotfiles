@@ -14,6 +14,7 @@ require('lazy').setup({
 
   require('modules.plugins.lualine'),      -- Statusline
   require('modules.plugins.blankline'),    -- Indention guidelines
+  require('modules.plugins.noice'),        -- UI for cmd, msg, popup
 
   require('modules.plugins.telescope'),    -- List fuzzy finder
   require('modules.plugins.fzf'),          -- fzf provider for Telescope
