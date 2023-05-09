@@ -14,6 +14,16 @@ def.configure = function()
           ['<C-k>'] = actions.move_selection_previous,
         },
       },
+      vimgrep_arguments = {
+        "ag",
+        "--nocolor",
+        "--noheading",
+        "--numbers",
+        "--column",
+        "--smart-case",
+        "--silent",
+        "--vimgrep",
+      },
     },
   }
 
