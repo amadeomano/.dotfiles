@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/ahmad.manouchehri/Documents/highlight-ui/packages/tokens/src'
+let g:netrw_dirhist_9='/Users/ahmad.manouchehri/.oh-my-zsh/custom/themes/powerlevel10k'
+let g:netrw_dirhist_8='/Users/ahmad.manouchehri/.zshrc-modules'
+let g:netrw_dirhist_7='/Users/ahmad.manouchehri/Documents/highlight-ui/packages/ui/menu/src'
+let g:netrw_dirhist_6='/Users/ahmad.manouchehri/Documents/highlight-ui/packages/ui/table'
+let g:netrw_dirhist_5='/Users/ahmad.manouchehri/personio'
+let g:netrw_dirhist_4='/Users/ahmad.manouchehri/.zshrc-modules'
+let g:netrw_dirhist_3='/Users/ahmad.manouchehri/Documents/design-system/.git'
+let g:netrw_dirhist_2='/Users/ahmad.manouchehri/Downloads/test-gradle/app/build/libs'
+let g:netrw_dirhist_1='/Users/ahmad.manouchehri/Documents/platform.artifact.service/src/test/kotlin/com/personio/artifacts/utests'

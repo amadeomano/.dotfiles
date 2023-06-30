@@ -5,6 +5,7 @@ require('lazy').setup({
   'tpope/vim-sleuth',                      -- auto set tabstop & shiftwidth
   'tpope/vim-surround',                    -- CRUD on surrounds
   'folke/which-key.nvim',                  -- show pending keybinds
+  'ggandor/leap.nvim',                     -- quick motion
 
   -- Plugins with options
   require('modules.plugins.lsp'),          -- LSP
@@ -12,6 +13,7 @@ require('lazy').setup({
   require('modules.plugins.trouble'),      -- Diagnostics
 
   require('modules.plugins.onedark'),      -- One Dark theme
+  require('modules.plugins.neoscroll'),    -- Smooth scroll
 
   require('modules.plugins.lualine'),      -- Statusline
   require('modules.plugins.blankline'),    -- Indention guidelines
@@ -30,6 +32,7 @@ require('lazy').setup({
 -----------------------------
 -- Configure Plugins
 -----------------------------
+require('leap').add_default_mappings()
 require('modules.plugins.telescope').configure()
 require('modules.plugins.telescope').bindKeys()
 

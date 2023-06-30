@@ -11,9 +11,10 @@ local renderLine = function(line)
   return {
     line.tabs().foreach(function(tab)
       local hl = tab.is_current() and theme.current_tab or theme.tab
+      local ext = string.match(tab.name(), '[.](%w*)') or ""
       return {
         line.sep('', hl, theme.fill),
-        tab.is_current() and '' or '',
+        require'nvim-web-devicons'.get_icon(tab.name(), ext, { default = true }),
         tab.number(),
         tab.name(),
         tab.close_btn(tab.is_current() and '󰅙' or '󰅚'),
@@ -25,10 +26,9 @@ local renderLine = function(line)
     line.spacer(),
     line.wins_in_tab(line.api.get_current_tab()).foreach(function(win)
       return {
-        line.sep('', theme.win, theme.fill),
+        ' ',
         win.is_current() and '' or '',
         win.buf_name(),
-        line.sep('', theme.win, theme.fill),
         hl = theme.win,
         margin = ' ',
       }
@@ -43,6 +43,7 @@ end
 
 return {
   'nanozuki/tabby.nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
     vim.o.showtabline = 2
     require('tabby.tabline').set(renderLine)

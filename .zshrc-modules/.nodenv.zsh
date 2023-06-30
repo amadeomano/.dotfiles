@@ -1,2 +1,2 @@
 # initialise nodenv node version manager
-eval "$(nodenv init -)"
+# eval "$(nodenv init -)"

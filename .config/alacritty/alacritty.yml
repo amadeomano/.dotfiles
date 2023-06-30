@@ -8,7 +8,7 @@ shell:
   args:
     - -l
     - -c
-    - "source ~/.zshrc; tmux attach -t 'ﱦ AM' || tmux new -s 'ﱦ AM'"
+    - "source ~/.zshrc; tmux attach -t '󰘳 AM' || tmux new -s '󰘳 AM'"
 
 window:
   decorations: Buttonless

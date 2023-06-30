@@ -15,3 +15,8 @@ export PATH="/usr/local/sbin:$PATH"
 # Add JAVA_HOME
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
 
+# Use login keychain for aws-vault
+export AWS_VAULT_KEYCHAIN_NAME="login"
+# Use long living sessions in aws-vault
+export AWS_SESSION_TTL="12h"
+

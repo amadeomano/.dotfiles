@@ -1,1 +1,1 @@
-grep -slR "PRIVATE" ~/.ssh/ | xargs ssh-add
+# grep -slR "PRIVATE" ~/.ssh/ | xargs ssh-add
