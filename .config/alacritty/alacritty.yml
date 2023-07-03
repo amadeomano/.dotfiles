@@ -4,11 +4,11 @@ font:
   size: 15
 
 shell:
-  program: /bin/zsh
+  program: /opt/Homebrew/bin/fish
   args:
     - -l
     - -c
-    - "source ~/.zshrc; tmux attach -t '󰘳 AM' || tmux new -s '󰘳 AM'"
+    - "tmux attach -t '󰘳 AM' || tmux new -s '󰘳 AM'"
 
 window:
   opacity: 0.8

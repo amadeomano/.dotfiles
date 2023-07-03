@@ -39,9 +39,11 @@ The following tools are being used and configured by my setup
 - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh#custom-directory)
 - [nodenv](https://formulae.brew.sh/formula/nodenv)
 - [tmux](https://formulae.brew.sh/formula/tmux)
+- [tpm](https://github.com/tmux-plugins/tpm)
 - [powerline](https://powerline.readthedocs.io/en/latest/installation.html#pip-installation)
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
 - [fzf](https://github.com/junegunn/fzf)
+- [Lazygit](https://github.com/jesseduffield/lazygit)
 
 ### Fonts
 
@@ -54,7 +56,7 @@ The following tools are being used and configured by my setup
 - [mpv](https://formulae.brew.sh/formula/mpv)
 - [neovim](https://formulae.brew.sh/formula/neovim)
 - [aria2](https://formulae.brew.sh/formula/aria2)
-- [logo-ls](https://github.com/Yash-Handa/logo-ls#macos-darwin)
+- [exa](https://the.exa.website/)
 
 ### NVIM Plugins
 
