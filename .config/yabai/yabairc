@@ -54,6 +54,7 @@ yabai -m rule --add label="About This Mac" app="System Information" title="About
 yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
 
 yabai -m rule --add app="^Alacritty$" manage=off sticky=on
+yabai -m rule --add app="^Bitdefender Endpoint Security Tools$" manage=off sticky=on border=off
 yabai -m rule --add app="^mpv$" manage=off sticky=on
 
 yabai -m config layout bsp

@@ -53,7 +53,7 @@ The following tools are being used and configured by my setup
 ### Fonts
 
 - `brew tap homebrew/cask-fonts && brew install --cask font-jetbrains-mono-nerd-font`
-- `curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf`
+- `curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/latest/download/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf`
 
 ### Apps
 

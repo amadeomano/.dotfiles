@@ -2,6 +2,9 @@ case $@ in
 "Brave Browser")
   icon_result=":brave_browser:"
   ;;
+"Arc")
+  icon_result=":arc:"
+  ;;
 "Keyboard Maestro")
   icon_result=":keyboard_maestro:"
   ;;
