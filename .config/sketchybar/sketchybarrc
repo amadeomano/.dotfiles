@@ -12,9 +12,9 @@ PADDINGS=3 # All paddings use this value (icon, label, background)
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=45
+  height=25
   color=$BAR_COLOR
-  border_width=2
+  border_width=0
   border_color=$BAR_BORDER_COLOR
   shadow=off
   position=top
@@ -23,7 +23,7 @@ bar=(
   padding_left=10
   margin=5
   y_offset=5
-  corner_radius=10
+  corner_radius=30
 )
 
 sketchybar --bar "${bar[@]}"
@@ -55,7 +55,7 @@ defaults=(
 sketchybar --default "${defaults[@]}"
 
 # Left
-source "$ITEM_DIR/apple.sh"
+# source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/front_app.sh"
 

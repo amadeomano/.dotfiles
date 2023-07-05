@@ -33,6 +33,11 @@ The following tools are being used and configured by my setup
 - [yabai](https://github.com/koekeishiya/yabai#install)
 - [SketchyBar](https://github.com/FelixKratz/SketchyBar)
 
+#### SketchyBar dependencies
+- [sf-symbols](https://formulae.brew.sh/cask/sf-symbols)
+- [jq](https://formulae.brew.sh/formula/jq)
+- [gh](https://formulae.brew.sh/formula/gh)
+
 ### Terminal Utilities
 
 - [zsh](https://formulae.brew.sh/formula/zsh)
@@ -48,6 +53,7 @@ The following tools are being used and configured by my setup
 ### Fonts
 
 - `brew tap homebrew/cask-fonts && brew install --cask font-jetbrains-mono-nerd-font`
+- `curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf`
 
 ### Apps
 

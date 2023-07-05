@@ -27,8 +27,8 @@ alias downl='down -i $@'
 # Yarn shortcut
 alias y='yarn $@'
 
-# Replace ls wih Logo ls
-alias ls='logo-ls $@'
+# Replace ls wih Exa
+alias ls='exa --icons $@'
 
 # Tmux shortcut
 alias t='tmux attach -t "ﱦ AM" || tmux new -s "ﱦ AM"'

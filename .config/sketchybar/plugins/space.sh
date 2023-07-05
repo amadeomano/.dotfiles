@@ -4,7 +4,7 @@ update() {
   source "$HOME/.config/sketchybar/colors.sh"
   COLOR=$BACKGROUND_2
   if [ "$SELECTED" = "true" ]; then
-    COLOR=$GREY
+    COLOR=0xbb1e1e2e
   fi
   sketchybar --set $NAME icon.highlight=$SELECTED label.highlight="$SELECTED" background.border_color=$COLOR
 }
