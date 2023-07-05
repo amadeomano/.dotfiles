@@ -85,3 +85,16 @@ The following tools are being used and configured by my setup
 - [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
+
+### Custom search engines
+
+|  Name  |  Shortcut  |  URL  | 
+| :----- | :--------: | :---- | 
+| Bundle Phobia | bun | https://bundlephobia.com/result?p=%s | 
+| Calendar | cal | https://calendar.google.com/calendar/u/0/r | 
+| Confluence | con | https://personio.atlassian.net/wiki/search?text=%s | 
+| Jira Board | jir | https://personio.atlassian.net/jira/software/c/projects/DST/boards/288 | 
+| DS tickets | ds | https://personio.atlassian.net/issues/?jql=project%20%3D%20%22Design%20System%20Team%22%20and%20summary%20~%20%22%s%22%20order%20by%20created%20DESC | 
+| Notepad | txt | data:text/html, <html contenteditable> | 
+
+
