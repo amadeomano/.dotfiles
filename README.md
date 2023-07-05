@@ -40,13 +40,10 @@ The following tools are being used and configured by my setup
 
 ### Terminal Utilities
 
-- [zsh](https://formulae.brew.sh/formula/zsh)
-- [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh#custom-directory)
+- [fish](https://formulae.brew.sh/formula/fish#default)
 - [nodenv](https://formulae.brew.sh/formula/nodenv)
 - [tmux](https://formulae.brew.sh/formula/tmux)
 - [tpm](https://github.com/tmux-plugins/tpm)
-- [powerline](https://powerline.readthedocs.io/en/latest/installation.html#pip-installation)
-- [powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
 - [fzf](https://github.com/junegunn/fzf)
 - [Lazygit](https://github.com/jesseduffield/lazygit)
 
