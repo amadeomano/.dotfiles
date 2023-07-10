@@ -9,6 +9,7 @@ abbr -a pi python3 -m pip install --user
 abbr -a lg lazygit
 
 # Git related aliases
+abbr -a g git
 abbr -a gs git status
 abbr -a ga git add
 abbr -a gc git commit
@@ -19,7 +20,7 @@ abbr -a gb git branch
 
 # Personio CLI
 abbr -a pc perctl
-abbr -a mc ~/personio/monolith-cli
+abbr -a mc ~/Public/personio/monolith-cli
 
 # Aria2 Downloader
 abbr -a down aria2c -x 16 -c

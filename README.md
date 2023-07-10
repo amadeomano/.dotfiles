@@ -41,11 +41,15 @@ The following tools are being used and configured by my setup
 ### Terminal Utilities
 
 - [fish](https://formulae.brew.sh/formula/fish#default)
-- [nodenv](https://formulae.brew.sh/formula/nodenv)
+- [fisher](https://github.com/jorgebucaran/fisher)
 - [tmux](https://formulae.brew.sh/formula/tmux)
 - [tpm](https://github.com/tmux-plugins/tpm)
 - [fzf](https://github.com/junegunn/fzf)
 - [Lazygit](https://github.com/jesseduffield/lazygit)
+
+#### Fisher plugins
+- [nvm.fish](https://github.com/jorgebucaran/nvm.fish)
+- [sdkman-for-fish@v2.0.0](https://github.com/reitzig/sdkman-for-fish)
 
 ### Fonts
 
