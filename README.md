@@ -46,6 +46,7 @@ The following tools are being used and configured by my setup
 - [tpm](https://github.com/tmux-plugins/tpm)
 - [fzf](https://github.com/junegunn/fzf)
 - [Lazygit](https://github.com/jesseduffield/lazygit)
+- [zoxide](https://github.com/ajeetdsouza/zoxide)
 
 #### Fisher plugins
 - [nvm.fish](https://github.com/jorgebucaran/nvm.fish)

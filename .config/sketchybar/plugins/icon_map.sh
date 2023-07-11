@@ -5,6 +5,9 @@ case $@ in
 "Arc")
   icon_result=":arc:"
   ;;
+"LiquidText")
+  icon_result=":pdf:"
+  ;;
 "Keyboard Maestro")
   icon_result=":keyboard_maestro:"
   ;;
