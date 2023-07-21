@@ -57,3 +57,4 @@ fn + shift - x : yabai -m space --mirror x-axis
 fn + shift - y : yabai -m space --mirror y-axis
 fn + shift - b : yabai -m space --balance
 fn + shift - r : yabai -m space --rotate 90
+fn - return    : yabai -m window --toggle float

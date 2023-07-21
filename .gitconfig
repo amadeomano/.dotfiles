@@ -1,6 +1,7 @@
 [user]
 	name = Amadeo Manouchehri
 	email = amadeo.manouchehri@gmail.com
+	signingkey = 31BE0E4DD72D7E7B
 [gpg]
 	program = gpg
 [alias]

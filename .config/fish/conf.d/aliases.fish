@@ -20,7 +20,7 @@ abbr -a gb git branch
 
 # Personio CLI
 abbr -a pc perctl
-abbr -a mc ~/Public/personio/monolith-cli
+abbr -a mc ~/repos/personio/monolith-cli
 
 # Aria2 Downloader
 abbr -a down aria2c -x 16 -c
