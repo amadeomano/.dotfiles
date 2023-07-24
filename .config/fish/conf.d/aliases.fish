@@ -34,7 +34,7 @@ abbr -a ls exa --icons
 abbr -a tree exa --icons --tree
 
 # Tmux shortcut
-abbr -a t tmux attach -t "󰘳 AM" || tmux new -s "󰘳 AM"
+# abbr -a t tmux attach -t "󰘳 AM" || tmux new -s "󰘳 AM"
 
 # Add ssh keys
 abbr -a add-ssh grep -slR "PRIVATE" ~/.ssh/ | xargs ssh-add
