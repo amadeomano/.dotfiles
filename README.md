@@ -48,6 +48,7 @@ The following tools are being used and configured by my setup
 - [Lazygit](https://github.com/jesseduffield/lazygit)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [fd](https://formulae.brew.sh/formula/fd)
+- [gitmux](https://github.com/arl/gitmux)
 
 #### Fisher plugins
 - [nvm.fish](https://github.com/jorgebucaran/nvm.fish)
