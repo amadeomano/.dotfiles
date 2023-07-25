@@ -6,7 +6,7 @@ return {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  eslint = {},
+  -- eslint = {},
   tsserver = {},
 
   lua_ls = {

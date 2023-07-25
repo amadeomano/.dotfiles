@@ -11,6 +11,7 @@ require('lazy').setup({
   require('modules.plugins.lsp'),          -- LSP
   require('modules.plugins.autocomp'),     -- Auto completion
   require('modules.plugins.trouble'),      -- Diagnostics
+  require('modules.plugins.null-ls'),      -- LSP actions integration
 
   require('modules.plugins.onedark'),      -- One Dark theme
   require('modules.plugins.neoscroll'),    -- Smooth scroll
