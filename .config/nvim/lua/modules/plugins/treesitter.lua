@@ -3,6 +3,7 @@ local def = {
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
     'nvim-treesitter/playground',
+    'windwp/nvim-ts-autotag',
   },
   build = ":TSUpdate",
 }
@@ -14,6 +15,9 @@ def.configure = function ()
 
     -- Disable autoinstall missing langs
     auto_install = false,
+
+    -- Enable nvim-ts-autotag
+    autotag = { enable = true },
 
     highlight = { enable = true },
     indent = { enable = true, disable = { 'python' } },
