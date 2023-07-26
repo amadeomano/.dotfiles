@@ -1,6 +1,10 @@
 
 # Dotfiles repo alias
-abbr -a dot git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
+abbr -a d dot
+abbr -a ds dot status
+abbr -a da dot add
+abbr -a dc dot commit
+abbr -a dd dot diff
 
 # Python install shortcut
 abbr -a pi python3 -m pip install --user
