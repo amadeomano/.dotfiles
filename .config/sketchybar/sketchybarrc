@@ -64,6 +64,15 @@ source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/brew.sh"
 source "$ITEM_DIR/battery.sh"
 
+datetime=(
+  background.color=$BACKGROUND_1
+  background.border_color=$BACKGROUND_2
+  background.border_width=2
+)
+
+sketchybar --add bracket datetime calendar brew battery  \
+           --set datetime "${datetime[@]}" \
+
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
 

@@ -14,3 +14,5 @@ calendar=(
 sketchybar --add item calendar right       \
            --set calendar "${calendar[@]}" \
            --subscribe calendar system_woke
+
+
