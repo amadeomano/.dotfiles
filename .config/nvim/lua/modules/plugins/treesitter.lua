@@ -8,7 +8,12 @@ local def = {
   build = ":TSUpdate",
 }
 
-def.configure = function ()
+def.configure = function()
+  -- Enable folding with treesitter
+  vim.o.foldmethod = "expr"
+  vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+  vim.o.foldlevelstart = 99 -- disable folding at startup
+
   require('nvim-treesitter.configs').setup {
     -- Languages to be installed automattically
     ensure_installed = { 'lua', 'tsx', 'typescript' },

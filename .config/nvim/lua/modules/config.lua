@@ -36,7 +36,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- Hide EOB character
-vim.wo.fillchars='eob: '
+vim.wo.fillchars = 'eob: '
 
 ---------------------------------------------------
 -- Functionality config
@@ -51,4 +51,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
-

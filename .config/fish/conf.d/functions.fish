@@ -6,3 +6,7 @@ end
 function dot -d "git wrapper for dot files"
     git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $argv
 end
+
+function code -d "WebStorm wrapper"
+    open -na WebStorm.app --args (pwd)/$argv
+end

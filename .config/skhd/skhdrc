@@ -19,8 +19,14 @@ cmd - return : open -a /Applications/Alacritty.app
 fn - b       : open -a '/Applications/Arc.app'
 fn - o       : open -a '/Applications/Obsidian.app'
 fn - s       : open -a '/Applications/Slack.app'
-fn - c       : open -a 'kitty'
+fn - c       : open -a '/Applications/WebStorm.app'
 fn - z       : open -a '/Applications/zoom.us.app'
+
+# Arrow Keys
+ctrl - h : skhd -k "left"
+ctrl - j : skhd -k "down"
+ctrl - k : skhd -k "up"
+ctrl - l : skhd -k "right"
 
 # Toggle sketchybar
 shift + lalt - space : sketchybar --bar hidden=toggle

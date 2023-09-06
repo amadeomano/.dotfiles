@@ -11,9 +11,12 @@ end
 
 def.bindKeys = function ()
   local tree = require('nvim-tree.view')
+
   vim.keymap.set('n', '<C-F>', function()
     if tree.is_visible() then
+      tree.focus()
     else
+      tree.close()
     end
   end, { silent = true })
 end
