@@ -50,6 +50,9 @@ The following tools are being used and configured by my setup
 - [fd](https://formulae.brew.sh/formula/fd)
 - [gitmux](https://github.com/arl/gitmux)
 
+### Dev tools
+- [asdf](https://asdf-vm.com/)
+
 #### Fisher plugins
 - [nvm.fish](https://github.com/jorgebucaran/nvm.fish)
 - [sdkman-for-fish@v2.0.0](https://github.com/reitzig/sdkman-for-fish)

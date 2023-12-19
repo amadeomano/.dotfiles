@@ -20,3 +20,7 @@ key_bindings:
   - { key: Q,        mods: Command, action: Hide }
   - { key: W,        mods: Command, action: Hide }
   - { key: J,        mods: Command, chars: "\x02\x54" } # open session mgr
+
+# themes from tlacritty/alacritty-theme repo
+import:
+  - ~/.config/alacritty/themes/themes/palenight.yaml
