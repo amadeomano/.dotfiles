@@ -4,6 +4,9 @@ set fish_greeting
 # set config path
 set -x XDG_CONFIG_HOME "$HOME/.config"
 
+# set config path
+set -gx GPG_TTY (tty)
+
 # add bins to paths
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path /opt/homebrew/bin/

@@ -21,6 +21,7 @@ fn - o       : open -a '/Applications/Obsidian.app'
 fn - s       : open -a '/Applications/Slack.app'
 fn - c       : open -a '/Applications/WebStorm.app'
 fn - z       : open -a '/Applications/zoom.us.app'
+fn - d       : osascript -e "tell application \"System Events\" to keystroke \"$(date +%Y-%m-%d)\""
 
 # Arrow Keys
 ctrl - h : skhd -k "left"

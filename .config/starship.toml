@@ -17,7 +17,7 @@ disabled = true
 disabled = true
 
 [character]
-disabled = true
+disabled = false
 
 [cmake]
 disabled = true
@@ -75,12 +75,13 @@ disabled = true
 
 [git_branch]
 disabled = false
+truncation_length = 20
 
 [git_commit]
-disabled = false
+disabled = true
 
 [git_metrics]
-disabled = true
+disabled = false
 
 [git_state]
 disabled = true

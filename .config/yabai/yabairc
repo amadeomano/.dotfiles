@@ -63,7 +63,6 @@ JB_Apps='^(WebStorm|CLion|PyCharm|IntelliJ IDEA)$'
 yabai -m rule --add app="${JB_Apps}" manage=off
 # If `Open last project when launch` is checked make sure `always show project path` is also checked.
 yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on opacity=0.9
-yabai -m rule --add app="${JB_Apps}" title="^$"  manage=on opacity=0.9
 
 yabai -m config layout bsp
 
