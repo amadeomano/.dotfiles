@@ -11,3 +11,4 @@ set -gx GPG_TTY (tty)
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path /opt/homebrew/bin/
 fish_add_path /opt/homebrew/sbin/
+fish_add_path $HOME/bin

@@ -18,6 +18,10 @@ disabled = true
 
 [character]
 disabled = false
+format = '''
+
+$symbol 
+'''
 
 [cmake]
 disabled = true
@@ -84,7 +88,7 @@ disabled = true
 disabled = false
 
 [git_state]
-disabled = true
+disabled = false
 
 [git_status]
 disabled = true
@@ -248,4 +252,5 @@ disabled = true
 [zig]
 disabled = true
 
-
+[cmd_duration]
+min_time = 4_000
