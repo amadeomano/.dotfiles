@@ -17,6 +17,7 @@ fn - l    : yabai -m window --focus east  || yabai -m display --focus east
 # Highly used apps
 cmd - return : open -a /Applications/Alacritty.app
 fn - b       : open -a '/Applications/Arc.app'
+fn - e       : open -a "/Applications/Microsoft Edge.app"
 fn - o       : open -a '/Applications/Obsidian.app'
 fn - s       : open -a '/Applications/Slack.app'
 fn - c       : open -a '/Applications/WebStorm.app'

@@ -42,3 +42,7 @@ abbr -a tree exa --icons --tree
 
 # Add ssh keys
 abbr -a add-ssh grep -slR "PRIVATE" ~/.ssh/ | xargs ssh-add
+
+# NX run through pnpm
+abbr -a e pnpm exec nx run 
+abbr -a ec "pnpm exec nx affected -t lint type-check test"
