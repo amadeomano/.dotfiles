@@ -10,3 +10,7 @@ end
 function code -d "WebStorm wrapper"
     open -na WebStorm.app --args (pwd)/$argv
 end
+
+function sub -d "SublimeText wrapper"
+    /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --args (pwd)/$argv
+end
