@@ -5,4 +5,7 @@
 	],
 	"vintage_start_in_command_mode": true,
 	"relative_line_numbers": true,
+	"font_face": "JetBrainsMono NFP",
+	"font_size": 13,
+	"font_options": ["dlig", "ss04"],
 }

@@ -1,0 +1,7 @@
+set rnu
+
+Plug 'tpope/vim-surround'
+set surround
+
+nmap S <Action>(AceBackwardAction)
+nmap s <Action>(AceForwardAction)

@@ -1,3 +1,5 @@
 [
 	{ "keys": ["super+shift+d"], "command": "toggle_side_bar" },
+	{ "keys": ["super+["], "command": "jump_back" },
+	{ "keys": ["super+]"], "command": "jump_forward" },
 ]
