@@ -1,4 +1,4 @@
-set rnu
+set nu rnu
 
 Plug 'tpope/vim-surround'
 set surround
