@@ -5,3 +5,4 @@ set surround
 
 nmap S <Action>(AceBackwardAction)
 nmap s <Action>(AceForwardAction)
+nmap <C-w><space> <Action>(MaximizeEditorInSplit)
