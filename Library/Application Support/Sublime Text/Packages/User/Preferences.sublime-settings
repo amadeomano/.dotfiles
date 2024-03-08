@@ -9,4 +9,5 @@
 	"font_size": 13,
 	"font_options": ["dlig", "ss04"],
 	"show_full_path": true,
+	"index_files": true,
 }
