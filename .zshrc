@@ -30,3 +30,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Configure Colima as Docker Host for applications which don't respect Docker Contexts
+export DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
+
+# Testcontainers should use the default Docker Socket
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock

@@ -9,10 +9,10 @@ fn - 7 : yabai -m space --focus 7
 fn - 8 : yabai -m space --focus 8
 
 # Window Navigation (through display borders): lalt - {j, k, l, ö}
-fn - h    : yabai -m window --focus west  || yabai -m display --focus west
-fn - j    : yabai -m window --focus south || yabai -m display --focus south
-fn - k    : yabai -m window --focus north || yabai -m display --focus north
-fn - l    : yabai -m window --focus east  || yabai -m display --focus east
+fn + shift - h    : yabai -m window --focus west  || yabai -m display --focus west
+fn + shift - j    : yabai -m window --focus south || yabai -m display --focus south
+fn + shift - k    : yabai -m window --focus north || yabai -m display --focus north
+fn + shift - l    : yabai -m window --focus east  || yabai -m display --focus east
 
 # Highly used apps
 cmd - return    : open -a /Applications/Alacritty.app
@@ -20,8 +20,11 @@ fn - b          : open -a '/Applications/Arc.app'
 fn - e          : open -a "/Applications/Microsoft Edge.app"
 fn - o          : open -a '/Applications/Obsidian.app'
 fn - s          : open -a '/Applications/Slack.app'
+fn - k          : open -a '/Applications/Amazon Kindle.app'
+fn - l          : open -a '/Applications/LiquidText.app'
 fn - c          : pgrep -i webstorm && open -a '/Applications/WebStorm.app' || open -a '/Applications/Sublime Text.app'
 fn - z          : open -a '/Applications/zoom.us.app'
+fn - f          : open -a '/Applications/Figma.app'
 fn - d          : osascript -e "tell application \"System Events\" to keystroke \"$(date +%Y-%m-%d)\""
 fn + shift - s  : open -a '/Applications/Sublime Text.app'
 
