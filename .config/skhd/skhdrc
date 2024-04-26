@@ -15,13 +15,14 @@ fn + shift - k    : yabai -m window --focus north || yabai -m display --focus no
 fn + shift - l    : yabai -m window --focus east  || yabai -m display --focus east
 
 # Highly used apps
-cmd - return    : open -a /Applications/Alacritty.app
+cmd - return    : open -a /Applications/kitty.app
 fn - b          : open -a '/Applications/Arc.app'
 fn - e          : open -a "/Applications/Microsoft Edge.app"
 fn - o          : open -a '/Applications/Obsidian.app'
 fn - s          : open -a '/Applications/Slack.app'
 fn - k          : open -a '/Applications/Amazon Kindle.app'
 fn - l          : open -a '/Applications/LiquidText.app'
+fn - p          : open -a '/System/Applications/Preview.app'
 fn - c          : pgrep -i webstorm && open -a '/Applications/WebStorm.app' || open -a '/Applications/Sublime Text.app'
 fn - z          : open -a '/Applications/zoom.us.app'
 fn - f          : open -a '/Applications/Figma.app'
