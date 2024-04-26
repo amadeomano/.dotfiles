@@ -14,3 +14,15 @@ end
 function sub -d "SublimeText wrapper"
     /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --args (pwd)/$argv
 end
+
+function en -d "Translate english word"
+    curl 'https://fastdic.com/suggestions' \
+        -H 'content-type: application/json' \
+        -H 'referer: https://fastdic.com/' \
+        --data-raw "{\"word\":\"$argv\"}" | jq
+end
+
+function de -d "Translate german word"
+    curl "https://api.wort.ir/api/vocab/details/de?slug=/woerterbuch/deutsch-persisch/$argv" \
+        | jq '.meta'
+end
