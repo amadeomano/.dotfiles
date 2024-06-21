@@ -1,7 +1,6 @@
 {
   "editor.fontLigatures": true,
   "editor.fontFamily": "Fira Code iScript",
-  "editor.fontSize": 15,
   "editor.lineHeight": 25,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
@@ -29,7 +28,6 @@
       }
     ]
   },
-  "workbench.colorTheme": "One Dark Pro",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   // Map VIM u|^r to vscode default behavior
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -55,13 +53,12 @@
   },
   "go.formatTool": "goimports",
   "diffEditor.renderSideBySide": false,
-  "workbench.iconTheme": "file-icons",
   "vim.sneak": true,
 
   // auto Formating
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.suggestSelection": "first",
@@ -77,6 +74,42 @@
     "FIG_NEW_SESSION": "1"
   },
   "editor.accessibilitySupport": "off",
+  "editor.stickyScroll.enabled": true,
+  "telemetry.telemetryLevel": "off",
   "workbench.sideBar.location": "right",
-  "editor.stickyScroll.enabled": true
+  "workbench.statusBar.visible": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.showTabs": "none",
+  "window.commandCenter": false,
+  "editor.minimap.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.editor.editorActionsLocation": "hidden",
+  "apc.stylesheet": {
+    ".monaco-workbench .part.editor>.content .editor-group-container .editor-group-watermark>.letterpress": "display: none;",
+    ".inline-title-bar:not(.statusbar-editor-top):not(.statusbar-top) .monaco-workbench.mac.no-activity-bar.sidebar-right.noauxiliarybar:not(.fullscreen) .part.editor>.content .editor-group-container>.title:not(.tabs)": "padding-left: 0"
+  },
+  "apc.electron": {
+    "titleBarStyle": "customButtonsOnHover",
+    "backgroundColor": "rgba(123, 123, 123, 0.5)",
+    "frame": false,
+    "transparent": true,
+    "vibrancy": "ultra-dark",
+    "opacity": 0.9, // Range: 0-1 (To go fully transparent, set it to 0)
+    "visualEffectState": "active",
+    "setWindowButtonVisibility": false
+  },
+  "window.titleBarStyle": "native",
+  "window.customTitleBarVisibility": "never",
+  "gitlens.ai.experimental.provider": "openai",
+  "gitlens.ai.experimental.openai.model": "gpt-4-turbo-preview",
+  "gitlens.graph.minimap.enabled": false,
+  "vim.foldfix": true,
+  "window.autoDetectColorScheme": true,
+  "editor.fontSize": 15,
+  "workbench.iconTheme": "material-icon-theme",
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "git.autofetch": true,
+  "jestrunner.jestPath": "../../node_modules/jest/bin/jest.js"
 }
