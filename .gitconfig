@@ -1,9 +1,13 @@
 [user]
 	name = Amadeo Manouchehri
 	email = amadeo.manouchehri@gmail.com
-	signingkey = 31BE0E4DD72D7E7B
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGTy7CohcdeLDzAS7KsdeYMuUlFrmIs64y4bkTz4ma5B
 [gpg]
-	program = gpg
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+	gpgsign = true
 [alias]
     lg = !"git lg1"
     lg1 = !"git lg1-specific --all"
@@ -13,5 +17,3 @@
     lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
     lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
-[commit]
-	gpgsign = true
