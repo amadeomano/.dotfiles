@@ -11,6 +11,9 @@ yabai -m signal --add event=display_removed action="sleep 1 && $HOME/.config/yab
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
 yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
+# Hide kitty when inactive
+yabai -m signal --add app='^kitty$' event=application_deactivated label="hide_inactive_kitty" action="osascript -e 'tell application \"System Events\" to set visible of application process \"kitty\" to false'"
+
 $HOME/.config/yabai/create_spaces.sh
 
 yabai -m config external_bar               all:35:0     \
