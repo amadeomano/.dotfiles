@@ -53,7 +53,6 @@
   },
   "go.formatTool": "goimports",
   "diffEditor.renderSideBySide": false,
-  "vim.sneak": true,
 
   // auto Formating
   "editor.formatOnSave": true,
@@ -111,5 +110,10 @@
   "workbench.iconTheme": "material-icon-theme",
   "typescript.inlayHints.parameterNames.enabled": "all",
   "git.autofetch": true,
-  "jestrunner.jestPath": "../../node_modules/jest/bin/jest.js"
+  "jestrunner.jestPath": "../../node_modules/jest/bin/jest.js",
+  "vim.leader": " ",
+  "vim.sneak": true,
+  "svg.preview.boundingBox": true,
+  "svg.preview.transparencyGrid": false,
+  "svelte.enable-ts-plugin": true
 }
