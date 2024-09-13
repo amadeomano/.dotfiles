@@ -1,0 +1,1 @@
+/Users/amadeo.manouchehri/.asdf/completions/asdf.fish

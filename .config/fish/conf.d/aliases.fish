@@ -34,8 +34,8 @@ abbr -a downl down -i
 abbr -a y yarn
 
 # Replace ls to use exa
-abbr -a ls exa --icons
-abbr -a tree exa --icons --tree
+abbr -a ls lsd
+abbr -a tree lsd --tree
 
 # Tmux shortcut
 # abbr -a t tmux attach -t "󰘳 AM" || tmux new -s "󰘳 AM"
