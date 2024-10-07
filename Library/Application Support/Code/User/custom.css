@@ -1,0 +1,13 @@
+/* Hide title bar and expand panels heights */
+
+body > div.file-icons-enabled.reduce-motion.monaco-workbench.mac.chromium.nopanel.noauxiliarybar.nostatusbar.macos-bigsur-or-newer.vs.vscode-theme-defaults-themes-light_modern-json > div.monaco-grid-view > div > div > div.monaco-scrollable-element.mac > div.split-view-container > div:nth-child(1) {
+  display: none !important; height: 0 !important;
+}
+
+body > div.file-icons-enabled.reduce-motion.monaco-workbench.mac.chromium.nopanel.noauxiliarybar.nostatusbar.macos-bigsur-or-newer.vs.vscode-theme-defaults-themes-light_modern-json > div.monaco-grid-view > div > div > div.monaco-scrollable-element.mac > div.split-view-container > div:nth-child(3) {
+  top: 0 !important; height: 100vh !important;
+}
+
+.breadcrumbs-below-tabs { padding-left: 70px !important; }
+
+[style*="height: 8"] { height: 100vh !important; }

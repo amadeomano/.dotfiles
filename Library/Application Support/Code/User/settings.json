@@ -99,7 +99,10 @@
     "visualEffectState": "active",
     "setWindowButtonVisibility": false
   },
-  "window.titleBarStyle": "native",
+  "vscode_custom_css.imports": [
+    "file:////Users/amadeo.manouchehri/Library/Application Support/Code/User/custom.css"
+  ],
+  "window.titleBarStyle": "custom",
   "window.customTitleBarVisibility": "never",
   "gitlens.ai.experimental.provider": "openai",
   "gitlens.ai.experimental.openai.model": "gpt-4-turbo-preview",
