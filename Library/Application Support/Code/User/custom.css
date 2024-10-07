@@ -11,3 +11,8 @@ body > div.file-icons-enabled.reduce-motion.monaco-workbench.mac.chromium.nopane
 .breadcrumbs-below-tabs { padding-left: 70px !important; }
 
 [style*="height: 8"] { height: 100vh !important; }
+
+/* Hide intro screen logo */
+#workbench\.parts\.editor > div.content.empty > div > div > div > div > div.monaco-scrollable-element.mac > div.split-view-container > div > div > div.editor-group-watermark > div.letterpress {
+  display: none !important;
+}
