@@ -5,6 +5,12 @@ case $@ in
 "Arc")
   icon_result=":arc:"
   ;;
+"Zed")
+  icon_result=":zulip:"
+  ;;
+"Books")
+  icon_result=":book:"
+  ;;
 "LiquidText")
   icon_result=":pdf:"
   ;;
