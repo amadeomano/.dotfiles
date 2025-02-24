@@ -30,9 +30,6 @@ abbr -a mc ~/repos/personio/monolith-cli
 abbr -a down aria2c -x 16 -c
 abbr -a downl down -i
 
-# Yarn shortcut
-abbr -a y yarn
-
 # Replace ls to use exa
 abbr -a ls lsd
 abbr -a tree lsd --tree
@@ -46,3 +43,6 @@ abbr -a add-ssh grep -slR "PRIVATE" ~/.ssh/ | xargs ssh-add
 # NX run through pnpm
 abbr -a e pnpm nx run 
 abbr -a ec "pnpm exec nx affected -t lint type-check test"
+
+# MPV
+abbr -a yt 'mpv --ytdl-format="bestvideo[ext=mp4][height<=?720]+bestaudio[ext=m4a]"'
