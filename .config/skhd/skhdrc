@@ -16,9 +16,9 @@ fn + shift - l    : yabai -m window --focus east  || yabai -m display --focus ea
 
 # Highly used apps
 cmd + shift - return: open -a /Applications/kitty.app
-fn - b          : open -a '/Applications/Arc.app'
-fn - v          : open -a '/Applications/Vivaldi.app'
-fn - e          : open -a "/Applications/Microsoft Edge.app"
+fn - b          : open -a '/Applications/Arc.app' --args --force-prefers-no-reduced-motion
+fn - v          : open -a '/Applications/Vivaldi.app' --args --force-prefers-no-reduced-motion
+fn - e          : open -a "/Applications/Microsoft Edge.app" --args --force-prefers-no-reduced-motion
 fn - o          : open -a '/Applications/Obsidian.app'
 fn - s          : open -a '/Applications/Slack.app'
 fn - k          : open -a '/System/Applications/Books.app'
@@ -28,7 +28,7 @@ fn - c          : pgrep -i webstorm && open -a '/Applications/WebStorm.app' || o
 fn + cmd - c    : open -a '/Applications/Zed.app'
 fn + cmd - n    : open -a '/System/Applications/Notes.app'
 fn - z          : open -a '/Applications/zoom.us.app'
-fn + cmd - z    : open -a '/Applications/Google Chrome.app'
+fn + cmd - z    : open -a '/Applications/Google Chrome.app' --args --force-prefers-no-reduced-motion
 fn - f          : open -a '/Applications/Figma.app'
 fn - d          : osascript -e "tell application \"System Events\" to keystroke \"$(date +%Y-%m-%d)\""
 fn + shift - s  : open -a '/Applications/Sublime Text.app'
