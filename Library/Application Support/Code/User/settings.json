@@ -111,12 +111,28 @@
   "window.autoDetectColorScheme": true,
   "editor.fontSize": 15,
   "workbench.iconTheme": "material-icon-theme",
-  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterNames.enabled": "none",
   "git.autofetch": true,
-  "jestrunner.jestPath": "../../node_modules/jest/bin/jest.js",
+  "jestrunner.jestPath": "/Users/amadeo.manouchehri/repos/personio-web/node_modules/jest/bin/jest.js",
   "vim.leader": " ",
   "vim.sneak": true,
   "svg.preview.boundingBox": true,
   "svg.preview.transparencyGrid": false,
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "github.copilot.advanced": {
+    "authProvider": "github"
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "typescript.tsserver.log": "off",
+  "gitlab.duoCodeSuggestions.enabled": false,
+  "gitlab.duoChat.enabled": false,
+  "[yaml]": {
+    "editor.stickyScroll.maxLineCount": 10
+  },
+  "workbench.editor.navigationScope": "editorGroup"
 }
