@@ -36,3 +36,4 @@ export DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
 
 # Testcontainers should use the default Docker Socket
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+. "/Users/amadeo.manouchehri/.deno/env"
