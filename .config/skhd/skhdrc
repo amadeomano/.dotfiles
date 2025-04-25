@@ -16,11 +16,12 @@ fn + shift - l    : yabai -m window --focus east  || yabai -m display --focus ea
 
 # Highly used apps
 cmd + shift - return: open -a /Applications/kitty.app
-fn - b          : open -a '/Applications/Arc.app' --args --force-prefers-no-reduced-motion
+fn - b          : ~/.config/skhd/open-or-focus-arc.sh
 fn - v          : open -a '/Applications/Vivaldi.app' --args --force-prefers-no-reduced-motion
 fn - e          : open -a "/Applications/Microsoft Edge.app" --args --force-prefers-no-reduced-motion
 fn - o          : open -a '/Applications/Obsidian.app'
 fn - s          : open -a '/Applications/Slack.app'
+fn + cmd - s    : open -a '/Applications/Spotify.app'
 fn - k          : open -a '/System/Applications/Books.app'
 fn - l          : open -a '/Applications/LiquidText.app'
 fn - p          : open -a '/System/Applications/Preview.app'
@@ -28,7 +29,7 @@ fn - c          : pgrep -i webstorm && open -a '/Applications/WebStorm.app' || o
 fn + cmd - c    : open -a '/Applications/Zed.app'
 fn + cmd - n    : open -a '/System/Applications/Notes.app'
 fn - z          : open -a '/Applications/zoom.us.app'
-fn + cmd - z    : open -a '/Applications/Google Chrome.app' --args --force-prefers-no-reduced-motion
+fn + shift - z  : open -a '/Users/amadeo.manouchehri/Applications/Chrome Apps.localized/Google Meet.app' --args --force-prefers-no-reduced-motion
 fn - f          : open -a '/Applications/Figma.app'
 fn - d          : osascript -e "tell application \"System Events\" to keystroke \"$(date +%Y-%m-%d)\""
 fn + shift - s  : open -a '/Applications/Sublime Text.app'
