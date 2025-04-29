@@ -13,7 +13,7 @@
   {
     "key": "cmd+0",
     "command": "workbench.action.closeSidebar",
-    "when": "activeViewlet == 'workbench.view.scm'"
+    "when": "activeViewlet == 'workbench.view.scm' && sideBarFocus"
   },
   // Cmd+Shift+0 Toggle Merge Requests View
   {
@@ -23,7 +23,7 @@
   {
     "key": "cmd+shift+0",
     "command": "workbench.action.closeSidebar",
-    "when": "activeViewlet == 'workbench.view.extension.gitlab-workflow'"
+    "when": "activeViewlet == 'workbench.view.extension.gitlab-workflow' && sideBarFocus"
   },
   // Cmd+1 Toggle Explorer
   {
