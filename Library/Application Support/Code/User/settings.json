@@ -75,15 +75,10 @@
   "editor.accessibilitySupport": "off",
   "editor.stickyScroll.enabled": true,
   "telemetry.telemetryLevel": "off",
-  "workbench.sideBar.location": "right",
-  "workbench.statusBar.visible": false,
-  "workbench.activityBar.location": "hidden",
   "workbench.editor.showTabs": "none",
-  "window.commandCenter": false,
   "editor.minimap.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
-  "workbench.layoutControl.enabled": false,
   "workbench.editor.editorActionsLocation": "hidden",
   "apc.stylesheet": {
     ".monaco-workbench .part.editor>.content .editor-group-container .editor-group-watermark>.letterpress": "display: none;",
@@ -103,7 +98,6 @@
     "file:////Users/amadeo.manouchehri/Library/Application Support/Code/User/custom.css"
   ],
   "window.titleBarStyle": "custom",
-  "window.customTitleBarVisibility": "never",
   "gitlens.ai.experimental.provider": "openai",
   "gitlens.ai.experimental.openai.model": "gpt-4-turbo-preview",
   "gitlens.graph.minimap.enabled": false,
@@ -129,10 +123,17 @@
     "scminput": false
   },
   "typescript.tsserver.log": "off",
-  "gitlab.duoCodeSuggestions.enabled": false,
+  "gitlab.duoCodeSuggestions.enabled": true,
   "gitlab.duoChat.enabled": false,
   "[yaml]": {
     "editor.stickyScroll.maxLineCount": 10
   },
-  "workbench.editor.navigationScope": "editorGroup"
+  "workbench.editor.navigationScope": "editorGroup",
+  "chat.agent.enabled": true,
+  "workbench.sideBar.location": "right",
+  "window.commandCenter": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.statusBar.visible": false,
+  "workbench.layoutControl.enabled": false,
+  "editor.smoothScrolling": true
 }
