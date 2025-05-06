@@ -4,6 +4,7 @@ return {
     opts = {
       formatters_by_ft = {
         graphql = { "prettier" }, -- prettier for graphql formatting
+        markdown = { "prettier" }, -- prettier for graphql formatting
       },
       formatters = {
         prettier = {
