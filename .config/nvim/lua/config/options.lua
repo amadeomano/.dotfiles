@@ -6,3 +6,5 @@ vim.filetype.add({
     query = "graphql",
   },
 })
+
+vim.opt.shell = "/opt/homebrew/bin/fish"
