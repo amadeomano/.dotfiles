@@ -6,7 +6,7 @@ case $@ in
   icon_result=":arc:"
   ;;
 "Zed")
-  icon_result=":zulip:"
+  icon_result=":zed:"
   ;;
 "Books")
   icon_result=":book:"
@@ -23,7 +23,7 @@ case $@ in
 "Final Cut Pro")
   icon_result=":final_cut_pro:"
   ;;
-"FaceTime")
+"FaceTime" | "Google Meet")
   icon_result=":face_time:"
   ;;
 "Affinity Publisher")
@@ -371,7 +371,7 @@ case $@ in
 "Podcasts")
   icon_result=":podcasts:"
   ;;
-"Alacritty" | "Hyper" | "iTerm2" | "kitty" | "Terminal" | "WezTerm")
+"Alacritty" | "Hyper" | "iTerm2" | "Terminal")
   icon_result=":terminal:"
   ;;
 "Tor Browser")
@@ -391,6 +391,27 @@ case $@ in
   ;;
 "Kindle")
   icon_result=":book:"
+  ;;
+"ChatGPT")
+  icon_result=":openai:"
+  ;;
+"Zen")
+  icon_result=":zen_browser:"
+  ;;
+"Cursor")
+  icon_result=":cursor:"
+  ;;
+"WezTerm")
+  icon_result=":neovim:"
+  ;;
+"kitty")
+  icon_result=":kitty:"
+  ;;
+"DaVinci Resolve")
+  icon_result=":davinciresolve:"
+  ;;
+"Orion")
+  icon_result=":orion:"
   ;;
 *)
   icon_result=":default:"
