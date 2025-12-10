@@ -9,30 +9,32 @@ fn - 7 : yabai -m space --focus 7
 fn - 8 : yabai -m space --focus 8
 
 # Window Navigation (through display borders): lalt - {j, k, l, ö}
-fn + shift - h    : yabai -m window --focus west  || yabai -m display --focus west
-fn + shift - j    : yabai -m window --focus south || yabai -m display --focus south
-fn + shift - k    : yabai -m window --focus north || yabai -m display --focus north
-fn + shift - l    : yabai -m window --focus east  || yabai -m display --focus east
+fn - h    : yabai -m window --focus west  || yabai -m display --focus west
+fn - j    : yabai -m window --focus south || yabai -m display --focus south
+fn - k    : yabai -m window --focus north || yabai -m display --focus north
+fn - l    : yabai -m window --focus east  || yabai -m display --focus east
 
 # Highly used apps
 cmd + shift - return: open -a /Applications/kitty.app
 fn - b          : ~/.config/skhd/open-or-focus-arc.sh
+fn + cmd - b    : open -a '/Applications/Zen.app'
 fn - v          : open -a '/Applications/Vivaldi.app' --args --force-prefers-no-reduced-motion
 fn - e          : open -a "/Applications/Microsoft Edge.app" --args --force-prefers-no-reduced-motion
 fn - o          : open -a '/Applications/Obsidian.app'
 fn - s          : open -a '/Applications/Slack.app'
 fn + cmd - s    : open -a '/Applications/Spotify.app'
-fn - k          : open -a '/System/Applications/Books.app'
-fn - l          : open -a '/Applications/LiquidText.app'
 fn - p          : open -a '/System/Applications/Preview.app'
-fn - c          : pgrep -i webstorm && open -a '/Applications/WebStorm.app' || open -a '/Applications/Visual Studio Code.app'
+fn - c          : bash -c 'pgrep -x "Code Helper" >/dev/null && open -a "Visual Studio Code" || open -a "neovide"'
+fn + shift - c  : open -a '/Applications/Cursor.app'
 fn + cmd - c    : open -a '/Applications/Zed.app'
 fn + cmd - n    : open -a '/System/Applications/Notes.app'
-fn - z          : open -a '/Applications/zoom.us.app'
-fn + shift - z  : open -a '/Users/amadeo.manouchehri/Applications/Chrome Apps.localized/Google Meet.app' --args --force-prefers-no-reduced-motion
-fn - f          : open -a '/Applications/Figma.app'
+fn + cmd - z    : open -a '/Applications/zoom.us.app'
+fn - z          : ~/.config/skhd/focus-google-meet-in-arc.sh
 fn - d          : osascript -e "tell application \"System Events\" to keystroke \"$(date +%Y-%m-%d)\""
 fn + shift - s  : open -a '/Applications/Sublime Text.app'
+fn - w          : open -a '/Applications/WezTerm.app'
+fn - f          : open -a '/Applications/Firefox.app'
+fn + cmd - f    : open -a '/Applications/Figma.app'
 
 # Arrow Keys
 ctrl - h : skhd -k "left"
