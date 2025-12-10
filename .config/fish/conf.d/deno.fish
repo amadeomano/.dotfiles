@@ -1,0 +1,1 @@
+source "/Users/amadeo.manouchehri/.deno/env.fish"
