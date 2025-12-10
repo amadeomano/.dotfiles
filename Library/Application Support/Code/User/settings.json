@@ -79,7 +79,6 @@
   "editor.minimap.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
-  "workbench.editor.editorActionsLocation": "hidden",
   "apc.stylesheet": {
     ".monaco-workbench .part.editor>.content .editor-group-container .editor-group-watermark>.letterpress": "display: none;",
     ".inline-title-bar:not(.statusbar-editor-top):not(.statusbar-top) .monaco-workbench.mac.no-activity-bar.sidebar-right.noauxiliarybar:not(.fullscreen) .part.editor>.content .editor-group-container>.title:not(.tabs)": "padding-left: 0"
@@ -113,17 +112,8 @@
   "svg.preview.boundingBox": true,
   "svg.preview.transparencyGrid": false,
   "svelte.enable-ts-plugin": true,
-  "github.copilot.advanced": {
-    "authProvider": "github"
-  },
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
   "typescript.tsserver.log": "off",
-  "gitlab.duoCodeSuggestions.enabled": true,
+  "gitlab.duoCodeSuggestions.enabled": false,
   "gitlab.duoChat.enabled": false,
   "[yaml]": {
     "editor.stickyScroll.maxLineCount": 10
@@ -131,9 +121,13 @@
   "workbench.editor.navigationScope": "editorGroup",
   "chat.agent.enabled": true,
   "workbench.sideBar.location": "right",
-  "window.commandCenter": false,
   "workbench.activityBar.location": "hidden",
-  "workbench.statusBar.visible": false,
+  "editor.smoothScrolling": true,
+  "workbench.editor.editorActionsLocation": "hidden",
+  "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
-  "editor.smoothScrolling": true
+  "chat.commandCenter.enabled": false,
+  "workbench.statusBar.visible": false,
+  "claudeCode.selectedModel": "default",
+  "claudeCode.preferredLocation": "sidebar"
 }
