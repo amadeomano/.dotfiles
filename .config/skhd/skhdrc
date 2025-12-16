@@ -17,7 +17,7 @@ fn - l    : yabai -m window --focus east  || yabai -m display --focus east
 # Highly used apps
 cmd + shift - return: open -a /Applications/kitty.app
 fn - b          : ~/.config/skhd/open-or-focus-arc.sh
-fn + cmd - b    : open -a '/Applications/Zen.app'
+fn + cmd - b    : open -a 'Orion'
 fn - v          : open -a '/Applications/Vivaldi.app' --args --force-prefers-no-reduced-motion
 fn - e          : open -a "/Applications/Microsoft Edge.app" --args --force-prefers-no-reduced-motion
 fn - o          : open -a '/Applications/Obsidian.app'
