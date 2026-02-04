@@ -2,62 +2,34 @@ return {
   { "nvim-neotest/neotest-jest" },
   {
     "nvim-neotest/neotest",
-    opts = function(_, opts)
-      -- find the closest project.json upward from the file
-      local function find_project_json(startpath)
-        local res = vim.fs.find("project.json", {
-          upward = true,
-          path = startpath,
-        })
-        return res[1]
-      end
-
-      -- read project name from project.json => { "name": "…" }
-      local function get_project_name(project_json_path)
-        local lines = vim.fn.readfile(project_json_path)
-        local decoded = vim.json.decode(table.concat(lines, "\n"))
-        return decoded.name
-      end
-
-      -- compute test file path relative to project root folder
-      local function relative_to_project(file, project_json_path)
-        local root = vim.fn.fnamemodify(project_json_path, ":h")
-        return file:gsub("^" .. vim.pesc(root .. "/"), "")
-      end
-
-      -- build Nx test command
-      local function build_nx_command(spec)
-        local file = spec.path
-        local project_json = find_project_json(file)
-        local project_name = get_project_name(project_json)
-        local rel_file = relative_to_project(file, project_json)
-
-        local cmd = { "nx", "run", project_name .. ":test", "--", rel_file }
-
-        local name = spec.tree:data().name
-        if name then
-          table.insert(cmd, "-t")
-          table.insert(cmd, name)
-        end
-
-        return cmd
-      end
-
-      opts.consumers = opts.consumers or {}
-      opts.consumers.nx = function()
-        return {
-          strategy = function(spec)
-            return {
-              command = build_nx_command(spec),
-              cwd = vim.fn.getcwd(),
-            }
+    opts = {
+      discovery = { enabled = false },
+      adapters = {
+        ["neotest-jest"] = {
+          jestCommand = function(path)
+            -- npx --no-install jest {path}
+            return "npx --no-install jest " .. path
           end,
-        }
-      end
 
-      opts.adapters = { "neotest-jest" }
+          jestConfigFile = function(file)
+            -- find the closest jest.config.ts upward from the file
+            local function find_jest_config(startpath)
+              local res = vim.fs.find("jest.config.ts", { upward = true, path = startpath })
+              return res[1]
+            end
+            local jest_config = find_jest_config(file)
+            if not jest_config then
+              return vim.fn.getcwd() .. "/jest.config.ts"
+            end
+            return jest_config
+          end,
 
-      return opts
-    end,
+          cwd = function(file)
+            -- vim.notify(file)
+            return vim.fn.getcwd()
+          end,
+        },
+      },
+    },
   },
 }
