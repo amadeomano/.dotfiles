@@ -27,6 +27,7 @@ return {
     backends = {
       ["_"] = { "lsp", "treesitter", "markdown", "man" },
       typescriptreact = { "treesitter" },
+      graphql = { "treesitter" },
     },
     filter_kind = {
       typescriptreact = false,
