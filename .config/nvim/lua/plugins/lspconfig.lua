@@ -4,6 +4,9 @@ return {
     diagnostics = {
       virtual_text = false, -- disable inline text
     },
+    inlay_hints = {
+      enabled = false,
+    },
     servers = {
       tsserver = { enabled = false },
       vtsls = { enabled = false },
