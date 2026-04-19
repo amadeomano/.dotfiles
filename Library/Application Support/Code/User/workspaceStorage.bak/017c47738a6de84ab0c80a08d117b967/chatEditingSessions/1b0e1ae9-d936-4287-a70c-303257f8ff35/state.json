@@ -1,0 +1,2945 @@
+{
+  "version": 2,
+  "sessionId": "1b0e1ae9-d936-4287-a70c-303257f8ff35",
+  "linearHistory": [
+    {
+      "requestId": "request_677c11a2-24ee-4786-aed8-c4f72986825d",
+      "stops": [
+        {
+          "workingSet": [],
+          "entries": []
+        }
+      ]
+    },
+    {
+      "requestId": "request_35d99b9c-fbae-4674-a7f4-1af102923bc6",
+      "stops": [
+        {
+          "workingSet": [],
+          "entries": []
+        }
+      ]
+    },
+    {
+      "requestId": "request_5bd250d1-b149-4e19-bd5f-31bce60dae6a",
+      "stops": [
+        {
+          "workingSet": [],
+          "entries": [
+            {
+              "resource": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.tsx",
+              "languageId": "typescriptreact",
+              "originalHash": "a4d32fa",
+              "currentHash": "a4d32fa",
+              "originalToCurrentEdit": [],
+              "state": 4,
+              "snapshotUri": "chat-editing-snapshot-text-model:/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.tsx?%7B%22sessionId%22%3A%221b0e1ae9-d936-4287-a70c-303257f8ff35%22%2C%22requestId%22%3A%22request_5bd250d1-b149-4e19-bd5f-31bce60dae6a%22%2C%22undoStop%22%3A%22%22%7D",
+              "telemetryInfo": {
+                "requestId": "request_5bd250d1-b149-4e19-bd5f-31bce60dae6a",
+                "agentId": "github.copilot.editsAgent"
+              }
+            }
+          ]
+        }
+      ],
+      "postEdit": [
+        {
+          "resource": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.tsx",
+          "languageId": "typescriptreact",
+          "originalHash": "a4d32fa",
+          "currentHash": "a937451",
+          "originalToCurrentEdit": [
+            {
+              "pos": 0,
+              "len": 43,
+              "txt": "import { useMemo, useEffect } from 'react';"
+            },
+            {
+              "pos": 45,
+              "len": 36,
+              "txt": "import classnames from 'classnames';"
+            },
+            {
+              "pos": 82,
+              "len": 47,
+              "txt": "import { useTranslation } from 'react-i18next';"
+            },
+            {
+              "pos": 131,
+              "len": 64,
+              "txt": "import { useAmplitude } from '@personio-web/amplitude-provider';"
+            },
+            {
+              "pos": 196,
+              "len": 75,
+              "txt": "import type { ColumnFilter } from 'designSystem/component/advanced-filter';"
+            },
+            {
+              "pos": 272,
+              "len": 8,
+              "txt": "import {"
+            },
+            {
+              "pos": 281,
+              "len": 28,
+              "txt": "  useGetEmployeeListColumns,"
+            },
+            {
+              "pos": 310,
+              "len": 29,
+              "txt": "  useGetEmployeeListMetadata,"
+            },
+            {
+              "pos": 340,
+              "len": 64,
+              "txt": "} from '@personio-web/employees-organizations-data-people-list';"
+            },
+            {
+              "pos": 405,
+              "len": 97,
+              "txt": "import { useDialogContext } from '@personio-web/employees-organizations-hook-use-dialog-context';"
+            },
+            {
+              "pos": 503,
+              "len": 108,
+              "txt": "import { usePeopleFilterConfig } from '@personio-web/employees-organizations-hook-use-people-filter-config';"
+            },
+            {
+              "pos": 612,
+              "len": 8,
+              "txt": "import {"
+            },
+            {
+              "pos": 621,
+              "len": 29,
+              "txt": "  ControlBar as DSControlBar,"
+            },
+            {
+              "pos": 651,
+              "len": 11,
+              "txt": "  Controls,"
+            },
+            {
+              "pos": 663,
+              "len": 44,
+              "txt": "} from 'designSystem/component/control-bar';"
+            },
+            {
+              "pos": 708,
+              "len": 68,
+              "txt": "import { DropdownMenu } from 'designSystem/component/dropdown-menu';"
+            },
+            {
+              "pos": 777,
+              "len": 52,
+              "txt": "import { icons } from 'designSystem/component/icon';"
+            },
+            {
+              "pos": 831,
+              "len": 47,
+              "txt": "import type { ControlBarProps } from './types';"
+            },
+            {
+              "pos": 880,
+              "len": 52,
+              "txt": "import { SEARCH_DEBOUNCE_TIME } from '../constants';"
+            },
+            {
+              "pos": 933,
+              "len": 46,
+              "txt": "import * as Amp from '../constants/amplitude';"
+            },
+            {
+              "pos": 980,
+              "len": 59,
+              "txt": "import { exportNodes, useTreeLayout } from '../TreeLayout';"
+            },
+            {
+              "pos": 1040,
+              "len": 50,
+              "txt": "import { type HierarchyTreeNode } from '../types';"
+            },
+            {
+              "pos": 1091,
+              "len": 35,
+              "txt": "import { TestIds } from '../utils';"
+            },
+            {
+              "pos": 1127,
+              "len": 59,
+              "txt": "import ControlBarCards from './components/ControlBarCards';"
+            },
+            {
+              "pos": 1187,
+              "len": 67,
+              "txt": "import ControlBarHighlight from './components/ControlBarHighlight';"
+            },
+            {
+              "pos": 1255,
+              "len": 8,
+              "txt": "import {"
+            },
+            {
+              "pos": 1264,
+              "len": 22,
+              "txt": "  ControlBarSpotlight,"
+            },
+            {
+              "pos": 1287,
+              "len": 16,
+              "txt": "  SpotlightIcon,"
+            },
+            {
+              "pos": 1304,
+              "len": 42,
+              "txt": "} from './components/ControlBarSpotlight';"
+            },
+            {
+              "pos": 1347,
+              "len": 77,
+              "txt": "import { ExportLimitationDialog } from './components/ExportLimitationDialog';"
+            },
+            {
+              "pos": 1425,
+              "len": 54,
+              "txt": "import { exportOptions } from './consts/exportConfig';"
+            },
+            {
+              "pos": 1480,
+              "len": 80,
+              "txt": "import { filterAttributes, getFilterColumnConfig } from './consts/filterConfig';"
+            },
+            {
+              "pos": 1561,
+              "len": 53,
+              "txt": "import { viewLabelsMap } from './consts/viewsConfig';"
+            },
+            {
+              "pos": 1616,
+              "len": 46,
+              "txt": "import styles from './ControlBar.module.scss';"
+            },
+            {
+              "pos": 1664,
+              "len": 28,
+              "txt": "export const ControlBar = ({"
+            },
+            {
+              "pos": 1693,
+              "len": 11,
+              "txt": "  disabled,"
+            },
+            {
+              "pos": 1705,
+              "len": 13,
+              "txt": "  searchTerm,"
+            },
+            {
+              "pos": 1719,
+              "len": 16,
+              "txt": "  setSearchTerm,"
+            },
+            {
+              "pos": 1736,
+              "len": 10,
+              "txt": "  filters,"
+            },
+            {
+              "pos": 1747,
+              "len": 13,
+              "txt": "  setFilters,"
+            },
+            {
+              "pos": 1761,
+              "len": 7,
+              "txt": "  view,"
+            },
+            {
+              "pos": 1769,
+              "len": 10,
+              "txt": "  setView,"
+            },
+            {
+              "pos": 1780,
+              "len": 18,
+              "txt": "  cardPreferences,"
+            },
+            {
+              "pos": 1799,
+              "len": 21,
+              "txt": "  setCardPreferences,"
+            },
+            {
+              "pos": 1821,
+              "len": 13,
+              "txt": "  attributes,"
+            },
+            {
+              "pos": 1835,
+              "len": 16,
+              "txt": "  setAttributes,"
+            },
+            {
+              "pos": 1852,
+              "len": 14,
+              "txt": "  highlighted,"
+            },
+            {
+              "pos": 1867,
+              "len": 17,
+              "txt": "  setHighlighted,"
+            },
+            {
+              "pos": 1885,
+              "len": 20,
+              "txt": "  focusedEmployeeId,"
+            },
+            {
+              "pos": 1906,
+              "len": 12,
+              "txt": "  spotlight,"
+            },
+            {
+              "pos": 1919,
+              "len": 22,
+              "txt": "  spotlightPersonName,"
+            },
+            {
+              "pos": 1942,
+              "len": 32,
+              "txt": "  spotlightVisibleRelationships,"
+            },
+            {
+              "pos": 1975,
+              "len": 35,
+              "txt": "  setSpotlightVisibleRelationships,"
+            },
+            {
+              "pos": 2011,
+              "len": 15,
+              "txt": "  setSpotlight,"
+            },
+            {
+              "pos": 2027,
+              "len": 18,
+              "txt": "  sortByAttribute,"
+            },
+            {
+              "pos": 2046,
+              "len": 21,
+              "txt": "  setSortByAttribute,"
+            },
+            {
+              "pos": 2068,
+              "len": 23,
+              "txt": "  onSearchResultSelect,"
+            },
+            {
+              "pos": 2092,
+              "len": 16,
+              "txt": "  searchResults,"
+            },
+            {
+              "pos": 2109,
+              "len": 26,
+              "txt": "  areSearchResultsLoading,"
+            },
+            {
+              "pos": 2136,
+              "len": 12,
+              "txt": "  hierarchy,"
+            },
+            {
+              "pos": 2149,
+              "len": 33,
+              "txt": "  additionalSupervisorAttributes,"
+            },
+            {
+              "pos": 2183,
+              "len": 17,
+              "txt": "  setIsExporting,"
+            },
+            {
+              "pos": 2201,
+              "len": 19,
+              "txt": "  isSavedViewsOpen,"
+            },
+            {
+              "pos": 2221,
+              "len": 22,
+              "txt": "  setIsSavedViewsOpen,"
+            },
+            {
+              "pos": 2244,
+              "len": 24,
+              "txt": "}: ControlBarProps) => {"
+            },
+            {
+              "pos": 2269,
+              "len": 35,
+              "txt": "  const { track } = useAmplitude();"
+            },
+            {
+              "pos": 2305,
+              "len": 44,
+              "txt": "  const { openDialog } = useDialogContext();"
+            },
+            {
+              "pos": 2350,
+              "len": 79,
+              "txt": "  const { getNodes, viewportInitialized } = useTreeLayout<HierarchyTreeNode>();"
+            },
+            {
+              "pos": 2431,
+              "len": 9,
+              "txt": "  const {"
+            },
+            {
+              "pos": 2441,
+              "len": 11,
+              "txt": "    mutate,"
+            },
+            {
+              "pos": 2453,
+              "len": 31,
+              "txt": "    data: employeeListMetadata,"
+            },
+            {
+              "pos": 2485,
+              "len": 43,
+              "txt": "    isLoading: employeeListMetadataLoading,"
+            },
+            {
+              "pos": 2529,
+              "len": 35,
+              "txt": "  } = useGetEmployeeListMetadata();"
+            },
+            {
+              "pos": 2566,
+              "len": 19,
+              "txt": "  useEffect(() => {"
+            },
+            {
+              "pos": 2586,
+              "len": 32,
+              "txt": "    mutate({ requestBody: {} });"
+            },
+            {
+              "pos": 2619,
+              "len": 59,
+              "txt": "    // eslint-disable-next-line react-hooks/exhaustive-deps"
+            },
+            {
+              "pos": 2679,
+              "len": 9,
+              "txt": "  }, []);"
+            },
+            {
+              "pos": 2690,
+              "len": 57,
+              "txt": "  const { data, isLoading } = useGetEmployeeListColumns({"
+            },
+            {
+              "pos": 2748,
+              "len": 19,
+              "txt": "    requestQuery: {"
+            },
+            {
+              "pos": 2768,
+              "len": 44,
+              "txt": "      enrich_employee_info_attributes: true,"
+            },
+            {
+              "pos": 2813,
+              "len": 6,
+              "txt": "    },"
+            },
+            {
+              "pos": 2820,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 2827,
+              "len": 52,
+              "txt": "  const accessibleFilterAttributes = useMemo(() => {"
+            },
+            {
+              "pos": 2880,
+              "len": 35,
+              "txt": "    if (!isLoading && data?.data) {"
+            },
+            {
+              "pos": 2916,
+              "len": 57,
+              "txt": "      const attributeIds = data.data.map((d) => d.value);"
+            },
+            {
+              "pos": 2974,
+              "len": 46,
+              "txt": "      return filterAttributes.filter((item) =>"
+            },
+            {
+              "pos": 3021,
+              "len": 48,
+              "txt": "        attributeIds.includes(item.attributeId),"
+            },
+            {
+              "pos": 3070,
+              "len": 8,
+              "txt": "      );"
+            },
+            {
+              "pos": 3079,
+              "len": 5,
+              "txt": "    }"
+            },
+            {
+              "pos": 3085,
+              "len": 14,
+              "txt": "    return [];"
+            },
+            {
+              "pos": 3100,
+              "len": 24,
+              "txt": "  }, [data, isLoading]);"
+            },
+            {
+              "pos": 3126,
+              "len": 73,
+              "txt": "  const filterConfig = usePeopleFilterConfig(accessibleFilterAttributes);"
+            },
+            {
+              "pos": 3201,
+              "len": 42,
+              "txt": "  const highlightAttributeLabel = useMemo("
+            },
+            {
+              "pos": 3244,
+              "len": 9,
+              "txt": "    () =>"
+            },
+            {
+              "pos": 3254,
+              "len": 22,
+              "txt": "      !!highlighted &&"
+            },
+            {
+              "pos": 3277,
+              "len": 67,
+              "txt": "      data?.data.find((item) => item.value === highlighted)?.label,"
+            },
+            {
+              "pos": 3345,
+              "len": 30,
+              "txt": "    [data?.data, highlighted],"
+            },
+            {
+              "pos": 3376,
+              "len": 4,
+              "txt": "  );"
+            },
+            {
+              "pos": 3382,
+              "len": 59,
+              "txt": "  const { t } = useTranslation('employees-organizations', {"
+            },
+            {
+              "pos": 3442,
+              "len": 39,
+              "txt": "    keyPrefix: 'org-chart.control-bar',"
+            },
+            {
+              "pos": 3482,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 3488,
+              "len": 68,
+              "txt": "  const { t: tErrors } = useTranslation('employees-organizations', {"
+            },
+            {
+              "pos": 3557,
+              "len": 34,
+              "txt": "    keyPrefix: 'org-chart.errors',"
+            },
+            {
+              "pos": 3592,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 3598,
+              "len": 55,
+              "txt": "  const { t: tAttributes } = useTranslation('models', {"
+            },
+            {
+              "pos": 3654,
+              "len": 26,
+              "txt": "    keyPrefix: 'employee',"
+            },
+            {
+              "pos": 3681,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 3688,
+              "len": 38,
+              "txt": "  const visibleAttributeIds = useMemo("
+            },
+            {
+              "pos": 3727,
+              "len": 11,
+              "txt": "    () => ["
+            },
+            {
+              "pos": 3739,
+              "len": 18,
+              "txt": "      ...new Set(["
+            },
+            {
+              "pos": 3758,
+              "len": 30,
+              "txt": "        ...(attributes ?? []),"
+            },
+            {
+              "pos": 3789,
+              "len": 46,
+              "txt": "        ...(highlighted ? [highlighted] : []),"
+            },
+            {
+              "pos": 3836,
+              "len": 9,
+              "txt": "      ]),"
+            },
+            {
+              "pos": 3846,
+              "len": 6,
+              "txt": "    ],"
+            },
+            {
+              "pos": 3853,
+              "len": 30,
+              "txt": "    [attributes, highlighted],"
+            },
+            {
+              "pos": 3884,
+              "len": 4,
+              "txt": "  );"
+            },
+            {
+              "pos": 3890,
+              "len": 60,
+              "txt": "  const isFirefox = navigator.userAgent.includes('Firefox');"
+            },
+            {
+              "pos": 3952,
+              "len": 25,
+              "txt": "  const hasExportAccess ="
+            },
+            {
+              "pos": 3978,
+              "len": 35,
+              "txt": "    !employeeListMetadataLoading &&"
+            },
+            {
+              "pos": 4014,
+              "len": 68,
+              "txt": "    employeeListMetadata?.data?.accessRights?.canExportEmployeeList;"
+            },
+            {
+              "pos": 4084,
+              "len": 10,
+              "txt": "  // Define a new function to handle export selection"
+            },
+            {
+              "pos": 4095,
+              "len": 8,
+              "txt": "  const handleExportSelection = (format: string) => {"
+            },
+            {
+              "pos": 4104,
+              "len": 79,
+              "txt": "    if (navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')) {"
+            },
+            {
+              "pos": 4184,
+              "len": 5,
+              "txt": "      openDialog('org-chart.export-limitation', {});"
+            },
+            {
+              "pos": 4190,
+              "len": 20,
+              "txt": "      return;"
+            },
+            {
+              "pos": 4211,
+              "len": 28,
+              "txt": "    }"
+            },
+            {
+              "pos": 4240,
+              "len": 66,
+              "txt": ""
+            },
+            {
+              "pos": 4307,
+              "len": 64,
+              "txt": "    track(Amp.EXPORTED, {"
+            },
+            {
+              "pos": 4372,
+              "len": 33,
+              "txt": "      format,"
+            },
+            {
+              "pos": 4406,
+              "len": 21,
+              "txt": "      triggered_from: 'org-chart-menu',"
+            },
+            {
+              "pos": 4428,
+              "len": 44,
+              "txt": "    });"
+            },
+            {
+              "pos": 4473,
+              "len": 12,
+              "txt": "    setIsExporting(true);"
+            },
+            {
+              "pos": 4486,
+              "len": 10,
+              "txt": "    exportNodes<HierarchyTreeNode>({"
+            },
+            {
+              "pos": 4497,
+              "len": 0,
+              "txt": "      format,"
+            },
+            {
+              "pos": 4498,
+              "len": 24,
+              "txt": "      nodes: getNodes(),"
+            },
+            {
+              "pos": 4523,
+              "len": 27,
+              "txt": "      onFinish: () => setIsExporting(false),"
+            },
+            {
+              "pos": 4551,
+              "len": 37,
+              "txt": "      t: tErrors,"
+            },
+            {
+              "pos": 4589,
+              "len": 80,
+              "txt": "    });"
+            },
+            {
+              "pos": 4670,
+              "len": 57,
+              "txt": "  };"
+            },
+            {
+              "pos": 4728,
+              "len": 39,
+              "txt": ""
+            },
+            {
+              "pos": 4768,
+              "len": 50,
+              "txt": "  return ("
+            },
+            {
+              "pos": 4819,
+              "len": 23,
+              "txt": "    <div"
+            },
+            {
+              "pos": 4843,
+              "len": 28,
+              "txt": "      className={classnames(styles.container, { [styles.disabled]: disabled })}"
+            },
+            {
+              "pos": 4872,
+              "len": 13,
+              "txt": "    >"
+            },
+            {
+              "pos": 4886,
+              "len": 0,
+              "txt": "      <DSControlBar>"
+            },
+            {
+              "pos": 4887,
+              "len": 32,
+              "txt": "        <Controls.SavedViews"
+            },
+            {
+              "pos": 4920,
+              "len": 12,
+              "txt": "          label={view ? t(viewLabelsMap[view]) : t('views.label')}"
+            },
+            {
+              "pos": 4933,
+              "len": 10,
+              "txt": "          onClick={() => setIsSavedViewsOpen(!isSavedViewsOpen)}"
+            },
+            {
+              "pos": 4944,
+              "len": 0,
+              "txt": "          open={isSavedViewsOpen}"
+            },
+            {
+              "pos": 4945,
+              "len": 24,
+              "txt": "          metadata={{"
+            },
+            {
+              "pos": 4970,
+              "len": 44,
+              "txt": "            testId: TestIds.ControlBarViews,"
+            },
+            {
+              "pos": 5015,
+              "len": 40,
+              "txt": "          }}"
+            },
+            {
+              "pos": 5056,
+              "len": 56,
+              "txt": "        />"
+            },
+            {
+              "pos": 5113,
+              "len": 9,
+              "txt": ""
+            },
+            {
+              "pos": 5123,
+              "len": 26,
+              "txt": "        <Controls.Filter"
+            },
+            {
+              "pos": 5150,
+              "len": 45,
+              "txt": "          filters={filters}"
+            },
+            {
+              "pos": 5196,
+              "len": 51,
+              "txt": "          filterConfig={filterConfig}"
+            },
+            {
+              "pos": 5248,
+              "len": 35,
+              "txt": "          columnConfig={getFilterColumnConfig(tAttributes, visibleAttributeIds)}"
+            },
+            {
+              "pos": 5284,
+              "len": 41,
+              "txt": "          metadata={{ testId: TestIds.ControlBarFilter }}"
+            },
+            {
+              "pos": 5326,
+              "len": 12,
+              "txt": "          disabled={Boolean(spotlight)}"
+            },
+            {
+              "pos": 5339,
+              "len": 26,
+              "txt": "          onChange={(filters: ColumnFilter[]) => {"
+            },
+            {
+              "pos": 5366,
+              "len": 0,
+              "txt": "            if (view) {"
+            },
+            {
+              "pos": 5367,
+              "len": 24,
+              "txt": "              setView(null);"
+            },
+            {
+              "pos": 5392,
+              "len": 17,
+              "txt": "            }"
+            },
+            {
+              "pos": 5410,
+              "len": 50,
+              "txt": ""
+            },
+            {
+              "pos": 5461,
+              "len": 65,
+              "txt": "            setFilters(filters);"
+            },
+            {
+              "pos": 5527,
+              "len": 36,
+              "txt": "          }}"
+            },
+            {
+              "pos": 5564,
+              "len": 11,
+              "txt": "        />"
+            },
+            {
+              "pos": 5576,
+              "len": 32,
+              "txt": ""
+            },
+            {
+              "pos": 5609,
+              "len": 53,
+              "txt": "        <Controls.Custom"
+            },
+            {
+              "pos": 5663,
+              "len": 44,
+              "txt": "          label={t('cards.customize-label')}"
+            },
+            {
+              "pos": 5708,
+              "len": 60,
+              "txt": "          icon={icons.badgeIdHorizontal}"
+            },
+            {
+              "pos": 5769,
+              "len": 9,
+              "txt": "          metadata={{ testId: TestIds.ControlBarCards }}"
+            },
+            {
+              "pos": 5779,
+              "len": 30,
+              "txt": "        >"
+            },
+            {
+              "pos": 5810,
+              "len": 37,
+              "txt": "          <ControlBarCards"
+            },
+            {
+              "pos": 5848,
+              "len": 43,
+              "txt": "            cardPreferences={cardPreferences}"
+            },
+            {
+              "pos": 5892,
+              "len": 45,
+              "txt": "            setCardPreferences={setCardPreferences}"
+            },
+            {
+              "pos": 5938,
+              "len": 51,
+              "txt": "            attributes={attributes}"
+            },
+            {
+              "pos": 5990,
+              "len": 12,
+              "txt": "            setAttributes={setAttributes}"
+            },
+            {
+              "pos": 6003,
+              "len": 26,
+              "txt": "          />"
+            },
+            {
+              "pos": 6030,
+              "len": 0,
+              "txt": "        </Controls.Custom>"
+            },
+            {
+              "pos": 6031,
+              "len": 24,
+              "txt": ""
+            },
+            {
+              "pos": 6056,
+              "len": 17,
+              "txt": "        <Controls.Custom"
+            },
+            {
+              "pos": 6074,
+              "len": 44,
+              "txt": "          label={"
+            },
+            {
+              "pos": 6119,
+              "len": 65,
+              "txt": "            highlighted && highlightAttributeLabel"
+            },
+            {
+              "pos": 6185,
+              "len": 36,
+              "txt": "              ? `${t('highlight.by')} ${highlightAttributeLabel}`"
+            },
+            {
+              "pos": 6222,
+              "len": 11,
+              "txt": "              : t('highlight.label')"
+            },
+            {
+              "pos": 6234,
+              "len": 30,
+              "txt": "          }"
+            },
+            {
+              "pos": 6265,
+              "len": 32,
+              "txt": "          icon={icons.lightBulb}"
+            },
+            {
+              "pos": 6298,
+              "len": 42,
+              "txt": "          isActive={!!highlighted || sortByAttribute}"
+            },
+            {
+              "pos": 6341,
+              "len": 60,
+              "txt": "          onClear={() => setHighlighted('')}"
+            },
+            {
+              "pos": 6402,
+              "len": 9,
+              "txt": "          metadata={{ testId: TestIds.ControlBarHighlight }}"
+            },
+            {
+              "pos": 6412,
+              "len": 30,
+              "txt": "        >"
+            },
+            {
+              "pos": 6443,
+              "len": 49,
+              "txt": "          <ControlBarHighlight"
+            },
+            {
+              "pos": 6493,
+              "len": 33,
+              "txt": "            highlighted={highlighted}"
+            },
+            {
+              "pos": 6527,
+              "len": 39,
+              "txt": "            setHighlighted={setHighlighted}"
+            },
+            {
+              "pos": 6567,
+              "len": 33,
+              "txt": "            sortByAttribute={sortByAttribute}"
+            },
+            {
+              "pos": 6601,
+              "len": 75,
+              "txt": "            setSortByAttribute={setSortByAttribute}"
+            },
+            {
+              "pos": 6677,
+              "len": 73,
+              "txt": "          />"
+            },
+            {
+              "pos": 6751,
+              "len": 79,
+              "txt": "        </Controls.Custom>"
+            },
+            {
+              "pos": 6831,
+              "len": 12,
+              "txt": ""
+            },
+            {
+              "pos": 6844,
+              "len": 26,
+              "txt": "        <Controls.Custom"
+            },
+            {
+              "pos": 6871,
+              "len": 0,
+              "txt": "          label={"
+            },
+            {
+              "pos": 6872,
+              "len": 24,
+              "txt": "            spotlight && spotlightPersonName"
+            },
+            {
+              "pos": 6897,
+              "len": 28,
+              "txt": "              ? `${t('spotlight.title')}: ${spotlightPersonName}`"
+            },
+            {
+              "pos": 6926,
+              "len": 38,
+              "txt": "              : t('spotlight.title')"
+            },
+            {
+              "pos": 6965,
+              "len": 41,
+              "txt": "          }"
+            },
+            {
+              "pos": 7007,
+              "len": 39,
+              "txt": "          icon={SpotlightIcon}"
+            },
+            {
+              "pos": 7047,
+              "len": 43,
+              "txt": "          isActive={!!spotlight}"
+            },
+            {
+              "pos": 7091,
+              "len": 53,
+              "txt": "          onClear={() => setSpotlight('')}"
+            },
+            {
+              "pos": 7145,
+              "len": 51,
+              "txt": "          metadata={{ testId: TestIds.ControlBarSpotlight }}"
+            },
+            {
+              "pos": 7197,
+              "len": 10,
+              "txt": "        >"
+            },
+            {
+              "pos": 7208,
+              "len": 0,
+              "txt": "          <ControlBarSpotlight"
+            },
+            {
+              "pos": 7209,
+              "len": 24,
+              "txt": "            focusedEmployeeId={focusedEmployeeId}"
+            },
+            {
+              "pos": 7234,
+              "len": 28,
+              "txt": "            spotlight={spotlight}"
+            },
+            {
+              "pos": 7263,
+              "len": 25,
+              "txt": "            setSpotlight={setSpotlight}"
+            },
+            {
+              "pos": 7289,
+              "len": 38,
+              "txt": "            hierarchy={hierarchy}"
+            },
+            {
+              "pos": 7328,
+              "len": 29,
+              "txt": "            additionalSupervisorAttributes={additionalSupervisorAttributes}"
+            },
+            {
+              "pos": 7358,
+              "len": 27,
+              "txt": "            spotlightVisibleRelationships={spotlightVisibleRelationships}"
+            },
+            {
+              "pos": 7386,
+              "len": 67,
+              "txt": "            setSpotlightVisibleRelationships={setSpotlightVisibleRelationships}"
+            },
+            {
+              "pos": 7454,
+              "len": 13,
+              "txt": "          />"
+            },
+            {
+              "pos": 7468,
+              "len": 12,
+              "txt": "        </Controls.Custom>"
+            },
+            {
+              "pos": 7481,
+              "len": 33,
+              "txt": ""
+            },
+            {
+              "pos": 7515,
+              "len": 30,
+              "txt": "        <Controls.Search"
+            },
+            {
+              "pos": 7546,
+              "len": 26,
+              "txt": "          value={searchTerm}"
+            },
+            {
+              "pos": 7573,
+              "len": 32,
+              "txt": "          onTextChange={setSearchTerm}"
+            },
+            {
+              "pos": 7606,
+              "len": 27,
+              "txt": "          placeholder={t('search.label')}"
+            },
+            {
+              "pos": 7634,
+              "len": 40,
+              "txt": "          searchResults={searchResults}"
+            },
+            {
+              "pos": 7675,
+              "len": 57,
+              "txt": "          loading={areSearchResultsLoading}"
+            },
+            {
+              "pos": 7733,
+              "len": 78,
+              "txt": "          onSearchResultSelect={onSearchResultSelect}"
+            },
+            {
+              "pos": 7812,
+              "len": 16,
+              "txt": "          searchDebounceTime={SEARCH_DEBOUNCE_TIME}"
+            },
+            {
+              "pos": 7829,
+              "len": 17,
+              "txt": "        />"
+            },
+            {
+              "pos": 7847,
+              "len": 31,
+              "txt": ""
+            },
+            {
+              "pos": 7879,
+              "len": 25,
+              "txt": "        <Controls.Share>"
+            },
+            {
+              "pos": 7905,
+              "len": 42,
+              "txt": "          <DropdownMenu.Item"
+            },
+            {
+              "pos": 7948,
+              "len": 44,
+              "txt": "            id=\"copy_url\""
+            },
+            {
+              "pos": 7993,
+              "len": 61,
+              "txt": "            name={t('share.copy-url')}"
+            },
+            {
+              "pos": 8055,
+              "len": 20,
+              "txt": "            icon={icons.link}"
+            },
+            {
+              "pos": 8076,
+              "len": 17,
+              "txt": "            onSelect={() =>"
+            },
+            {
+              "pos": 8094,
+              "len": 15,
+              "txt": "              navigator?.clipboard?.writeText(window.location.href)"
+            },
+            {
+              "pos": 8110,
+              "len": 48,
+              "txt": "            }"
+            },
+            {
+              "pos": 8159,
+              "len": 36,
+              "txt": "          />"
+            },
+            {
+              "pos": 8196,
+              "len": 32,
+              "txt": "          {viewportInitialized &&"
+            },
+            {
+              "pos": 8229,
+              "len": 31,
+              "txt": "            hasExportAccess &&"
+            },
+            {
+              "pos": 8261,
+              "len": 69,
+              "txt": "            (isFirefox ? ("
+            },
+            {
+              "pos": 8331,
+              "len": 69,
+              "txt": "              <DropdownMenu.Item"
+            },
+            {
+              "pos": 8401,
+              "len": 23,
+              "txt": "                id=\"export\""
+            },
+            {
+              "pos": 8425,
+              "len": 37,
+              "txt": "                name={t('share.export')}"
+            },
+            {
+              "pos": 8463,
+              "len": 43,
+              "txt": "                icon={icons.rectangleHorizontalArrowDown}"
+            },
+            {
+              "pos": 8507,
+              "len": 31,
+              "txt": "                onSelect={() => openDialog('org-chart.export-limitation', {})}"
+            },
+            {
+              "pos": 8539,
+              "len": 57,
+              "txt": "              />"
+            },
+            {
+              "pos": 8597,
+              "len": 25,
+              "txt": "            ) : ("
+            },
+            {
+              "pos": 8623,
+              "len": 43,
+              "txt": "              <DropdownMenu.Sub"
+            },
+            {
+              "pos": 8667,
+              "len": 54,
+              "txt": "                trigger={"
+            },
+            {
+              "pos": 8722,
+              "len": 31,
+              "txt": "                  <DropdownMenu.SubTrigger"
+            },
+            {
+              "pos": 8754,
+              "len": 42,
+              "txt": "                    name={t('share.export')}"
+            },
+            {
+              "pos": 8797,
+              "len": 62,
+              "txt": "                    icon={icons.rectangleHorizontalArrowDown}"
+            },
+            {
+              "pos": 8860,
+              "len": 35,
+              "txt": "                  />"
+            },
+            {
+              "pos": 8896,
+              "len": 25,
+              "txt": "                }"
+            },
+            {
+              "pos": 8922,
+              "len": 22,
+              "txt": "              >"
+            },
+            {
+              "pos": 8945,
+              "len": 20,
+              "txt": "                {exportOptions.map((format) => ("
+            },
+            {
+              "pos": 8966,
+              "len": 19,
+              "txt": "                  <DropdownMenu.Item"
+            },
+            {
+              "pos": 8986,
+              "len": 33,
+              "txt": "                    key={format}"
+            },
+            {
+              "pos": 9020,
+              "len": 15,
+              "txt": "                    id={format}"
+            },
+            {
+              "pos": 9036,
+              "len": 25,
+              "txt": "                    name={t(`share.export-${format.toLowerCase()}`, {"
+            },
+            {
+              "pos": 9062,
+              "len": 21,
+              "txt": "                      defaultValue: t('share.export-as', { format }),"
+            },
+            {
+              "pos": 9084,
+              "len": 32,
+              "txt": "                    })}"
+            },
+            {
+              "pos": 9117,
+              "len": 10,
+              "txt": "                    onSelect={() => handleExportSelection(format)}"
+            },
+            {
+              "pos": 9128,
+              "len": 4,
+              "txt": "                  />"
+            },
+            {
+              "pos": 9133,
+              "len": 2,
+              "txt": "                ))}"
+            },
+            {
+              "pos": 9136,
+              "len": 0,
+              "txt": "              </DropdownMenu.Sub>\n            ))}\n        </Controls.Share>\n      </DSControlBar>\n      <ExportLimitationDialog />\n    </div>\n  );\n};\n"
+            }
+          ],
+          "state": 0,
+          "snapshotUri": "chat-editing-snapshot-text-model:/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.tsx?%7B%22sessionId%22%3A%221b0e1ae9-d936-4287-a70c-303257f8ff35%22%2C%22requestId%22%3A%22request_5bd250d1-b149-4e19-bd5f-31bce60dae6a%22%2C%22undoStop%22%3A%22d19944f6-f46c-4e17-911b-79a8e843c7c0%22%7D",
+          "telemetryInfo": {
+            "requestId": "request_5bd250d1-b149-4e19-bd5f-31bce60dae6a",
+            "agentId": "github.copilot.editsAgent"
+          }
+        }
+      ]
+    },
+    {
+      "requestId": "request_a0074a23-a0e1-4a32-860b-61f23cab79c1",
+      "stops": [
+        {
+          "workingSet": [],
+          "entries": [
+            {
+              "resource": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.tsx",
+              "languageId": "typescriptreact",
+              "originalHash": "6daf203",
+              "currentHash": "6daf203",
+              "originalToCurrentEdit": [],
+              "state": 1,
+              "snapshotUri": "chat-editing-snapshot-text-model:/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.tsx?%7B%22sessionId%22%3A%221b0e1ae9-d936-4287-a70c-303257f8ff35%22%2C%22requestId%22%3A%22request_a0074a23-a0e1-4a32-860b-61f23cab79c1%22%2C%22undoStop%22%3A%22%22%7D",
+              "telemetryInfo": {
+                "requestId": "request_5bd250d1-b149-4e19-bd5f-31bce60dae6a",
+                "agentId": "github.copilot.editsAgent"
+              }
+            },
+            {
+              "resource": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.test.tsx",
+              "languageId": "typescriptreact",
+              "originalHash": "57580a8",
+              "currentHash": "57580a8",
+              "originalToCurrentEdit": [],
+              "state": 4,
+              "snapshotUri": "chat-editing-snapshot-text-model:/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.test.tsx?%7B%22sessionId%22%3A%221b0e1ae9-d936-4287-a70c-303257f8ff35%22%2C%22requestId%22%3A%22request_a0074a23-a0e1-4a32-860b-61f23cab79c1%22%2C%22undoStop%22%3A%22%22%7D",
+              "telemetryInfo": {
+                "requestId": "request_a0074a23-a0e1-4a32-860b-61f23cab79c1",
+                "agentId": "github.copilot.editsAgent"
+              }
+            }
+          ]
+        }
+      ],
+      "postEdit": [
+        {
+          "resource": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.tsx",
+          "languageId": "typescriptreact",
+          "originalHash": "6daf203",
+          "currentHash": "6daf203",
+          "originalToCurrentEdit": [],
+          "state": 1,
+          "snapshotUri": "chat-editing-snapshot-text-model:/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.tsx?%7B%22sessionId%22%3A%221b0e1ae9-d936-4287-a70c-303257f8ff35%22%2C%22requestId%22%3A%22%22%2C%22undoStop%22%3A%22%22%7D",
+          "telemetryInfo": {
+            "requestId": "request_5bd250d1-b149-4e19-bd5f-31bce60dae6a",
+            "agentId": "github.copilot.editsAgent"
+          }
+        },
+        {
+          "resource": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.test.tsx",
+          "languageId": "typescriptreact",
+          "originalHash": "57580a8",
+          "currentHash": "8072013",
+          "originalToCurrentEdit": [
+            {
+              "pos": 0,
+              "len": 42,
+              "txt": "import { type ReactElement } from 'react';"
+            },
+            {
+              "pos": 44,
+              "len": 62,
+              "txt": "import { act, screen, waitFor } from '@testing-library/react';"
+            },
+            {
+              "pos": 107,
+              "len": 52,
+              "txt": "import userEvent from '@testing-library/user-event';"
+            },
+            {
+              "pos": 161,
+              "len": 8,
+              "txt": "import {"
+            },
+            {
+              "pos": 170,
+              "len": 33,
+              "txt": "  getEmployeeListColumnsHandlers,"
+            },
+            {
+              "pos": 204,
+              "len": 34,
+              "txt": "  getEmployeeListMetadataHandlers,"
+            },
+            {
+              "pos": 239,
+              "len": 72,
+              "txt": "} from '@personio-web/employees-organizations-data-people-list/mocking';"
+            },
+            {
+              "pos": 312,
+              "len": 118,
+              "txt": "import { type UseHierarchicalDataReturnType } from '@personio-web/employees-organizations-hook-use-hierarchical-data';"
+            },
+            {
+              "pos": 431,
+              "len": 90,
+              "txt": "import { PersonSystemAttribute } from '@personio-web/employees-organizations-util-people';"
+            },
+            {
+              "pos": 522,
+              "len": 52,
+              "txt": "import { server } from '@personio-web/mocks/server';"
+            },
+            {
+              "pos": 575,
+              "len": 60,
+              "txt": "import { OptionLabel } from 'designSystem/component/picker';"
+            },
+            {
+              "pos": 637,
+              "len": 41,
+              "txt": "import type { TFunction } from 'i18next';"
+            },
+            {
+              "pos": 680,
+              "len": 8,
+              "txt": "import {"
+            },
+            {
+              "pos": 689,
+              "len": 17,
+              "txt": "  getTranslation,"
+            },
+            {
+              "pos": 707,
+              "len": 45,
+              "txt": "  renderWithWrapper as renderWithWrapperBase,"
+            },
+            {
+              "pos": 753,
+              "len": 38,
+              "txt": "} from '../../test-setup/testHelpers';"
+            },
+            {
+              "pos": 792,
+              "len": 46,
+              "txt": "import * as Amp from '../constants/amplitude';"
+            },
+            {
+              "pos": 839,
+              "len": 50,
+              "txt": "import { useOrgChartPreferences } from '../hooks';"
+            },
+            {
+              "pos": 890,
+              "len": 43,
+              "txt": "import { type EntityNode } from '../types';"
+            },
+            {
+              "pos": 934,
+              "len": 54,
+              "txt": "import { exportOptions } from './consts/exportConfig';"
+            },
+            {
+              "pos": 989,
+              "len": 62,
+              "txt": "import { getFilterColumnConfig } from './consts/filterConfig';"
+            },
+            {
+              "pos": 1052,
+              "len": 42,
+              "txt": "import { ControlBar } from './ControlBar';"
+            },
+            {
+              "pos": 1095,
+              "len": 47,
+              "txt": "import { type ControlBarProps } from './types';"
+            },
+            {
+              "pos": 1144,
+              "len": 33,
+              "txt": "const mockExportNode = jest.fn();"
+            },
+            {
+              "pos": 1179,
+              "len": 62,
+              "txt": "const tErrors = jest.fn((key) => key) as unknown as TFunction<"
+            },
+            {
+              "pos": 1242,
+              "len": 28,
+              "txt": "  'employees-organizations',"
+            },
+            {
+              "pos": 1271,
+              "len": 20,
+              "txt": "  'org-chart.errors'"
+            },
+            {
+              "pos": 1292,
+              "len": 2,
+              "txt": ">;"
+            },
+            {
+              "pos": 1296,
+              "len": 42,
+              "txt": "const mockTrackAmplitudeEvent = jest.fn();"
+            },
+            {
+              "pos": 1340,
+              "len": 54,
+              "txt": "jest.mock('@personio-web/amplitude-provider', () => ({"
+            },
+            {
+              "pos": 1395,
+              "len": 24,
+              "txt": "  useAmplitude: () => ({"
+            },
+            {
+              "pos": 1420,
+              "len": 35,
+              "txt": "    track: mockTrackAmplitudeEvent,"
+            },
+            {
+              "pos": 1456,
+              "len": 5,
+              "txt": "  }),"
+            },
+            {
+              "pos": 1462,
+              "len": 4,
+              "txt": "}));"
+            },
+            {
+              "pos": 1468,
+              "len": 35,
+              "txt": "jest.mock('../TreeLayout', () => ({"
+            },
+            {
+              "pos": 1504,
+              "len": 41,
+              "txt": "  ...jest.requireActual('../TreeLayout'),"
+            },
+            {
+              "pos": 1546,
+              "len": 74,
+              "txt": "  exportNodes: (args: never[]) => mockExportNode({ ...args, t: tErrors }),"
+            },
+            {
+              "pos": 1621,
+              "len": 33,
+              "txt": "  useTreeLayout: jest.fn(() => ({"
+            },
+            {
+              "pos": 1655,
+              "len": 44,
+              "txt": "    getNodes: jest.fn().mockReturnValue([]),"
+            },
+            {
+              "pos": 1700,
+              "len": 30,
+              "txt": "    viewportInitialized: true,"
+            },
+            {
+              "pos": 1731,
+              "len": 6,
+              "txt": "  })),"
+            },
+            {
+              "pos": 1738,
+              "len": 4,
+              "txt": "}));"
+            },
+            {
+              "pos": 1744,
+              "len": 65,
+              "txt": "const clipboardMethods = { clipboard: { writeText: jest.fn() } };"
+            },
+            {
+              "pos": 1810,
+              "len": 43,
+              "txt": "Object.assign(navigator, clipboardMethods);"
+            },
+            {
+              "pos": 1854,
+              "len": 45,
+              "txt": "jest.spyOn(navigator.clipboard, 'writeText');"
+            },
+            {
+              "pos": 1901,
+              "len": 67,
+              "txt": "const TestControlBar = (otherProps?: Partial<ControlBarProps>) => {"
+            },
+            {
+              "pos": 1969,
+              "len": 41,
+              "txt": "  const props = useOrgChartPreferences();"
+            },
+            {
+              "pos": 2011,
+              "len": 22,
+              "txt": "  const localProps = {"
+            },
+            {
+              "pos": 2034,
+              "len": 16,
+              "txt": "    hierarchy: {"
+            },
+            {
+              "pos": 2051,
+              "len": 25,
+              "txt": "      getNode: jest.fn(),"
+            },
+            {
+              "pos": 2077,
+              "len": 16,
+              "txt": "      nodes: [],"
+            },
+            {
+              "pos": 2094,
+              "len": 20,
+              "txt": "      rootNodes: [],"
+            },
+            {
+              "pos": 2115,
+              "len": 62,
+              "txt": "    } as UseHierarchicalDataReturnType<EntityNode, undefined>,"
+            },
+            {
+              "pos": 2178,
+              "len": 4,
+              "txt": "  };"
+            },
+            {
+              "pos": 2184,
+              "len": 10,
+              "txt": "  return ("
+            },
+            {
+              "pos": 2195,
+              "len": 15,
+              "txt": "    <ControlBar"
+            },
+            {
+              "pos": 2211,
+              "len": 16,
+              "txt": "      {...props}"
+            },
+            {
+              "pos": 2228,
+              "len": 21,
+              "txt": "      {...localProps}"
+            },
+            {
+              "pos": 2250,
+              "len": 21,
+              "txt": "      {...otherProps}"
+            },
+            {
+              "pos": 2272,
+              "len": 62,
+              "txt": "      setIsExporting={otherProps?.setIsExporting ?? jest.fn()}"
+            },
+            {
+              "pos": 2335,
+              "len": 62,
+              "txt": "      isSavedViewsOpen={otherProps?.isSavedViewsOpen ?? false}"
+            },
+            {
+              "pos": 2398,
+              "len": 72,
+              "txt": "      setIsSavedViewsOpen={otherProps?.setIsSavedViewsOpen ?? jest.fn()}"
+            },
+            {
+              "pos": 2471,
+              "len": 6,
+              "txt": "    />"
+            },
+            {
+              "pos": 2478,
+              "len": 4,
+              "txt": "  );"
+            },
+            {
+              "pos": 2483,
+              "len": 2,
+              "txt": "};"
+            },
+            {
+              "pos": 2487,
+              "len": 56,
+              "txt": "const renderWithWrapper = (component: ReactElement) => {"
+            },
+            {
+              "pos": 2544,
+              "len": 53,
+              "txt": "  return act(() => renderWithWrapperBase(component));"
+            },
+            {
+              "pos": 2598,
+              "len": 2,
+              "txt": "};"
+            },
+            {
+              "pos": 2602,
+              "len": 34,
+              "txt": "describe('<ControlBar />', () => {"
+            },
+            {
+              "pos": 2637,
+              "len": 54,
+              "txt": "  const { t: tDS } = getTranslation('design-system', {"
+            },
+            {
+              "pos": 2692,
+              "len": 29,
+              "txt": "    keyPrefix: 'control-bar',"
+            },
+            {
+              "pos": 2722,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 2728,
+              "len": 55,
+              "txt": "  const { t: tAttributes } = getTranslation('models', {"
+            },
+            {
+              "pos": 2784,
+              "len": 26,
+              "txt": "    keyPrefix: 'employee',"
+            },
+            {
+              "pos": 2811,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 2817,
+              "len": 59,
+              "txt": "  const { t } = getTranslation('employees-organizations', {"
+            },
+            {
+              "pos": 2877,
+              "len": 39,
+              "txt": "    keyPrefix: 'org-chart.control-bar',"
+            },
+            {
+              "pos": 2917,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 2924,
+              "len": 20,
+              "txt": "  beforeEach(() => {"
+            },
+            {
+              "pos": 2945,
+              "len": 62,
+              "txt": "    server.use(getEmployeeListColumnsHandlers.defaultHandler);"
+            },
+            {
+              "pos": 3008,
+              "len": 63,
+              "txt": "    server.use(getEmployeeListMetadataHandlers.defaultHandler);"
+            },
+            {
+              "pos": 3072,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 3079,
+              "len": 55,
+              "txt": "  it('renders ControlBar with all menus', async () => {"
+            },
+            {
+              "pos": 3135,
+              "len": 48,
+              "txt": "    await renderWithWrapper(<TestControlBar />);"
+            },
+            {
+              "pos": 3185,
+              "len": 67,
+              "txt": "    expect(screen.getByText(t('views.label'))).toBeInTheDocument();"
+            },
+            {
+              "pos": 3253,
+              "len": 77,
+              "txt": "    expect(screen.getByText(t('cards.customize-label'))).toBeInTheDocument();"
+            },
+            {
+              "pos": 3331,
+              "len": 71,
+              "txt": "    expect(screen.getByText(t('highlight.label'))).toBeInTheDocument();"
+            },
+            {
+              "pos": 3403,
+              "len": 72,
+              "txt": "    expect(screen.getByText(tDS('trigger.filter'))).toBeInTheDocument();"
+            },
+            {
+              "pos": 3476,
+              "len": 79,
+              "txt": "    expect(screen.getByLabelText(t('search.placeholder'))).toBeInTheDocument();"
+            },
+            {
+              "pos": 3556,
+              "len": 76,
+              "txt": "    expect(screen.getByLabelText(tDS('trigger.share'))).toBeInTheDocument();"
+            },
+            {
+              "pos": 3633,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 3640,
+              "len": 70,
+              "txt": "  it('renders ControlBar and interacts with Cards menu', async () => {"
+            },
+            {
+              "pos": 3711,
+              "len": 48,
+              "txt": "    await renderWithWrapper(<TestControlBar />);"
+            },
+            {
+              "pos": 3761,
+              "len": 62,
+              "txt": "    const menu = screen.getByText(t('cards.customize-label'));"
+            },
+            {
+              "pos": 3824,
+              "len": 26,
+              "txt": "    userEvent.click(menu);"
+            },
+            {
+              "pos": 3852,
+              "len": 11,
+              "txt": "    expect("
+            },
+            {
+              "pos": 3864,
+              "len": 63,
+              "txt": "      screen.getByText(t('cards.customize-cards.nodes.title')),"
+            },
+            {
+              "pos": 3928,
+              "len": 26,
+              "txt": "    ).toBeInTheDocument();"
+            },
+            {
+              "pos": 3956,
+              "len": 11,
+              "txt": "    expect("
+            },
+            {
+              "pos": 3968,
+              "len": 65,
+              "txt": "      screen.getByText(t('cards.customize-cards.content.title')),"
+            },
+            {
+              "pos": 4034,
+              "len": 26,
+              "txt": "    ).toBeInTheDocument();"
+            },
+            {
+              "pos": 4061,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 4068,
+              "len": 55,
+              "txt": "  it('should select highlight attribute', async () => {"
+            },
+            {
+              "pos": 4124,
+              "len": 42,
+              "txt": "    renderWithWrapper(<TestControlBar />);"
+            },
+            {
+              "pos": 4168,
+              "len": 60,
+              "txt": "    userEvent.click(screen.getByText(t('highlight.label')));"
+            },
+            {
+              "pos": 4230,
+              "len": 25,
+              "txt": "    await waitFor(() => {"
+            },
+            {
+              "pos": 4256,
+              "len": 63,
+              "txt": "      expect(screen.getByRole('combobox')).toBeInTheDocument();"
+            },
+            {
+              "pos": 4320,
+              "len": 7,
+              "txt": "    });"
+            },
+            {
+              "pos": 4329,
+              "len": 50,
+              "txt": "    userEvent.click(screen.getByRole('combobox'));"
+            },
+            {
+              "pos": 4381,
+              "len": 25,
+              "txt": "    await waitFor(() => {"
+            },
+            {
+              "pos": 4407,
+              "len": 57,
+              "txt": "      expect(screen.getAllByRole('option')).toBeTruthy();"
+            },
+            {
+              "pos": 4465,
+              "len": 7,
+              "txt": "    });"
+            },
+            {
+              "pos": 4473,
+              "len": 66,
+              "txt": "    userEvent.click(screen.getAllByRole('option')[0], undefined, {"
+            },
+            {
+              "pos": 4540,
+              "len": 35,
+              "txt": "      skipPointerEventsCheck: true,"
+            },
+            {
+              "pos": 4576,
+              "len": 7,
+              "txt": "    });"
+            },
+            {
+              "pos": 4585,
+              "len": 23,
+              "txt": "    await waitFor(() =>"
+            },
+            {
+              "pos": 4609,
+              "len": 13,
+              "txt": "      expect("
+            },
+            {
+              "pos": 4623,
+              "len": 36,
+              "txt": "        screen.getByRole('button', {"
+            },
+            {
+              "pos": 4660,
+              "len": 46,
+              "txt": "          name: `${t('highlight.by')} Gender`,"
+            },
+            {
+              "pos": 4707,
+              "len": 11,
+              "txt": "        }),"
+            },
+            {
+              "pos": 4719,
+              "len": 28,
+              "txt": "      ).toBeInTheDocument(),"
+            },
+            {
+              "pos": 4748,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 4755,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 4762,
+              "len": 63,
+              "txt": "  it('should clear selected highlight attribute', async () => {"
+            },
+            {
+              "pos": 4826,
+              "len": 41,
+              "txt": "    const mockSetHighlighted = jest.fn();"
+            },
+            {
+              "pos": 4868,
+              "len": 22,
+              "txt": "    renderWithWrapper("
+            },
+            {
+              "pos": 4891,
+              "len": 21,
+              "txt": "      <TestControlBar"
+            },
+            {
+              "pos": 4913,
+              "len": 50,
+              "txt": "        highlighted={PersonSystemAttribute.Gender}"
+            },
+            {
+              "pos": 4964,
+              "len": 43,
+              "txt": "        setHighlighted={mockSetHighlighted}"
+            },
+            {
+              "pos": 5008,
+              "len": 9,
+              "txt": "      />,"
+            },
+            {
+              "pos": 5018,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 5026,
+              "len": 25,
+              "txt": "    await waitFor(() => {"
+            },
+            {
+              "pos": 5052,
+              "len": 13,
+              "txt": "      expect("
+            },
+            {
+              "pos": 5066,
+              "len": 38,
+              "txt": "        screen.queryByRole('button', {"
+            },
+            {
+              "pos": 5105,
+              "len": 62,
+              "txt": "          name: 'Clear', // Not translated in the DS component"
+            },
+            {
+              "pos": 5168,
+              "len": 11,
+              "txt": "        }),"
+            },
+            {
+              "pos": 5180,
+              "len": 28,
+              "txt": "      ).toBeInTheDocument();"
+            },
+            {
+              "pos": 5209,
+              "len": 7,
+              "txt": "    });"
+            },
+            {
+              "pos": 5218,
+              "len": 20,
+              "txt": "    userEvent.click("
+            },
+            {
+              "pos": 5239,
+              "len": 34,
+              "txt": "      screen.getByRole('button', {"
+            },
+            {
+              "pos": 5274,
+              "len": 22,
+              "txt": "        name: 'Clear',"
+            },
+            {
+              "pos": 5297,
+              "len": 9,
+              "txt": "      }),"
+            },
+            {
+              "pos": 5307,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 5315,
+              "len": 56,
+              "txt": "    expect(mockSetHighlighted).toHaveBeenCalledWith('');"
+            },
+            {
+              "pos": 5372,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 5379,
+              "len": 71,
+              "txt": "  it('renders ControlBar and interacts with Filter menu', async () => {"
+            },
+            {
+              "pos": 5451,
+              "len": 48,
+              "txt": "    await renderWithWrapper(<TestControlBar />);"
+            },
+            {
+              "pos": 5501,
+              "len": 57,
+              "txt": "    const menu = screen.getByText(tDS('trigger.filter'));"
+            },
+            {
+              "pos": 5559,
+              "len": 26,
+              "txt": "    userEvent.click(menu);"
+            },
+            {
+              "pos": 5587,
+              "len": 53,
+              "txt": "    const filterColumnConfig = getFilterColumnConfig("
+            },
+            {
+              "pos": 5641,
+              "len": 64,
+              "txt": "      tAttributes as unknown as TFunction<'models', 'employee'>,"
+            },
+            {
+              "pos": 5706,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 5713,
+              "len": 23,
+              "txt": "    await waitFor(() =>"
+            },
+            {
+              "pos": 5737,
+              "len": 13,
+              "txt": "      expect("
+            },
+            {
+              "pos": 5751,
+              "len": 64,
+              "txt": "        screen.getByText(filterColumnConfig?.[0]?.header || ''),"
+            },
+            {
+              "pos": 5816,
+              "len": 28,
+              "txt": "      ).toBeInTheDocument(),"
+            },
+            {
+              "pos": 5845,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 5852,
+              "len": 44,
+              "txt": "    filterColumnConfig.forEach((column) => {"
+            },
+            {
+              "pos": 5897,
+              "len": 72,
+              "txt": "      expect(screen.getByText(column.header || '')).toBeInTheDocument();"
+            },
+            {
+              "pos": 5970,
+              "len": 7,
+              "txt": "    });"
+            },
+            {
+              "pos": 5978,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 5985,
+              "len": 79,
+              "txt": "  it('renders ControlBar filters with limited attribute options', async () => {"
+            },
+            {
+              "pos": 6065,
+              "len": 15,
+              "txt": "    server.use("
+            },
+            {
+              "pos": 6081,
+              "len": 85,
+              "txt": "      getEmployeeListColumnsHandlers.getEmployeeListColumns200Handler__limitedAccess,"
+            },
+            {
+              "pos": 6167,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 6174,
+              "len": 42,
+              "txt": "    renderWithWrapper(<TestControlBar />);"
+            },
+            {
+              "pos": 6218,
+              "len": 23,
+              "txt": "    await waitFor(() =>"
+            },
+            {
+              "pos": 6242,
+              "len": 74,
+              "txt": "      expect(screen.getByText(tDS('trigger.filter'))).toBeInTheDocument(),"
+            },
+            {
+              "pos": 6317,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 6324,
+              "len": 57,
+              "txt": "    const menu = screen.getByText(tDS('trigger.filter'));"
+            },
+            {
+              "pos": 6382,
+              "len": 26,
+              "txt": "    userEvent.click(menu);"
+            },
+            {
+              "pos": 6410,
+              "len": 23,
+              "txt": "    await waitFor(() =>"
+            },
+            {
+              "pos": 6434,
+              "len": 13,
+              "txt": "      expect("
+            },
+            {
+              "pos": 6448,
+              "len": 65,
+              "txt": "        screen.getByTestId('control-bar-filter-popover-content'),"
+            },
+            {
+              "pos": 6514,
+              "len": 28,
+              "txt": "      ).toBeInTheDocument(),"
+            },
+            {
+              "pos": 6543,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 6550,
+              "len": 58,
+              "txt": "    expect(screen.getAllByRole('option')).toHaveLength(1);"
+            },
+            {
+              "pos": 6609,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 6616,
+              "len": 74,
+              "txt": "  it('renders ControlBar and interacts with Search control', async () => {"
+            },
+            {
+              "pos": 6691,
+              "len": 48,
+              "txt": "    await renderWithWrapper(<TestControlBar />);"
+            },
+            {
+              "pos": 6741,
+              "len": 64,
+              "txt": "    const menu = screen.getByLabelText(t('search.placeholder'));"
+            },
+            {
+              "pos": 6806,
+              "len": 26,
+              "txt": "    userEvent.click(menu);"
+            },
+            {
+              "pos": 6834,
+              "len": 70,
+              "txt": "    const searchInput = screen.getByPlaceholderText<HTMLInputElement>("
+            },
+            {
+              "pos": 6905,
+              "len": 24,
+              "txt": "      t('search.label'),"
+            },
+            {
+              "pos": 6930,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 6937,
+              "len": 47,
+              "txt": "    userEvent.type(searchInput, 'test search');"
+            },
+            {
+              "pos": 6986,
+              "len": 50,
+              "txt": "    expect(searchInput.value).toBe('test search');"
+            },
+            {
+              "pos": 7037,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 7044,
+              "len": 74,
+              "txt": "  it('renders ControlBar and interacts with search results', async () => {"
+            },
+            {
+              "pos": 7119,
+              "len": 43,
+              "txt": "    const onSearchResultSelect = jest.fn();"
+            },
+            {
+              "pos": 7164,
+              "len": 28,
+              "txt": "    await renderWithWrapper("
+            },
+            {
+              "pos": 7193,
+              "len": 21,
+              "txt": "      <TestControlBar"
+            },
+            {
+              "pos": 7215,
+              "len": 23,
+              "txt": "        searchTerm=\"em\""
+            },
+            {
+              "pos": 7239,
+              "len": 24,
+              "txt": "        searchResults={["
+            },
+            {
+              "pos": 7264,
+              "len": 11,
+              "txt": "          {"
+            },
+            {
+              "pos": 7276,
+              "len": 23,
+              "txt": "            value: '1',"
+            },
+            {
+              "pos": 7300,
+              "len": 20,
+              "txt": "            label: ("
+            },
+            {
+              "pos": 7321,
+              "len": 32,
+              "txt": "              <OptionLabel.Token"
+            },
+            {
+              "pos": 7354,
+              "len": 34,
+              "txt": "                label=\"Emma Weber\""
+            },
+            {
+              "pos": 7389,
+              "len": 25,
+              "txt": "                avatar={{"
+            },
+            {
+              "pos": 7415,
+              "len": 37,
+              "txt": "                  name: 'Emma Weber',"
+            },
+            {
+              "pos": 7453,
+              "len": 18,
+              "txt": "                }}"
+            },
+            {
+              "pos": 7472,
+              "len": 16,
+              "txt": "              />"
+            },
+            {
+              "pos": 7489,
+              "len": 14,
+              "txt": "            ),"
+            },
+            {
+              "pos": 7504,
+              "len": 12,
+              "txt": "          },"
+            },
+            {
+              "pos": 7517,
+              "len": 10,
+              "txt": "        ]}"
+            },
+            {
+              "pos": 7528,
+              "len": 51,
+              "txt": "        onSearchResultSelect={onSearchResultSelect}"
+            },
+            {
+              "pos": 7580,
+              "len": 9,
+              "txt": "      />,"
+            },
+            {
+              "pos": 7590,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 7598,
+              "len": 70,
+              "txt": "    const searchInput = screen.getByPlaceholderText<HTMLInputElement>("
+            },
+            {
+              "pos": 7669,
+              "len": 24,
+              "txt": "      t('search.label'),"
+            },
+            {
+              "pos": 7694,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 7701,
+              "len": 41,
+              "txt": "    expect(searchInput.value).toBe('em');"
+            },
+            {
+              "pos": 7744,
+              "len": 24,
+              "txt": "    searchInput.focus();"
+            },
+            {
+              "pos": 7769,
+              "len": 60,
+              "txt": "    expect(screen.getByRole('listbox')).toBeInTheDocument();"
+            },
+            {
+              "pos": 7831,
+              "len": 56,
+              "txt": "    const searchResult = screen.getByText('Emma Weber');"
+            },
+            {
+              "pos": 7888,
+              "len": 45,
+              "txt": "    expect(searchResult).toBeInTheDocument();"
+            },
+            {
+              "pos": 7935,
+              "len": 34,
+              "txt": "    userEvent.click(searchResult);"
+            },
+            {
+              "pos": 7970,
+              "len": 59,
+              "txt": "    expect(onSearchResultSelect).toHaveBeenCalledWith('1');"
+            },
+            {
+              "pos": 8030,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 8037,
+              "len": 32,
+              "txt": "  describe('Share menu', () => {"
+            },
+            {
+              "pos": 8070,
+              "len": 78,
+              "txt": "    it('renders ControlBar and checks \"Copy URL\" in Share menu', async () => {"
+            },
+            {
+              "pos": 8149,
+              "len": 50,
+              "txt": "      await renderWithWrapper(<TestControlBar />);"
+            },
+            {
+              "pos": 8201,
+              "len": 63,
+              "txt": "      const menu = screen.getByLabelText(tDS('trigger.share'));"
+            },
+            {
+              "pos": 8265,
+              "len": 28,
+              "txt": "      userEvent.click(menu);"
+            },
+            {
+              "pos": 8295,
+              "len": 64,
+              "txt": "      const copyUrlItem = screen.getByText(t('share.copy-url'));"
+            },
+            {
+              "pos": 8360,
+              "len": 46,
+              "txt": "      expect(copyUrlItem).toBeInTheDocument();"
+            },
+            {
+              "pos": 8408,
+              "len": 35,
+              "txt": "      userEvent.click(copyUrlItem);"
+            },
+            {
+              "pos": 8444,
+              "len": 63,
+              "txt": "      expect(navigator.clipboard.writeText).toHaveBeenCalled();"
+            },
+            {
+              "pos": 8508,
+              "len": 7,
+              "txt": "    });"
+            },
+            {
+              "pos": 8517,
+              "len": 76,
+              "txt": "    it('renders ControlBar and checks \"Export\" in Share menu', async () => {"
+            },
+            {
+              "pos": 8594,
+              "len": 50,
+              "txt": "      await renderWithWrapper(<TestControlBar />);"
+            },
+            {
+              "pos": 8646,
+              "len": 63,
+              "txt": "      const menu = screen.getByLabelText(tDS('trigger.share'));"
+            },
+            {
+              "pos": 8710,
+              "len": 28,
+              "txt": "      userEvent.click(menu);"
+            },
+            {
+              "pos": 8740,
+              "len": 61,
+              "txt": "      const exportMenu = screen.getByText(t('share.export'));"
+            },
+            {
+              "pos": 8802,
+              "len": 45,
+              "txt": "      expect(exportMenu).toBeInTheDocument();"
+            },
+            {
+              "pos": 8849,
+              "len": 34,
+              "txt": "      userEvent.click(exportMenu);"
+            },
+            {
+              "pos": 8885,
+              "len": 41,
+              "txt": "      exportOptions.forEach((format) => {"
+            },
+            {
+              "pos": 8927,
+              "len": 15,
+              "txt": "        expect("
+            },
+            {
+              "pos": 8943,
+              "len": 70,
+              "txt": "          screen.getByText(t(`share.export-${format.toLowerCase()}`)),"
+            },
+            {
+              "pos": 9014,
+              "len": 30,
+              "txt": "        ).toBeInTheDocument();"
+            },
+            {
+              "pos": 9045,
+              "len": 9,
+              "txt": "      });"
+            },
+            {
+              "pos": 9055,
+              "len": 7,
+              "txt": "    });"
+            },
+            {
+              "pos": 9064,
+              "len": 29,
+              "txt": "    test.each(exportOptions)("
+            },
+            {
+              "pos": 9094,
+              "len": 54,
+              "txt": "      'interacts with \"Export\" submenu in Share memu',"
+            },
+            {
+              "pos": 9149,
+              "len": 25,
+              "txt": "      async (format) => {"
+            },
+            {
+              "pos": 9175,
+              "len": 41,
+              "txt": "        const setIsExporting = jest.fn();"
+            },
+            {
+              "pos": 9217,
+              "len": 32,
+              "txt": "        await renderWithWrapper("
+            },
+            {
+              "pos": 9250,
+              "len": 61,
+              "txt": "          <TestControlBar setIsExporting={setIsExporting} />,"
+            },
+            {
+              "pos": 9312,
+              "len": 10,
+              "txt": "        );"
+            },
+            {
+              "pos": 9324,
+              "len": 69,
+              "txt": "        userEvent.click(screen.getByLabelText(tDS('trigger.share')));"
+            },
+            {
+              "pos": 9395,
+              "len": 63,
+              "txt": "        const exportMenu = screen.getByText(t('share.export'));"
+            },
+            {
+              "pos": 9459,
+              "len": 47,
+              "txt": "        expect(exportMenu).toBeInTheDocument();"
+            },
+            {
+              "pos": 9508,
+              "len": 36,
+              "txt": "        userEvent.click(exportMenu);"
+            },
+            {
+              "pos": 9546,
+              "len": 17,
+              "txt": "        act(() =>"
+            },
+            {
+              "pos": 9564,
+              "len": 26,
+              "txt": "          userEvent.click("
+            },
+            {
+              "pos": 9591,
+              "len": 72,
+              "txt": "            screen.getByText(t(`share.export-${format.toLowerCase()}`)),"
+            },
+            {
+              "pos": 9664,
+              "len": 12,
+              "txt": "          ),"
+            },
+            {
+              "pos": 9677,
+              "len": 10,
+              "txt": "        );"
+            },
+            {
+              "pos": 9689,
+              "len": 58,
+              "txt": "        expect(setIsExporting).toHaveBeenCalledWith(true);"
+            },
+            {
+              "pos": 9748,
+              "len": 53,
+              "txt": "        expect(mockExportNode).toHaveBeenCalledWith({"
+            },
+            {
+              "pos": 9802,
+              "len": 17,
+              "txt": "          format,"
+            },
+            {
+              "pos": 9820,
+              "len": 20,
+              "txt": "          nodes: [],"
+            },
+            {
+              "pos": 9841,
+              "len": 42,
+              "txt": "          onFinish: expect.toBeFunction(),"
+            },
+            {
+              "pos": 9884,
+              "len": 21,
+              "txt": "          t: tErrors,"
+            },
+            {
+              "pos": 9906,
+              "len": 11,
+              "txt": "        });"
+            },
+            {
+              "pos": 9919,
+              "len": 76,
+              "txt": "        expect(mockTrackAmplitudeEvent).toHaveBeenCalledWith(Amp.EXPORTED, {"
+            },
+            {
+              "pos": 9996,
+              "len": 17,
+              "txt": "          format,"
+            },
+            {
+              "pos": 10014,
+              "len": 43,
+              "txt": "          triggered_from: 'org-chart-menu',"
+            },
+            {
+              "pos": 10058,
+              "len": 11,
+              "txt": "        });"
+            },
+            {
+              "pos": 10070,
+              "len": 8,
+              "txt": "      },"
+            },
+            {
+              "pos": 10079,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 10086,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 10093,
+              "len": 76,
+              "txt": "  it('should not render Export menu on ControlBar Share menu', async () => {"
+            },
+            {
+              "pos": 10170,
+              "len": 15,
+              "txt": "    server.use("
+            },
+            {
+              "pos": 10186,
+              "len": 114,
+              "txt": "      getEmployeeListMetadataHandlers.getEmployeeListMetadata200Handler__metadataResponseWithNoAccessAccessRights,"
+            },
+            {
+              "pos": 10301,
+              "len": 6,
+              "txt": "    );"
+            },
+            {
+              "pos": 10309,
+              "len": 48,
+              "txt": "    await renderWithWrapper(<TestControlBar />);"
+            },
+            {
+              "pos": 10359,
+              "len": 61,
+              "txt": "    const menu = screen.getByLabelText(tDS('trigger.share'));"
+            },
+            {
+              "pos": 10421,
+              "len": 26,
+              "txt": "    userEvent.click(menu);"
+            },
+            {
+              "pos": 10449,
+              "len": 74,
+              "txt": "    expect(screen.queryByText(t('share.export'))).not.toBeInTheDocument();"
+            },
+            {
+              "pos": 10524,
+              "len": 5,
+              "txt": "  });"
+            },
+            {
+              "pos": 10530,
+              "len": 3,
+              "txt": ""
+            },
+            {
+              "pos": 10534,
+              "len": 0,
+              "txt": "  it('should call openDialog when on Safari and exporting', async () => {\n    const openDialogMock = jest.fn();\n    Object.defineProperty(navigator, 'userAgent', {\n        value: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15',\n        writable: true,\n    });\n\n    await renderWithWrapper(\n        <TestControlBar setIsExporting={jest.fn()} openDialog={openDialogMock} />\n    );\n\n    userEvent.click(screen.getByLabelText(tDS('trigger.share')));\n\n    const exportMenu = screen.getByText(t('share.export'));\n    expect(exportMenu).toBeInTheDocument();\n\n    userEvent.click(exportMenu);\n\n    act(() =>\n        userEvent.click(\n            screen.getByText(t(`share.export-${exportOptions[0].toLowerCase()}`))\n        )\n    );\n\n    expect(openDialogMock).toHaveBeenCalledWith('org-chart.export-limitation', {});\n  });\n});\n"
+            }
+          ],
+          "state": 0,
+          "snapshotUri": "chat-editing-snapshot-text-model:/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.test.tsx?%7B%22sessionId%22%3A%221b0e1ae9-d936-4287-a70c-303257f8ff35%22%2C%22requestId%22%3A%22request_a0074a23-a0e1-4a32-860b-61f23cab79c1%22%2C%22undoStop%22%3A%22d19944f6-f46c-4e17-911b-79a8e843c7c0%22%7D",
+          "telemetryInfo": {
+            "requestId": "request_a0074a23-a0e1-4a32-860b-61f23cab79c1",
+            "agentId": "github.copilot.editsAgent"
+          }
+        }
+      ]
+    }
+  ],
+  "linearHistoryIndex": 4,
+  "initialFileContents": [
+    [
+      "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.tsx",
+      "a4d32fa"
+    ],
+    [
+      "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.test.tsx",
+      "57580a8"
+    ]
+  ],
+  "recentSnapshot": {
+    "workingSet": [],
+    "entries": [
+      {
+        "resource": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.tsx",
+        "languageId": "typescriptreact",
+        "originalHash": "fe25d61",
+        "currentHash": "fe25d61",
+        "originalToCurrentEdit": [],
+        "state": 1,
+        "snapshotUri": "chat-editing-snapshot-text-model:/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.tsx?%7B%22sessionId%22%3A%221b0e1ae9-d936-4287-a70c-303257f8ff35%22%2C%22requestId%22%3A%22%22%2C%22undoStop%22%3A%22%22%7D",
+        "telemetryInfo": {
+          "requestId": "request_5bd250d1-b149-4e19-bd5f-31bce60dae6a",
+          "agentId": "github.copilot.editsAgent"
+        }
+      },
+      {
+        "resource": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.test.tsx",
+        "languageId": "typescriptreact",
+        "originalHash": "57580a8",
+        "currentHash": "57580a8",
+        "originalToCurrentEdit": [],
+        "state": 1,
+        "snapshotUri": "chat-editing-snapshot-text-model:/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/ControlBar.test.tsx?%7B%22sessionId%22%3A%221b0e1ae9-d936-4287-a70c-303257f8ff35%22%2C%22requestId%22%3A%22%22%2C%22undoStop%22%3A%22%22%7D",
+        "telemetryInfo": {
+          "requestId": "request_a0074a23-a0e1-4a32-860b-61f23cab79c1",
+          "agentId": "github.copilot.editsAgent"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+version: 1
+type: web-product-area-data
+component:
+  name: payroll-data-gofer
+  description: Data hook for interacting with the gofer
+  service: payroll
+  lifecycle: production
+  team: PAY

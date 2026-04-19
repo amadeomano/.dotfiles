@@ -1,0 +1,17 @@
+{
+  "name": "payroll-data-payroll-me",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "tags": ["product-area:payroll", "scope:private", "module-type:data"],
+  "targets": {
+    "static": {},
+    "lint": {},
+    "type-check": {},
+    "request-sync": {
+      "executor": "@personio-web/nx-request-sync:sync",
+      "options": {
+        "serviceName": "international-service"
+      }
+    }
+  }
+}

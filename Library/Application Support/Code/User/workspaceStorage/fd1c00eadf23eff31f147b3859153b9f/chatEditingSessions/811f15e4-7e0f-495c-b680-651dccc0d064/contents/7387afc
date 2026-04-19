@@ -1,0 +1,103 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+
+/**
+ * Extract words from a StarDict .idx file
+ * @param {string} idxFilePath - Path to the .idx file
+ * @returns {Array<string>} Array of words
+ */
+function extractWordsFromStarDict(idxFilePath) {
+    try {
+        // Read the index file as a buffer
+        const buffer = fs.readFileSync(idxFilePath);
+        
+        const words = [];
+        let currentWord = '';
+        let i = 0;
+        
+        while (i < buffer.length) {
+            const byte = buffer[i];
+            
+            if (byte === 0) {
+                // Null byte indicates end of word
+                if (currentWord.length > 0) {
+                    words.push(currentWord);
+                    currentWord = '';
+                }
+                
+                // Skip the next 8 bytes (offset and length in the .dict file)
+                i += 9; // +1 for the null byte, +8 for offset/length
+            } else {
+                // Add character to current word
+                currentWord += String.fromCharCode(byte);
+                i++;
+            }
+        }
+        
+        // Add the last word if it exists
+        if (currentWord.length > 0) {
+            words.push(currentWord);
+        }
+        
+        return words;
+    } catch (error) {
+        console.error('Error reading StarDict index file:', error.message);
+        return [];
+    }
+}
+
+/**
+ * Save words to a text file
+ * @param {Array<string>} words - Array of words to save
+ * @param {string} outputPath - Path to save the text file
+ */
+function saveWordsToFile(words, outputPath) {
+    try {
+        const content = words.join('\n');
+        fs.writeFileSync(outputPath, content, 'utf8');
+        console.log(`✓ Successfully saved ${words.length} words to ${outputPath}`);
+    } catch (error) {
+        console.error('Error saving words to file:', error.message);
+    }
+}
+
+// Main execution
+function main() {
+    const idxFilePath = path.join(__dirname, 'xmlittre', 'stardict.idx');
+    const outputPath = path.join(__dirname, 'dictionary-words.txt');
+    
+    console.log('Extracting words from StarDict dictionary...');
+    console.log(`Reading from: ${idxFilePath}`);
+    
+    // Check if the index file exists
+    if (!fs.existsSync(idxFilePath)) {
+        console.error(`Error: StarDict index file not found at ${idxFilePath}`);
+        return;
+    }
+    
+    // Extract words
+    const words = extractWordsFromStarDict(idxFilePath);
+    
+    if (words.length > 0) {
+        console.log(`Found ${words.length} words in the dictionary`);
+        console.log('Sample words:', words.slice(0, 10).join(', '), '...');
+        
+        // Save to file
+        saveWordsToFile(words, outputPath);
+        
+        // Show some statistics
+        const uniqueWords = [...new Set(words)];
+        console.log(`Total words: ${words.length}`);
+        console.log(`Unique words: ${uniqueWords.length}`);
+    } else {
+        console.log('No words found in the dictionary');
+    }
+}
+
+if (require.main === module) {
+    main();
+}
+
+module.exports = { extractWordsFromStarDict, saveWordsToFile };

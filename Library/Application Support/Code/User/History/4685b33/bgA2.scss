@@ -1,0 +1,7 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.avatar {
+  height: tokens.$spacing-10;
+  width: tokens.$spacing-10;
+  flex: 0 0 tokens.$spacing-10;
+}

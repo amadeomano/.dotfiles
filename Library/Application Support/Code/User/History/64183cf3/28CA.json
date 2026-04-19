@@ -1,0 +1,14 @@
+{
+  "name": "payroll-mocks-gofer",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "tags": ["product-area:payroll", "scope:private", "module-type:mocks"],
+  "targets": {
+    "static": {},
+    "lint": {},
+    "type-check": {},
+    "sonar": {
+      "executor": "@personio-web/nx-plugin:sonar"
+    }
+  }
+}

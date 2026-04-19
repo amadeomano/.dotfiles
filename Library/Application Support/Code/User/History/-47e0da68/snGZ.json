@@ -1,0 +1,29 @@
+{
+  "name": "@personio-web/design-system-component-hover-card",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/playwright-test": "workspace:*",
+    "@types/personio-web__design-system-component-hover-card": "workspace:*",
+    "@types/personio-web__employees-organizations-util-org-chart": "workspace:*",
+    "@personio-web/design-system-utils-testing": "workspace:*"
+  },
+  "dependencies": {
+    "@personio-web/design-system-component-avatar": "workspace:*",
+    "@personio-web/design-system-component-breadcrumb": "workspace:*",
+    "@personio-web/design-system-component-empty-state": "workspace:*",
+    "@personio-web/design-system-component-enum": "workspace:*",
+    "@personio-web/design-system-component-facepile": "workspace:*",
+    "@personio-web/design-system-component-icon": "workspace:*",
+    "@personio-web/design-system-component-layout": "workspace:*",
+    "@personio-web/design-system-component-link": "workspace:*",
+    "@personio-web/design-system-component-token": "workspace:*",
+    "@personio-web/design-system-component-metadata-item": "workspace:*",
+    "@personio-web/design-system-styles": "workspace:*",
+    "@personio-web/design-system-tokens": "workspace:*",
+    "@personio-web/design-system-utils": "workspace:*"
+  }
+}

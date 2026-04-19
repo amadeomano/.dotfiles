@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sessionId": "64e203c0-2a72-4d40-8166-7844009a39e9",
+  "linearHistory": [],
+  "linearHistoryIndex": 0,
+  "initialFileContents": [],
+  "recentSnapshot": {
+    "workingSet": [
+      [
+        "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/TreeLayout.tsx",
+        {
+          "description": "Often edited with types.ts (Suggested)",
+          "state": 6
+        }
+      ],
+      [
+        "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/constants.ts",
+        {
+          "description": "Often edited with types.ts (Suggested)",
+          "state": 6
+        }
+      ],
+      [
+        "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/types.ts",
+        {
+          "state": 3,
+          "description": "Open Editor"
+        }
+      ]
+    ],
+    "entries": []
+  }
+}

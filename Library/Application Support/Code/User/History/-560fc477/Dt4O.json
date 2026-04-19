@@ -1,0 +1,11 @@
+{
+  "name": "@personio-web/eo-commons-org-chart-link",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/personio-web__employees-organizations-hook-use-query-param-state": "workspace:*",
+    "@types/personio-web__employees-organizations-util-people": "workspace:*"
+  }
+}

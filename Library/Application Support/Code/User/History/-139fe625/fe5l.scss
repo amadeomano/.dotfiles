@@ -1,0 +1,8 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: tokens.$spacing-6;
+}

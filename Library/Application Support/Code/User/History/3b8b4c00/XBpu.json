@@ -1,0 +1,20 @@
+{
+  "name": "@personio-web/payroll-component-payroll-layout",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/playwright-test": "workspace:*",
+    "@personio-web/design-system-utils": "workspace:*",
+    "@personio-web/design-system-tokens": "workspace:*",
+    "@personio-web/design-system-utils-testing": "workspace:*",
+    "@types/personio-web__design-system-component-page": "workspace:*",
+    "@types/personio-web__design-system-component-panel": "workspace:*",
+    "@types/personio-web__design-system-component-page-layout": "workspace:*",
+    "@types/personio-web__design-system-component-select": "workspace:*",
+    "@types/personio-web__design-system-component-tabs": "workspace:*",
+    "@types/personio-web__design-system-component-dropdown-menu": "workspace:*"
+  }
+}

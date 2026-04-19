@@ -1,0 +1,15 @@
+{
+  "name": "@personio-web/employees-organizations-gofer",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@personio-web/gofer": "workspace:*",
+    "@personio-web/design-system-utils": "workspace:*
+  },
+  "devDependencies": {
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/mocks": "workspace:*"
+  }
+}

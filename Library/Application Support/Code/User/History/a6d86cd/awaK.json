@@ -1,0 +1,12 @@
+{
+  "name": "@types/personio-web__employees-organizations-feature-org-chart",
+  "version": "1.0.0",
+  "private": true,
+  "types": "index.d.ts",
+  "devDependencies": {
+    "@personio-web/config-typescript": "workspace:*",
+    "@types/personio-web__design-system-component-advanced-filter": "workspace:*",
+    "@types/personio-web__employees-organizations-hook-use-hierarchical-data": "workspace:*",
+    "@types/personio-web__employees-organizations-hook-use-organization": "workspace:*"
+  }
+}

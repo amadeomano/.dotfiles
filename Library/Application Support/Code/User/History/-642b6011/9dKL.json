@@ -1,0 +1,41 @@
+{
+  "name": "@personio-web/employees-organizations-feature-employee-layout",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/playwright-test": "workspace:*",
+    "@personio-web/amplitude-provider": "workspace:*",
+    "@personio-web/auth-context": "workspace:^"
+  },
+  "dependencies": {
+    "@personio-web/employees-organizations-data-employee-header": "workspace:*",
+    "@personio-web/employees-organizations-data-compact-employments": "workspace:*",
+    "@personio-web/employees-organizations-feature-employee-header": "workspace:*",
+    "@personio-web/employees-organizations-mocks-employee-header": "workspace:*",
+    "@personio-web/employees-organizations-util-dialogs": "workspace:*",
+    "@personio-web/employees-organizations-util-org-chart": "workspace:*",
+    "@personio-web/employees-organizations-feature-delete-employee-dialog": "workspace:*",
+    "@personio-web/employees-organizations-feature-terminate-employment-dialog": "workspace:*",
+    "@personio-web/employees-organizations-feature-schedule-employee-leave-dialog": "workspace:*",
+    "@personio-web/design-system-tokens": "workspace:*",
+    "@personio-web/orchestrator-common": "workspace:*",
+    "@types/personio-web__design-system-component-action-bar": "workspace:*",
+    "@types/personio-web__design-system-component-dialog": "workspace:*",
+    "@types/personio-web__design-system-component-page": "workspace:*",
+    "@types/personio-web__design-system-component-dropdown-menu": "workspace:*",
+    "@types/personio-web__design-system-component-tabs": "workspace:*",
+    "@types/personio-web__design-system-component-icon": "workspace:*",
+    "@types/personio-web__design-system-component-button": "workspace:*",
+    "@types/personio-web__design-system-component-tooltip": "workspace:*",
+    "@types/personio-web__employees-organizations-feature-employee-layout": "workspace:*",
+    "@personio-web/i18n": "workspace:*",
+    "@personio-web/use-feature-flag-wrapper": "workspace:*",
+    "@personio-web/employees-organizations-hook-use-rehire-status-attribute-config": "workspace:*",
+    "@types/personio-web__time-money-feature-attendance-history": "workspace:*",
+    "@personio-web/employees-organizations-hook-use-is-about-me-enabled": "workspace:*",
+    "@personio-web/eo-commons-org-chart-link": "workspace:^"
+  }
+}

@@ -1,0 +1,57 @@
+{
+   "background": {
+      "scripts": [ "background.bundle.js", "integrationTest.bundle.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "icons/normal/Icon-19.png",
+         "38": "icons/normal/Icon-38.png"
+      },
+      "default_title": "OneLogin for Google Chrome"
+   },
+   "commands": {
+      "unit_test": {
+         "description": "Run unit tests",
+         "suggested_key": {
+            "default": "Ctrl+Shift+U",
+            "mac": "Command+Shift+U"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "js": [ "contentAll.bundle.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   }, {
+      "js": [ "contentAllDocStart.bundle.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "include_globs": [ "http://localhost:*/*", "http://*.onelogin*/*", "https://*.onelogin*/*" ],
+      "js": [ "contentPortal.bundle.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+   "description": "Single Sign-On for cloud lovers.",
+   "icons": {
+      "128": "icons/normal/Icon-128.png",
+      "16": "icons/normal/Icon-16.png",
+      "48": "icons/normal/Icon-48.png"
+   },
+   "incognito": "split",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC8q5UriLAV0ue7wiggQlSC3XEonT+eKoIdDtRFo+WgRO/woBis5X4aJMznQqap3cgdArzLeBsizOZ/gfP3d0G9fvZRnOhv9FFqvJgULTtSS9hI2IerZLu2Om9cI7S9pb48tYLBe2/7hpDpZqfpaBnZCRh4UEsX+4yKHgDDT9xYsQIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "22.0.0.0",
+   "name": "OneLogin for Google Chrome",
+   "options_page": "options/options.html",
+   "options_ui": {
+      "chrome_style": true,
+      "page": "options/options.html"
+   },
+   "permissions": [ "storage", "webRequest", "webRequestBlocking", "tabs", "http://*/*", "https://*/*", "cookies", "webNavigation" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.4.52",
+   "web_accessible_resources": [ "ui/saveNewAppDialog.html", "ui/updateAppDialog.html" ]
+}

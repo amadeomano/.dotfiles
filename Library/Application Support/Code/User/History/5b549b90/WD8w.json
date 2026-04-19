@@ -1,0 +1,17 @@
+{
+  "name": "employees-organizations-type-util-people",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "tags": [
+    "product-area:employees-organizations",
+    "scope:public",
+    "type:lib",
+    "module-type:types"
+  ],
+  "targets": {
+    "static": {},
+    "lint": {},
+    "type-check": {},
+    "test-coverage-update": {}
+  }
+}

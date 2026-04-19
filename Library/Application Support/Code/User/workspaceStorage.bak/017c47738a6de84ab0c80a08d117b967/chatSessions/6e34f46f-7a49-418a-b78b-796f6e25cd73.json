@@ -1,0 +1,712 @@
+{
+  "version": 3,
+  "requesterUsername": "amadeo-manouchehri_pers0nio",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/190103085",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_871b5050-c02c-4a64-aadb-4ac44c588f3a",
+      "message": {
+        "text": "Explain the function mapEdgesRecursively",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 40
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 41
+            },
+            "text": "Explain the function mapEdgesRecursively",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "id": "vscode.implicit.viewport",
+            "name": "file:mapEdges.ts",
+            "value": {
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              },
+              "range": {
+                "startLineNumber": 28,
+                "startColumn": 1,
+                "endLineNumber": 61,
+                "endColumn": 14
+              }
+            },
+            "isFile": true,
+            "isDynamic": true,
+            "modelDescription": "User's current visible code"
+          }
+        ]
+      },
+      "response": [
+        {
+          "value": "The ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          },
+          "uris": {}
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "mapEdgesRecursively",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 42,
+                "startColumn": 10,
+                "endLineNumber": 42,
+                "endColumn": 10
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "2411920a-864a-4ea2-8697-e5b7e52a00a9"
+        },
+        {
+          "value": " function is a TypeScript function that maps tree nodes to edges recursively. It processes each node in a tree structure and creates edges between parent nodes and their child nodes based on certain conditions. Here's a detailed explanation of how it works:\n\n### Function Signature\n```typescript\nfunction mapEdgesRecursively<T extends BaseData>(\n  treeNodes: TreeNode<T>[],\n  layoutOptions?: TreeLayoutOptions,\n): TreeEdges[] {\n```\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "treeNodes",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 19,
+                "startColumn": 3,
+                "endLineNumber": 19,
+                "endColumn": 3
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "6cfa75c1-64b0-45d8-ac04-2b9df345c981"
+        },
+        {
+          "value": "**: An array of tree nodes to be processed.\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "layoutOptions",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 21,
+                "startColumn": 3,
+                "endLineNumber": 21,
+                "endColumn": 3
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "0c64fd78-c314-4588-9b51-c033d7eb12e5"
+        },
+        {
+          "value": "**: Optional layout options that can influence the edge creation process.\n\n### Destructuring Layout Options\n```typescript\nconst {\n  nodeSize: { width },\n  spacing: { sibling: siblingSpacing },\n  getEdgeStyle,\n} = { ...defaultTreeLayoutOptions, ...layoutOptions };\n```\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "nodeSize.width",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 129,
+                "startColumn": 3,
+                "endLineNumber": 129,
+                "endColumn": 3
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/types.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/types.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/types.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "c99fec1f-30c2-4a37-9607-0f86af72c21d"
+        },
+        {
+          "value": "**: The width of a node.\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "spacing.sibling",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 136,
+                "startColumn": 3,
+                "endLineNumber": 136,
+                "endColumn": 3
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/types.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/types.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/types.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "eb92db4e-9af6-4799-920a-79ccf1dbcfc0"
+        },
+        {
+          "value": "**: The spacing between sibling nodes.\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "getEdgeStyle",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 135,
+                "startColumn": 3,
+                "endLineNumber": 135,
+                "endColumn": 3
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/types.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/types.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/types.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "eb4caa0e-2595-480e-b4fc-8caa037d0355"
+        },
+        {
+          "value": "**: A function to get the style of an edge.\n\n### Initializing Edges Array\n```typescript\nconst edges: TreeEdges[] = [];\n```\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "edges",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 23,
+                "startColumn": 9,
+                "endLineNumber": 23,
+                "endColumn": 9
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "a512a4a7-015b-46dc-9921-0b6f0a10103c"
+        },
+        {
+          "value": "**: An array to store the edges created during the recursion.\n\n### Processing Each Node\n```typescript\ntreeNodes.forEach((node) => {\n  if (\n    node.depth < 1 ||\n    !node.children ||\n    (layoutOptions?.groups?.length &&\n      node.group?.id !== DEFAULT_NODE_GROUP_ID)\n  ) {\n    return;\n  }\n```\n- **`node.depth < 1`**: Skip nodes with a depth less than 1.\n- **`!node.children`**: Skip nodes without children.\n- **`layoutOptions?.groups?.length && node.group?.id !== DEFAULT_NODE_GROUP_ID`**: Skip nodes that do not belong to the default group if groups are defined in the layout options.\n\n### Filtering First Row Children\n```typescript\nconst firstRowChildren = node.children.filter(\n  (child) =>\n    (!child.cluster || !isClusterNodeInSecondRow(child)) &&\n    (!layoutOptions?.groups?.length ||\n      child.group?.id === DEFAULT_NODE_GROUP_ID),\n);\n```\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "firstRowChildren",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 64,
+                "startColumn": 11,
+                "endLineNumber": 64,
+                "endColumn": 11
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "71e1850a-db76-441b-be4b-c89ef724fd36"
+        },
+        {
+          "value": "**: An array of children nodes that are in the first row and belong to the default group if groups are defined.\n\n### Creating Edges for Each Child\n```typescript\nfirstRowChildren.forEach((currentChild, i) => {\n  const previousNode = firstRowChildren[i - 1];\n  const nextNode = firstRowChildren[i + 1];\n  const isFirstChild = i === 0;\n  const isLastChild = i === firstRowChildren.length - 1;\n  const isDirectlyBelowParent = node.x === currentChild.x;\n  const isNodeActive = node.data.isActive;\n  const isCurrentChildActive = isNodeActive && currentChild.data.isActive;\n\n  const hasExtraSpacingBetweenSiblings =\n    (previousNode &&\n      previousNode.x + width + siblingSpacing < currentChild.x) ||\n    (nextNode && currentChild.x + width + siblingSpacing < nextNode.x);\n\n  const shouldCreateEdge =\n    isFirstChild ||\n    isLastChild ||\n    isDirectlyBelowParent ||\n    hasExtraSpacingBetweenSiblings;\n\n  if (shouldCreateEdge) {\n    if (isCurrentChildActive) {\n      edges.push(\n        createEdge({\n          source: node.id,\n          target: currentChild.id,\n          isActive: true,\n          getEdgeStyle,\n        }),\n      );\n    } else if (!hasExtraSpacingBetweenSiblings) {\n      const edgePosition = isDirectlyBelowParent\n        ? 'middle'\n        : isFirstChild\n        ? 'left'\n        : 'right';\n\n      const isActive = shouldEdgeBeActive(node, currentChild, edgePosition);\n\n      if (\n        !isDirectlyBelowParent ||\n        isActive ||\n        node.children?.filter(\n          (child) => child.group?.id === DEFAULT_NODE_GROUP_ID,\n        ).length === 1\n      ) {\n        edges.push(\n          createEdge({\n            source: node.id,\n            target: currentChild.id,\n            isActive,\n            getEdgeStyle,\n          }),\n        );\n      }\n    } else if (!isDirectlyBelowParent) {\n      edges.push(\n        createEdge({\n          source: node.id,\n          target: currentChild.id,\n          getEdgeStyle,\n        }),\n      );\n    }\n  }\n});\n```\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "shouldCreateEdge",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 86,
+                "startColumn": 13,
+                "endLineNumber": 86,
+                "endColumn": 13
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "3cf7cc1e-42a9-4285-a1c3-d0b151a34f52"
+        },
+        {
+          "value": "**: Determines if an edge should be created based on various conditions.\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "createEdge",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 238,
+                "startColumn": 10,
+                "endLineNumber": 238,
+                "endColumn": 10
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "5488ad51-4824-4dc3-8724-380dfd470966"
+        },
+        {
+          "value": "**: Creates an edge between the parent node and the current child node.\n\n### Recursively Processing Child Nodes\n```typescript\nedges.push(...mapEdgesRecursively(node.children, layoutOptions));\n```\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "mapEdgesRecursively",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 42,
+                "startColumn": 10,
+                "endLineNumber": 42,
+                "endColumn": 10
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "9d0253ad-da88-4b08-87e3-1288fcc0cc77"
+        },
+        {
+          "value": "**: Recursively processes the child nodes to create edges for their children.\n\n### Returning the Edges\n```typescript\nreturn edges;\n```\n- **",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "edges",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 23,
+                "startColumn": 9,
+                "endLineNumber": 23,
+                "endColumn": 9
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "bb1e96ec-4612-4638-8a30-f6d6d67e9c80"
+        },
+        {
+          "value": "**: Returns the array of edges created during the recursion.\n\nIn summary, the ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "mapEdgesRecursively",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 42,
+                "startColumn": 10,
+                "endLineNumber": 42,
+                "endColumn": 10
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "0eb5be6b-7639-4215-95dd-e80b9f6618a3"
+        },
+        {
+          "value": " function processes each node in the tree, creates edges between parent nodes and their child nodes based on specific conditions, and recursively processes the child nodes to create edges for their children.",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "responseId": "response_4fe71db6-59e1-4517-aba2-13a0f4bec8fb",
+      "isHidden": false,
+      "result": {
+        "timings": {
+          "firstProgress": 3392,
+          "totalElapsed": 22213
+        },
+        "metadata": {
+          "codeBlocks": [
+            {
+              "code": "function mapEdgesRecursively<T extends BaseData>(\n  treeNodes: TreeNode<T>[],\n  layoutOptions?: TreeLayoutOptions,\n): TreeEdges[] {\n",
+              "language": "typescript",
+              "markdownBeforeBlock": "The `mapEdgesRecursively` function is a TypeScript function that maps tree nodes to edges recursively. It processes each node in a tree structure and creates edges between parent nodes and their child nodes based on certain conditions. Here's a detailed explanation of how it works:\n\n### Function Signature\n"
+            },
+            {
+              "code": "const {\n  nodeSize: { width },\n  spacing: { sibling: siblingSpacing },\n  getEdgeStyle,\n} = { ...defaultTreeLayoutOptions, ...layoutOptions };\n",
+              "language": "typescript",
+              "markdownBeforeBlock": "- **`treeNodes`**: An array of tree nodes to be processed.\n- **`layoutOptions`**: Optional layout options that can influence the edge creation process.\n\n### Destructuring Layout Options\n"
+            },
+            {
+              "code": "const edges: TreeEdges[] = [];\n",
+              "language": "typescript",
+              "markdownBeforeBlock": "- **`nodeSize.width`**: The width of a node.\n- **`spacing.sibling`**: The spacing between sibling nodes.\n- **`getEdgeStyle`**: A function to get the style of an edge.\n\n### Initializing Edges Array\n"
+            },
+            {
+              "code": "treeNodes.forEach((node) => {\n  if (\n    node.depth < 1 ||\n    !node.children ||\n    (layoutOptions?.groups?.length &&\n      node.group?.id !== DEFAULT_NODE_GROUP_ID)\n  ) {\n    return;\n  }\n",
+              "language": "typescript",
+              "markdownBeforeBlock": "- **`edges`**: An array to store the edges created during the recursion.\n\n### Processing Each Node\n"
+            },
+            {
+              "code": "const firstRowChildren = node.children.filter(\n  (child) =>\n    (!child.cluster || !isClusterNodeInSecondRow(child)) &&\n    (!layoutOptions?.groups?.length ||\n      child.group?.id === DEFAULT_NODE_GROUP_ID),\n);\n",
+              "language": "typescript",
+              "markdownBeforeBlock": "- **`node.depth < 1`**: Skip nodes with a depth less than 1.\n- **`!node.children`**: Skip nodes without children.\n- **`layoutOptions?.groups?.length && node.group?.id !== DEFAULT_NODE_GROUP_ID`**: Skip nodes that do not belong to the default group if groups are defined in the layout options.\n\n### Filtering First Row Children\n"
+            },
+            {
+              "code": "firstRowChildren.forEach((currentChild, i) => {\n  const previousNode = firstRowChildren[i - 1];\n  const nextNode = firstRowChildren[i + 1];\n  const isFirstChild = i === 0;\n  const isLastChild = i === firstRowChildren.length - 1;\n  const isDirectlyBelowParent = node.x === currentChild.x;\n  const isNodeActive = node.data.isActive;\n  const isCurrentChildActive = isNodeActive && currentChild.data.isActive;\n\n  const hasExtraSpacingBetweenSiblings =\n    (previousNode &&\n      previousNode.x + width + siblingSpacing < currentChild.x) ||\n    (nextNode && currentChild.x + width + siblingSpacing < nextNode.x);\n\n  const shouldCreateEdge =\n    isFirstChild ||\n    isLastChild ||\n    isDirectlyBelowParent ||\n    hasExtraSpacingBetweenSiblings;\n\n  if (shouldCreateEdge) {\n    if (isCurrentChildActive) {\n      edges.push(\n        createEdge({\n          source: node.id,\n          target: currentChild.id,\n          isActive: true,\n          getEdgeStyle,\n        }),\n      );\n    } else if (!hasExtraSpacingBetweenSiblings) {\n      const edgePosition = isDirectlyBelowParent\n        ? 'middle'\n        : isFirstChild\n        ? 'left'\n        : 'right';\n\n      const isActive = shouldEdgeBeActive(node, currentChild, edgePosition);\n\n      if (\n        !isDirectlyBelowParent ||\n        isActive ||\n        node.children?.filter(\n          (child) => child.group?.id === DEFAULT_NODE_GROUP_ID,\n        ).length === 1\n      ) {\n        edges.push(\n          createEdge({\n            source: node.id,\n            target: currentChild.id,\n            isActive,\n            getEdgeStyle,\n          }),\n        );\n      }\n    } else if (!isDirectlyBelowParent) {\n      edges.push(\n        createEdge({\n          source: node.id,\n          target: currentChild.id,\n          getEdgeStyle,\n        }),\n      );\n    }\n  }\n});\n",
+              "language": "typescript",
+              "markdownBeforeBlock": "- **`firstRowChildren`**: An array of children nodes that are in the first row and belong to the default group if groups are defined.\n\n### Creating Edges for Each Child\n"
+            },
+            {
+              "code": "edges.push(...mapEdgesRecursively(node.children, layoutOptions));\n",
+              "language": "typescript",
+              "markdownBeforeBlock": "- **`shouldCreateEdge`**: Determines if an edge should be created based on various conditions.\n- **`createEdge`**: Creates an edge between the parent node and the current child node.\n\n### Recursively Processing Child Nodes\n"
+            },
+            {
+              "code": "return edges;\n",
+              "language": "typescript",
+              "markdownBeforeBlock": "- **`mapEdgesRecursively`**: Recursively processes the child nodes to create edges for their children.\n\n### Returning the Edges\n"
+            }
+          ],
+          "messages": [
+            {
+              "role": "user",
+              "content": "Explain the function mapEdgesRecursively"
+            },
+            {
+              "role": "assistant",
+              "content": "The `mapEdgesRecursively` function is a TypeScript function that maps tree nodes to edges recursively. It processes each node in a tree structure and creates edges between parent nodes and their child nodes based on certain conditions. Here's a detailed explanation of how it works:\n\n### Function Signature\n```typescript\nfunction mapEdgesRecursively<T extends BaseData>(\n  treeNodes: TreeNode<T>[],\n  layoutOptions?: TreeLayoutOptions,\n): TreeEdges[] {\n```\n- **`treeNodes`**: An array of tree nodes to be processed.\n- **`layoutOptions`**: Optional layout options that can influence the edge creation process.\n\n### Destructuring Layout Options\n```typescript\nconst {\n  nodeSize: { width },\n  spacing: { sibling: siblingSpacing },\n  getEdgeStyle,\n} = { ...defaultTreeLayoutOptions, ...layoutOptions };\n```\n- **`nodeSize.width`**: The width of a node.\n- **`spacing.sibling`**: The spacing between sibling nodes.\n- **`getEdgeStyle`**: A function to get the style of an edge.\n\n### Initializing Edges Array\n```typescript\nconst edges: TreeEdges[] = [];\n```\n- **`edges`**: An array to store the edges created during the recursion.\n\n### Processing Each Node\n```typescript\ntreeNodes.forEach((node) => {\n  if (\n    node.depth < 1 ||\n    !node.children ||\n    (layoutOptions?.groups?.length &&\n      node.group?.id !== DEFAULT_NODE_GROUP_ID)\n  ) {\n    return;\n  }\n```\n- **`node.depth < 1`**: Skip nodes with a depth less than 1.\n- **`!node.children`**: Skip nodes without children.\n- **`layoutOptions?.groups?.length && node.group?.id !== DEFAULT_NODE_GROUP_ID`**: Skip nodes that do not belong to the default group if groups are defined in the layout options.\n\n### Filtering First Row Children\n```typescript\nconst firstRowChildren = node.children.filter(\n  (child) =>\n    (!child.cluster || !isClusterNodeInSecondRow(child)) &&\n    (!layoutOptions?.groups?.length ||\n      child.group?.id === DEFAULT_NODE_GROUP_ID),\n);\n```\n- **`firstRowChildren`**: An array of children nodes that are in the first row and belong to the default group if groups are defined.\n\n### Creating Edges for Each Child\n```typescript\nfirstRowChildren.forEach((currentChild, i) => {\n  const previousNode = firstRowChildren[i - 1];\n  const nextNode = firstRowChildren[i + 1];\n  const isFirstChild = i === 0;\n  const isLastChild = i === firstRowChildren.length - 1;\n  const isDirectlyBelowParent = node.x === currentChild.x;\n  const isNodeActive = node.data.isActive;\n  const isCurrentChildActive = isNodeActive && currentChild.data.isActive;\n\n  const hasExtraSpacingBetweenSiblings =\n    (previousNode &&\n      previousNode.x + width + siblingSpacing < currentChild.x) ||\n    (nextNode && currentChild.x + width + siblingSpacing < nextNode.x);\n\n  const shouldCreateEdge =\n    isFirstChild ||\n    isLastChild ||\n    isDirectlyBelowParent ||\n    hasExtraSpacingBetweenSiblings;\n\n  if (shouldCreateEdge) {\n    if (isCurrentChildActive) {\n      edges.push(\n        createEdge({\n          source: node.id,\n          target: currentChild.id,\n          isActive: true,\n          getEdgeStyle,\n        }),\n      );\n    } else if (!hasExtraSpacingBetweenSiblings) {\n      const edgePosition = isDirectlyBelowParent\n        ? 'middle'\n        : isFirstChild\n        ? 'left'\n        : 'right';\n\n      const isActive = shouldEdgeBeActive(node, currentChild, edgePosition);\n\n      if (\n        !isDirectlyBelowParent ||\n        isActive ||\n        node.children?.filter(\n          (child) => child.group?.id === DEFAULT_NODE_GROUP_ID,\n        ).length === 1\n      ) {\n        edges.push(\n          createEdge({\n            source: node.id,\n            target: currentChild.id,\n            isActive,\n            getEdgeStyle,\n          }),\n        );\n      }\n    } else if (!isDirectlyBelowParent) {\n      edges.push(\n        createEdge({\n          source: node.id,\n          target: currentChild.id,\n          getEdgeStyle,\n        }),\n      );\n    }\n  }\n});\n```\n- **`shouldCreateEdge`**: Determines if an edge should be created based on various conditions.\n- **`createEdge`**: Creates an edge between the parent node and the current child node.\n\n### Recursively Processing Child Nodes\n```typescript\nedges.push(...mapEdgesRecursively(node.children, layoutOptions));\n```\n- **`mapEdgesRecursively`**: Recursively processes the child nodes to create edges for their children.\n\n### Returning the Edges\n```typescript\nreturn edges;\n```\n- **`edges`**: Returns the array of edges created during the recursion.\n\nIn summary, the `mapEdgesRecursively` function processes each node in the tree, creates edges between parent nodes and their child nodes based on specific conditions, and recursively processes the child nodes to create edges for their children."
+            }
+          ],
+          "toolCallResults": {},
+          "modelMessageId": "b482a7bb-4d17-44ab-a8c5-2846d94fc625",
+          "responseId": "a18458e3-1098-441e-9c07-d0f1c2cf690d",
+          "sessionId": "31f9a166-3345-4a0e-b622-413ebe2253bc",
+          "agentId": "github.copilot.default"
+        }
+      },
+      "followups": [
+        {
+          "kind": "reply",
+          "agentId": "github.copilot.default",
+          "message": "What are the edge creation conditions?"
+        }
+      ],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.default",
+        "description": "Ask Copilot",
+        "metadata": {
+          "themeIcon": {
+            "id": "copilot"
+          },
+          "hasFollowups": true,
+          "helpTextPrefix": "You can ask me general programming questions, or chat with the following participants which have specialized expertise and can perform actions:",
+          "helpTextVariablesPrefix": "You can also help me understand your question by using the following variables to give me extra context:",
+          "helpTextPostfix": {
+            "value": "To have a great conversation, ask me questions as if I was a real programmer:\n\n* **Show me the code** you want to talk about by having the files open and selecting the most important lines.\n* **Make refinements** by asking me follow-up questions, adding clarifications, providing errors, etc.\n* **Review my suggested code** and tell me about issues or improvements, so I can iterate on it.\n\nYou can also ask me questions about your editor selection by [starting an inline chat session](command:inlineChat.start).\n\nLearn more about [GitHub Copilot](https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted) in [Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview). Or explore the [Copilot walkthrough](command:github.copilot.open.walkthrough).",
+            "isTrusted": {
+              "enabledCommands": [
+                "inlineChat.start",
+                "github.copilot.open.walkthrough"
+              ]
+            },
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "uris": {
+              "command:inlineChat.start": {
+                "$mid": 1,
+                "path": "inlineChat.start",
+                "scheme": "command"
+              },
+              "https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted": {
+                "$mid": 1,
+                "path": "/copilot/using-github-copilot/getting-started-with-github-copilot",
+                "scheme": "https",
+                "authority": "docs.github.com",
+                "query": "tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted"
+              },
+              "https://code.visualstudio.com/docs/copilot/overview": {
+                "$mid": 1,
+                "path": "/docs/copilot/overview",
+                "scheme": "https",
+                "authority": "code.visualstudio.com"
+              },
+              "command:github.copilot.open.walkthrough": {
+                "$mid": 1,
+                "path": "github.copilot.open.walkthrough",
+                "scheme": "command"
+              }
+            }
+          },
+          "supportIssueReporting": false,
+          "supportsSlowVariables": true,
+          "requester": {
+            "name": "amadeo-manouchehri_pers0nio",
+            "icon": {
+              "$mid": 1,
+              "path": "/u/190103085",
+              "scheme": "https",
+              "authority": "avatars.githubusercontent.com",
+              "query": "v=4"
+            }
+          }
+        },
+        "name": "GitHubCopilot",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "slashCommands": [],
+        "disambiguation": [
+          {
+            "category": "generate_code_sample",
+            "description": "The user wants to generate code snippets without referencing the contents of the current workspace. This category does not include generating entire projects.",
+            "examples": [
+              "Write an example of computing a SHA256 hash."
+            ]
+          },
+          {
+            "category": "add_feature_to_file",
+            "description": "The user wants to change code in a file that is provided in their request, without referencing the contents of the current workspace. This category does not include generating entire projects.",
+            "examples": [
+              "Add a refresh button to the table widget."
+            ]
+          },
+          {
+            "category": "question_about_specific_files",
+            "description": "The user has a question about a specific file or code snippet that they have provided as part of their query, and the question does not require additional workspace context to answer.",
+            "examples": [
+              "What does this file do?"
+            ]
+          }
+        ]
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+            "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timestamp": 1740515594971
+    }
+  ],
+  "sessionId": "6e34f46f-7a49-418a-b78b-796f6e25cd73",
+  "creationDate": 1740515587586,
+  "isImported": false,
+  "lastMessageDate": 1740515594971,
+  "customTitle": "Explaining the mapEdgesRecursively function"
+}

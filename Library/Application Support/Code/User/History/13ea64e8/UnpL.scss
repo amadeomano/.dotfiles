@@ -1,0 +1,5 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.emptyStateWrapper {
+  padding: tokens.$spacing-section-medium 0;
+}

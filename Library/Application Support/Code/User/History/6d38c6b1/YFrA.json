@@ -1,0 +1,18 @@
+{
+  "name": "@personio-web/employees-organizations-hook-use-query-param-state",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@personio-web/eo-commons-org-chart-link": "workspace:*"
+  },
+  "devDependencies": {
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/design-system-tokens": "workspace:*",
+    "@personio-web/playwright-test": "workspace:*",
+    "@types/personio-web__design-system-component-form-field": "workspace:*",
+    "@types/personio-web__design-system-component-segmented-control": "workspace:*",
+    "@types/personio-web__design-system-component-switch": "workspace:*"
+  }
+}

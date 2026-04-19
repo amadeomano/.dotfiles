@@ -1,0 +1,134 @@
+import { useMemo } from 'react';
+import {
+  type DefaultOperatorName,
+  formatQuery,
+  type RuleType,
+} from 'react-querybuilder';
+
+import { type ColumnFilter } from 'designSystem/component/advanced-filter';
+import { useFilterOrgUnitsByEmployees } from '@personio-web/employees-organizations-gofer';
+import { PersonSystemAttribute } from '@personio-web/employees-organizations-util-people';
+
+import { useOrgChartPreferencesContext } from '../../../../contexts/useOrgChartPreferences';
+import { type OrgChartFilter } from '../../../../types';
+import { type Source } from '../../../preferences/types';
+
+export const useGetFilterConditions = (enabled: boolean) => {
+  const prefs = useOrgChartPreferencesContext();
+
+  const directFilters: ColumnFilter[] = [];
+  const indirectFilters: ColumnFilter[] = [];
+
+  prefs.filters.forEach((filter) => {
+    if (
+      filter.id === PersonSystemAttribute.Department ||
+      filter.id === PersonSystemAttribute.Team
+    ) {
+      directFilters.push(filter);
+    } else {
+      indirectFilters.push(filter);
+    }
+  });
+
+  const filterExp = mapFilterQuery(enabled, indirectFilters) ?? '';
+  const orgUnitsByEmployee = useFilterOrgUnitsByEmployees({
+    variables: { filterExp, includeDepartment: true, includeTeam: true },
+    queryOptions: { enabled: enabled && !!filterExp },
+  });
+
+  const legacyIds = useMemo(
+    () => [
+      ...new Set(
+        orgUnitsByEmployee.data?.data?.result?.employmentsList
+          .map((emp) => {
+            if (prefs.source === 'Department')
+              return emp.department?.legacyId?.id;
+            else if (prefs.source === 'Team') return emp.team?.legacyId?.id;
+          })
+          .filter((id) => id !== undefined && id !== null) ?? [],
+      ),
+    ],
+    [prefs.filters, orgUnitsByEmployee.status],
+  );
+
+  const conditions = useMemo(
+    () =>
+      mapFilterQuery(
+        enabled,
+        directFilters,
+        [
+          {
+            id: 'legacy_id',
+            value: { condition: 'contains', value: legacyIds },
+          },
+        ],
+        prefs.source,
+      ),
+    [prefs.filters, legacyIds],
+  );
+
+  return conditions;
+};
+
+const supportedFilterConditions = ['contains', 'does_not_contain'];
+const conditionToOperatorMap: Record<string, DefaultOperatorName> = {
+  contains: 'in',
+  does_not_contain: 'notIn',
+};
+const attributeFilterName: Record<string, string> = {
+  [PersonSystemAttribute.Department]: 'legacy_id',
+  [PersonSystemAttribute.Team]: 'legacy_id',
+  [PersonSystemAttribute.Office]: 'workplace_id',
+  [PersonSystemAttribute.LegalEntity]: 'legal_entity_id',
+};
+
+function isValidFilter(
+  filter: ColumnFilter | OrgChartFilter,
+): filter is OrgChartFilter {
+  if (!supportedFilterConditions.includes(String(filter.value.condition))) {
+    console.error(
+      `Filter condition ${filter.value.condition} is not currently supported`,
+    );
+    return false;
+  }
+
+  if (
+    filter.value.value !== undefined &&
+    (!Array.isArray(filter.value.value) ||
+      filter.value.value.length === 0 ||
+      filter.value.value.some((item) => typeof item !== 'string'))
+  ) {
+    console.error(
+      `Filter value ${JSON.stringify(
+        filter.value.value,
+      )} is not currently supported`,
+    );
+    return false;
+  }
+
+  return true;
+}
+
+function mapFilterQuery(
+  enabled = false,
+  filters: ColumnFilter[] = [],
+  extraRules: ColumnFilter[] = [],
+  source?: Source,
+): string | undefined {
+  if (!enabled) return undefined;
+  const rules: RuleType[] = [];
+
+  [...filters, ...extraRules].forEach((filter) => {
+    if (!isValidFilter(filter)) return;
+
+    rules.push({
+      field: attributeFilterName[filter.id] ?? filter.id,
+      operator: conditionToOperatorMap[filter.value.condition],
+      value: filter.value.value,
+    });
+  });
+
+  if (rules.length === 0) return undefined;
+  if (source) rules.push({ field: 'type', operator: '=', value: source });
+  return formatQuery({ combinator: 'and', rules }, { format: 'cel' });
+}

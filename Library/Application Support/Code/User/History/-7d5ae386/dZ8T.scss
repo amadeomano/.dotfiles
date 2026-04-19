@@ -1,0 +1,13 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.labels {
+  // name
+  & > span:nth-child(1) {
+    font-size: tokens.$typography-text-small-font-size;
+    font-weight: tokens.$font-weights-medium;
+  }
+
+  // position
+  & > span:nth-child(2) {
+  }
+}

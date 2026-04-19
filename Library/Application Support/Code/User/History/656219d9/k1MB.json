@@ -1,0 +1,15 @@
+{
+  "name": "@personio-web/employees-organizations-util-people",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@personio-web/eo-commons-org-chart-link": "workspace:*"
+  },
+  "devDependencies": {
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/playwright-test": "workspace:*",
+    "@types/personio-web__design-system-component-icon": "workspace:*"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "@personio-web/payroll-view-a3-settings",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@personio-web/design-system-tokens": "workspace:*",
+    "@personio-web/global-constants": "workspace:*",
+    "@personio-web/payroll-integrations-commons-test": "workspace:*",
+    "@personio-web/payroll-data-payroll-integration-oauth": "workspace:*",
+    "@personio-web/payroll-data-payroll-integration-settings": "workspace:*",
+    "@personio-web/payroll-data-payroll-integration-context": "workspace:*",
+    "@personio-web/payroll-component-inline-banner": "workspace:*",
+    "@personio-web/payroll-component-settings-field": "workspace:*",
+    "@personio-web/payroll-component-controlled-select": "workspace:*",
+    "@personio-web/payroll-component-skeleton": "workspace:*",
+    "@personio-web/payroll-component-error-boundary": "workspace:*",
+    "@personio-web/i18n": "workspace:*",
+    "@personio-web/payroll-util-navigation": "workspace:*"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@personio-web/mocks": "workspace:*",
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/payroll-integrations-commons-test": "workspace:*",
+    "@types/personio-web__design-system-component-button": "workspace:*",
+    "@types/personio-web__design-system-component-icon": "workspace:*",
+    "@types/personio-web__design-system-component-avatar": "workspace:*",
+    "@types/personio-web__design-system-component-layout": "workspace:*",
+    "@types/personio-web__design-system-component-tooltip": "workspace:*",
+    "@types/personio-web__payroll-view-a3-settings": "workspace:*"
+  }
+}

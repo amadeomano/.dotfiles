@@ -1,0 +1,29 @@
+{
+  "name": "eo-commons-org-chart-link",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/eo-commons/org-chart-link/src",
+  "projectType": "library",
+  "tags": ["scope:eo", "type:lib"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/eo-commons/org-chart-link/jest.config.ts"
+      }
+    },
+    "ampli-pull": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ampli pull",
+        "cwd": "libs/eo-commons/org-chart-link"
+      }
+    },
+    "test-coverage-update": {},
+    "fetch-flags": {}
+  }
+}

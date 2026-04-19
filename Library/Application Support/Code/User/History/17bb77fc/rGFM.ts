@@ -1,0 +1,88 @@
+import { useRouter, type NextRouter } from 'next/router';
+import { useCallback, useEffect } from 'react';
+import { type PayrollHubTabDefinition } from '../../../components/PayrollHubLayout/components/HubHeader/HubHeader';
+import { DocumentsTab } from '../tabs/DocumentsTab/DocumentsTab';
+import { ManageTab } from '../tabs/ManageTab/ManageTab';
+import { PayrollRunTab } from '../tabs/PayrollRunTab/PayrollRunTab';
+import { PayRunsTab } from '../tabs/PayRunsTab/PayRunsTab';
+import { ProcessTab } from '../tabs/ProcessTab/ProcessTab';
+import { type TabDef } from '../components/temp-layout/TabBar';
+
+type GenericTabDef<T> = TabDef & { route: T };
+type TabName = keyof typeof tabs;
+type NavigateTo = (to: TabName) => void;
+type UseTabNavigatorReturn = {
+  currentTab?: TabName;
+  navigateTo: NavigateTo;
+  TabComponent: () => JSX.Element;
+};
+
+const LANDING_TAB: TabName = 'payruns';
+
+type Tabs = { [Key in string]: GenericTabDef<Key> };
+const tabs: Tabs = {
+  payruns: {
+    route: 'payruns',
+    href: '/payroll/payruns',
+    label: () => 'Payroll Runs',
+    text: 'Hey',
+  },
+  personal: {
+    route: 'personal',
+    href: '/payroll/personal',
+    label: () => 'Payments',
+    component: PayrollRunTab,
+  },
+  process: {
+    route: 'process',
+    href: '/payroll/process',
+    label: () => 'Process',
+    component: ProcessTab,
+  },
+  documents: {
+    route: 'documents',
+    href: '/payroll/documents',
+    label: () => 'Documents',
+    component: DocumentsTab,
+  },
+  manage: {
+    route: 'manage',
+    href: '/payroll/manage',
+    label: () => 'Manage',
+    component: ManageTab,
+  },
+};
+export const tabsDefinition: PayrollHubTabDefinition<'payroll'>[] =
+  Object.values(tabs);
+
+const getTabName = (source: string | undefined): TabName | undefined => {
+  if (!source) return undefined;
+  return source in tabs ? (source as TabName) : undefined;
+};
+
+const navigate =
+  (router: NextRouter): NavigateTo =>
+  (to) =>
+    router.replace({ query: { ...router.query, slug: [to] } });
+
+export const useTabNavigator = (): UseTabNavigatorReturn => {
+  const router = useRouter();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const navigateTo = useCallback(navigate(router), [router.query]);
+  const currentTab = getTabName(router.query.slug?.[0]);
+
+  useEffect(() => {
+    if (!currentTab) navigateTo(LANDING_TAB);
+  }, [currentTab, navigateTo]);
+
+  const TabComponent =
+    currentTab && tabs[currentTab]
+      ? tabs[currentTab].component
+      : tabs[LANDING_TAB].component;
+
+  return {
+    currentTab,
+    navigateTo,
+    TabComponent,
+  };
+};

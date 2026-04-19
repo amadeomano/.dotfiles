@@ -1,0 +1,22 @@
+{
+  "name": "payroll-data-gofer",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "tags": ["product-area:payroll", "scope:private", "module-type:data"],
+  "targets": {
+    "static": {},
+    "lint": {},
+    "test": {},
+    "type-check": {},
+    "codegen-graphql": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx graphql-codegen",
+        "cwd": "product-areas/payroll/data/gofer"
+      }
+    },
+    "sonar": {
+      "executor": "@personio-web/nx-plugin:sonar"
+    }
+  }
+}

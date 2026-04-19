@@ -1,0 +1,6 @@
+Release Version: 1.9.1
+Build Version: 1.9.1.249
+Build Time: 2024-10-31 08:14:05Z
+Branch: release
+Commit SHA:
+web/extension: 0c2fddf81e1799f5d2d23dcf9b518e26e6ad82e5

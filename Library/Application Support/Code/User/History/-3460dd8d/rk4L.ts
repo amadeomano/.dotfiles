@@ -1,0 +1,1 @@
+import { useTabNavigator } from './useTabsNavigator';

@@ -1,0 +1,40 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.leadsListContainer {
+  display: flex;
+  align-items: flex-start;
+  margin: tokens.$spacing-gap-large tokens.$primitive-spacing-2 0 !important;
+}
+
+.leadsList {
+  width: 100%;
+  border-radius: tokens.$radius-large;
+  background-color: tokens.$colors-static-bg-accent;
+}
+
+.leadItem {
+  padding: tokens.$spacing-gap-small tokens.$spacing-gap-medium !important;
+  margin: 0 !important;
+  &::before {
+    background-color: inherit !important;
+  }
+  &:first-of-type {
+    padding-top: tokens.$spacing-gap-medium !important;
+  }
+  &:last-of-type {
+    padding-bottom: tokens.$spacing-gap-medium !important;
+  }
+}
+
+.labels {
+  // name
+  & > span:nth-child(1) {
+    @include tokens.typography-meta;
+    font-weight: tokens.$font-weights-medium;
+  }
+
+  // position
+  & > span:nth-child(2) {
+    @include tokens.typography-meta;
+  }
+}

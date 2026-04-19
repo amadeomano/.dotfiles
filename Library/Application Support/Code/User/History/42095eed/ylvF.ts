@@ -1,0 +1,25 @@
+import type { UseHierarchicalDataReturnType } from '@personio-web/employees-organizations-hook-use-hierarchical-data';
+
+import { type TreeLayoutModes } from '../TreeLayout/types';
+import { type EntityNode } from '../types';
+
+export type OrgChartTreeProps = {
+  interactive?: boolean;
+  groups?: Record<string, string>;
+  mode?: TreeLayoutModes;
+  includedRootIds?: string[];
+  hiddenPeopleCount?: number;
+  includeOpenPositions?: boolean;
+  additionalSupervisorAttributes?: Record<string, string>;
+  isFiltering: boolean;
+};
+
+export type FocusOptions = {
+  includeDirectAncestors?: boolean;
+  animate?: boolean;
+};
+
+export type FitNodesOptions = FocusOptions & {
+  waitForUpdatedPosition?: boolean;
+  allowZoomIn?: boolean;
+};

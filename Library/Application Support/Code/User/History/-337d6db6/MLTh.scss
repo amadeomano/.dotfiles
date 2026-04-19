@@ -1,0 +1,21 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.description {
+  margin: tokens.$primitive-spacing-4 0;
+}
+
+.closingDatePicker {
+  margin-bottom: tokens.$primitive-spacing-4;
+}
+
+.confirmationCheckbox label span {
+  white-space: unset !important;
+}
+
+.link {
+  // border-bottom: 1px solid tokens.$colors-static-fg-warning-secondary;
+}
+
+.warningMessage {
+  margin-bottom: tokens.$primitive-spacing-4;
+}

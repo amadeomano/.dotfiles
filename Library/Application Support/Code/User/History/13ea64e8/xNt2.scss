@@ -1,0 +1,8 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.addGroupButton {
+}
+
+.emptyStateWrapper {
+  padding: tokens.$spacing-section-huge 0;
+}

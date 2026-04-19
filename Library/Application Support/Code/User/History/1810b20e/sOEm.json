@@ -1,0 +1,13 @@
+{
+  "name": "payroll-utils-navigation",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "tags": ["product-area:payroll", "scope:private", "module-type:util"],
+  "targets": {
+    "static": {},
+    "lint": {},
+    "test": {},
+    "type-check": {},
+    "fui": {}
+  }
+}

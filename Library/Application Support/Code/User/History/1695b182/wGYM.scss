@@ -1,0 +1,23 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.triggerWrapper {
+  height: 40px;
+  border-radius: 10px;
+  padding: tokens.$spacing-gap-small;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 0 1px rgba(0, 0, 0, 0.01),
+    0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  background: tokens.$color-base;
+
+  .trigger > div {
+    gap: tokens.$spacing-gap-large;
+  }
+}
+
+.tooltip {
+  text-align: center;
+}
+
+.redesignedTriggerWrapper {
+  box-shadow: unset;
+  background: unset;
+}

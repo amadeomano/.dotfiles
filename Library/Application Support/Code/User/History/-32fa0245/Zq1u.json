@@ -1,0 +1,27 @@
+{
+  "name": "@personio-web/design-system-feature-smart-hover-card",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/orchestrator-common": "workspace:^",
+    "@personio-web/playwright-test": "workspace:*",
+    "@types/personio-web__design-system-feature-smart-hover-card": "workspace:*",
+    "@types/personio-web__design-system-data-person-details": "workspace:*"
+  },
+  "dependencies": {
+    "@personio-web/auth-context": "workspace:^",
+    "@personio-web/design-system-component-hover-card": "workspace:^",
+    "@personio-web/design-system-component-icon": "workspace:^",
+    "@personio-web/design-system-component-token": "workspace:^",
+    "@personio-web/design-system-gofer": "workspace:*",
+    "@personio-web/design-system-utils": "workspace:^",
+    "@personio-web/global-constants": "workspace:^",
+    "@personio-web/i18n": "workspace:^",
+    "@personio-web/design-system-data-person-details": "workspace:*",
+    "@personio-web/design-system-component-calendar": "workspace:*",
+    "@personio-web/eo-commons-org-chart-link": "workspace:*"
+  }
+}

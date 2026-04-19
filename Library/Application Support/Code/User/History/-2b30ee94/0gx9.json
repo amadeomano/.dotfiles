@@ -1,0 +1,43 @@
+{
+  "name": "@personio-web/employees-organizations-feature-employee-header",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@personio-web/auth-context": "workspace:*",
+    "@personio-web/design-system-tokens": "workspace:*",
+    "@personio-web/orchestrator-common": "workspace:*",
+    "@personio-web/employees-organizations-data-employee-header": "workspace:*",
+    "@personio-web/employees-organizations-data-gofer": "workspace:^",
+    "@personio-web/employees-organizations-gofer": "workspace:^",
+    "@personio-web/ds-candidate-skeleton": "workspace:*",
+    "@personio-web/eo-commons-org-chart-link": "workspace:*",
+    "@personio-web/i18n": "workspace:*",
+    "@personio-web/employees-organizations-util-dialogs": "workspace:*",
+    "@personio-web/employees-organizations-feature-schedule-employee-leave-dialog": "workspace:*",
+    "@personio-web/employees-organizations-feature-terminate-employment-dialog": "workspace:*",
+    "@personio-web/employees-organizations-hook-use-employee-id": "workspace:*",
+    "@personio-web/employees-organizations-hook-use-employee-events": "workspace:*"
+  },
+  "devDependencies": {
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/employees-organizations-mocks-gofer": "workspace:*",
+    "@personio-web/playwright-test": "workspace:*",
+    "@types/personio-web__design-system-component-avatar": "workspace:*",
+    "@types/personio-web__design-system-component-breadcrumb": "workspace:*",
+    "@types/personio-web__design-system-component-enum": "workspace:*",
+    "@types/personio-web__design-system-component-icon": "workspace:*",
+    "@types/personio-web__design-system-component-layout": "workspace:*",
+    "@types/personio-web__design-system-component-token": "workspace:*",
+    "@types/personio-web__design-system-component-link": "workspace:*",
+    "@types/personio-web__design-system-component-toaster": "workspace:*",
+    "@types/personio-web__design-system-component-button": "workspace:*",
+    "@types/personio-web__design-system-component-profile-image-uploader": "workspace:*",
+    "@types/personio-web__design-system-data-gofer": "workspace:*",
+    "@types/personio-web__design-system-feature-smart-hover-card": "workspace:*",
+    "@types/personio-web__employees-organizations-feature-employee-header": "workspace:*",
+    "@types/personio-web__internal-feature-kudos-dialog": "workspace:*",
+    "@personio-web/translations": "workspace:*"
+  }
+}

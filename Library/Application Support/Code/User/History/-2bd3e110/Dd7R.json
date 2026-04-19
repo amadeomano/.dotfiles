@@ -1,0 +1,27 @@
+{
+  "name": "@personio-web/payroll-feature-integration-people-table",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@personio-web/design-system-tokens": "workspace:*",
+    "@personio-web/i18n": "workspace:*",
+    "@personio-web/payroll-data-payroll-integration-hub": "workspace:*",
+    "@personio-web/payroll-data-payroll-integration-context": "workspace:*",
+    "@personio-web/payroll-hook-use-payroll-integration-navigator": "workspace:*",
+    "@personio-web/payroll-util-navigation": "workspace:*"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/payroll-mocks-payroll-integration-hub": "workspace:*",
+    "@types/personio-web__payroll-data-payroll-integration-hub": "workspace:*",
+    "@types/personio-web__payroll-data-payroll-integration-context": "workspace:*",
+    "@types/personio-web__payroll-feature-integration-people-table": "workspace:*",
+    "@types/personio-web__design-system-component-table": "workspace:*",
+    "@types/personio-web__design-system-component-icon": "workspace:*",
+    "@personio-web/payroll-util-common": "workspace:*",
+    "@personio-web/payroll-util-navigation": "workspace:*"
+  }
+}

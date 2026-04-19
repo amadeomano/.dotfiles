@@ -1,0 +1,38 @@
+{
+  "name": "employees-organizations-feature-org-chart",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "tags": [
+    "product-area:employees-organizations",
+    "scope:private",
+    "module-type:feature"
+  ],
+  "targets": {
+    "static": {},
+    "lint": {},
+    "test": {},
+    "type-check": {},
+    "fui": {},
+    "fetch-translations": {
+      "executor": "@personio-web/nx-translations:generate",
+      "options": {
+        "namespaces": [
+          "employees-organizations",
+          "models",
+          "personio-payroll",
+          "employee-picker",
+          "org-units"
+        ]
+      }
+    },
+    "sonar": {},
+    "fetch-flags": {},
+    "verify-catalog": {},
+    "synthetic-tests": {
+      "executor": "@personio-web/nx-plugin:synthetic-tests",
+      "options": {
+        "testIds": ["rwi-dry-7im", "jmt-6x5-t6z", "5re-79n-zde"]
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.infoHero {
+  padding-top: tokens.$spacing-3pt5;
+  padding-inline: tokens.$spacing-3pt5;
+  overflow: hidden;
+
+  .avatar {
+    height: tokens.$spacing-section-lhuge;
+    width: tokens.$spacing-section-mhuge;
+  }
+}

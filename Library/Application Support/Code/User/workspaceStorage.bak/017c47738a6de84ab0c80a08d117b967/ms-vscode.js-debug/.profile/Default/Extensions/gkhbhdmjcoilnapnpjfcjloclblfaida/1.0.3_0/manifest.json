@@ -1,0 +1,18 @@
+{
+   "background": {
+      "service_worker": "background.js"
+   },
+   "description": "Go to your urls faster by typing go ...",
+   "icons": {
+      "48": "icons/go-links-48.png",
+      "96": "icons/go-links-96.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArrJOi99ex/eTNr8v/M6Mhy3kW/XILr/WxDzCz6k5iLWfGLGuEmXiFo1S5AwHowuhrVgVXVjixlo5I0CGtt+1ozxyyxXP8EHnovAaQQMyz2HcdszV1TB12tiQBZNYaehGUO8CmcD6SEoLu8aeZP+UUEZUt54uE9f63Oks2FOldFK+2iWkCssyIomyIKDRCa1YHK3ZuB03pDrjDrFbDYoCASiM3p8ENLt/J4xzo/ub0mxpmnIugPhX60CMzuILtCR5B36yxBr6G0pEUwlhyy/UDB/6UdtDaGYKn3+DJSPWc/eUZuWBMne70lsaM48pcC9ofNrMIcdQwly8LELQlmBbpwIDAQAB",
+   "manifest_version": 3,
+   "name": "Go-Links",
+   "omnibox": {
+      "keyword": "go"
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.3"
+}

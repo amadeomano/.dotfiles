@@ -1,0 +1,156 @@
+@use '@personio-web/design-system-tokens' as tokens;
+@use './constants.module' as constants;
+
+$default-box-shadow-hover: 0px 2px 12px 0px tokens.$colors-utility-shadow-accent,
+  0px 4px 12px 0px rgba(0, 0, 0, 0.05);
+$default-box-shadow-focus-border: 0 0 0 2px tokens.$color-focus;
+
+$active-box-shadow: $default-box-shadow-hover;
+$active-box-shadow-border: 0 0 0 2px tokens.$color-solid-accent-alpha;
+$active-box-shadow-hover: $default-box-shadow-hover;
+$active-box-shadow-focus-border: 0 0 0 2px tokens.$color-solid-accent-alpha;
+
+@mixin card-states {
+  &.expandable {
+    cursor: pointer;
+  }
+
+  &:hover {
+    box-shadow: $default-box-shadow-hover;
+  }
+
+  &:focus-visible,
+  &:focus-within {
+    outline: none;
+    box-shadow: $default-box-shadow-hover, $default-box-shadow-focus-border;
+  }
+
+  &:active {
+    box-shadow: $default-box-shadow-hover, $default-box-shadow-focus-border;
+  }
+
+  &.inaccessible {
+    box-shadow: constants.$default-box-shadow, 0 0 0 1px tokens.$color-border;
+  }
+
+  &.isActive {
+    box-shadow: $active-box-shadow-border;
+
+    &:focus-visible,
+    &:focus-within {
+      box-shadow: $active-box-shadow-focus-border, $active-box-shadow-hover,
+        $active-box-shadow;
+    }
+
+    &:hover {
+      box-shadow: $active-box-shadow-border, $active-box-shadow-hover,
+        $active-box-shadow;
+    }
+
+    &:active {
+      box-shadow: $active-box-shadow-focus-border, $active-box-shadow-hover,
+        $active-box-shadow;
+    }
+  }
+
+  &.isFocused {
+    box-shadow: $active-box-shadow-border, $default-box-shadow-hover,
+      $active-box-shadow;
+
+    &:focus-visible,
+    &:focus-within {
+      box-shadow: $active-box-shadow-focus-border, $active-box-shadow-hover,
+        $active-box-shadow, $active-box-shadow;
+    }
+
+    &:hover {
+      box-shadow: $active-box-shadow-border, $active-box-shadow-hover,
+        $active-box-shadow, $active-box-shadow;
+    }
+
+    &:active {
+      box-shadow: $active-box-shadow-focus-border, $active-box-shadow-hover,
+        $active-box-shadow, $active-box-shadow;
+    }
+  }
+}
+
+@mixin colors($background-color-tone: 2) {
+  &.amber,
+  &.warning {
+    color: tokens.$color-amber-10;
+    background-color: var(--ds-color-amber-#{$background-color-tone});
+  }
+
+  &.blue {
+    color: tokens.$color-blue-10;
+    background-color: var(--ds-color-blue-#{$background-color-tone});
+  }
+
+  &.emerald {
+    color: tokens.$color-emerald-10;
+    background-color: var(--ds-color-emerald-#{$background-color-tone});
+  }
+
+  &.gray {
+    opacity: 0.6;
+    color: tokens.$color-gray-10;
+  }
+
+  &.green,
+  &.positive {
+    color: tokens.$color-green-10;
+    background-color: var(--ds-color-green-#{$background-color-tone});
+  }
+
+  &.indigo {
+    color: tokens.$color-indigo-10;
+    background-color: var(--ds-color-indigo-#{$background-color-tone});
+  }
+
+  &.lime {
+    color: tokens.$color-lime-10;
+    background-color: var(--ds-color-lime-#{$background-color-tone});
+  }
+
+  &.orange {
+    color: tokens.$color-orange-9;
+    background-color: var(--ds-color-orange-#{$background-color-tone});
+  }
+
+  &.pink {
+    color: tokens.$color-pink-10;
+    background-color: var(--ds-color-pink-#{$background-color-tone});
+  }
+
+  &.purple {
+    color: tokens.$color-purple-10;
+    background-color: var(--ds-color-purple-#{$background-color-tone});
+  }
+
+  &.red,
+  &.negative {
+    color: tokens.$color-red-10;
+    background-color: var(--ds-color-red-#{$background-color-tone});
+  }
+
+  &.sky {
+    color: tokens.$color-sky-10;
+    background-color: var(--ds-color-sky-#{$background-color-tone});
+  }
+
+  &.teal {
+    color: tokens.$color-teal-10;
+    background-color: var(--ds-color-teal-#{$background-color-tone});
+  }
+
+  &.violet {
+    color: tokens.$color-violet-10;
+    background-color: var(--ds-color-violet-#{$background-color-tone});
+  }
+
+  &.yellow {
+    color: tokens.$color-yellow-8;
+    background-color: var(--ds-color-yellow-#{$background-color-tone});
+  }
+}

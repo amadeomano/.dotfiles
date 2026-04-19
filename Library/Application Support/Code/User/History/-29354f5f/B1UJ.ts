@@ -1,0 +1,115 @@
+import { useMemo } from 'react';
+import {
+  type UsePersonCompleteHierarchyQuery,
+  type EntityNode,
+} from '@personio-web/employees-organizations-feature-org-chart';
+import { useHierarchicalData } from '@personio-web/employees-organizations-hook-use-hierarchical-data';
+import { useListOrgUnitsHierarchy } from '@personio-web/employees-organizations-gofer';
+import { type ListOrgUnitsHierarchyQueryResult } from '@personio-web/employees-organizations-gofer';
+
+import { NodeMap } from '../../../Nodes/constants';
+import { type Source } from '../../preferences/types';
+import { useOrgChartPreferencesContext } from '../../../contexts';
+
+const orgUnitFilter: Record<Source, string> = {
+  Supervisor: '',
+  Department: 'type == department',
+  Team: 'type == team',
+};
+
+export const useCompleteHierarchy: UsePersonCompleteHierarchyQuery = (vars) => {
+  const prefs = useOrgChartPreferencesContext();
+
+  const filter = orgUnitFilter[prefs.source] ?? '';
+  const orgUnitsHierarchyData = useListOrgUnitsHierarchy({
+    queryOptions: { enabled: vars?.enabled },
+    variables: { filter },
+  });
+
+  const [relationships, rootIds] = useMemo(
+    () => getFlattenedHierarchy(orgUnitsHierarchyData.data?.data),
+    [orgUnitsHierarchyData.data?.data],
+  );
+
+  const hierarchy = useHierarchicalData<OrgUnitEntityNode>({
+    data: relationships,
+  });
+
+  // For a node to be included it must have:
+  // 1. at least one direct member
+  // 2. or it is an ancestor of a node that has at least one direct member
+  const [finalNodes, hiddenIds] = useMemo(() => {
+    const whiteListedNodes = new Set<OrgUnitEntityNode>();
+    const hiddenNodeIds: string[] = [];
+    hierarchy.nodes.forEach((node) => {
+      if (!node.data.directMemberCount) {
+        hiddenNodeIds.push(node.data.id);
+        return;
+      }
+      whiteListedNodes.add(node.data);
+      node.ancestors.forEach((ancestor) => whiteListedNodes.add(ancestor.data));
+    });
+    return [[...whiteListedNodes.values()], hiddenNodeIds];
+  }, [hierarchy]);
+
+  const finalHierarchy = useHierarchicalData<EntityNode>({
+    data: finalNodes,
+  });
+
+  const leadsCount = useMemo(
+    () =>
+      orgUnitsHierarchyData.data?.data?.orgUnits?.orgUnitsList.reduce(
+        (acc, orgUnit) => Math.max(acc, orgUnit.orgUnitLeadsList.length),
+        0,
+      ),
+    [orgUnitsHierarchyData.data?.data],
+  );
+
+  return {
+    data: {
+      source: (prefs.source === 'Department' ? 'Department' : 'Team') as
+        | 'Department'
+        | 'Team',
+      hierarchy: finalHierarchy,
+      includedRootIds: rootIds,
+      hiddenRootIds: hiddenIds,
+      leadsCount,
+    },
+    isLoading: orgUnitsHierarchyData.isLoading,
+    error: orgUnitsHierarchyData.error,
+    refetch: orgUnitsHierarchyData.refetch,
+  };
+};
+
+export type OrgUnitEntityNode = EntityNode & { directMemberCount: number };
+const getFlattenedHierarchy = (
+  orgUnitHierarchy?: ListOrgUnitsHierarchyQueryResult,
+): [OrgUnitEntityNode[], string[]] => {
+  const rootItems: OrgUnitEntityNode[] = [];
+  const leafItems: OrgUnitEntityNode[] = [];
+
+  if (!orgUnitHierarchy?.orgUnits?.orgUnitsList) {
+    return [[], []];
+  }
+
+  const orgUnits = orgUnitHierarchy?.orgUnits?.orgUnitsList;
+
+  orgUnits?.forEach((orgUnit) => {
+    if (!orgUnit.id.id) return;
+
+    const node: OrgUnitEntityNode = {
+      id: orgUnit.id.id,
+      directMemberCount: orgUnit.directMemberCount ?? 0,
+      parent_id: orgUnit.parentId?.id ?? null,
+      entity_id: orgUnit.id.id,
+      type: NodeMap.OrgUnit,
+    };
+
+    if (orgUnit.parentId === null) rootItems.push(node);
+    else leafItems.push(node);
+  });
+
+  const rootIds = rootItems.map((item) => item.id);
+
+  return [[...rootItems, ...leafItems], [...rootIds]];
+};

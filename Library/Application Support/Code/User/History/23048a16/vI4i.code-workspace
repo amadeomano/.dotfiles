@@ -1,0 +1,122 @@
+{
+  "folders": [
+    {
+      "name": "[App] Orchestrator",
+      "path": "apps/orchestrator"
+    },
+    {
+      "name": "[Product Area] Access Management",
+      "path": "product-areas/access-management"
+    },
+    {
+      "name": "[Product Area] Analytics & Reporting",
+      "path": "product-areas/analytics-reporting"
+    },
+    {
+      "name": "[Product Area] Compensation Management",
+      "path": "product-areas/compensation-management"
+    },
+    {
+      "name": "[Product Area] Design System",
+      "path": "product-areas/design-system"
+    },
+    {
+      "name": "[Product Area] Document Management",
+      "path": "product-areas/document-management"
+    },
+    {
+      "name": "[Product Area] Employees & Organizations",
+      "path": "product-areas/employees-organizations"
+    },
+    {
+      "name": "[Product Area] Fedx",
+      "path": "product-areas/fedx"
+    },
+    {
+      "name": "[Product Area] Global Experience",
+      "path": "product-areas/global-experience"
+    },
+    {
+      "name": "[Product Area] Identity",
+      "path": "product-areas/identity"
+    },
+    {
+      "name": "[Product Area] Integrations",
+      "path": "product-areas/integrations"
+    },
+    {
+      "name": "[Product Area] Internal",
+      "path": "product-areas/internal"
+    },
+    {
+      "name": "[Product Area] Payroll",
+      "path": "product-areas/payroll"
+    },
+    {
+      "name": "[Product Area] Performance & Development",
+      "path": "product-areas/performance-development"
+    },
+    {
+      "name": "[Product Area] Recruiting",
+      "path": "product-areas/recruiting"
+    },
+    {
+      "name": "[Product Area] Time & Money",
+      "path": "product-areas/time-money"
+    },
+    {
+      "name": "[Product Area] Work Management",
+      "path": "product-areas/work-management"
+    },
+    {
+      "name": "[Product Area] Workflows",
+      "path": "product-areas/workflows"
+    },
+    {
+      "name": "[Product Area] Workforce Planning",
+      "path": "product-areas/workforce-planning"
+    },
+    {
+      "name": "Configs",
+      "path": "configs"
+    },
+    {
+      "name": "[All Libraries]",
+      "path": "libs"
+    },
+    {
+      "name": "[NX]",
+      "path": "libs/nx"
+    },
+    {
+      "name": "[DW]",
+      "path": ".gitlab"
+    },
+    {
+      "name": "[Apps]",
+      "path": "apps"
+    },
+    {
+      "name": "[POC]",
+      "path": "product-areas/poc-employee-organizations"
+    },
+    {
+      "name": "_root",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {},
+    "yaml.schemas": {
+      "https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json": [
+        ".gitlab/**/*.yml"
+      ],
+      "https://service-catalog.tools.personio-internal.de/api/v1/yamlschema": [
+        ".catalog.yml"
+      ]
+    },
+    "makefile.extensionOutputFolder": "./.vscode",
+    "nxConsole.generatorAllowlist": ["@personio-web*"],
+    "typescript.tsdk": "_root/node_modules/typescript/lib"
+  }
+}

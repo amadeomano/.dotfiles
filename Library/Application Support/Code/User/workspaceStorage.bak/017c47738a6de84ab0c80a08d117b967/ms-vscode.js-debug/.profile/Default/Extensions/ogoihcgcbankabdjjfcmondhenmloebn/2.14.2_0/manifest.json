@@ -1,0 +1,20 @@
+{
+   "action": {
+      "default_icon": "personio-logo.png",
+      "default_popup": "index.html"
+   },
+   "author": "tpf-dx-dw@personio.de",
+   "description": "Test your mFE in upper environments, use specific releases from the FRM or test against the Monolith Preview.",
+   "host_permissions": [ "http://*.personio.de/*", "https://*.personio.de/*", "http://*.personio-internal.de/*", "https://*.personio-internal.de/*" ],
+   "icons": {
+      "128": "personio-logo.png",
+      "16": "personio-logo.png",
+      "48": "personio-logo.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgKs63VFYCEi0YQqAHS8npKt/0qdUFeLdhDqXUw/l+x+iig4JnFJtEmzl7tK+NT8MeVDYg22U0u2PMeWuymnCbOD0sRTGvwWJU7zHFrHtQ5k+qQHcnrQjIGfQ08RGEKvJgKb9GnghEBtu5y43T5GA1kh3GP+a9C+zrBSun5cJ9hyWKORx9UQxbcxjDZ5Tpr72Z5wSefnUyV8RgeCH2XxGVaxscPp3WD1zgDx0JXWqr2cRb4UpMUP1Hovjv9DD0WCScIqDe+E2i8hLNEdZecjfeU8mgTJ0RlkNLANrRmLPH+OQwVqApojQd03CvPeHb1QNPt91aW8zwjA06r5cw0hDUQIDAQAB",
+   "manifest_version": 3,
+   "name": "Personio Chrome Extension",
+   "permissions": [ "storage", "activeTab", "declarativeNetRequest", "declarativeNetRequestFeedback", "scripting", "webRequest" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.14.2"
+}

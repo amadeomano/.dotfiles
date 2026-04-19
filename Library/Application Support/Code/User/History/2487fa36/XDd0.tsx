@@ -1,0 +1,47 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import {
+  EmployeeDetailsPanelContextProvider,
+  EmployeeDetailsPanelContext,
+} from './EmployeeDetailsPanelContext';
+
+describe('EmployeeDetailsPanelContext', () => {
+  it('provides default values', () => {
+    render(
+      <EmployeeDetailsPanelContextProvider>
+        <EmployeeDetailsPanelContext.Consumer>
+          {(value) => (
+            <span data-test-id="employeeIds">
+              {value?.employeeIds.join(',')}
+            </span>
+          )}
+        </EmployeeDetailsPanelContext.Consumer>
+      </EmployeeDetailsPanelContextProvider>,
+    );
+
+    expect(screen.getByTestId('employeeIds').textContent).toBe('');
+  });
+
+  it('updates employeeIds', () => {
+    const TestComponent = () => {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const { employeeIds, setEmployeeIds } = React.useContext(
+        EmployeeDetailsPanelContext,
+      )!;
+
+      React.useEffect(() => {
+        setEmployeeIds([1, 2, 3]);
+      }, [setEmployeeIds]);
+
+      return <span data-testid="employeeIds">{employeeIds.join(',')}</span>;
+    };
+
+    render(
+      <EmployeeDetailsPanelContextProvider>
+        <TestComponent />
+      </EmployeeDetailsPanelContextProvider>,
+    );
+
+    expect(screen.getByTestId('employeeIds').textContent).toBe('1,2,3');
+  });
+});

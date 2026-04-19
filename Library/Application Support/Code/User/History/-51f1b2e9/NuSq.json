@@ -1,0 +1,9 @@
+{
+  "name": "@types/personio-web__payroll-data-gofer",
+  "version": "1.0.0",
+  "private": true,
+  "types": "index.d.ts",
+  "devDependencies": {
+    "@personio-web/config-typescript": "workspace:*"
+  }
+}

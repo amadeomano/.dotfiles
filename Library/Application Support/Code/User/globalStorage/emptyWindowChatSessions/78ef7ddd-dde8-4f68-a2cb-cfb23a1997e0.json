@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "requesterUsername": "amadeo-manouchehri_personio",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/209497769",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [],
+  "sessionId": "78ef7ddd-dde8-4f68-a2cb-cfb23a1997e0",
+  "creationDate": 1746182453725,
+  "isImported": false,
+  "lastMessageDate": 1746182453725
+}

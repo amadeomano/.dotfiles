@@ -1,0 +1,15 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.peopleListLinkRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  a {
+    font-size: tokens.$typography-text-meta-font-size;
+  }
+}
+
+.infoCircle {
+  margin-inline-start: tokens.$gap-medium;
+}

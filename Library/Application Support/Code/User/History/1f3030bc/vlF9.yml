@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: amadeo-wohnung
+    container_name: amadeo-wohnung
+    volumes:
+      - ..:/workspace
+    ports:
+      - "3000:3000" # Astro dev server
+      - "8888:8888" # Netlify dev server
+    environment:
+      - NODE_ENV=development
+    command: >
+      sh -c "npm install"

@@ -1,0 +1,124 @@
+{
+  "version": 3,
+  "responderUsername": "",
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_6bbe43ce-59b4-4483-9ee8-31d005732b21",
+      "message": {
+        "text": "Analyze this codebase to generate or update `.github/copilot-instructions.md` for guiding AI coding agents.\n\nFocus on discovering the essential knowledge that would help an AI agents be immediately productive in this codebase. Consider aspects like:\n- The \"big picture\" architecture that requires reading multiple files to understand - major components, service boundaries, data flows, and the \"why\" behind structural decisions\n- Critical developer workflows (builds, tests, debugging) especially commands that aren't obvious from file inspection alone\n- Project-specific conventions and patterns that differ from common practices\n- Integration points, external dependencies, and cross-component communication patterns\n\nSource existing AI conventions from `**/{.github/copilot-instructions.md,AGENT.md,AGENTS.md,CLAUDE.md,.cursorrules,.windsurfrules,.clinerules,.cursor/rules/**,.windsurf/rules/**,.clinerules/**,README.md}` (do one glob search).\n\nGuidelines (read more at https://aka.ms/vscode-instructions-docs):\n- If `.github/copilot-instructions.md` exists, merge intelligently - preserve valuable content while updating outdated sections\n- Write concise, actionable instructions (~20-50 lines) using markdown structure\n- Include specific examples from the codebase when describing patterns\n- Avoid generic advice (\"write tests\", \"handle errors\") - focus on THIS project's specific approaches\n- Document only discoverable patterns, not aspirational practices\n- Reference key files/directories that exemplify important patterns\n\nUpdate `.github/copilot-instructions.md` for the user, then ask for feedback on any unclear or incomplete sections to iterate.",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 1658
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 19,
+              "endColumn": 127
+            },
+            "text": "Analyze this codebase to generate or update `.github/copilot-instructions.md` for guiding AI coding agents.\n\nFocus on discovering the essential knowledge that would help an AI agents be immediately productive in this codebase. Consider aspects like:\n- The \"big picture\" architecture that requires reading multiple files to understand - major components, service boundaries, data flows, and the \"why\" behind structural decisions\n- Critical developer workflows (builds, tests, debugging) especially commands that aren't obvious from file inspection alone\n- Project-specific conventions and patterns that differ from common practices\n- Integration points, external dependencies, and cross-component communication patterns\n\nSource existing AI conventions from `**/{.github/copilot-instructions.md,AGENT.md,AGENTS.md,CLAUDE.md,.cursorrules,.windsurfrules,.clinerules,.cursor/rules/**,.windsurf/rules/**,.clinerules/**,README.md}` (do one glob search).\n\nGuidelines (read more at https://aka.ms/vscode-instructions-docs):\n- If `.github/copilot-instructions.md` exists, merge intelligently - preserve valuable content while updating outdated sections\n- Write concise, actionable instructions (~20-50 lines) using markdown structure\n- Include specific examples from the codebase when describing patterns\n- Avoid generic advice (\"write tests\", \"handle errors\") - focus on THIS project's specific approaches\n- Document only discoverable patterns, not aspirational practices\n- Reference key files/directories that exemplify important patterns\n\nUpdate `.github/copilot-instructions.md` for the user, then ask for feedback on any unclear or incomplete sections to iterate.",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "value": "Repository name: gofer\nOwner: Personio-Internal\nCurrent branch: ORG-3314-enable-wwh-in-person-info\nDefault branch: master\nActive pull request (may not be the same as open pull request): feat: add includeWeeklyWorkingHours to ListEmploymentsByPersonIds https://github.com/Personio-Internal/gofer/pull/977",
+            "name": "Personio-Internal/gofer",
+            "modelDescription": "Information about the current repository. You can use this information when you need to calculate diffs or compare changes with the default branch",
+            "id": "Personio-Internal/gofer",
+            "kind": "workspace"
+          }
+        ]
+      },
+      "response": [
+        {
+          "kind": "mcpServersStarting",
+          "didStartServerIds": []
+        },
+        {
+          "value": "You need to set up GitHub Copilot and be signed in to use Chat.",
+          "isTrusted": false,
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "supportAlertSyntax": false
+        }
+      ],
+      "agent": {
+        "id": "setup.agent",
+        "name": "GitHub Copilot",
+        "isDefault": true,
+        "isCore": true,
+        "modes": [
+          "agent"
+        ],
+        "when": "config.chat.agent.enabled && !previewFeaturesDisabled",
+        "slashCommands": [],
+        "disambiguation": [],
+        "locations": [
+          "panel"
+        ],
+        "metadata": {
+          "helpTextPrefix": {
+            "value": "You need to set up GitHub Copilot and be signed in to use Chat.",
+            "isTrusted": false,
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "supportAlertSyntax": false
+          },
+          "themeIcon": {
+            "id": "tools"
+          }
+        },
+        "description": "Describe what to build next",
+        "extensionId": {
+          "value": "nullExtensionDescription",
+          "_lower": "nullextensiondescription"
+        },
+        "extensionDisplayName": "Null Extension Description",
+        "extensionPublisherId": "vscode"
+      },
+      "timestamp": 1765898424597,
+      "responseId": "response_9a914864-fefe-4aac-9ab7-030849fb9c1a",
+      "result": {},
+      "responseMarkdownInfo": [],
+      "followups": [],
+      "modelState": {
+        "value": 1,
+        "completedAt": 1765898428415
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timeSpentWaiting": 0
+    }
+  ],
+  "sessionId": "7b1f6b15-ca12-4512-aed1-761f21d055bf",
+  "creationDate": 1765898407141,
+  "lastMessageDate": 1765898424597,
+  "hasPendingEdits": false,
+  "contrib": {
+    "chatDynamicVariableModel": []
+  },
+  "attachments": [],
+  "mode": {
+    "id": "agent",
+    "kind": "agent"
+  },
+  "inputText": "",
+  "selections": [
+    {
+      "startLineNumber": 1,
+      "startColumn": 1,
+      "endLineNumber": 1,
+      "endColumn": 1,
+      "selectionStartLineNumber": 1,
+      "selectionStartColumn": 1,
+      "positionLineNumber": 1,
+      "positionColumn": 1
+    }
+  ]
+}

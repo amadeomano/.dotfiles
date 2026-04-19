@@ -1,0 +1,65 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+$zoom-level-min-width: 34px;
+
+.viewActionsBarWrapper {
+  position: absolute;
+  right: tokens.$spacing-gap-large;
+  bottom: tokens.$spacing-gap-xlarge;
+  display: flex;
+  gap: tokens.$spacing-gap-default;
+}
+
+.viewActionsBar {
+  display: inline-flex;
+  align-items: center;
+  gap: tokens.$spacing-gap-small;
+  padding: tokens.$spacing-gap-small tokens.$spacing-gap-default
+    tokens.$spacing-gap-small tokens.$spacing-gap-small;
+  border-radius: tokens.$radii-4pt5;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1), 0 4px 0 1px rgba(0, 0, 0, 0.01),
+    0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  background: tokens.$color-base;
+  overflow: hidden;
+}
+
+.redesignedActionsBarWrapper {
+  right: 0;
+  bottom: 0;
+  background: tokens.$color-base;
+  height: 46px;
+
+  $rightCurveHeight: 74;
+  $rightCurveWidth: 21;
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url('data:image/svg+xml;utf8,<svg width="#{$rightCurveWidth}" height="#{rightCurveHeight}" viewBox="0 0 21 74" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 0.5C21 11.5457 11.5457 27.5 0.5 27.5H0V74H21V0.5Z" fill="currentColor"/></svg>');
+    width: #{$rightCurveWidth}px;
+    height: #{$rightCurveHeight}px;
+    right: 0;
+    bottom: 0;
+  }
+
+  .viewActionsBar {
+    box-shadow: unset;
+    border-radius: unset;
+    background: unset;
+  }
+}
+
+.zoomLevel {
+  display: flex;
+  justify-content: center;
+  min-width: $zoom-level-min-width;
+  @include tokens.typography-meta;
+  color: tokens.$color-text-secondary;
+  user-select: none;
+}
+
+.separator {
+  background: tokens.$color-divider-alpha;
+  height: tokens.$spacing-section-small;
+  width: 0.5px;
+  margin: tokens.$spacing-gap-xsmall;
+}

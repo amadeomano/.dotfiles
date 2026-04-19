@@ -1,0 +1,13 @@
+{
+  "name": "payroll-component-payroll-layout",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "tags": ["product-area:payroll", "scope:private", "module-type:component"],
+  "targets": {
+    "static": {},
+    "lint": {},
+    "test": {},
+    "type-check": {},
+    "fui": {}
+  }
+}

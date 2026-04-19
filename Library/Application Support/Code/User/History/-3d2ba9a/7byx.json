@@ -1,0 +1,27 @@
+{
+  "name": "@personio-web/payroll-view-xero-settings",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@personio-web/design-system-tokens": "workspace:*",
+    "@personio-web/payroll-integrations-commons-test": "workspace:*",
+    "@personio-web/payroll-data-payroll-integration-oauth": "workspace:*",
+    "@personio-web/payroll-data-payroll-integration-settings": "workspace:*",
+    "@personio-web/payroll-data-payroll-integration-context": "workspace:*",
+    "@personio-web/payroll-component-inline-banner": "workspace:*",
+    "@personio-web/payroll-component-settings-field": "workspace:*",
+    "@personio-web/payroll-component-controlled-select": "workspace:*",
+    "@personio-web/payroll-component-controlled-switch": "workspace:*",
+    "@personio-web/payroll-component-skeleton": "workspace:*",
+    "@personio-web/payroll-component-error-boundary": "workspace:*",
+    "@personio-web/i18n": "workspace:*",
+    "@personio-web/payroll-util-navigation": "workspace:*"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@types/personio-web__payroll-view-xero-settings": "workspace:*"
+  }
+}

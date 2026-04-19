@@ -1,0 +1,176 @@
+import { camelCase } from 'lodash';
+import { useRouter } from 'next/router';
+import { type ListEmployerCompensationSchemasData } from 'payroll/data/payroll-me';
+import {
+  TableCell,
+  useTable,
+  type UseTableReturnType,
+  type ColumnConfig,
+} from 'designSystem/component/table';
+import { type ColumnFilter } from 'designSystem/component/advanced-filter';
+import { icons } from 'designSystem/component/icon';
+
+import { getNumericValue, type EmployeeResult } from '../../../utils/helpers';
+import {
+  type PayrollRun,
+  payrollRunEmployeeFullname,
+} from '../../../utils/payrollRun';
+import {
+  sortByNum,
+  sortByStr,
+} from '../../../tabs/PayRunsTab/tableUtils/sortUtils';
+import {
+  CurrencyCell,
+  getCompensationColums,
+  getCompensationsColumns,
+} from '../components/EmployeesTable/tableUtils/tableColumns';
+import { getFilters } from '../components/EmployeesTable/tableUtils/filters';
+import { getHrefForEmployeeDetails } from '../hooks/useEmployeeDetailsPanelNavigator';
+
+export const useBuildTable = (
+  payRunData: PayrollRun | undefined,
+  compensationSchemas: ListEmployerCompensationSchemasData['data'] | undefined,
+) => {
+  const router = useRouter();
+  type Column = keyof typeof COLUMNS;
+  type ColConfig = ColumnConfig<EmployeeResult, unknown> & {
+    sortHandler: (
+      desc?: boolean,
+    ) => (a: EmployeeResult, b: EmployeeResult) => number;
+  };
+  type ActionHandlersMap = {
+    sorter: ColConfig['sortHandler'];
+    filterer: (
+      colFilter: ColumnFilter['value'],
+    ) => (predicate: EmployeeResult) => boolean;
+  };
+  type ColumnSorterMap = { [K in Column]: ActionHandlersMap };
+
+  const table = useTable();
+  const compensationDescriptions =
+    compensationSchemas?.map((compensation) => compensation.description) || [];
+
+  const STATIC_COLUMNS = {
+    person: 'person',
+    grossPay: 'grossPay',
+    netPay: 'netPay',
+  };
+
+  const COMPENSATIONS_COLUMNS = getCompensationsColumns(
+    compensationDescriptions,
+  );
+
+  const COLUMNS = {
+    ...STATIC_COLUMNS,
+    ...COMPENSATIONS_COLUMNS,
+  };
+
+  const tableColumns: ColConfig[] = [
+    {
+      id: COLUMNS.person,
+      header: 'Person',
+      accessor: (emp: EmployeeResult) =>
+        payrollRunEmployeeFullname(emp.employee),
+      cell: ({ value, row }) => {
+        const name = value as string;
+        const href = getHrefForEmployeeDetails(router, row.employeeId);
+        return <TableCell.Token avatar={{ name }} value={name} href={href} />;
+      },
+      columnSize: 'medium',
+      icon: icons.personCircle,
+      enableSorting: true,
+      sortHandler: (desc) => (a: EmployeeResult, b: EmployeeResult) =>
+        sortByStr(
+          payrollRunEmployeeFullname(a.employee),
+          payrollRunEmployeeFullname(b.employee),
+          desc,
+        ),
+    },
+    {
+      id: COLUMNS.grossPay,
+      header: 'Gross pay',
+      accessor: (row: EmployeeResult) => String(row.payslip?.grossPay ?? ''),
+      cell: CurrencyCell,
+      columnSize: 'small',
+      icon: icons.moneyBag,
+      sortHandler: (desc) => (a: EmployeeResult, b: EmployeeResult) =>
+        sortByNum(
+          getNumericValue(a?.payslip?.grossPay || ''),
+          getNumericValue(b.payslip?.grossPay || ''),
+          desc,
+        ),
+    },
+    {
+      id: COLUMNS.netPay,
+      header: 'Net pay',
+      accessor: (row: EmployeeResult) => String(row.payslip?.netPay ?? ''),
+      cell: CurrencyCell,
+      columnSize: 'small',
+      icon: icons.moneyBag,
+      sortHandler: (desc) => (a: EmployeeResult, b: EmployeeResult) =>
+        sortByNum(
+          getNumericValue(a.payslip?.netPay || ''),
+          getNumericValue(b.payslip?.netPay || ''),
+          desc,
+        ),
+    },
+    ...getCompensationColums(compensationDescriptions),
+  ];
+
+  const getColumn = (columnName: string) =>
+    tableColumns.find((column) => column.id === columnName);
+
+  const filters = getFilters(COLUMNS);
+  const getFilterer = (columnName: string) =>
+    filters.find((filter) => filter.columnId === columnName)?.filterHandler;
+
+  const columnSorterMap: ColumnSorterMap = Object.keys(COLUMNS).reduce(
+    (accum, column) => {
+      return {
+        ...accum,
+        ...{
+          [column]: {
+            sorter: getColumn(COLUMNS[column as Column])?.sortHandler,
+            filterer: getFilterer(COLUMNS[column as Column]),
+          },
+        },
+      };
+    },
+    {} as ColumnSorterMap,
+  );
+
+  const getProcessedTableData = (
+    table: UseTableReturnType,
+    data: PayrollRun['employeeResults'] | undefined,
+    columnSorterMap: ColumnSorterMap,
+  ): PayrollRun['employeeResults'] => {
+    if (!data) return [];
+    const processedData = [...data];
+
+    const sorting = table.sorting.sorting;
+
+    if (sorting) {
+      return processedData.sort(
+        columnSorterMap[camelCase(sorting.id) as Column]?.sorter(sorting.desc),
+      );
+    }
+
+    return table.filters.filters.reduce((acc, { id, value }) => {
+      return acc?.filter(
+        columnSorterMap[camelCase(id) as Column]?.filterer(value),
+      );
+    }, processedData || []);
+  };
+
+  return {
+    table,
+    tableColumns,
+    processedTableData: getProcessedTableData(
+      table,
+      payRunData?.employeeResults,
+      columnSorterMap,
+    ),
+    filters,
+    getProcessedTableData,
+  };
+};

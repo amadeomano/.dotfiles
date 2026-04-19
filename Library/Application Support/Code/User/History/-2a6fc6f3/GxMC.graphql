@@ -1,0 +1,20 @@
+query ListPersonsByIds($personIds: [String!]!, $companyId: Int!) {
+  persons: personandemployment_PersonService_ListPersons_v1(
+    input: { personIds: { ids: $personIds } }
+  ) {
+    list: personsList {
+      id
+      firstName {
+        value
+      }
+      lastName {
+        value
+      }
+      profilePicUrls(path: { companyId: $companyId }) {
+        paths {
+          small
+        }
+      }
+    }
+  }
+}

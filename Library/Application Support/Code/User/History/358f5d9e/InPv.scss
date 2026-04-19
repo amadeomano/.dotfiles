@@ -1,0 +1,85 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+section:has(.drawerBody) {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.drawerBody {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$primitive-spacing-5;
+}
+
+.noDescription {
+  color: tokens.$colors-static-fg-tertiary;
+  font-style: italic;
+}
+
+.propertyList {
+  padding: 0;
+  margin: tokens.$spacing-gap-medium calc(-1 * tokens.$primitive-spacing-4pt5) 0;
+
+  // Allow text wrap on about property
+  li:nth-child(2) {
+    padding-top: tokens.$primitive-spacing-2;
+    padding-bottom: tokens.$primitive-spacing-2;
+    height: auto;
+
+    > *:last-child span {
+      white-space: wrap;
+    }
+  }
+
+  // Aims for resource link property
+  li:nth-child(3) > *:last-child > div {
+    position: relative;
+    max-width: calc(100% - #{tokens.$primitive-spacing-1});
+
+    a {
+      max-width: calc(100% - #{tokens.$primitive-spacing-1});
+    }
+
+    svg {
+      position: absolute;
+      top: tokens.$primitive-spacing-1pt5;
+      right: calc(#{tokens.$primitive-spacing-1} * -1);
+    }
+  }
+}
+
+.info {
+  margin-top: tokens.$primitive-spacing-6pt5;
+
+  > span {
+    @include tokens.typography-base;
+    color: tokens.$color-text-tertiary;
+  }
+}
+
+.infoCircle {
+  margin-inline-start: tokens.$spacing-gap-medium;
+  vertical-align: text-top;
+}
+
+.listRowDescription {
+  color: tokens.$color-text-tertiary;
+}
+
+.splittedCell {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+
+  a {
+    font-size: tokens.$typography-text-meta-font-size;
+    svg {
+      position: initial !important;
+    }
+  }
+}
+
+.leadsStack {
+  align-items: flex-start;
+}

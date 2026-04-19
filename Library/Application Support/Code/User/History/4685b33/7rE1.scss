@@ -1,0 +1,34 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.infoHero {
+  padding-top: tokens.$spacing-3pt5;
+  padding-inline: tokens.$spacing-3pt5;
+  overflow: hidden;
+
+  .avatar {
+    height: tokens.$spacing-8pt5;
+    width: tokens.$spacing-8pt5;
+    flex: 0 0 tokens.$spacing-8pt5;
+  }
+
+  .info {
+    overflow: hidden;
+  }
+
+  .ancestors {
+    @extend %truncatedText;
+    line-height: tokens.$typography-text-meta-line-height;
+
+    > div {
+      display: inline; // Enable ellipsis to be displayed
+
+      > div {
+        vertical-align: middle;
+      }
+    }
+
+    span:first-of-type {
+      padding-left: 0; // Remove extra left padding to visually align
+    }
+  }
+}

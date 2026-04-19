@@ -1,0 +1,14 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.labels {
+  // name
+  & > span:nth-child(1) {
+    @include tokens.typography-meta;
+    background-color: #cf1;
+  }
+
+  // position
+  & > span:nth-child(2) {
+    background-color: #fc1;
+  }
+}

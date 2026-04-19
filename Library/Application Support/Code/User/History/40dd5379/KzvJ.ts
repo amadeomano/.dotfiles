@@ -1,0 +1,20 @@
+import { useMemo } from 'react';
+
+import { generateOrgChartLink } from '@personio-web/eo-commons-org-chart-link';
+
+import { useAboutMeContext } from '../components/AboutMeProvider/AboutMeProvider';
+
+export const usePersonSpotlightOrgChartLink = () => {
+  const { employeeId } = useAboutMeContext();
+
+  return useMemo(
+    () =>
+      generateOrgChartLink({
+        source: 'Supervisor',
+        activeCardId: employeeId,
+        spotlight: employeeId,
+        filters: [],
+      }),
+    [employeeId],
+  );
+};

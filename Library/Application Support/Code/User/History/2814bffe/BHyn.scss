@@ -1,0 +1,11 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.members {
+  display: flex;
+  align-items: center;
+  gap: tokens.$primitive-spacing-1pt5;
+  margin: tokens.$primitive-spacing-4 tokens.$primitive-spacing-4 0;
+  color: tokens.$colors-solid-fg-neutral-strong-primary;
+  white-space: nowrap;
+  @include tokens.typography-meta;
+}

@@ -1,0 +1,121 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.flexGrow {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 1px;
+}
+
+.positions {
+  color: tokens.$color-text-secondary;
+  font-weight: tokens.$font-weights-medium;
+
+  &.isActive {
+    color: tokens.$color-text-secondary-accent;
+    font-weight: tokens.$font-weights-semibold;
+  }
+}
+
+.people {
+  min-width: fit-content;
+
+  span {
+    height: auto;
+    font-size: tokens.$font-sizes-3;
+    line-height: tokens.$line-heights-3;
+  }
+
+  &.isActive {
+    span {
+      font-weight: tokens.$font-weights-semibold;
+      color: tokens.$color-text-secondary-accent;
+    }
+  }
+}
+
+.pill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: tokens.$color-surface-alpha;
+  padding: tokens.$spacing-0pt5 tokens.$spacing-2;
+  color: tokens.$color-text-secondary;
+  font-weight: tokens.$font-weights-medium;
+  line-height: tokens.$line-heights-3;
+  border-radius: tokens.$radii-full;
+
+  &.isActive {
+    background-color: tokens.$color-blue-3-alpha;
+    color: tokens.$color-text-secondary-accent;
+    font-weight: tokens.$font-weights-semibold;
+  }
+}
+
+.menu {
+  &.isActive {
+    &:hover {
+      background-color: tokens.$color-blue-3-alpha;
+    }
+    svg {
+      color: tokens.$color-blue-10;
+    }
+  }
+}
+
+.redesignEllipsis {
+  border-radius: tokens.$radius-static-large;
+}
+.icon {
+  color: tokens.$color-text-secondary;
+
+  &.isActive {
+    color: tokens.$color-text-secondary-accent;
+  }
+}
+
+.separator {
+  height: tokens.$line-heights-2;
+  width: 1px;
+  background-color: tokens.$color-divider-alpha;
+
+  &.isActive {
+    background-color: tokens.$color-divider-accent-alpha;
+  }
+
+  &.hide {
+    background-color: transparent;
+  }
+}
+
+.tooltip {
+  box-shadow: none;
+  border: 0.5px solid tokens.$color-gray-3;
+  margin-bottom: -(tokens.$spacing-0pt5);
+  color: tokens.$color-text-primary;
+}
+
+.tooltipContent {
+  display: flex;
+  flex-grow: 1;
+}
+
+// Disables focused style while exporting
+:global(.react-flow__viewport.org-chart-export) {
+  .people.isActive,
+  .positions.isActive,
+  .separator.isActive,
+  .pill.isActive,
+  .icon.isActive {
+    color: tokens.$color-text-secondary;
+    font-weight: tokens.$font-weights-medium;
+  }
+  .pill.isActive {
+    background-color: tokens.$color-surface-alpha;
+  }
+  .separator.isActive {
+    background-color: tokens.$color-divider-alpha;
+  }
+  .menu {
+    display: none;
+  }
+}

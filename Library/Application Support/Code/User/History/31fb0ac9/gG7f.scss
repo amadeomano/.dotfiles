@@ -1,0 +1,123 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+$strokeWidth: 1px;
+
+.orgUnitSelectTrigger {
+  background-color: tokens.$color-base;
+  border: 0;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08),
+    0 0 0 $strokeWidth tokens.$color-gray-5-alpha;
+  color: tokens.$color-text-primary;
+  display: inline-flex;
+  font-weight: tokens.$font-weights-medium;
+  padding: 0 tokens.$spacing-gap-large;
+  width: 100%;
+
+  input {
+    text-align: left;
+  }
+
+  .selectIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.popoverContent {
+  width: max(var(--radix-popover-trigger-width), 100%);
+  max-width: min(
+    var(--radix-popper-available-width),
+    384px
+  ); // max-width for filters
+  // needed for legacy reasons of drawers setting to big z-indexes
+  z-index: 10001 !important;
+  pointer-events: auto;
+
+  div:first-child {
+    max-width: 100%;
+  }
+
+  &.limitTriggerWidth {
+    max-width: var(--radix-popper-anchor-width, 530px); // max-width for selects
+  }
+
+  // Temporary solution until we switch to the Picker
+  [role='option'] [class*='indentation'] {
+    flex-shrink: 0;
+  }
+
+  // Temporary solution until we switch to the Picker
+  [class^='MultiSelectInput'] {
+    display: none;
+  }
+}
+
+.contentFallback {
+  margin: 0 0 tokens.$spacing-gap-default tokens.$spacing-gap-xlarge;
+}
+
+.selectError {
+  color: tokens.$color-text-tertiary-negative;
+  font-size: tokens.$typography-text-default-font-size;
+  font-weight: tokens.$typography-text-default-font-weight;
+  line-height: tokens.$typography-text-default-line-height;
+}
+
+// --------------------------------------------------------------
+// we provide a rough legacy support of the trigger for non-overhauled consumers
+// legacy support
+.legacySelectTrigger {
+  background-color: tokens.$color-base !important;
+
+  border: 1px solid tokens.$color-border;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: tokens.$color-base;
+  cursor: pointer;
+  height: 40px !important;
+
+  justify-content: space-between;
+
+  outline: none;
+  padding: 0 tokens.$spacing-gap-xlarge !important;
+
+  transition: all 0.3s ease;
+
+  input {
+    text-align: left;
+  }
+
+  &:hover {
+    background-color: tokens.$color-base-hover;
+    border: 1px solid tokens.$color-border;
+    color: tokens.$color-text-secondary;
+  }
+
+  .selectIcon {
+    align-items: center;
+    display: flex;
+    gap: tokens.$spacing-1;
+    justify-content: space-between;
+  }
+}
+
+.legacyPopoverContent {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.legacyFooter {
+  display: flex;
+  flex: 1;
+  gap: tokens.$spacing-gap-default;
+  justify-content: space-between;
+  padding: tokens.$spacing-gap-default tokens.$spacing-gap-default 0;
+  border-top: 1px solid #dededd;
+}
+
+.popoverContentAccessRights {
+  @extend .popoverContent;
+
+  z-index: 1000000 !important;
+}

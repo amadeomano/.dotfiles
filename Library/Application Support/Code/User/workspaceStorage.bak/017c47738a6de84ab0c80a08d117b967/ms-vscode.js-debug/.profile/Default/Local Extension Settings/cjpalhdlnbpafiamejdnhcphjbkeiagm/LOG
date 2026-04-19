@@ -1,0 +1,11 @@
+2024/11/13-12:00:32.514 8307 Creating DB /Users/amadeo.manouchehri/Library/Application Support/Code/User/workspaceStorage/017c47738a6de84ab0c80a08d117b967/ms-vscode.js-debug/.profile/Default/Local Extension Settings/cjpalhdlnbpafiamejdnhcphjbkeiagm since it was missing.
+2024/11/13-12:00:32.530 8307 Reusing MANIFEST /Users/amadeo.manouchehri/Library/Application Support/Code/User/workspaceStorage/017c47738a6de84ab0c80a08d117b967/ms-vscode.js-debug/.profile/Default/Local Extension Settings/cjpalhdlnbpafiamejdnhcphjbkeiagm/MANIFEST-000001
+2024/11/13-12:00:36.612 a303 Level-0 table #5: started
+2024/11/13-12:00:36.623 a303 Level-0 table #5: 4342147 bytes OK
+2024/11/13-12:00:36.627 a303 Delete type=0 #3
+2024/11/13-12:00:41.914 a303 Level-0 table #7: started
+2024/11/13-12:00:41.926 a303 Level-0 table #7: 4627202 bytes OK
+2024/11/13-12:00:41.932 a303 Delete type=0 #4
+2024/11/13-12:01:45.027 8307 Level-0 table #9: started
+2024/11/13-12:01:45.065 8307 Level-0 table #9: 8472506 bytes OK
+2024/11/13-12:01:45.070 8307 Delete type=0 #6

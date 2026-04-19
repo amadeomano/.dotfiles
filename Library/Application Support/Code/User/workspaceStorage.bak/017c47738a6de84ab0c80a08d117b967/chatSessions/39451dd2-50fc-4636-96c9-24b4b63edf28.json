@@ -1,0 +1,488 @@
+{
+  "version": 3,
+  "requesterUsername": "amadeo-manouchehri_pers0nio",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/190103085",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_aa01990e-7450-4982-8a74-0c8d8775d751",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 45
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 46
+            },
+            "text": "Explain what shouldEdgeBeActive function does",
+            "kind": "text"
+          }
+        ],
+        "text": "Explain what shouldEdgeBeActive function does"
+      },
+      "variableData": {
+        "variables": [
+          {
+            "id": "vscode.implicit.viewport",
+            "name": "file:mapEdges.ts",
+            "value": {
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              },
+              "range": {
+                "startLineNumber": 179,
+                "startColumn": 1,
+                "endLineNumber": 212,
+                "endColumn": 53
+              }
+            },
+            "isFile": true,
+            "isDynamic": true,
+            "modelDescription": "User's current visible code"
+          }
+        ]
+      },
+      "response": [],
+      "responseId": "response_f6c77f13-737d-489e-8784-0d0b749a047f",
+      "isHidden": false,
+      "isCanceled": true,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.default",
+        "description": "Ask Copilot",
+        "metadata": {
+          "themeIcon": {
+            "id": "copilot"
+          },
+          "hasFollowups": true,
+          "helpTextPrefix": "You can ask me general programming questions, or chat with the following participants which have specialized expertise and can perform actions:",
+          "helpTextVariablesPrefix": "You can also help me understand your question by using the following variables to give me extra context:",
+          "helpTextPostfix": {
+            "value": "To have a great conversation, ask me questions as if I was a real programmer:\n\n* **Show me the code** you want to talk about by having the files open and selecting the most important lines.\n* **Make refinements** by asking me follow-up questions, adding clarifications, providing errors, etc.\n* **Review my suggested code** and tell me about issues or improvements, so I can iterate on it.\n\nYou can also ask me questions about your editor selection by [starting an inline chat session](command:inlineChat.start).\n\nLearn more about [GitHub Copilot](https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted) in [Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview). Or explore the [Copilot walkthrough](command:github.copilot.open.walkthrough).",
+            "isTrusted": {
+              "enabledCommands": [
+                "inlineChat.start",
+                "github.copilot.open.walkthrough"
+              ]
+            },
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "uris": {
+              "command:inlineChat.start": {
+                "$mid": 1,
+                "path": "inlineChat.start",
+                "scheme": "command"
+              },
+              "https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted": {
+                "$mid": 1,
+                "path": "/copilot/using-github-copilot/getting-started-with-github-copilot",
+                "scheme": "https",
+                "authority": "docs.github.com",
+                "query": "tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted"
+              },
+              "https://code.visualstudio.com/docs/copilot/overview": {
+                "$mid": 1,
+                "path": "/docs/copilot/overview",
+                "scheme": "https",
+                "authority": "code.visualstudio.com"
+              },
+              "command:github.copilot.open.walkthrough": {
+                "$mid": 1,
+                "path": "github.copilot.open.walkthrough",
+                "scheme": "command"
+              }
+            }
+          },
+          "supportIssueReporting": false,
+          "supportsSlowVariables": true,
+          "requester": {
+            "name": "amadeo-manouchehri_pers0nio",
+            "icon": {
+              "$mid": 1,
+              "path": "/u/190103085",
+              "scheme": "https",
+              "authority": "avatars.githubusercontent.com",
+              "query": "v=4"
+            }
+          }
+        },
+        "name": "GitHubCopilot",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "slashCommands": [],
+        "disambiguation": [
+          {
+            "category": "generate_code_sample",
+            "description": "The user wants to generate code snippets without referencing the contents of the current workspace. This category does not include generating entire projects.",
+            "examples": [
+              "Write an example of computing a SHA256 hash."
+            ]
+          },
+          {
+            "category": "add_feature_to_file",
+            "description": "The user wants to change code in a file that is provided in their request, without referencing the contents of the current workspace. This category does not include generating entire projects.",
+            "examples": [
+              "Add a refresh button to the table widget."
+            ]
+          },
+          {
+            "category": "question_about_specific_files",
+            "description": "The user has a question about a specific file or code snippet that they have provided as part of their query, and the question does not require additional workspace context to answer.",
+            "examples": [
+              "What does this file do?"
+            ]
+          }
+        ]
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+            "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timestamp": 1740514658084
+    },
+    {
+      "requestId": "request_482ab670-1de8-4a7b-bd71-c3263113c98d",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 45
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 46
+            },
+            "text": "Explain what shouldEdgeBeActive function does",
+            "kind": "text"
+          }
+        ],
+        "text": "Explain what shouldEdgeBeActive function does"
+      },
+      "variableData": {
+        "variables": [
+          {
+            "id": "vscode.implicit.viewport",
+            "name": "file:mapEdges.ts",
+            "value": {
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              },
+              "range": {
+                "startLineNumber": 179,
+                "startColumn": 1,
+                "endLineNumber": 212,
+                "endColumn": 53
+              }
+            },
+            "isFile": true,
+            "isDynamic": true,
+            "modelDescription": "User's current visible code"
+          }
+        ]
+      },
+      "response": [
+        {
+          "value": "The ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          },
+          "uris": {}
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "shouldEdgeBeActive",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 188,
+                "startColumn": 10,
+                "endLineNumber": 188,
+                "endColumn": 10
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "01fee593-3bc8-4cb9-8a2d-5511fbd62187"
+        },
+        {
+          "value": " function determines if an edge between a parent node (",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "node",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 54,
+                "startColumn": 22,
+                "endLineNumber": 54,
+                "endColumn": 22
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "2241eaf4-0df9-45eb-98f6-b6352ffa4881"
+        },
+        {
+          "value": ") and a child node (",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "currentChild",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 71,
+                "startColumn": 31,
+                "endLineNumber": 71,
+                "endColumn": 31
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "5bad9a6c-5ab5-4d59-9923-58602ba79dae"
+        },
+        {
+          "value": ") should be marked as active based on various conditions. Here's a breakdown of its logic:\n\n1. **Find Active Sibling**: It searches for an active sibling node among the children of the parent node that does not have its own children.\n   ```typescript\n   const activeSibling = node.children?.find(\n     (child) => !child.children && child.data.isActive,\n   );\n   ```\n\n2. **Return False if No Active Sibling**: If no such active sibling is found, the function returns `false`.\n   ```typescript\n   if (!activeSibling) {\n     return false;\n   }\n   ```\n\n3. **Determine Active Sibling's Position and Conditions**:\n   - **Position in Cluster**: Determines the position (`left` or `right`) of the active sibling within its cluster.\n   - **First Row Check**: Checks if the active sibling is in the same row as the current child.\n   - **Directly Below Parent Check**: Checks if the active sibling is directly below the parent node.\n   - **Odd Cluster Check**: Checks if the active sibling is in a cluster with an odd number of nodes.\n   ```typescript\n   const activeSiblingPosition = getNodePositionInCluster(activeSibling);\n   const isActiveSiblingFirstRow = currentChild.y === activeSibling.y;\n   const isActiveSiblingDirectlyBelowParent = node.x === activeSibling.x;\n   const isActiveSiblingInOddCluster =\n     activeSibling.cluster && activeSibling.cluster.nodes.length % 2 !== 0;\n   ```\n\n4. **Determine if Edge Should Be Active**:\n   - **Middle Position**: If the edge position is `middle`, it checks if the active sibling is directly below the parent.\n   - **Left Position**: If the edge position is `left`, it checks if the active sibling is on the left.\n   - **Right Position**: If the edge position is `right`, it checks if the active sibling is on the right and not directly below the parent.\n   ```typescript\n   let isActiveEdge;\n\n   if (edgePosition === 'middle') {\n     isActiveEdge = isActiveSiblingDirectlyBelowParent;\n   } else if (edgePosition === 'left') {\n     isActiveEdge = activeSiblingPosition === 'left';\n   } else {\n     isActiveEdge =\n       activeSiblingPosition === 'right' && !isActiveSiblingDirectlyBelowParent;\n   }\n   ```\n\n5. **Special Case for Odd Clusters**: If the active sibling is in an odd cluster, not in the first row, and directly below the parent, the edge is marked as active.\n   ```typescript\n   if (\n     isActiveSiblingInOddCluster &&\n     !isActiveSiblingFirstRow &&\n     isActiveSiblingDirectlyBelowParent\n   ) {\n     isActiveEdge = true;\n   }\n   ```\n\n6. **Return Result**: Finally, the function returns whether the edge should be active.\n   ```typescript\n   return isActiveEdge;\n   ```\n\nIn summary, the function evaluates several conditions related to the positions and states of nodes to decide if an edge should be marked as active.",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "responseId": "response_5423a666-8cf4-4bbe-a8b7-a7d692a7c16b",
+      "isHidden": false,
+      "result": {
+        "timings": {
+          "firstProgress": 1161,
+          "totalElapsed": 8123
+        },
+        "metadata": {
+          "codeBlocks": [],
+          "messages": [
+            {
+              "role": "user",
+              "content": "Explain what shouldEdgeBeActive function does"
+            },
+            {
+              "role": "assistant",
+              "content": "The `shouldEdgeBeActive` function determines if an edge between a parent node (`node`) and a child node (`currentChild`) should be marked as active based on various conditions. Here's a breakdown of its logic:\n\n1. **Find Active Sibling**: It searches for an active sibling node among the children of the parent node that does not have its own children.\n   ```typescript\n   const activeSibling = node.children?.find(\n     (child) => !child.children && child.data.isActive,\n   );\n   ```\n\n2. **Return False if No Active Sibling**: If no such active sibling is found, the function returns `false`.\n   ```typescript\n   if (!activeSibling) {\n     return false;\n   }\n   ```\n\n3. **Determine Active Sibling's Position and Conditions**:\n   - **Position in Cluster**: Determines the position (`left` or `right`) of the active sibling within its cluster.\n   - **First Row Check**: Checks if the active sibling is in the same row as the current child.\n   - **Directly Below Parent Check**: Checks if the active sibling is directly below the parent node.\n   - **Odd Cluster Check**: Checks if the active sibling is in a cluster with an odd number of nodes.\n   ```typescript\n   const activeSiblingPosition = getNodePositionInCluster(activeSibling);\n   const isActiveSiblingFirstRow = currentChild.y === activeSibling.y;\n   const isActiveSiblingDirectlyBelowParent = node.x === activeSibling.x;\n   const isActiveSiblingInOddCluster =\n     activeSibling.cluster && activeSibling.cluster.nodes.length % 2 !== 0;\n   ```\n\n4. **Determine if Edge Should Be Active**:\n   - **Middle Position**: If the edge position is `middle`, it checks if the active sibling is directly below the parent.\n   - **Left Position**: If the edge position is `left`, it checks if the active sibling is on the left.\n   - **Right Position**: If the edge position is `right`, it checks if the active sibling is on the right and not directly below the parent.\n   ```typescript\n   let isActiveEdge;\n\n   if (edgePosition === 'middle') {\n     isActiveEdge = isActiveSiblingDirectlyBelowParent;\n   } else if (edgePosition === 'left') {\n     isActiveEdge = activeSiblingPosition === 'left';\n   } else {\n     isActiveEdge =\n       activeSiblingPosition === 'right' && !isActiveSiblingDirectlyBelowParent;\n   }\n   ```\n\n5. **Special Case for Odd Clusters**: If the active sibling is in an odd cluster, not in the first row, and directly below the parent, the edge is marked as active.\n   ```typescript\n   if (\n     isActiveSiblingInOddCluster &&\n     !isActiveSiblingFirstRow &&\n     isActiveSiblingDirectlyBelowParent\n   ) {\n     isActiveEdge = true;\n   }\n   ```\n\n6. **Return Result**: Finally, the function returns whether the edge should be active.\n   ```typescript\n   return isActiveEdge;\n   ```\n\nIn summary, the function evaluates several conditions related to the positions and states of nodes to decide if an edge should be marked as active."
+            }
+          ],
+          "toolCallResults": {},
+          "modelMessageId": "1209f250-e6de-4aed-aaa0-808c19a27b90",
+          "responseId": "961c65fc-7970-40f7-8ec9-76e54dee5669",
+          "sessionId": "e2c211a2-66c2-4cee-892b-03a2a1c04d20",
+          "agentId": "github.copilot.default"
+        }
+      },
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.default",
+        "description": "Ask Copilot",
+        "metadata": {
+          "themeIcon": {
+            "id": "copilot"
+          },
+          "hasFollowups": true,
+          "helpTextPrefix": "You can ask me general programming questions, or chat with the following participants which have specialized expertise and can perform actions:",
+          "helpTextVariablesPrefix": "You can also help me understand your question by using the following variables to give me extra context:",
+          "helpTextPostfix": {
+            "value": "To have a great conversation, ask me questions as if I was a real programmer:\n\n* **Show me the code** you want to talk about by having the files open and selecting the most important lines.\n* **Make refinements** by asking me follow-up questions, adding clarifications, providing errors, etc.\n* **Review my suggested code** and tell me about issues or improvements, so I can iterate on it.\n\nYou can also ask me questions about your editor selection by [starting an inline chat session](command:inlineChat.start).\n\nLearn more about [GitHub Copilot](https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted) in [Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview). Or explore the [Copilot walkthrough](command:github.copilot.open.walkthrough).",
+            "isTrusted": {
+              "enabledCommands": [
+                "inlineChat.start",
+                "github.copilot.open.walkthrough"
+              ]
+            },
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "uris": {
+              "command:inlineChat.start": {
+                "$mid": 1,
+                "path": "inlineChat.start",
+                "scheme": "command"
+              },
+              "https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted": {
+                "$mid": 1,
+                "path": "/copilot/using-github-copilot/getting-started-with-github-copilot",
+                "scheme": "https",
+                "authority": "docs.github.com",
+                "query": "tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted"
+              },
+              "https://code.visualstudio.com/docs/copilot/overview": {
+                "$mid": 1,
+                "path": "/docs/copilot/overview",
+                "scheme": "https",
+                "authority": "code.visualstudio.com"
+              },
+              "command:github.copilot.open.walkthrough": {
+                "$mid": 1,
+                "path": "github.copilot.open.walkthrough",
+                "scheme": "command"
+              }
+            }
+          },
+          "supportIssueReporting": false,
+          "supportsSlowVariables": true,
+          "requester": {
+            "name": "amadeo-manouchehri_pers0nio",
+            "icon": {
+              "$mid": 1,
+              "path": "/u/190103085",
+              "scheme": "https",
+              "authority": "avatars.githubusercontent.com",
+              "query": "v=4"
+            }
+          }
+        },
+        "name": "GitHubCopilot",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "slashCommands": [],
+        "disambiguation": [
+          {
+            "category": "generate_code_sample",
+            "description": "The user wants to generate code snippets without referencing the contents of the current workspace. This category does not include generating entire projects.",
+            "examples": [
+              "Write an example of computing a SHA256 hash."
+            ]
+          },
+          {
+            "category": "add_feature_to_file",
+            "description": "The user wants to change code in a file that is provided in their request, without referencing the contents of the current workspace. This category does not include generating entire projects.",
+            "examples": [
+              "Add a refresh button to the table widget."
+            ]
+          },
+          {
+            "category": "question_about_specific_files",
+            "description": "The user has a question about a specific file or code snippet that they have provided as part of their query, and the question does not require additional workspace context to answer.",
+            "examples": [
+              "What does this file do?"
+            ]
+          }
+        ]
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+            "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/mapEdges.ts",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timestamp": 1740514700445
+    }
+  ],
+  "sessionId": "39451dd2-50fc-4636-96c9-24b4b63edf28",
+  "creationDate": 1740514642170,
+  "isImported": false,
+  "lastMessageDate": 1740514700445,
+  "isNew": true
+}

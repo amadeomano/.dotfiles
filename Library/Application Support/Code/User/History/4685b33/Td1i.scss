@@ -1,0 +1,14 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.infoHero {
+  padding-top: tokens.$spacing-3pt5;
+  padding-inline: tokens.$spacing-3pt5;
+  overflow: hidden;
+
+  // Hardcoded dimensions as in the design:
+  // https://www.figma.com/design/UqyyCuSkGdYnRi31T8dfmg/Payroll-Market-Expansion---Native-Payroll-UK-Exploration-002---2024-Q3?node-id=2916-171623&t=uLdtKSASeZJdnSJq-4
+  .avatar {
+    height: tokens.$section-medium;
+    width: 84px;
+  }
+}

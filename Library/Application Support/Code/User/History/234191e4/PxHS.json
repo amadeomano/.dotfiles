@@ -1,0 +1,33 @@
+{
+  "name": "@personio-web/employees-organizations-view-org-chart",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@personio-web/auth-context": "workspace:*",
+    "@personio-web/design-system-brand-config": "workspace:*",
+    "@personio-web/employees-organizations-data-feature-access": "workspace:*",
+    "@personio-web/employees-organizations-feature-org-chart": "workspace:*",
+    "@personio-web/employees-organizations-feature-org-units": "workspace:*",
+    "@personio-web/employees-organizations-feature-organization-tabs": "workspace:*",
+    "@personio-web/employees-organizations-feature-profile-drawer": "workspace:*",
+    "@personio-web/employees-organizations-hook-use-dialog-context": "workspace:*",
+    "@personio-web/employees-organizations-util-people": "workspace:*",
+    "@personio-web/orchestrator-common": "workspace:*",
+    "@personio-web/use-feature-flag-wrapper": "workspace:*",
+    "@personio-web/amplitude-provider": "workspace:*"
+  },
+  "devDependencies": {
+    "@personio-web/config-storybook": "workspace:*",
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/employees-organizations-data-gofer": "workspace:*",
+    "@personio-web/employees-organizations-gofer": "workspace:*",
+    "@personio-web/employees-organizations-data-people-list": "workspace:*",
+    "@personio-web/employees-organizations-mocks-gofer": "workspace:*",
+    "@personio-web/playwright-fui": "workspace:*",
+    "@types/personio-web__design-system-component-page": "workspace:*",
+    "@types/personio-web__global-experience-data-support-csat": "workspace:*",
+    "@types/personio-web__employees-organizations-view-org-chart": "workspace:*"
+  }
+}

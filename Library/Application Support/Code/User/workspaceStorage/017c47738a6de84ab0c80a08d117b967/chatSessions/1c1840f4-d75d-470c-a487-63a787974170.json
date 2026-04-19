@@ -1,0 +1,315 @@
+{
+  "version": 3,
+  "requesterUsername": "amadeo-manouchehri_personio",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/209497769",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_ff8b0ea9-e2d0-4652-a507-23c2126f55df",
+      "message": {
+        "text": "import rendreHook and the wrapper to include prefs using #file:MockOrgChartPreferencesContext.tsx ",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 57
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 58
+            },
+            "text": "import rendreHook and the wrapper to include prefs using ",
+            "kind": "text"
+          },
+          {
+            "range": {
+              "start": 57,
+              "endExclusive": 97
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 58,
+              "endLineNumber": 1,
+              "endColumn": 98
+            },
+            "text": "#file:MockOrgChartPreferencesContext.tsx",
+            "id": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/test-setup/mocks/MockOrgChartPreferencesContext.tsx",
+            "data": {
+              "$mid": 1,
+              "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/test-setup/mocks/MockOrgChartPreferencesContext.tsx",
+              "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/test-setup/mocks/MockOrgChartPreferencesContext.tsx",
+              "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/test-setup/mocks/MockOrgChartPreferencesContext.tsx",
+              "scheme": "file"
+            },
+            "isFile": true,
+            "isDirectory": false,
+            "kind": "dynamic"
+          },
+          {
+            "range": {
+              "start": 97,
+              "endExclusive": 98
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 98,
+              "endLineNumber": 1,
+              "endColumn": 99
+            },
+            "text": " ",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "kind": "file",
+            "id": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/test-setup/mocks/MockOrgChartPreferencesContext.tsx",
+            "name": "file:MockOrgChartPreferencesContext.tsx",
+            "range": {
+              "start": 57,
+              "endExclusive": 97
+            },
+            "value": {
+              "$mid": 1,
+              "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/test-setup/mocks/MockOrgChartPreferencesContext.tsx",
+              "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/test-setup/mocks/MockOrgChartPreferencesContext.tsx",
+              "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/test-setup/mocks/MockOrgChartPreferencesContext.tsx",
+              "scheme": "file"
+            }
+          },
+          {
+            "kind": "file",
+            "id": "vscode.implicit.selection",
+            "name": "file:useGetOrgUnitSearchResults.test.tsx",
+            "value": {
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx",
+                "scheme": "file"
+              },
+              "range": {
+                "startLineNumber": 3,
+                "startColumn": 24,
+                "endLineNumber": 3,
+                "endColumn": 34,
+                "selectionStartLineNumber": 3,
+                "selectionStartColumn": 24,
+                "positionLineNumber": 3,
+                "positionColumn": 34
+              }
+            },
+            "modelDescription": "User's active selection"
+          }
+        ]
+      },
+      "response": [
+        {
+          "value": "I'll help you import `renderHook` and add the wrapper using the `MockOrgChartPreferencesContext`. Let me first read the current test file to understand its structure and then make the necessary imports and modifications. ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "copilot_readFile"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Reading [](file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx)",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "uris": {
+              "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx": {
+                "$mid": 1,
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx",
+                "scheme": "file"
+              }
+            }
+          },
+          "pastTenseMessage": {
+            "value": "Read [](file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx)",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "uris": {
+              "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx": {
+                "$mid": 1,
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx",
+                "scheme": "file"
+              }
+            }
+          },
+          "isConfirmed": true,
+          "isComplete": true,
+          "toolCallId": "ebdaa4b0-f814-46d2-8c62-0041d74c9d4c",
+          "toolId": "copilot_readFile"
+        },
+        {
+          "value": "Now I need to check if there are any existing imports at the top of the file. Let me search for import statements: ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "copilot_findTextInFiles"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Searching text for `^import` (`**/useGetOrgUnitSearchResults.test.tsx`)",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "uris": {}
+          },
+          "pastTenseMessage": {
+            "value": "Searched text for `^import` (`**/useGetOrgUnitSearchResults.test.tsx`), no results",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "uris": {}
+          },
+          "isConfirmed": true,
+          "isComplete": true,
+          "resultDetails": [],
+          "toolCallId": "9cf0931f-02b4-415e-87bb-691661fac05e",
+          "toolId": "copilot_findTextInFiles"
+        },
+        {
+          "value": "It seems there are no import statements yet. Let me also check what the ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "inlineReference",
+          "inlineReference": {
+            "name": "useGetOrgUnitSearchResults",
+            "kind": 12,
+            "containerName": "",
+            "location": {
+              "range": {
+                "startLineNumber": 3,
+                "startColumn": 41,
+                "endLineNumber": 3,
+                "endColumn": 41
+              },
+              "uri": {
+                "$mid": 1,
+                "fsPath": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx",
+                "external": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx",
+                "path": "/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/ControlBar/components/Search/utils/useGetOrgUnitSearchResults.test.tsx",
+                "scheme": "file"
+              }
+            }
+          },
+          "resolveId": "37dd75fd-a1cc-45f7-b627-fde38d2294ce"
+        },
+        {
+          "value": " hook looks like to understand what needs to be imported: ",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/Users/amadeo.manouchehri/repos/personio-web/apps/orchestrator/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "prepareToolInvocation",
+          "toolName": "copilot_findFiles"
+        },
+        {
+          "kind": "toolInvocationSerialized",
+          "invocationMessage": {
+            "value": "Searching for files matching `**/useGetOrgUnitSearchResults.ts`",
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "uris": {}
+          },
+          "isConfirmed": true,
+          "isComplete": true,
+          "toolCallId": "2e3fedc8-81e0-4963-8ec8-398ead1f5c24",
+          "toolId": "copilot_findFiles"
+        }
+      ],
+      "responseId": "response_3f7de1f4-039a-4702-9044-9d7e9592bd55",
+      "result": {},
+      "responseMarkdownInfo": [],
+      "followups": [],
+      "isCanceled": true,
+      "vote": 0,
+      "voteDownReason": "didNotFollowInstructions",
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.editsAgent",
+        "description": "Edit files in your workspace in agent mode",
+        "when": "config.chat.agent.enabled",
+        "metadata": {
+          "themeIcon": {
+            "id": "tools"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "agent",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "agent"
+        ],
+        "slashCommands": [
+          {
+            "name": "list"
+          }
+        ],
+        "disambiguation": []
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timestamp": 1752224772203,
+      "modelId": "github.copilot-chat/claude-sonnet-4"
+    }
+  ],
+  "sessionId": "1c1840f4-d75d-470c-a487-63a787974170",
+  "creationDate": 1752220331729,
+  "isImported": false,
+  "lastMessageDate": 1752224772203
+}

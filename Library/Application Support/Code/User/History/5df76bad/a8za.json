@@ -1,0 +1,16 @@
+{
+  "name": "@personio-web/payroll-data-gofer",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/core-cookies": "workspace:*",
+    "@types/personio-web__payroll-data-gofer": "workspace:*"
+  },
+  "dependencies": {
+    "@personio-web/global-constants": "workspace:^",
+    "@personio-web/i18n": "workspace:^"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@personio-web/payroll-view-a3-payroll",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@personio-web/design-system-tokens": "workspace:*",
+    "@personio-web/i18n": "workspace:*",
+    "@personio-web/payroll-integrations-commons-test": "workspace:*",
+    "@personio-web/payroll-data-payroll-integration-context": "workspace:*",
+    "@personio-web/payroll-data-payroll-integration-hub": "workspace:*",
+    "@personio-web/payroll-component-fullscreen-modal": "workspace:*",
+    "@personio-web/payroll-component-inline-banner": "workspace:*",
+    "@personio-web/payroll-component-last-refresh-banner": "workspace:*",
+    "@personio-web/payroll-component-skeleton": "workspace:*",
+    "@personio-web/payroll-component-error-boundary": "workspace:*",
+    "@personio-web/payroll-hook-use-sticky-header": "workspace:*",
+    "@personio-web/payroll-feature-integration-people-table": "workspace:*",
+    "@personio-web/payroll-util-navigation": "workspace:*"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@types/personio-web__payroll-view-a3-payroll": "workspace:*"
+  }
+}

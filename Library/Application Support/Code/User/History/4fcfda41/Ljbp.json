@@ -1,0 +1,16 @@
+{
+  "name": "@types/personio-web__design-system-component-picker",
+  "version": "1.0.0",
+  "private": true,
+  "types": "index.d.ts",
+  "devDependencies": {
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/design-system-utils": "workspace:*",
+    "@types/personio-web__design-system-component-enum": "workspace:*",
+    "@types/personio-web__design-system-component-icon": "workspace:*",
+    "@types/personio-web__design-system-component-flag": "workspace:*",
+    "@types/personio-web__design-system-component-token": "workspace:*",
+    "@types/personio-web__design-system-component-tooltip": "workspace:*",
+    "@types/personio-web__design-system-component-popover": "workspace:*"
+  }
+}

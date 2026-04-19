@@ -1,0 +1,16 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.leadsContainer {
+}
+
+.labels {
+  // name
+  & > span:nth-child(1) {
+    // @include tokens.typography-base;
+    // font-weight: tokens.$font-weights-medium;
+  }
+
+  // position
+  & > span:nth-child(2) {
+  }
+}

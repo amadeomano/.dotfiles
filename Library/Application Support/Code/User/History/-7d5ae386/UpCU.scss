@@ -1,0 +1,27 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.leadsContainer {
+  border-radius: tokens.$radius-large;
+  background-color: tokens.$colors-static-bg-accent;
+  margin: tokens.$spacing-gap-large tokens.$primitive-spacing-3pt5 0;
+}
+
+.leadItem {
+  padding: tekens.$spacing-gap-small tokens.$spacing-gap-medium;
+  &::before {
+    background-color: inherit !important;
+  }
+}
+
+.labels {
+  // name
+  & > span:nth-child(1) {
+    @include tokens.typography-meta;
+    font-weight: tokens.$font-weights-medium;
+  }
+
+  // position
+  & > span:nth-child(2) {
+    @include tokens.typography-meta;
+  }
+}

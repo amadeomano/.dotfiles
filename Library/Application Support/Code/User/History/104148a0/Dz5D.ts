@@ -1,0 +1,48 @@
+import { type FilterConfig } from 'designSystem/component/advanced-filter';
+import { useTable } from 'designSystem/component/table';
+import {
+  type PayGroup,
+  usePayGroups,
+} from '../../../hooks/payroll-lifecycle/usePayGroups';
+import { type Employee } from '../../../hooks/usePeopleData';
+import { type ColConfig } from '../tableUtils/columns';
+import * as columns from '../tableUtils/columns';
+import * as filters from '../tableUtils/filters';
+import { getProcessedData } from '../tableUtils/dataProcessor';
+import {
+  type PersonColumnData,
+  usePersonColumnData,
+} from './usePersonColumnData';
+
+export const useTableConfig = (data?: Employee[]) => {
+  const table = useTable();
+  const { payGroups } = usePayGroups();
+
+  const ids = data?.map(({ employeeId }) => employeeId.toString()) ?? [];
+  const { persons } = usePersonColumnData(ids);
+
+  return {
+    table,
+    isConfigLoading: false,
+    columnsConfig: columnsConfig(persons),
+    filtersConfig: getFiltersConfig(payGroups?.data),
+    processedData: getProcessedData(table, data, payGroups?.data),
+  };
+};
+
+const columnsConfig = (personsData: PersonColumnData[]): ColConfig[] => [
+  columns.personColumn(personsData),
+  columns.statusColumn,
+  columns.payGroupColumn,
+  columns.lastPaidColumn,
+  columns.nextPayDayColumn,
+];
+
+type GetFiltersConfig = (payGroups?: PayGroup[]) => FilterConfig[];
+const getFiltersConfig: GetFiltersConfig = (payGroups = []) => [
+  filters.personFilter,
+  filters.statusFilter,
+  filters.payGroupFilter(payGroups),
+  filters.lastPaidFilter,
+  filters.nextPayDayFilter,
+];

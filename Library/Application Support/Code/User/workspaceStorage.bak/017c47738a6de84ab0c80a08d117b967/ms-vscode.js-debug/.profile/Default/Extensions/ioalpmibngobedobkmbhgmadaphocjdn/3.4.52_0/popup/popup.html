@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8"/>
+   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div id="popup-body" class="popup-body" >
+  <div id="popup-header">
+     <div id="title" class="popup-title">
+        <a id="server-link" href="#" target="_blank" class="extension-logo"></a>
+
+    </div>
+
+    <div id="error" class="popup-message" style="display:none;color:red;" title=""></div>
+    <div id="warning" class="popup-message" title="">Connecting...</div>
+    <div id="spinner-wrapper" class="spinner-wrapper">
+      <div id="spinner" class="spinner" title=""></div>
+    </div>
+
+    <div id="login-button-wrapper" class="login-button-wrapper"></div>
+
+     <div class="filter-wrapper" id="filter-wrapper">
+        <input placeholder="Search" id="filter-input" name="filter-input" autofocus class="filter-input" spellcheck="false">
+     </div>
+
+  </div>
+
+  <div id="all-apps" class="items-list" >
+  </div>
+
+
+
+  <div id="popup-footer" class="popup-footer">
+    <!--&nbsp; to be counted in popup height-->
+    <div id="server_info" class="server-info" style="display: none;">&nbsp;</div>
+  </div>
+
+
+
+</div>
+<script type="text/javascript" src="popup.bundle.js"></script></body>
+</html>

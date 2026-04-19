@@ -1,0 +1,369 @@
+openapi: '3.0.0'
+info:
+  title: Salary and Payroll Settings
+  version: 1.0.0
+  description: Endpoint for Salary and Payroll Settings
+
+paths:
+  /api/v1/payroll/settings:
+    get:
+      summary: Retrieves all settings
+      operationId: GetAllPayrollSettings
+      responses:
+        "200":
+          description: List all settings
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SettingsResponse'
+              examples:
+                200:
+                  value:
+                    success: true
+                    data:
+                      attributes:
+                        - id: universal_id_1
+                          label: Label 1
+                          selected: false
+                          category: payroll
+                        - id: universal_id_2
+                          label: Label 2
+                          selected: false
+                          category: absence
+                        - id: universal_id_3
+                          label: Label 3
+                          selected: false
+                          category: employee
+                      absence_types:
+                        - id: universal_id
+                          label: label
+                          selected: true
+                        - id: universal_id_2
+                          label: label_2
+                          selected: false
+                      settings:
+                        review_reminder_day: 25
+                        prorate_salary_base: 30-days
+                        split_salary_data: false
+                        company: 
+                          is_paychex_customer: false
+                        employer_error_reminders: false
+                      payroll_groups:
+                        - id: department_id
+                          label: Department
+                          selected: false
+                
+
+    post:
+      summary: Save all settings
+      operationId: SaveAllSettings
+      requestBody:
+        description: The settings to be saved
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveSettingsRequest'
+            example:
+              data:
+                attributes:
+                  - universal_id
+                absence_types:
+                  - universal_absence
+                settings:
+                  review_reminder_day: 2
+                  split_salary_data: false
+                  prorate_salary_base: 30–days
+                  employee_error_reminders: true
+                  employer_error_reminders: true
+                payroll_groups: department_id
+      responses:
+        '204':
+          description: Settings were saved
+        '400':
+          description: Settings were not saved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                400:
+                  value:
+                    success: false
+                    error:
+                      code: ''
+                      message: technical message
+                      key: error-key
+
+  /api/v2/payrolls/context:
+    get:
+      operationId: GetPayrollsContext
+      summary: Retrieve context about active payroll integrations
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayrollContextResponse'
+              examples:
+                200:
+                  value:
+                    success: true
+                    data:
+                      integrations: []
+                      features:
+                        payslips: false
+                        payslipsDistribution: false
+                        errors: true
+
+
+  /api/v1/features/payroll-accounting-groups:
+    get:
+      operationId: GetIsPayrollGroupsActive
+      summary: Retrieve information if payroll groups are enabled
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayrollGroupsFeatureResponse'
+              examples:
+                200:
+                  value:
+                    success: true
+                    data:
+                      enabled: false
+
+components:
+  schemas:
+    SettingsResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          $ref: '#/components/schemas/SettingsData'
+      required:
+        - success
+        - data
+
+    SettingsData:
+      type: object
+      properties:
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attribute'
+        absence_types:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbsenceType'
+        settings:
+          $ref: '#/components/schemas/Settings'
+        payroll_groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/PayrollGroup'
+      required:
+        - attributes
+        - absence_types
+        - settings
+        - payroll_groups
+
+    Attribute:
+      type: object
+      properties:
+        id:
+          type: string
+          example: universal_id_1
+        label:
+          type: string
+          example: Label 1
+        selected:
+          type: boolean
+        category:
+          type: string
+          example: payroll
+      required:
+        - id
+        - label
+        - selected
+        - category
+
+    AbsenceType:
+      type: object
+      properties:
+        id:
+          type: string
+          example: universal_id
+        label:
+          type: string
+          example: label
+        selected:
+          type: boolean
+      required:
+        - id
+        - label
+        - selected
+
+    Settings:
+      type: object
+      properties:
+        review_reminder_day:
+          type: integer
+          format: int32
+          example: 25
+        prorate_salary_base:
+          type: string
+          example: 30-days
+        split_salary_data:
+          type: boolean
+        company:
+          $ref: '#/components/schemas/Company'
+        employee_error_reminders:
+          type: boolean
+        employer_error_reminders:
+          type: boolean
+      required:
+        - review_reminder_day
+        - prorate_salary_base
+        - split_salary_data
+        - company
+        - employee_error_reminders
+        - employer_error_reminders
+
+    Company:
+      type: object
+      properties:
+        is_paychex_customer:
+          type: boolean
+      required:
+        - is_paychex_customer
+
+    PayrollGroup:
+      type: object
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        selected:
+          type: boolean
+      required:
+        - id
+        - label
+        - selected
+
+    SaveSettingsRequest:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/SaveSettingsData'
+      required:
+        - data
+
+    SaveSettingsData:
+      type: object
+      properties:
+        attributes:
+          type: array
+          items:
+            type: string
+        absence_types:
+          type: array
+          items:
+            type: string
+        settings:
+          $ref: '#/components/schemas/Settings'
+        payroll_groups:
+          type: string
+          nullable: true
+      required:
+        - attributes
+        - absence_types
+        - settings
+        - payroll_groups
+
+    ErrorResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          $ref: '#/components/schemas/ErrorDetail'
+      required:
+        - success
+        - error
+
+    ErrorDetail:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        key:
+          type: string
+      required:
+        - code
+        - message
+        - key
+
+    PayrollContextResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          $ref: '#/components/schemas/PayrollContextData'
+      required:
+        - success
+        - data
+
+    PayrollContextData:
+      type: object
+      properties:
+        integrations:
+          type: array
+          items:
+            type: string
+        features:
+          $ref: '#/components/schemas/Features'
+      required:
+        - integrations
+        - features
+
+    Features:
+      type: object
+      properties:
+        payslips:
+          type: boolean
+        payslipsDistribution:
+          type: boolean
+        errors:
+          type: boolean
+      required:
+        - payslips
+        - payslipsDistribution
+        - errors
+
+    PayrollGroupsFeatureResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          $ref: '#/components/schemas/PayrollGroupsFeature'
+      required:
+        - success
+        - data
+
+    PayrollGroupsFeature:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+      required:
+        - enabled

@@ -1,0 +1,43 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.membersList {
+  --ds-picker-width: 100%;
+  --DS-list-primitive-item-padding: #{tokens.$spacing-gap-medium} 0;
+
+  & [role='listbox'] {
+    padding: 0;
+  }
+
+  & :global(.ds-type-control-medium) {
+    cursor: default;
+    background-color: transparent !important;
+
+    // Copied from PrimitiveListItem as Picker Items do no support separators
+    // https://github.com/Personio-Internal/personio-web/blob/a36435fbd1d6a780ec9304637adb31b7154ce1f5/product-areas/design-system/components/list-primitive/src/ListPrimitiveItem/ListPrimitiveItem.module.scss#L39-L40
+    &:not(:first-of-type) {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: var(
+          --DS-list-primitive-item-overline-offset,
+          tokens.$spacing-gap-large
+        );
+        right: var(
+          --DS-list-primitive-item-overline-offset,
+          tokens.$spacing-gap-large
+        );
+        background-color: tokens.$colors-static-stroke-primary;
+        height: 0.5px;
+      }
+    }
+  }
+}
+
+.memberOption {
+  flex-grow: 1;
+  &:hover {
+    background-color: #cf1;
+  }
+}

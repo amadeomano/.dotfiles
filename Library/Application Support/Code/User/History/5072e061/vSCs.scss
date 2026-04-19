@@ -1,0 +1,7 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin-bottom: tokens.$spacing-5;
+}

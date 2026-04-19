@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "sessionId": "9d981e5f-cec5-4de8-a30c-117b32ae5e20",
+  "linearHistory": [],
+  "linearHistoryIndex": 0,
+  "initialFileContents": [],
+  "recentSnapshot": {
+    "workingSet": [
+      [
+        "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/OrgChartTree/OrgChartTree.tsx",
+        {
+          "description": "Often edited with ViewActionsBar.tsx (Suggested)",
+          "state": 6
+        }
+      ],
+      [
+        "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/TreeLayout.tsx",
+        {
+          "state": 3,
+          "description": "Open Editor"
+        }
+      ],
+      [
+        "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/types.ts",
+        {
+          "description": "Often edited with TreeLayout.tsx (Suggested)",
+          "state": 6
+        }
+      ]
+    ],
+    "entries": []
+  },
+  "filesToSkipCreating": []
+}

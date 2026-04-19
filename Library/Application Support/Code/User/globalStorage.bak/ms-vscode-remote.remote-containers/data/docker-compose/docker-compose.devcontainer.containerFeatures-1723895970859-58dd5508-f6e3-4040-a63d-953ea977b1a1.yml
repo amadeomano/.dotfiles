@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  'dev':
+    entrypoint: ["/bin/sh", "-c", "echo Container started\n
+trap \"exit 0\" 15\n
+\n
+exec \"$$@\"\n
+while sleep 1 & wait $$!; do :; done", "-", "docker-entrypoint.sh"]
+    command: ["node"]
+    labels:
+      - 'devcontainer.local_folder=/Users/amadeo.manouchehri/Documents/amadeo-wohnung'
+      - 'devcontainer.config_file=/Users/amadeo.manouchehri/Documents/amadeo-wohnung/.devcontainer/devcontainer.json'
+    volumes:
+      - vscode:/vscode
+volumes:
+  
+  vscode:
+    external: true

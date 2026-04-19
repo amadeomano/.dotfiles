@@ -1,0 +1,4026 @@
+{
+  "version": 2,
+  "sessionId": "7e8be9ec-7ae9-4bb9-9fe3-ad3355a3897c",
+  "linearHistory": [
+    {
+      "requestId": "request_b97b3251-28a0-4409-8f38-2393b35be80f",
+      "stops": [
+        {
+          "workingSet": [],
+          "entries": [
+            {
+              "resource": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/computeTreeCoordinates.ts",
+              "languageId": "typescript",
+              "originalHash": "a0efc57",
+              "currentHash": "a0efc57",
+              "originalToCurrentEdit": [],
+              "state": 4,
+              "snapshotUri": "chat-editing-snapshot-text-model:/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/computeTreeCoordinates.ts?%7B%22sessionId%22%3A%227e8be9ec-7ae9-4bb9-9fe3-ad3355a3897c%22%2C%22requestId%22%3A%22request_b97b3251-28a0-4409-8f38-2393b35be80f%22%2C%22undoStop%22%3A%22%22%7D",
+              "telemetryInfo": {
+                "requestId": "request_b97b3251-28a0-4409-8f38-2393b35be80f",
+                "agentId": "github.copilot.editingSession"
+              }
+            }
+          ]
+        }
+      ],
+      "postEdit": [
+        {
+          "resource": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/computeTreeCoordinates.ts",
+          "languageId": "typescript",
+          "originalHash": "a0efc57",
+          "currentHash": "943660f",
+          "originalToCurrentEdit": [
+            {
+              "pos": 0,
+              "len": 61,
+              "txt": "/* eslint-disable @typescript-eslint/no-non-null-assertion */"
+            },
+            {
+              "pos": 62,
+              "len": 13,
+              "txt": "import type {"
+            },
+            {
+              "pos": 76,
+              "len": 11,
+              "txt": "  BaseData,"
+            },
+            {
+              "pos": 88,
+              "len": 18,
+              "txt": "  ClusterTreeNode,"
+            },
+            {
+              "pos": 107,
+              "len": 20,
+              "txt": "  TreeLayoutOptions,"
+            },
+            {
+              "pos": 128,
+              "len": 11,
+              "txt": "  TreeNode,"
+            },
+            {
+              "pos": 140,
+              "len": 18,
+              "txt": "} from '../types';"
+            },
+            {
+              "pos": 160,
+              "len": 79,
+              "txt": "import { DEFAULT_NODE_GROUP_ID, defaultTreeLayoutOptions } from '../constants';"
+            },
+            {
+              "pos": 240,
+              "len": 70,
+              "txt": "import { isClusterNodeInSecondRow } from './isClusterNodeInSecondRow';"
+            },
+            {
+              "pos": 312,
+              "len": 33,
+              "txt": "const ROOT_NODE_ID = 'ROOT_NODE';"
+            },
+            {
+              "pos": 346,
+              "len": 116,
+              "txt": "const MIN_GROUP_COUNT = 1; // Minimum number of groups to consider for group layout, condescending the default group"
+            },
+            {
+              "pos": 464,
+              "len": 3,
+              "txt": "/**"
+            },
+            {
+              "pos": 468,
+              "len": 96,
+              "txt": " * Computes the x and y coordinates of hierarchical nodes on a tree diagram in two layout modes:"
+            },
+            {
+              "pos": 565,
+              "len": 72,
+              "txt": " * - **Horizontal**: all nodes at the same depth are vertically aligned."
+            },
+            {
+              "pos": 638,
+              "len": 88,
+              "txt": " * - **Compact**: four or more consecutive leaf nodes are arranged in a two-row cluster."
+            },
+            {
+              "pos": 727,
+              "len": 2,
+              "txt": " *"
+            },
+            {
+              "pos": 730,
+              "len": 15,
+              "txt": " * Terminology:"
+            },
+            {
+              "pos": 746,
+              "len": 6,
+              "txt": " * ---"
+            },
+            {
+              "pos": 753,
+              "len": 121,
+              "txt": " * - **Ancestor**: Any node above the current node in the hierarchy, including the immediate parent and nodes further up."
+            },
+            {
+              "pos": 875,
+              "len": 123,
+              "txt": " * - **Descendant**: Any node below the current node in the hierarchy, including immediate children and nodes further down."
+            },
+            {
+              "pos": 999,
+              "len": 57,
+              "txt": " * - **Siblings**: Nodes that share the same parent node."
+            },
+            {
+              "pos": 1057,
+              "len": 68,
+              "txt": " * - **Depth**: The rank or position of a node within the hierarchy."
+            },
+            {
+              "pos": 1126,
+              "len": 44,
+              "txt": " * - **Leaf**: Any node without descendants."
+            },
+            {
+              "pos": 1171,
+              "len": 2,
+              "txt": " *"
+            },
+            {
+              "pos": 1174,
+              "len": 9,
+              "txt": " * Logic:"
+            },
+            {
+              "pos": 1184,
+              "len": 6,
+              "txt": " * ---"
+            },
+            {
+              "pos": 1191,
+              "len": 78,
+              "txt": " * The **x coordinate** is determined by plotting node from left to right in a"
+            },
+            {
+              "pos": 1270,
+              "len": 74,
+              "txt": " * post-order tree traversal, starting with the leftmost node at x = 0 and"
+            },
+            {
+              "pos": 1345,
+              "len": 60,
+              "txt": " * shifting further nodes rightwards in a sequential manner."
+            },
+            {
+              "pos": 1406,
+              "len": 2,
+              "txt": " *"
+            },
+            {
+              "pos": 1409,
+              "len": 86,
+              "txt": " * The **y coordinate** is computed by starting with the ancestor node's y-coordinate,"
+            },
+            {
+              "pos": 1496,
+              "len": 81,
+              "txt": " * then adding the current node's height, and including a margin between the node"
+            },
+            {
+              "pos": 1578,
+              "len": 71,
+              "txt": " * and its descendants to ensure clear visualization and avoid overlap."
+            },
+            {
+              "pos": 1650,
+              "len": 2,
+              "txt": " *"
+            },
+            {
+              "pos": 1653,
+              "len": 64,
+              "txt": " * More details on each step are documented within the function."
+            },
+            {
+              "pos": 1718,
+              "len": 2,
+              "txt": " *"
+            },
+            {
+              "pos": 1721,
+              "len": 29,
+              "txt": " * This function is based on:"
+            },
+            {
+              "pos": 1751,
+              "len": 81,
+              "txt": " * - [D3 tree function](https://github.com/d3/d3-hierarchy/blob/main/src/tree.js)"
+            },
+            {
+              "pos": 1833,
+              "len": 81,
+              "txt": " * - [Reingold-Tilford \"tidy\" algorithm](https://reingold.co/tidier-drawings.pdf)"
+            },
+            {
+              "pos": 1915,
+              "len": 3,
+              "txt": " */"
+            },
+            {
+              "pos": 1919,
+              "len": 59,
+              "txt": "export function computeTreeCoordinates<T extends BaseData>("
+            },
+            {
+              "pos": 1979,
+              "len": 27,
+              "txt": "  rootNodes: TreeNode<T>[],"
+            },
+            {
+              "pos": 2007,
+              "len": 34,
+              "txt": "  options: TreeLayoutOptions = {},"
+            },
+            {
+              "pos": 2042,
+              "len": 18,
+              "txt": "): TreeNode<T>[] {"
+            },
+            {
+              "pos": 2061,
+              "len": 61,
+              "txt": "  const { nodeSize, mode, spacing, groups, groupPadding } = {"
+            },
+            {
+              "pos": 2123,
+              "len": 32,
+              "txt": "    ...defaultTreeLayoutOptions,"
+            },
+            {
+              "pos": 2156,
+              "len": 15,
+              "txt": "    ...options,"
+            },
+            {
+              "pos": 2172,
+              "len": 4,
+              "txt": "  };"
+            },
+            {
+              "pos": 2177,
+              "len": 65,
+              "txt": ""
+            },
+            {
+              "pos": 2243,
+              "len": 65,
+              "txt": "  // Adjust horizontal spacing dynamically based on node size"
+            },
+            {
+              "pos": 2309,
+              "len": 71,
+              "txt": "  const getNodeWidth = (node: TreeNode<T>) => {"
+            },
+            {
+              "pos": 2381,
+              "len": 34,
+              "txt": "    switch (node.size) {"
+            },
+            {
+              "pos": 2416,
+              "len": 58,
+              "txt": "      case 'medium':"
+            },
+            {
+              "pos": 2475,
+              "len": 47,
+              "txt": "        return nodeSize.width * 1.5;"
+            },
+            {
+              "pos": 2523,
+              "len": 33,
+              "txt": "      case 'large':"
+            },
+            {
+              "pos": 2557,
+              "len": 30,
+              "txt": "        return nodeSize.width * 2;"
+            },
+            {
+              "pos": 2588,
+              "len": 56,
+              "txt": "      default:"
+            },
+            {
+              "pos": 2645,
+              "len": 0,
+              "txt": "        return nodeSize.width;"
+            },
+            {
+              "pos": 2646,
+              "len": 5,
+              "txt": "    }"
+            },
+            {
+              "pos": 2652,
+              "len": 105,
+              "txt": "  };"
+            },
+            {
+              "pos": 2758,
+              "len": 84,
+              "txt": ""
+            },
+            {
+              "pos": 2843,
+              "len": 96,
+              "txt": "  const horizontalNodeSpacing = (nodeA: TreeNode<T>, nodeB: TreeNode<T>) =>"
+            },
+            {
+              "pos": 2940,
+              "len": 5,
+              "txt": "    getNodeWidth(nodeA) / 2 + getNodeWidth(nodeB) / 2 + spacing.sibling;"
+            },
+            {
+              "pos": 2946,
+              "len": 41,
+              "txt": ""
+            },
+            {
+              "pos": 2988,
+              "len": 0,
+              "txt": "  const verticalNodeSpacing = nodeSize.height + spacing.children;"
+            },
+            {
+              "pos": 2989,
+              "len": 5,
+              "txt": "  const verticalClusterNodeSpacing = nodeSize.height + spacing.sibling;"
+            },
+            {
+              "pos": 2995,
+              "len": 12,
+              "txt": "  const horizontalSubTreeSpacing ="
+            },
+            {
+              "pos": 3008,
+              "len": 8,
+              "txt": "    (spacing.subtrees - spacing.sibling) / nodeSize.width;"
+            },
+            {
+              "pos": 3017,
+              "len": 76,
+              "txt": "  const verticalGroupsSpacing = spacing.groups;"
+            },
+            {
+              "pos": 3094,
+              "len": 5,
+              "txt": "  const horizontalGroupsSpacing ="
+            },
+            {
+              "pos": 3100,
+              "len": 43,
+              "txt": "    horizontalSubTreeSpacing +"
+            },
+            {
+              "pos": 3144,
+              "len": 42,
+              "txt": "    (spacing.groups - spacing.sibling) / nodeSize.width;"
+            },
+            {
+              "pos": 3188,
+              "len": 5,
+              "txt": "  /**"
+            },
+            {
+              "pos": 3194,
+              "len": 20,
+              "txt": "   * To enable the tree diagram to have multiple root nodes, a higher-level virtual root node is created."
+            },
+            {
+              "pos": 3215,
+              "len": 8,
+              "txt": "   * This is necessary to satisfy the algorithm's requirement of a single root node."
+            },
+            {
+              "pos": 3224,
+              "len": 98,
+              "txt": "   * The virtual root node is used for computation only and is not returned in the final output."
+            },
+            {
+              "pos": 3323,
+              "len": 115,
+              "txt": "   */"
+            },
+            {
+              "pos": 3439,
+              "len": 5,
+              "txt": "  const root = createRootNode(rootNodes);"
+            },
+            {
+              "pos": 3445,
+              "len": 45,
+              "txt": ""
+            },
+            {
+              "pos": 3491,
+              "len": 27,
+              "txt": "  /**"
+            },
+            {
+              "pos": 3519,
+              "len": 45,
+              "txt": "   * Groups:"
+            },
+            {
+              "pos": 3565,
+              "len": 53,
+              "txt": "   * ---"
+            },
+            {
+              "pos": 3619,
+              "len": 47,
+              "txt": "   * Nodes can be visually grouped, keeping the default group in the center."
+            },
+            {
+              "pos": 3667,
+              "len": 3,
+              "txt": "   */"
+            },
+            {
+              "pos": 3671,
+              "len": 0,
+              "txt": "  const depthWithGroup = new Set<number>();"
+            },
+            {
+              "pos": 3672,
+              "len": 5,
+              "txt": "  const sortedGroups = sortGroups(groups);"
+            },
+            {
+              "pos": 3678,
+              "len": 37,
+              "txt": ""
+            },
+            {
+              "pos": 3716,
+              "len": 8,
+              "txt": "  /**"
+            },
+            {
+              "pos": 3725,
+              "len": 81,
+              "txt": "   * Compact layout:"
+            },
+            {
+              "pos": 3807,
+              "len": 90,
+              "txt": "   * ---"
+            },
+            {
+              "pos": 3898,
+              "len": 152,
+              "txt": "   * Node clusters form when there are more than three consecutive sibling leaf nodes in sequence."
+            },
+            {
+              "pos": 4051,
+              "len": 148,
+              "txt": "   * Each node within a cluster is annotated with metadata, and the cluster depth is stored for layout computation."
+            },
+            {
+              "pos": 4200,
+              "len": 4,
+              "txt": "   */"
+            },
+            {
+              "pos": 4205,
+              "len": 62,
+              "txt": "  const depthWithCluster = new Set<number>();"
+            },
+            {
+              "pos": 4268,
+              "len": 8,
+              "txt": "  if (mode === 'compact') {"
+            },
+            {
+              "pos": 4277,
+              "len": 19,
+              "txt": "    traverseTreeBefore(root, computeCluster);"
+            },
+            {
+              "pos": 4297,
+              "len": 20,
+              "txt": "  } else if (sortedGroups.length > MIN_GROUP_COUNT) {"
+            },
+            {
+              "pos": 4318,
+              "len": 21,
+              "txt": "    traverseTreeBefore(root, sortNodesByGroup);"
+            },
+            {
+              "pos": 4340,
+              "len": 20,
+              "txt": "  }"
+            },
+            {
+              "pos": 4361,
+              "len": 21,
+              "txt": ""
+            },
+            {
+              "pos": 4383,
+              "len": 11,
+              "txt": "  /**"
+            },
+            {
+              "pos": 4395,
+              "len": 7,
+              "txt": "   * Computing x coordinate variables"
+            },
+            {
+              "pos": 4403,
+              "len": 46,
+              "txt": "   * ---"
+            },
+            {
+              "pos": 4450,
+              "len": 4,
+              "txt": "   * To determine the x coordinate of every node, three variables are calculated:"
+            },
+            {
+              "pos": 4455,
+              "len": 15,
+              "txt": "   * - **Prelim:** Initial x-coordinate of the node based on its position within the tree."
+            },
+            {
+              "pos": 4471,
+              "len": 4,
+              "txt": "   * - **Mod:** refers to the amount of shift for the node’s descendants (but not the node itself), to make the children centered with respect to itself"
+            },
+            {
+              "pos": 4476,
+              "len": 119,
+              "txt": "   * - **Shift:** refers to the amount of shift for the node’s descendants, including itself, to not overlap with the subtrees to the left of itself"
+            },
+            {
+              "pos": 4596,
+              "len": 52,
+              "txt": "   *"
+            },
+            {
+              "pos": 4649,
+              "len": 119,
+              "txt": "   * The tree example will be traversed in alphabetical order:"
+            },
+            {
+              "pos": 4769,
+              "len": 115,
+              "txt": "   * ```"
+            },
+            {
+              "pos": 4885,
+              "len": 78,
+              "txt": "   *      Root node"
+            },
+            {
+              "pos": 4964,
+              "len": 4,
+              "txt": "   *     /  /   \\  \\"
+            },
+            {
+              "pos": 4969,
+              "len": 12,
+              "txt": "   *    E   F    J  K"
+            },
+            {
+              "pos": 4982,
+              "len": 4,
+              "txt": "   *   / \\     / | \\"
+            },
+            {
+              "pos": 4987,
+              "len": 106,
+              "txt": "   *  A   B   G  H  I"
+            },
+            {
+              "pos": 5094,
+              "len": 117,
+              "txt": "   *  C   D"
+            },
+            {
+              "pos": 5212,
+              "len": 43,
+              "txt": "   *```"
+            },
+            {
+              "pos": 5256,
+              "len": 4,
+              "txt": "   * A-B-C-D nodes are in a cluster formation."
+            },
+            {
+              "pos": 5261,
+              "len": 14,
+              "txt": "   *"
+            },
+            {
+              "pos": 5276,
+              "len": 4,
+              "txt": "   * **Prelim**"
+            },
+            {
+              "pos": 5281,
+              "len": 101,
+              "txt": "   *"
+            },
+            {
+              "pos": 5383,
+              "len": 102,
+              "txt": "   * The leftmost node (node A) starts with the `prelim` of 0, the following nodes will sum the left sibling's `prelim`"
+            },
+            {
+              "pos": 5486,
+              "len": 80,
+              "txt": "   * and a sibling distance of 1 (B has prelim = 1)."
+            },
+            {
+              "pos": 5567,
+              "len": 4,
+              "txt": "   * If a node is in the second row of a cluster, its `prelim` matches that of the node above it (e.i. D has prelim 1)."
+            },
+            {
+              "pos": 5572,
+              "len": 116,
+              "txt": "   * If a node is the leftmost child and has children, its `prelim` is the midpoint of its children's prelim values"
+            },
+            {
+              "pos": 5689,
+              "len": 39,
+              "txt": "   * (e.i. E has prelim 0.5). Nodes grouping can also affect the prelim value."
+            },
+            {
+              "pos": 5729,
+              "len": 104,
+              "txt": "   *"
+            },
+            {
+              "pos": 5834,
+              "len": 66,
+              "txt": "   * **Mod**"
+            },
+            {
+              "pos": 5901,
+              "len": 4,
+              "txt": "   *"
+            },
+            {
+              "pos": 5906,
+              "len": 49,
+              "txt": "   * Nodes with children that are NOT the leftmost node of their subtree, the `mod` is set to their prelim"
+            },
+            {
+              "pos": 5956,
+              "len": 82,
+              "txt": "   * minus the midpoint of their children (e.i. J has mod 1.5). Nodes grouping can also affect the mod value in order"
+            },
+            {
+              "pos": 6039,
+              "len": 53,
+              "txt": "   * to keep the default group centralized."
+            },
+            {
+              "pos": 6093,
+              "len": 118,
+              "txt": "   *"
+            },
+            {
+              "pos": 6212,
+              "len": 4,
+              "txt": "   * **Shift**"
+            },
+            {
+              "pos": 6217,
+              "len": 52,
+              "txt": "   *"
+            },
+            {
+              "pos": 6270,
+              "len": 4,
+              "txt": "   * `Shift` ensures minimal subtree distance between nodes from different parents to avoid overlaps."
+            },
+            {
+              "pos": 6275,
+              "len": 66,
+              "txt": "   * To detect overlaps, the rightmost descendant of the left subtree (right contour) and the leftmost"
+            },
+            {
+              "pos": 6342,
+              "len": 66,
+              "txt": "   * descendant of the right subtree (left contour) are compared at every level."
+            },
+            {
+              "pos": 6409,
+              "len": 66,
+              "txt": "   *"
+            },
+            {
+              "pos": 6476,
+              "len": 66,
+              "txt": "   * In the example, node B (on the right contour) has a current x-coordinate of 1, and node G (on the left contour)"
+            },
+            {
+              "pos": 6543,
+              "len": 66,
+              "txt": "   * has a current x-coordinate of 1.5."
+            },
+            {
+              "pos": 6610,
+              "len": 66,
+              "txt": "   * To maintain a minimum subtree distance of 2 between nodes from different parents and avoid overlap,"
+            },
+            {
+              "pos": 6677,
+              "len": 66,
+              "txt": "   * the subtree rooted at node J is adjusted with a shift of 1.5."
+            },
+            {
+              "pos": 6744,
+              "len": 66,
+              "txt": "   *"
+            },
+            {
+              "pos": 6811,
+              "len": 66,
+              "txt": "   * The shift affects the subtree root siblings."
+            },
+            {
+              "pos": 6878,
+              "len": 66,
+              "txt": "   * For instance, left siblings like node F will adjust by `1.5 * (1 / 2) = 0.75`"
+            },
+            {
+              "pos": 6945,
+              "len": 66,
+              "txt": "   * to maintain centralization within their subtree."
+            },
+            {
+              "pos": 7012,
+              "len": 5,
+              "txt": "   * Similarly, right siblings will receive the same shift as the node that initiated the shift (node J in this case)."
+            },
+            {
+              "pos": 7018,
+              "len": 55,
+              "txt": "   *"
+            },
+            {
+              "pos": 7074,
+              "len": 20,
+              "txt": "   * In the example, the final X will be as follows:"
+            },
+            {
+              "pos": 7095,
+              "len": 33,
+              "txt": "   *"
+            },
+            {
+              "pos": 7129,
+              "len": 38,
+              "txt": "   * | Node  | prelim | parent's mod | subtree's shift | Final X |"
+            },
+            {
+              "pos": 7168,
+              "len": 29,
+              "txt": "   * | ----- | ------ | ------------ | --------------- | ------- |"
+            },
+            {
+              "pos": 7198,
+              "len": 55,
+              "txt": "   * | E     | 0.5    | 0            | 0               | 0.5     |"
+            },
+            {
+              "pos": 7254,
+              "len": 5,
+              "txt": "   * | F     | 1.5    | 0            | 0.75            | 2.25    |"
+            },
+            {
+              "pos": 7260,
+              "len": 0,
+              "txt": "   * | J     | 2.5    | 0            | 1.5             | 4       |"
+            },
+            {
+              "pos": 7261,
+              "len": 29,
+              "txt": "   * | K     | 3.5    | 0            | 1.5             | 5       |"
+            },
+            {
+              "pos": 7291,
+              "len": 0,
+              "txt": "   * | A & C | 0      | 0            | 0               | 0       |"
+            },
+            {
+              "pos": 7292,
+              "len": 72,
+              "txt": "   * | B & D | 1      | 0            | 0               | 1       |"
+            },
+            {
+              "pos": 7365,
+              "len": 25,
+              "txt": "   * | G     | 0      | 1.5          | 1.5             | 3       |"
+            },
+            {
+              "pos": 7391,
+              "len": 13,
+              "txt": "   * | H     | 1      | 1.5          | 1.5             | 4       |"
+            },
+            {
+              "pos": 7405,
+              "len": 5,
+              "txt": "   * | I     | 2      | 1.5          | 1.5             | 5       |"
+            },
+            {
+              "pos": 7411,
+              "len": 0,
+              "txt": "   */"
+            },
+            {
+              "pos": 7412,
+              "len": 73,
+              "txt": "  traverseTreeAfter(root, computeXCoordinateVariables);"
+            },
+            {
+              "pos": 7486,
+              "len": 62,
+              "txt": "  // Centralize tree"
+            },
+            {
+              "pos": 7549,
+              "len": 0,
+              "txt": "  root.parent.mod = -root.prelim;"
+            },
+            {
+              "pos": 7550,
+              "len": 6,
+              "txt": "  traverseTreeBefore(root, (node) => {"
+            },
+            {
+              "pos": 7557,
+              "len": 75,
+              "txt": "    resolveXCoordinate(node);"
+            },
+            {
+              "pos": 7633,
+              "len": 7,
+              "txt": "    if (node.id !== ROOT_NODE_ID) setCoordinates(node);"
+            },
+            {
+              "pos": 7641,
+              "len": 38,
+              "txt": "  });"
+            },
+            {
+              "pos": 7680,
+              "len": 63,
+              "txt": ""
+            },
+            {
+              "pos": 7744,
+              "len": 38,
+              "txt": "  return root.children ?? [];"
+            },
+            {
+              "pos": 7783,
+              "len": 38,
+              "txt": ""
+            },
+            {
+              "pos": 7822,
+              "len": 7,
+              "txt": "  function computeCluster<T extends BaseData>(node: TreeNode<T>): void {"
+            },
+            {
+              "pos": 7830,
+              "len": 43,
+              "txt": "    if (!node.children) {"
+            },
+            {
+              "pos": 7874,
+              "len": 0,
+              "txt": "      return;"
+            },
+            {
+              "pos": 7875,
+              "len": 36,
+              "txt": "    }"
+            },
+            {
+              "pos": 7912,
+              "len": 65,
+              "txt": ""
+            },
+            {
+              "pos": 7978,
+              "len": 44,
+              "txt": "    const leafChildrenByGroup: Record<string, ClusterTreeNode<T>[]> = {};"
+            },
+            {
+              "pos": 8023,
+              "len": 44,
+              "txt": "    const groupedChildren: Record<string, TreeNode<T>[]> = {};"
+            },
+            {
+              "pos": 8068,
+              "len": 9,
+              "txt": ""
+            },
+            {
+              "pos": 8078,
+              "len": 71,
+              "txt": "    /*"
+            },
+            {
+              "pos": 8150,
+              "len": 7,
+              "txt": "     * Group leaf nodes by their group to determine if they form a cluster."
+            },
+            {
+              "pos": 8158,
+              "len": 7,
+              "txt": "     */"
+            },
+            {
+              "pos": 8166,
+              "len": 0,
+              "txt": "    node.children.forEach((child) => {"
+            },
+            {
+              "pos": 8167,
+              "len": 80,
+              "txt": "      const groupId = child.group?.id ?? DEFAULT_NODE_GROUP_ID;"
+            },
+            {
+              "pos": 8248,
+              "len": 55,
+              "txt": "      if (!groupedChildren[groupId]) {"
+            },
+            {
+              "pos": 8304,
+              "len": 6,
+              "txt": "        groupedChildren[groupId] = [];"
+            },
+            {
+              "pos": 8311,
+              "len": 0,
+              "txt": "      }"
+            },
+            {
+              "pos": 8312,
+              "len": 52,
+              "txt": "      groupedChildren[groupId].push(child);"
+            },
+            {
+              "pos": 8366,
+              "len": 6,
+              "txt": "      if (!child.children?.length) {"
+            },
+            {
+              "pos": 8373,
+              "len": 83,
+              "txt": "        const groupId = child.group?.id ?? DEFAULT_NODE_GROUP_ID;"
+            },
+            {
+              "pos": 8457,
+              "len": 87,
+              "txt": "        if (!leafChildrenByGroup[groupId]) {"
+            },
+            {
+              "pos": 8545,
+              "len": 49,
+              "txt": "          leafChildrenByGroup[groupId] = [];"
+            },
+            {
+              "pos": 8595,
+              "len": 56,
+              "txt": "        }"
+            },
+            {
+              "pos": 8652,
+              "len": 7,
+              "txt": "        leafChildrenByGroup[groupId].push(child as ClusterTreeNode<T>);"
+            },
+            {
+              "pos": 8660,
+              "len": 44,
+              "txt": "      }"
+            },
+            {
+              "pos": 8705,
+              "len": 60,
+              "txt": "    });"
+            },
+            {
+              "pos": 8767,
+              "len": 25,
+              "txt": "    const groupsWithCluster: string[] = Object.keys(leafChildrenByGroup).filter("
+            },
+            {
+              "pos": 8793,
+              "len": 37,
+              "txt": "      (group) => leafChildrenByGroup[group].length > 3,"
+            },
+            {
+              "pos": 8831,
+              "len": 28,
+              "txt": "    );"
+            },
+            {
+              "pos": 8860,
+              "len": 67,
+              "txt": ""
+            },
+            {
+              "pos": 8928,
+              "len": 60,
+              "txt": "    const hasCluster = groupsWithCluster.length > 0;"
+            },
+            {
+              "pos": 8989,
+              "len": 7,
+              "txt": ""
+            },
+            {
+              "pos": 8997,
+              "len": 0,
+              "txt": "    /*"
+            },
+            {
+              "pos": 8998,
+              "len": 68,
+              "txt": "     * Rearrange sibling nodes based on their proximity to either end of the array."
+            },
+            {
+              "pos": 9067,
+              "len": 0,
+              "txt": "     * Nodes with children should be moved either to the beginning or end of the array,"
+            },
+            {
+              "pos": 9068,
+              "len": 6,
+              "txt": "     * depending on which end they are closer to."
+            },
+            {
+              "pos": 9075,
+              "len": 55,
+              "txt": "     * Enabling the layout to be as compact as possible."
+            },
+            {
+              "pos": 9131,
+              "len": 7,
+              "txt": "     */"
+            },
+            {
+              "pos": 9139,
+              "len": 8,
+              "txt": "    const segmentCount = hasCluster ? 4 : 2;"
+            },
+            {
+              "pos": 9148,
+              "len": 46,
+              "txt": "    const segmentSize = node.children.length / segmentCount;"
+            },
+            {
+              "pos": 9195,
+              "len": 59,
+              "txt": ""
+            },
+            {
+              "pos": 9255,
+              "len": 7,
+              "txt": "    let runningIndex = 0;"
+            },
+            {
+              "pos": 9263,
+              "len": 41,
+              "txt": "    sortedGroups.forEach((group) => {"
+            },
+            {
+              "pos": 9305,
+              "len": 5,
+              "txt": "      groupedChildren[group]"
+            },
+            {
+              "pos": 9311,
+              "len": 0,
+              "txt": "        ?.sort(getSortNodesWithChildren(segmentCount, segmentSize))"
+            },
+            {
+              "pos": 9312,
+              "len": 6,
+              "txt": "        .forEach((child) => (child.index = runningIndex++));"
+            },
+            {
+              "pos": 9319,
+              "len": 100,
+              "txt": "    });"
+            },
+            {
+              "pos": 9420,
+              "len": 7,
+              "txt": ""
+            },
+            {
+              "pos": 9428,
+              "len": 22,
+              "txt": "    node.children.sort((nodeA, nodeB) => nodeA.index - nodeB.index);"
+            },
+            {
+              "pos": 9451,
+              "len": 13,
+              "txt": ""
+            },
+            {
+              "pos": 9465,
+              "len": 5,
+              "txt": "    /*"
+            },
+            {
+              "pos": 9471,
+              "len": 0,
+              "txt": "     * The group depth is stored for layout computation"
+            },
+            {
+              "pos": 9472,
+              "len": 6,
+              "txt": "     */"
+            },
+            {
+              "pos": 9479,
+              "len": 57,
+              "txt": "    if ("
+            },
+            {
+              "pos": 9537,
+              "len": 7,
+              "txt": "      sortedGroups.length > MIN_GROUP_COUNT &&"
+            },
+            {
+              "pos": 9545,
+              "len": 41,
+              "txt": "      Object.keys(groupedChildren).length > MIN_GROUP_COUNT"
+            },
+            {
+              "pos": 9587,
+              "len": 0,
+              "txt": "    ) {"
+            },
+            {
+              "pos": 9588,
+              "len": 6,
+              "txt": "      depthWithGroup.add(node.depth + 1);"
+            },
+            {
+              "pos": 9595,
+              "len": 60,
+              "txt": "    }"
+            },
+            {
+              "pos": 9656,
+              "len": 7,
+              "txt": ""
+            },
+            {
+              "pos": 9664,
+              "len": 42,
+              "txt": "    /*"
+            },
+            {
+              "pos": 9707,
+              "len": 54,
+              "txt": "     * Node clusters form when there are more than three consecutive sibling leaf nodes in sequence."
+            },
+            {
+              "pos": 9762,
+              "len": 50,
+              "txt": "     */"
+            },
+            {
+              "pos": 9813,
+              "len": 29,
+              "txt": "    if (!hasCluster) {"
+            },
+            {
+              "pos": 9843,
+              "len": 30,
+              "txt": "      return;"
+            },
+            {
+              "pos": 9874,
+              "len": 16,
+              "txt": "    }"
+            },
+            {
+              "pos": 9891,
+              "len": 10,
+              "txt": ""
+            },
+            {
+              "pos": 9902,
+              "len": 9,
+              "txt": "    /*"
+            },
+            {
+              "pos": 9912,
+              "len": 7,
+              "txt": "     * The cluster depth is stored for layout computation"
+            },
+            {
+              "pos": 9920,
+              "len": 3,
+              "txt": "     */"
+            },
+            {
+              "pos": 9924,
+              "len": 0,
+              "txt": "    depthWithCluster.add(node.depth + 1);"
+            },
+            {
+              "pos": 9925,
+              "len": 74,
+              "txt": ""
+            },
+            {
+              "pos": 10000,
+              "len": 25,
+              "txt": "    /*"
+            },
+            {
+              "pos": 10026,
+              "len": 13,
+              "txt": "     * Each node within a cluster is annotated with metadata"
+            },
+            {
+              "pos": 10040,
+              "len": 5,
+              "txt": "     */"
+            },
+            {
+              "pos": 10046,
+              "len": 0,
+              "txt": "    groupsWithCluster.forEach((group) => {"
+            },
+            {
+              "pos": 10047,
+              "len": 66,
+              "txt": "      const clusterNodes = leafChildrenByGroup[group];"
+            },
+            {
+              "pos": 10114,
+              "len": 63,
+              "txt": "      clusterNodes.forEach((leafChild, index) => {"
+            },
+            {
+              "pos": 10178,
+              "len": 26,
+              "txt": "        leafChild.cluster = {"
+            },
+            {
+              "pos": 10205,
+              "len": 26,
+              "txt": "          nodes: clusterNodes,"
+            },
+            {
+              "pos": 10232,
+              "len": 7,
+              "txt": "          index,"
+            },
+            {
+              "pos": 10240,
+              "len": 0,
+              "txt": "        };"
+            },
+            {
+              "pos": 10241,
+              "len": 31,
+              "txt": "      });"
+            },
+            {
+              "pos": 10273,
+              "len": 17,
+              "txt": "    });"
+            },
+            {
+              "pos": 10291,
+              "len": 44,
+              "txt": "  }"
+            },
+            {
+              "pos": 10337,
+              "len": 25,
+              "txt": "  function sortNodesByGroup<T extends BaseData>(node: TreeNode<T>): void {"
+            },
+            {
+              "pos": 10363,
+              "len": 37,
+              "txt": "    if (!node.children) {"
+            },
+            {
+              "pos": 10401,
+              "len": 38,
+              "txt": "      return;"
+            },
+            {
+              "pos": 10440,
+              "len": 50,
+              "txt": "    }"
+            },
+            {
+              "pos": 10491,
+              "len": 8,
+              "txt": ""
+            },
+            {
+              "pos": 10500,
+              "len": 7,
+              "txt": "    const groupedChildren = node.children.reduce((acc, child) => {"
+            },
+            {
+              "pos": 10508,
+              "len": 0,
+              "txt": "      const groupId = child.group?.id ?? DEFAULT_NODE_GROUP_ID;"
+            },
+            {
+              "pos": 10509,
+              "len": 6,
+              "txt": "      if (!acc[groupId]) {"
+            },
+            {
+              "pos": 10516,
+              "len": 55,
+              "txt": "        acc[groupId] = [];"
+            },
+            {
+              "pos": 10572,
+              "len": 7,
+              "txt": "      }"
+            },
+            {
+              "pos": 10580,
+              "len": 8,
+              "txt": ""
+            },
+            {
+              "pos": 10589,
+              "len": 46,
+              "txt": "      acc[groupId].push(child);"
+            },
+            {
+              "pos": 10636,
+              "len": 59,
+              "txt": "      return acc;"
+            },
+            {
+              "pos": 10696,
+              "len": 7,
+              "txt": "    }, {} as Record<string, TreeNode<T>[]>);"
+            },
+            {
+              "pos": 10704,
+              "len": 41,
+              "txt": ""
+            },
+            {
+              "pos": 10746,
+              "len": 5,
+              "txt": "    let runningIndex = 0;"
+            },
+            {
+              "pos": 10752,
+              "len": 0,
+              "txt": "    sortedGroups.forEach((group) => {"
+            },
+            {
+              "pos": 10753,
+              "len": 68,
+              "txt": "      groupedChildren[group]?.forEach("
+            },
+            {
+              "pos": 10822,
+              "len": 3,
+              "txt": "        (child) => (child.index = runningIndex++),"
+            },
+            {
+              "pos": 10826,
+              "len": 0,
+              "txt": "      );"
+            },
+            {
+              "pos": 10827,
+              "len": 59,
+              "txt": "    });"
+            },
+            {
+              "pos": 10887,
+              "len": 22,
+              "txt": ""
+            },
+            {
+              "pos": 10910,
+              "len": 11,
+              "txt": "    /*"
+            },
+            {
+              "pos": 10922,
+              "len": 35,
+              "txt": "     * The group depth is stored for layout computation"
+            },
+            {
+              "pos": 10958,
+              "len": 32,
+              "txt": "     */"
+            },
+            {
+              "pos": 10991,
+              "len": 37,
+              "txt": "    if ("
+            },
+            {
+              "pos": 11029,
+              "len": 70,
+              "txt": "      sortedGroups.length > MIN_GROUP_COUNT &&"
+            },
+            {
+              "pos": 11100,
+              "len": 0,
+              "txt": "      Object.keys(groupedChildren).length > MIN_GROUP_COUNT"
+            },
+            {
+              "pos": 11101,
+              "len": 27,
+              "txt": "    ) {"
+            },
+            {
+              "pos": 11129,
+              "len": 24,
+              "txt": "      depthWithGroup.add(node.depth + 1);"
+            },
+            {
+              "pos": 11154,
+              "len": 38,
+              "txt": "    }"
+            },
+            {
+              "pos": 11194,
+              "len": 8,
+              "txt": "    node.children.sort((nodeA, nodeB) => nodeA.index - nodeB.index);"
+            },
+            {
+              "pos": 11203,
+              "len": 86,
+              "txt": "  }"
+            },
+            {
+              "pos": 11290,
+              "len": 80,
+              "txt": ""
+            },
+            {
+              "pos": 11371,
+              "len": 9,
+              "txt": "  function computeXCoordinateVariables<T extends BaseData>("
+            },
+            {
+              "pos": 11381,
+              "len": 50,
+              "txt": "    node: TreeNode<T>,"
+            },
+            {
+              "pos": 11432,
+              "len": 53,
+              "txt": "  ): void {"
+            },
+            {
+              "pos": 11486,
+              "len": 63,
+              "txt": "    const children = node.children;"
+            },
+            {
+              "pos": 11550,
+              "len": 10,
+              "txt": "    const parent = node.parent!;"
+            },
+            {
+              "pos": 11561,
+              "len": 0,
+              "txt": "    const siblings = parent.children;"
+            },
+            {
+              "pos": 11562,
+              "len": 42,
+              "txt": "    const prevSibling = node.index ? siblings![node.index - 1] : null;"
+            },
+            {
+              "pos": 11605,
+              "len": 50,
+              "txt": ""
+            },
+            {
+              "pos": 11656,
+              "len": 9,
+              "txt": "    if (children?.length) {"
+            },
+            {
+              "pos": 11666,
+              "len": 7,
+              "txt": "      applyShifts(node);"
+            },
+            {
+              "pos": 11674,
+              "len": 0,
+              "txt": "      let relevantChildren = children;"
+            },
+            {
+              "pos": 11675,
+              "len": 58,
+              "txt": ""
+            },
+            {
+              "pos": 11734,
+              "len": 29,
+              "txt": "      /*"
+            },
+            {
+              "pos": 11764,
+              "len": 61,
+              "txt": "       * If there are multiple groups, only consider the children in the default group"
+            },
+            {
+              "pos": 11826,
+              "len": 64,
+              "txt": "       * to determine the midpoint, keeping the default group nodes centralized."
+            },
+            {
+              "pos": 11891,
+              "len": 0,
+              "txt": "       */"
+            },
+            {
+              "pos": 11892,
+              "len": 24,
+              "txt": "      if (sortedGroups.length > MIN_GROUP_COUNT) {"
+            },
+            {
+              "pos": 11917,
+              "len": 10,
+              "txt": "        const defaultGroupChildren = children.filter("
+            },
+            {
+              "pos": 11928,
+              "len": 47,
+              "txt": "          (child) => child.group?.id === DEFAULT_NODE_GROUP_ID,"
+            },
+            {
+              "pos": 11976,
+              "len": 92,
+              "txt": "        );"
+            },
+            {
+              "pos": 12069,
+              "len": 67,
+              "txt": ""
+            },
+            {
+              "pos": 12137,
+              "len": 11,
+              "txt": "        if (defaultGroupChildren.length) {"
+            },
+            {
+              "pos": 12149,
+              "len": 73,
+              "txt": "          relevantChildren = defaultGroupChildren;"
+            },
+            {
+              "pos": 12223,
+              "len": 42,
+              "txt": "        }"
+            },
+            {
+              "pos": 12266,
+              "len": 14,
+              "txt": "      }"
+            },
+            {
+              "pos": 12281,
+              "len": 10,
+              "txt": ""
+            },
+            {
+              "pos": 12292,
+              "len": 47,
+              "txt": "      const firstChildPrelim = relevantChildren[0].prelim;"
+            },
+            {
+              "pos": 12340,
+              "len": 71,
+              "txt": "      const lastChildPrelim ="
+            },
+            {
+              "pos": 12412,
+              "len": 11,
+              "txt": "        relevantChildren[relevantChildren.length - 1].prelim;"
+            },
+            {
+              "pos": 12424,
+              "len": 31,
+              "txt": "      const midpoint = (firstChildPrelim + lastChildPrelim) / 2;"
+            },
+            {
+              "pos": 12456,
+              "len": 7,
+              "txt": ""
+            },
+            {
+              "pos": 12464,
+              "len": 29,
+              "txt": "      if (prevSibling) {"
+            },
+            {
+              "pos": 12494,
+              "len": 43,
+              "txt": "        /*"
+            },
+            {
+              "pos": 12538,
+              "len": 65,
+              "txt": "         * For non-leftmost node with children:"
+            },
+            {
+              "pos": 12604,
+              "len": 10,
+              "txt": "         * 1. Set prelim to the prelim of the previous sibling plus the separation distance."
+            },
+            {
+              "pos": 12615,
+              "len": 81,
+              "txt": "         * 2. Adjust mod to center the node's descendants below it."
+            },
+            {
+              "pos": 12697,
+              "len": 69,
+              "txt": "         */"
+            },
+            {
+              "pos": 12767,
+              "len": 11,
+              "txt": "        node.prelim ="
+            },
+            {
+              "pos": 12779,
+              "len": 49,
+              "txt": "          prevSibling.prelim + horizontalNodeSpacing(prevSibling, node);"
+            },
+            {
+              "pos": 12829,
+              "len": 14,
+              "txt": "        node.mod = node.prelim - midpoint;"
+            },
+            {
+              "pos": 12844,
+              "len": 10,
+              "txt": "      } else {"
+            },
+            {
+              "pos": 12855,
+              "len": 50,
+              "txt": "        /*"
+            },
+            {
+              "pos": 12906,
+              "len": 89,
+              "txt": "         * For the leftmost node with children:"
+            },
+            {
+              "pos": 12996,
+              "len": 11,
+              "txt": "         * Center the node directly above the midpoint of its children."
+            },
+            {
+              "pos": 13008,
+              "len": 73,
+              "txt": "         */"
+            },
+            {
+              "pos": 13082,
+              "len": 7,
+              "txt": "        node.prelim = midpoint;"
+            },
+            {
+              "pos": 13090,
+              "len": 5,
+              "txt": "      }"
+            },
+            {
+              "pos": 13096,
+              "len": 0,
+              "txt": "    } else if (prevSibling) {"
+            },
+            {
+              "pos": 13097,
+              "len": 6,
+              "txt": "      if (isClusterNodeInSecondRow(node)) {"
+            },
+            {
+              "pos": 13104,
+              "len": 56,
+              "txt": "        const firstRowClusterNode = getFirstRowClusterNode(node);"
+            },
+            {
+              "pos": 13161,
+              "len": 83,
+              "txt": "        /*"
+            },
+            {
+              "pos": 13245,
+              "len": 7,
+              "txt": "         * For non-leftmost node without children in the second row of a cluster:"
+            },
+            {
+              "pos": 13253,
+              "len": 36,
+              "txt": "         * Set prelim to the prelim of the node immediately above it."
+            },
+            {
+              "pos": 13290,
+              "len": 11,
+              "txt": "         */"
+            },
+            {
+              "pos": 13302,
+              "len": 18,
+              "txt": "        node.prelim = firstRowClusterNode.prelim;"
+            },
+            {
+              "pos": 13321,
+              "len": 42,
+              "txt": "      } else {"
+            },
+            {
+              "pos": 13364,
+              "len": 6,
+              "txt": "        /*"
+            },
+            {
+              "pos": 13371,
+              "len": 3,
+              "txt": "         * For non-leftmost node without children:"
+            },
+            {
+              "pos": 13375,
+              "len": 0,
+              "txt": "         * Set prelim to the prelim of the previous sibling plus the separation distance."
+            },
+            {
+              "pos": 13376,
+              "len": 76,
+              "txt": "         */"
+            },
+            {
+              "pos": 13453,
+              "len": 44,
+              "txt": "        node.prelim ="
+            },
+            {
+              "pos": 13498,
+              "len": 33,
+              "txt": "          prevSibling.prelim + horizontalNodeSpacing(prevSibling, node);"
+            },
+            {
+              "pos": 13532,
+              "len": 3,
+              "txt": "      }"
+            },
+            {
+              "pos": 13536,
+              "len": 0,
+              "txt": "    }"
+            },
+            {
+              "pos": 13537,
+              "len": 5,
+              "txt": ""
+            },
+            {
+              "pos": 13543,
+              "len": 51,
+              "txt": "    /*"
+            },
+            {
+              "pos": 13595,
+              "len": 83,
+              "txt": "     * The apportion function computes shift adjustments"
+            },
+            {
+              "pos": 13679,
+              "len": 45,
+              "txt": "     * to ensure that sibling subtrees are properly spaced apart and don't overlap."
+            },
+            {
+              "pos": 13725,
+              "len": 75,
+              "txt": "     */"
+            },
+            {
+              "pos": 13801,
+              "len": 49,
+              "txt": "    parent.rootAncestor = apportion("
+            },
+            {
+              "pos": 13851,
+              "len": 87,
+              "txt": "      node,"
+            },
+            {
+              "pos": 13939,
+              "len": 41,
+              "txt": "      prevSibling,"
+            },
+            {
+              "pos": 13981,
+              "len": 80,
+              "txt": "      parent.rootAncestor || siblings![0],"
+            },
+            {
+              "pos": 14062,
+              "len": 81,
+              "txt": "    );"
+            },
+            {
+              "pos": 14144,
+              "len": 60,
+              "txt": "  }"
+            },
+            {
+              "pos": 14205,
+              "len": 44,
+              "txt": ""
+            },
+            {
+              "pos": 14250,
+              "len": 5,
+              "txt": "  function resolveXCoordinate<T extends BaseData>(node: TreeNode<T>): void {"
+            },
+            {
+              "pos": 14256,
+              "len": 41,
+              "txt": "    node.x = node.prelim + node.parent!.mod;"
+            },
+            {
+              "pos": 14298,
+              "len": 22,
+              "txt": "    node.mod += node.parent!.mod;"
+            },
+            {
+              "pos": 14321,
+              "len": 40,
+              "txt": "  }"
+            },
+            {
+              "pos": 14362,
+              "len": 26,
+              "txt": ""
+            },
+            {
+              "pos": 14389,
+              "len": 18,
+              "txt": "  /**"
+            },
+            {
+              "pos": 14408,
+              "len": 26,
+              "txt": "   * Combines a new subtree with previous subtrees."
+            },
+            {
+              "pos": 14435,
+              "len": 36,
+              "txt": "   * Uses threads to traverse the inside and outside contours of the left and right"
+            },
+            {
+              "pos": 14472,
+              "len": 35,
+              "txt": "   * subtrees up to the highest common level."
+            },
+            {
+              "pos": 14508,
+              "len": 47,
+              "txt": "   * Vertices for the traversals are currentInsideRight, currentInsideLeft,"
+            },
+            {
+              "pos": 14556,
+              "len": 72,
+              "txt": "   * currentOutsideLeft, and currentOutsideRight."
+            },
+            {
+              "pos": 14629,
+              "len": 0,
+              "txt": "   * For summing up the modifiers along the contour, use modInsideRight, modInsideLeft,"
+            },
+            {
+              "pos": 14630,
+              "len": 50,
+              "txt": "   * modOutsideLeft, and modOutsideRight."
+            },
+            {
+              "pos": 14681,
+              "len": 48,
+              "txt": "   * When two nodes of the inside contours conflict, compute the left one of the"
+            },
+            {
+              "pos": 14730,
+              "len": 50,
+              "txt": "   * greatest uncommon ancestors using nextAncestor and call moveSubtree to shift"
+            },
+            {
+              "pos": 14781,
+              "len": 52,
+              "txt": "   * the subtree and prepare the shifts of smaller subtrees."
+            },
+            {
+              "pos": 14834,
+              "len": 16,
+              "txt": "   * Finally, add a new thread if necessary."
+            },
+            {
+              "pos": 14851,
+              "len": 0,
+              "txt": "   */"
+            },
+            {
+              "pos": 14852,
+              "len": 41,
+              "txt": "  function apportion<T extends BaseData>("
+            },
+            {
+              "pos": 14894,
+              "len": 13,
+              "txt": "    node: TreeNode<T>,"
+            },
+            {
+              "pos": 14908,
+              "len": 63,
+              "txt": "    previousSibling: TreeNode<T> | null,"
+            },
+            {
+              "pos": 14972,
+              "len": 61,
+              "txt": "    ancestor: TreeNode<T>,"
+            },
+            {
+              "pos": 15034,
+              "len": 49,
+              "txt": "  ): TreeNode<T> {"
+            },
+            {
+              "pos": 15084,
+              "len": 9,
+              "txt": "    if (previousSibling) {"
+            },
+            {
+              "pos": 15094,
+              "len": 61,
+              "txt": "      let currentInsideRight = node;"
+            },
+            {
+              "pos": 15156,
+              "len": 58,
+              "txt": "      let currentInsideLeft = node;"
+            },
+            {
+              "pos": 15215,
+              "len": 42,
+              "txt": "      let currentOutsideLeft = previousSibling;"
+            },
+            {
+              "pos": 15258,
+              "len": 0,
+              "txt": "      let currentOutsideRight = currentInsideRight.parent!.children![0];"
+            },
+            {
+              "pos": 15259,
+              "len": 56,
+              "txt": ""
+            },
+            {
+              "pos": 15316,
+              "len": 15,
+              "txt": "      let modInsideRight = currentInsideRight.mod;"
+            },
+            {
+              "pos": 15332,
+              "len": 37,
+              "txt": "      let modInsideLeft = currentInsideLeft.mod;"
+            },
+            {
+              "pos": 15370,
+              "len": 26,
+              "txt": "      let modOutsideLeft = currentOutsideLeft.mod;"
+            },
+            {
+              "pos": 15397,
+              "len": 37,
+              "txt": "      let modOutsideRight = currentOutsideRight.mod;"
+            },
+            {
+              "pos": 15435,
+              "len": 26,
+              "txt": "      let shift;"
+            },
+            {
+              "pos": 15462,
+              "len": 61,
+              "txt": ""
+            },
+            {
+              "pos": 15524,
+              "len": 0,
+              "txt": "      // Traverse the contour of the tree"
+            },
+            {
+              "pos": 15525,
+              "len": 24,
+              "txt": "      while ("
+            },
+            {
+              "pos": 15550,
+              "len": 48,
+              "txt": "        ((currentOutsideLeft = nextRight(currentOutsideLeft)!),"
+            },
+            {
+              "pos": 15599,
+              "len": 22,
+              "txt": "        (currentInsideRight = nextLeft(currentInsideRight)!),"
+            },
+            {
+              "pos": 15622,
+              "len": 61,
+              "txt": "        currentOutsideLeft && currentInsideRight)"
+            },
+            {
+              "pos": 15684,
+              "len": 17,
+              "txt": "      ) {"
+            },
+            {
+              "pos": 15702,
+              "len": 18,
+              "txt": "        currentOutsideRight = nextLeft(currentOutsideRight)!;"
+            },
+            {
+              "pos": 15721,
+              "len": 12,
+              "txt": "        currentInsideLeft = nextRight(currentInsideLeft)!;"
+            },
+            {
+              "pos": 15734,
+              "len": 0,
+              "txt": "        currentInsideLeft.ancestor = node;"
+            },
+            {
+              "pos": 15735,
+              "len": 41,
+              "txt": ""
+            },
+            {
+              "pos": 15777,
+              "len": 34,
+              "txt": "        // Calculate the shift required to avoid overlap"
+            },
+            {
+              "pos": 15812,
+              "len": 33,
+              "txt": "        shift ="
+            },
+            {
+              "pos": 15846,
+              "len": 9,
+              "txt": "          currentOutsideLeft.prelim +"
+            },
+            {
+              "pos": 15856,
+              "len": 0,
+              "txt": "          modOutsideLeft -"
+            },
+            {
+              "pos": 15857,
+              "len": 54,
+              "txt": "          currentInsideRight.prelim -"
+            },
+            {
+              "pos": 15912,
+              "len": 49,
+              "txt": "          modInsideRight +"
+            },
+            {
+              "pos": 15962,
+              "len": 49,
+              "txt": "          separation(currentOutsideLeft, currentInsideRight);"
+            },
+            {
+              "pos": 16012,
+              "len": 51,
+              "txt": ""
+            },
+            {
+              "pos": 16064,
+              "len": 47,
+              "txt": "        if (shift > 0) {"
+            },
+            {
+              "pos": 16112,
+              "len": 7,
+              "txt": "          // Apply the shift to move the subtree"
+            },
+            {
+              "pos": 16120,
+              "len": 0,
+              "txt": "          moveSubtree("
+            },
+            {
+              "pos": 16121,
+              "len": 85,
+              "txt": "            nextAncestor(currentOutsideLeft, node, ancestor),"
+            },
+            {
+              "pos": 16207,
+              "len": 64,
+              "txt": "            node,"
+            },
+            {
+              "pos": 16272,
+              "len": 54,
+              "txt": "            shift,"
+            },
+            {
+              "pos": 16327,
+              "len": 64,
+              "txt": "          );"
+            },
+            {
+              "pos": 16392,
+              "len": 7,
+              "txt": ""
+            },
+            {
+              "pos": 16400,
+              "len": 65,
+              "txt": "          // Adjust modifiers accordingly"
+            },
+            {
+              "pos": 16466,
+              "len": 56,
+              "txt": "          modInsideRight += shift;"
+            },
+            {
+              "pos": 16523,
+              "len": 68,
+              "txt": "          modInsideLeft += shift;"
+            },
+            {
+              "pos": 16592,
+              "len": 24,
+              "txt": "        }"
+            },
+            {
+              "pos": 16617,
+              "len": 7,
+              "txt": ""
+            },
+            {
+              "pos": 16625,
+              "len": 5,
+              "txt": "        // Update the modifiers for the next iteration"
+            },
+            {
+              "pos": 16631,
+              "len": 20,
+              "txt": "        modOutsideLeft += currentOutsideLeft.mod;"
+            },
+            {
+              "pos": 16652,
+              "len": 3,
+              "txt": "        modInsideRight += currentInsideRight.mod;"
+            },
+            {
+              "pos": 16656,
+              "len": 0,
+              "txt": "        modOutsideRight += currentOutsideRight.mod;"
+            },
+            {
+              "pos": 16657,
+              "len": 72,
+              "txt": "        modInsideLeft += currentInsideLeft.mod;"
+            },
+            {
+              "pos": 16730,
+              "len": 40,
+              "txt": "      }"
+            },
+            {
+              "pos": 16771,
+              "len": 48,
+              "txt": ""
+            },
+            {
+              "pos": 16820,
+              "len": 66,
+              "txt": "      // Handle threads (temporary links to facilitate traversal) for remaining nodes"
+            },
+            {
+              "pos": 16887,
+              "len": 0,
+              "txt": "      if (currentOutsideLeft && !nextRight(currentInsideLeft)) {"
+            },
+            {
+              "pos": 16888,
+              "len": 43,
+              "txt": "        currentInsideLeft.thread = currentOutsideLeft;"
+            },
+            {
+              "pos": 16932,
+              "len": 42,
+              "txt": "        currentInsideLeft.mod += modOutsideLeft - modInsideLeft;"
+            },
+            {
+              "pos": 16975,
+              "len": 0,
+              "txt": "      }"
+            },
+            {
+              "pos": 16976,
+              "len": 36,
+              "txt": "      if (currentInsideRight && !nextLeft(currentOutsideRight)) {"
+            },
+            {
+              "pos": 17013,
+              "len": 27,
+              "txt": "        currentOutsideRight.thread = currentInsideRight;"
+            },
+            {
+              "pos": 17041,
+              "len": 12,
+              "txt": "        currentOutsideRight.mod += modInsideRight - modOutsideRight;"
+            },
+            {
+              "pos": 17054,
+              "len": 5,
+              "txt": "        ancestor = node;"
+            },
+            {
+              "pos": 17060,
+              "len": 0,
+              "txt": "      }"
+            },
+            {
+              "pos": 17061,
+              "len": 85,
+              "txt": "    }"
+            },
+            {
+              "pos": 17147,
+              "len": 44,
+              "txt": "    return ancestor;"
+            },
+            {
+              "pos": 17192,
+              "len": 38,
+              "txt": "  }"
+            },
+            {
+              "pos": 17231,
+              "len": 5,
+              "txt": ""
+            },
+            {
+              "pos": 17237,
+              "len": 0,
+              "txt": "  function setCoordinates<T extends BaseData>(node: TreeNode<T>): void {"
+            },
+            {
+              "pos": 17238,
+              "len": 79,
+              "txt": "    const parentY = node.parent?.y ?? 0;"
+            },
+            {
+              "pos": 17318,
+              "len": 42,
+              "txt": "    const parentDepth = node.parent?.depth ?? 0;"
+            },
+            {
+              "pos": 17361,
+              "len": 62,
+              "txt": "    const isSecondRowClusterNode = isClusterNodeInSecondRow(node);"
+            },
+            {
+              "pos": 17424,
+              "len": 5,
+              "txt": ""
+            },
+            {
+              "pos": 17430,
+              "len": 0,
+              "txt": "    let x = node.x * horizontalNodeSpacing(node, node);"
+            },
+            {
+              "pos": 17431,
+              "len": 70,
+              "txt": "    let y = parentY + verticalNodeSpacing;"
+            },
+            {
+              "pos": 17502,
+              "len": 59,
+              "txt": ""
+            },
+            {
+              "pos": 17562,
+              "len": 59,
+              "txt": "    // Starts first depth at the top"
+            },
+            {
+              "pos": 17622,
+              "len": 5,
+              "txt": "    if (node.depth === 1) {"
+            },
+            {
+              "pos": 17628,
+              "len": 0,
+              "txt": "      y = 0;"
+            },
+            {
+              "pos": 17629,
+              "len": 84,
+              "txt": "    }"
+            },
+            {
+              "pos": 17714,
+              "len": 33,
+              "txt": ""
+            },
+            {
+              "pos": 17748,
+              "len": 38,
+              "txt": "    // Increment y with vertical cluster spacing if parent's depth has a cluster node"
+            },
+            {
+              "pos": 17787,
+              "len": 5,
+              "txt": "    if (depthWithCluster.has(parentDepth)) {"
+            },
+            {
+              "pos": 17793,
+              "len": 0,
+              "txt": "      y += verticalClusterNodeSpacing;"
+            },
+            {
+              "pos": 17794,
+              "len": 97,
+              "txt": "    }"
+            },
+            {
+              "pos": 17892,
+              "len": 72,
+              "txt": ""
+            },
+            {
+              "pos": 17965,
+              "len": 37,
+              "txt": "    // Increment y with vertical cluster spacing if parent's depth has a groups"
+            },
+            {
+              "pos": 18003,
+              "len": 5,
+              "txt": "    if (depthWithGroup.has(parentDepth)) {"
+            },
+            {
+              "pos": 18009,
+              "len": 0,
+              "txt": "      y += verticalGroupsSpacing + (groupPadding.bottom || 0);"
+            },
+            {
+              "pos": 18010,
+              "len": 27,
+              "txt": "    }"
+            },
+            {
+              "pos": 18038,
+              "len": 15,
+              "txt": ""
+            },
+            {
+              "pos": 18054,
+              "len": 21,
+              "txt": "    // Increment y with vertical cluster spacing if depth has a groups"
+            },
+            {
+              "pos": 18076,
+              "len": 16,
+              "txt": "    if (depthWithGroup.has(node.depth) && node.depth > 1) {"
+            },
+            {
+              "pos": 18093,
+              "len": 16,
+              "txt": "      y += verticalGroupsSpacing + (groupPadding.top || 0);"
+            },
+            {
+              "pos": 18110,
+              "len": 6,
+              "txt": "    }"
+            },
+            {
+              "pos": 18117,
+              "len": 3,
+              "txt": ""
+            },
+            {
+              "pos": 18121,
+              "len": 0,
+              "txt": "    // Increment y with vertical cluster spacing if it's a cluster on the second row"
+            },
+            {
+              "pos": 18122,
+              "len": 42,
+              "txt": "    if (isSecondRowClusterNode) {"
+            },
+            {
+              "pos": 18165,
+              "len": 26,
+              "txt": "      y += verticalClusterNodeSpacing;"
+            },
+            {
+              "pos": 18192,
+              "len": 27,
+              "txt": "    }"
+            },
+            {
+              "pos": 18220,
+              "len": 13,
+              "txt": ""
+            },
+            {
+              "pos": 18234,
+              "len": 23,
+              "txt": "    // Adjust x to centralize second row nodes if it's a node on the second row of an odd cluster"
+            },
+            {
+              "pos": 18258,
+              "len": 0,
+              "txt": "    if (isSecondRowClusterNode && node.cluster.nodes.length % 2 !== 0) {"
+            },
+            {
+              "pos": 18259,
+              "len": 43,
+              "txt": "      x -= horizontalNodeSpacing(node, node) / 2;"
+            },
+            {
+              "pos": 18303,
+              "len": 47,
+              "txt": "    }"
+            },
+            {
+              "pos": 18351,
+              "len": 45,
+              "txt": ""
+            },
+            {
+              "pos": 18397,
+              "len": 5,
+              "txt": "    node.x = Math.floor(x);"
+            },
+            {
+              "pos": 18403,
+              "len": 0,
+              "txt": "    node.y = y;"
+            },
+            {
+              "pos": 18404,
+              "len": 41,
+              "txt": "    node.position = {"
+            },
+            {
+              "pos": 18446,
+              "len": 53,
+              "txt": "      x: node.x,"
+            },
+            {
+              "pos": 18500,
+              "len": 44,
+              "txt": "      y: node.y,"
+            },
+            {
+              "pos": 18545,
+              "len": 5,
+              "txt": "    };"
+            },
+            {
+              "pos": 18551,
+              "len": 0,
+              "txt": "  }"
+            },
+            {
+              "pos": 18552,
+              "len": 48,
+              "txt": ""
+            },
+            {
+              "pos": 18601,
+              "len": 46,
+              "txt": "  function separation<T extends BaseData>("
+            },
+            {
+              "pos": 18648,
+              "len": 21,
+              "txt": "    leftNode: TreeNode<T>,"
+            },
+            {
+              "pos": 18670,
+              "len": 5,
+              "txt": "    rightNode: TreeNode<T>,"
+            },
+            {
+              "pos": 18676,
+              "len": 0,
+              "txt": "  ): number {"
+            },
+            {
+              "pos": 18677,
+              "len": 22,
+              "txt": "    let separation ="
+            },
+            {
+              "pos": 18700,
+              "len": 3,
+              "txt": "      getNodeWidth(leftNode) / 2 + getNodeWidth(rightNode) / 2 + spacing.sibling;"
+            },
+            {
+              "pos": 18704,
+              "len": 1,
+              "txt": ""
+            },
+            {
+              "pos": 18706,
+              "len": 0,
+              "txt": "    // Increase separation between subtrees"
+            },
+            {
+              "pos": 18707,
+              "len": 44,
+              "txt": "    if (leftNode.parent !== rightNode.parent) {"
+            },
+            {
+              "pos": 18752,
+              "len": 23,
+              "txt": "      separation += horizontalSubTreeSpacing;"
+            },
+            {
+              "pos": 18776,
+              "len": 42,
+              "txt": "    }"
+            },
+            {
+              "pos": 18819,
+              "len": 16,
+              "txt": ""
+            },
+            {
+              "pos": 18836,
+              "len": 21,
+              "txt": "    // Increase separation between groups"
+            },
+            {
+              "pos": 18858,
+              "len": 23,
+              "txt": "    if (leftNode.group?.id !== rightNode.group?.id) {"
+            },
+            {
+              "pos": 18882,
+              "len": 17,
+              "txt": "      separation += horizontalGroupsSpacing;"
+            },
+            {
+              "pos": 18900,
+              "len": 14,
+              "txt": "    }"
+            },
+            {
+              "pos": 18915,
+              "len": 11,
+              "txt": ""
+            },
+            {
+              "pos": 18927,
+              "len": 14,
+              "txt": "    // Reset separation if either node is hidden"
+            },
+            {
+              "pos": 18942,
+              "len": 13,
+              "txt": "    if (leftNode.hidden || rightNode.hidden) {"
+            },
+            {
+              "pos": 18956,
+              "len": 9,
+              "txt": "      separation = 1;"
+            },
+            {
+              "pos": 18966,
+              "len": 9,
+              "txt": "    }"
+            },
+            {
+              "pos": 18976,
+              "len": 18,
+              "txt": ""
+            },
+            {
+              "pos": 18995,
+              "len": 20,
+              "txt": "    return separation;"
+            },
+            {
+              "pos": 19016,
+              "len": 13,
+              "txt": "  }"
+            },
+            {
+              "pos": 19030,
+              "len": 56,
+              "txt": "}"
+            },
+            {
+              "pos": 19088,
+              "len": 52,
+              "txt": "function createRootNode<T extends BaseData>("
+            },
+            {
+              "pos": 19141,
+              "len": 23,
+              "txt": "  nodes: TreeNode<T>[],"
+            },
+            {
+              "pos": 19165,
+              "len": 0,
+              "txt": "): TreeNode<T> & { parent: TreeNode<T> } {"
+            },
+            {
+              "pos": 19166,
+              "len": 49,
+              "txt": "  const root = {"
+            },
+            {
+              "pos": 19216,
+              "len": 69,
+              "txt": "    id: ROOT_NODE_ID,"
+            },
+            {
+              "pos": 19286,
+              "len": 20,
+              "txt": "    rootAncestor: null,"
+            },
+            {
+              "pos": 19307,
+              "len": 17,
+              "txt": "    thread: null,"
+            },
+            {
+              "pos": 19325,
+              "len": 19,
+              "txt": "    prelim: 0,"
+            },
+            {
+              "pos": 19345,
+              "len": 20,
+              "txt": "    mod: 0,"
+            },
+            {
+              "pos": 19366,
+              "len": 0,
+              "txt": "    change: 0,"
+            },
+            {
+              "pos": 19367,
+              "len": 24,
+              "txt": "    shift: 0,"
+            },
+            {
+              "pos": 19392,
+              "len": 40,
+              "txt": "    x: 0,"
+            },
+            {
+              "pos": 19433,
+              "len": 30,
+              "txt": "    y: 0,"
+            },
+            {
+              "pos": 19464,
+              "len": 9,
+              "txt": "    cluster: null,"
+            },
+            {
+              "pos": 19474,
+              "len": 5,
+              "txt": "    children: nodes,"
+            },
+            {
+              "pos": 19480,
+              "len": 4,
+              "txt": "    depth: 0,"
+            },
+            {
+              "pos": 19485,
+              "len": 0,
+              "txt": "  } as unknown as TreeNode<T> & { parent: TreeNode<T> };"
+            },
+            {
+              "pos": 19486,
+              "len": 27,
+              "txt": ""
+            },
+            {
+              "pos": 19514,
+              "len": 23,
+              "txt": "  root.parent = { children: [root] } as TreeNode<T>;"
+            },
+            {
+              "pos": 19538,
+              "len": 25,
+              "txt": "  root.ancestor = root;"
+            },
+            {
+              "pos": 19564,
+              "len": 5,
+              "txt": ""
+            },
+            {
+              "pos": 19570,
+              "len": 0,
+              "txt": "  const initializeNode = (node: TreeNode<T>) => {"
+            },
+            {
+              "pos": 19571,
+              "len": 14,
+              "txt": "    if (node.prelim && node.mod && node.shift && node.change) return;"
+            },
+            {
+              "pos": 19586,
+              "len": 1,
+              "txt": "    node.prelim = 0;"
+            },
+            {
+              "pos": 19588,
+              "len": 0,
+              "txt": "    node.mod = 0;"
+            },
+            {
+              "pos": 19589,
+              "len": 2,
+              "txt": "    node.shift = 0;"
+            },
+            {
+              "pos": 19592,
+              "len": 65,
+              "txt": "    node.change = 0;"
+            },
+            {
+              "pos": 19658,
+              "len": 3,
+              "txt": ""
+            },
+            {
+              "pos": 19662,
+              "len": 50,
+              "txt": "    if (node.children) {"
+            },
+            {
+              "pos": 19713,
+              "len": 24,
+              "txt": "      node.children.forEach((child) => {"
+            },
+            {
+              "pos": 19738,
+              "len": 35,
+              "txt": "        initializeNode(child);"
+            },
+            {
+              "pos": 19774,
+              "len": 3,
+              "txt": "      });"
+            },
+            {
+              "pos": 19778,
+              "len": 0,
+              "txt": "    }"
+            },
+            {
+              "pos": 19779,
+              "len": 53,
+              "txt": "  };"
+            },
+            {
+              "pos": 19833,
+              "len": 49,
+              "txt": ""
+            },
+            {
+              "pos": 19883,
+              "len": 47,
+              "txt": "  nodes.forEach((node) => {"
+            },
+            {
+              "pos": 19931,
+              "len": 0,
+              "txt": "    node.parent = root;"
+            },
+            {
+              "pos": 19932,
+              "len": 60,
+              "txt": "    initializeNode(node);"
+            },
+            {
+              "pos": 19993,
+              "len": 1,
+              "txt": "  });"
+            },
+            {
+              "pos": 19996,
+              "len": 67,
+              "txt": "  return root;"
+            },
+            {
+              "pos": 20064,
+              "len": 16,
+              "txt": "}"
+            },
+            {
+              "pos": 20081,
+              "len": 17,
+              "txt": ""
+            },
+            {
+              "pos": 20099,
+              "len": 34,
+              "txt": "/*"
+            },
+            {
+              "pos": 20134,
+              "len": 26,
+              "txt": " * Sorts groups in a way that the default group is in the center."
+            },
+            {
+              "pos": 20161,
+              "len": 25,
+              "txt": " */"
+            },
+            {
+              "pos": 20187,
+              "len": 0,
+              "txt": "function sortGroups(groups?: string[]): string[] {"
+            },
+            {
+              "pos": 20188,
+              "len": 75,
+              "txt": "  if (!groups?.length) {"
+            },
+            {
+              "pos": 20264,
+              "len": 64,
+              "txt": "    return [DEFAULT_NODE_GROUP_ID];"
+            },
+            {
+              "pos": 20329,
+              "len": 0,
+              "txt": "  }"
+            },
+            {
+              "pos": 20330,
+              "len": 20,
+              "txt": ""
+            },
+            {
+              "pos": 20351,
+              "len": 24,
+              "txt": "  const defaultIndex = Math.floor(groups.length / 2);"
+            },
+            {
+              "pos": 20376,
+              "len": 0,
+              "txt": "  const leftPart = groups.slice(0, defaultIndex);"
+            },
+            {
+              "pos": 20377,
+              "len": 81,
+              "txt": "  const rightPart = groups.slice(defaultIndex);"
+            },
+            {
+              "pos": 20459,
+              "len": 8,
+              "txt": ""
+            },
+            {
+              "pos": 20468,
+              "len": 28,
+              "txt": "  return [...leftPart, DEFAULT_NODE_GROUP_ID, ...rightPart];"
+            },
+            {
+              "pos": 20497,
+              "len": 68,
+              "txt": "}"
+            },
+            {
+              "pos": 20566,
+              "len": 37,
+              "txt": ""
+            },
+            {
+              "pos": 20604,
+              "len": 7,
+              "txt": "function applyShifts<T extends BaseData>(node: TreeNode<T>): void {"
+            },
+            {
+              "pos": 20612,
+              "len": 28,
+              "txt": "  let shift = 0;"
+            },
+            {
+              "pos": 20641,
+              "len": 25,
+              "txt": "  let change = 0;"
+            },
+            {
+              "pos": 20667,
+              "len": 5,
+              "txt": "  const children = node.children!;"
+            },
+            {
+              "pos": 20673,
+              "len": 0,
+              "txt": "  let i = children.length;"
+            },
+            {
+              "pos": 20674,
+              "len": 27,
+              "txt": "  let child: TreeNode<T>;"
+            },
+            {
+              "pos": 20702,
+              "len": 34,
+              "txt": ""
+            },
+            {
+              "pos": 20737,
+              "len": 3,
+              "txt": "  // Middle clusters are clusters between sibling nodes that have children."
+            },
+            {
+              "pos": 20741,
+              "len": 0,
+              "txt": "  const middleClusterNodes = getMiddleClusterSiblings(children);"
+            },
+            {
+              "pos": 20742,
+              "len": 48,
+              "txt": ""
+            },
+            {
+              "pos": 20791,
+              "len": 27,
+              "txt": "  while (--i >= 0) {"
+            },
+            {
+              "pos": 20819,
+              "len": 78,
+              "txt": "    child = children[i];"
+            },
+            {
+              "pos": 20898,
+              "len": 65,
+              "txt": ""
+            },
+            {
+              "pos": 20964,
+              "len": 25,
+              "txt": "    // Avoids applying shifts to middle cluster nodes to keep them tightly spaced"
+            },
+            {
+              "pos": 20990,
+              "len": 0,
+              "txt": "    if ("
+            },
+            {
+              "pos": 20991,
+              "len": 26,
+              "txt": "      !middleClusterNodes ||"
+            },
+            {
+              "pos": 21018,
+              "len": 68,
+              "txt": "      i > middleClusterNodes[middleClusterNodes.length - 1].index ||"
+            },
+            {
+              "pos": 21087,
+              "len": 0,
+              "txt": "      i < middleClusterNodes[0].index"
+            },
+            {
+              "pos": 21088,
+              "len": 42,
+              "txt": "    ) {"
+            },
+            {
+              "pos": 21131,
+              "len": 40,
+              "txt": "      child.prelim += shift;"
+            },
+            {
+              "pos": 21172,
+              "len": 7,
+              "txt": "      child.mod += shift;"
+            },
+            {
+              "pos": 21180,
+              "len": 3,
+              "txt": "    }"
+            },
+            {
+              "pos": 21184,
+              "len": 1,
+              "txt": ""
+            },
+            {
+              "pos": 21186,
+              "len": 0,
+              "txt": "    change += child.change;"
+            },
+            {
+              "pos": 21187,
+              "len": 2,
+              "txt": "    shift += child.shift + change;"
+            },
+            {
+              "pos": 21190,
+              "len": 86,
+              "txt": "  }"
+            },
+            {
+              "pos": 21277,
+              "len": 97,
+              "txt": ""
+            },
+            {
+              "pos": 21375,
+              "len": 60,
+              "txt": "  // Position middle cluster in between siblings"
+            },
+            {
+              "pos": 21436,
+              "len": 6,
+              "txt": "  if (middleClusterNodes) {"
+            },
+            {
+              "pos": 21443,
+              "len": 9,
+              "txt": "    const lastClusterNode = middleClusterNodes[middleClusterNodes.length - 1];"
+            },
+            {
+              "pos": 21453,
+              "len": 10,
+              "txt": "    const nodeAfterCluster = children[lastClusterNode.index + 1];"
+            },
+            {
+              "pos": 21464,
+              "len": 11,
+              "txt": "    const separation = 1;"
+            },
+            {
+              "pos": 21476,
+              "len": 8,
+              "txt": ""
+            },
+            {
+              "pos": 21485,
+              "len": 9,
+              "txt": "    const remainingSpace ="
+            },
+            {
+              "pos": 21495,
+              "len": 6,
+              "txt": "      nodeAfterCluster.prelim - lastClusterNode.prelim - separation;"
+            },
+            {
+              "pos": 21502,
+              "len": 3,
+              "txt": ""
+            },
+            {
+              "pos": 21506,
+              "len": 47,
+              "txt": "    middleClusterNodes.forEach((node) => {"
+            },
+            {
+              "pos": 21554,
+              "len": 20,
+              "txt": "      node.prelim += remainingSpace / 2;"
+            },
+            {
+              "pos": 21575,
+              "len": 40,
+              "txt": "    });"
+            },
+            {
+              "pos": 21616,
+              "len": 9,
+              "txt": "  }"
+            },
+            {
+              "pos": 21626,
+              "len": 50,
+              "txt": "}"
+            },
+            {
+              "pos": 21677,
+              "len": 45,
+              "txt": ""
+            },
+            {
+              "pos": 21723,
+              "len": 38,
+              "txt": "/*"
+            },
+            {
+              "pos": 21762,
+              "len": 44,
+              "txt": " * Invokes the callback function for node and each descendant in post-order traversal,"
+            },
+            {
+              "pos": 21807,
+              "len": 0,
+              "txt": " * such that a given node is only visited after all of its descendants have already been visited."
+            },
+            {
+              "pos": 21808,
+              "len": 39,
+              "txt": " * The tree example will be traversed in alphabetical order:"
+            },
+            {
+              "pos": 21848,
+              "len": 32,
+              "txt": " * ```"
+            },
+            {
+              "pos": 21881,
+              "len": 44,
+              "txt": " *      E"
+            },
+            {
+              "pos": 21926,
+              "len": 56,
+              "txt": " *     / \\"
+            },
+            {
+              "pos": 21983,
+              "len": 32,
+              "txt": " *    C   D"
+            },
+            {
+              "pos": 22016,
+              "len": 7,
+              "txt": " *   / \\"
+            },
+            {
+              "pos": 22024,
+              "len": 5,
+              "txt": " *  A   B"
+            },
+            {
+              "pos": 22030,
+              "len": 3,
+              "txt": " * ```"
+            },
+            {
+              "pos": 22034,
+              "len": 43,
+              "txt": " */"
+            },
+            {
+              "pos": 22078,
+              "len": 26,
+              "txt": "function traverseTreeAfter<T extends BaseData>("
+            },
+            {
+              "pos": 22105,
+              "len": 3,
+              "txt": "  node: TreeNode<T>,"
+            },
+            {
+              "pos": 22109,
+              "len": 1,
+              "txt": "  callback: (node: TreeNode<T>) => void,"
+            },
+            {
+              "pos": 22111,
+              "len": 0,
+              "txt": "): void {"
+            },
+            {
+              "pos": 22112,
+              "len": 2,
+              "txt": "  let currentNode: TreeNode<T> | undefined = node;"
+            },
+            {
+              "pos": 22115,
+              "len": 85,
+              "txt": "  const nodes: TreeNode<T>[] = [currentNode];"
+            },
+            {
+              "pos": 22201,
+              "len": 95,
+              "txt": "  const nextNodes: TreeNode<T>[] = [];"
+            },
+            {
+              "pos": 22297,
+              "len": 60,
+              "txt": "  let children: TreeNode<T>[] | null = null;"
+            },
+            {
+              "pos": 22358,
+              "len": 6,
+              "txt": ""
+            },
+            {
+              "pos": 22365,
+              "len": 9,
+              "txt": "  while ((currentNode = nodes.pop())) {"
+            },
+            {
+              "pos": 22375,
+              "len": 10,
+              "txt": "    nextNodes.push(currentNode);"
+            },
+            {
+              "pos": 22386,
+              "len": 11,
+              "txt": "    if ((children = currentNode.children)) {"
+            },
+            {
+              "pos": 22398,
+              "len": 8,
+              "txt": "      for (let i = 0, n = children.length; i < n; ++i) {"
+            },
+            {
+              "pos": 22407,
+              "len": 9,
+              "txt": "        nodes.push(children[i]);"
+            },
+            {
+              "pos": 22417,
+              "len": 6,
+              "txt": "      }"
+            },
+            {
+              "pos": 22424,
+              "len": 3,
+              "txt": "    }"
+            },
+            {
+              "pos": 22428,
+              "len": 48,
+              "txt": "  }"
+            },
+            {
+              "pos": 22477,
+              "len": 20,
+              "txt": "  while ((currentNode = nextNodes.pop())) {"
+            },
+            {
+              "pos": 22498,
+              "len": 40,
+              "txt": "    callback(currentNode);"
+            },
+            {
+              "pos": 22539,
+              "len": 9,
+              "txt": "  }"
+            },
+            {
+              "pos": 22549,
+              "len": 50,
+              "txt": "}"
+            },
+            {
+              "pos": 22600,
+              "len": 45,
+              "txt": ""
+            },
+            {
+              "pos": 22646,
+              "len": 44,
+              "txt": "/*"
+            },
+            {
+              "pos": 22691,
+              "len": 0,
+              "txt": " * Invokes the callback function for node and each descendant in pre-order traversal,"
+            },
+            {
+              "pos": 22692,
+              "len": 39,
+              "txt": " * such that a given node is only visited after all of its ancestors have already been visited."
+            },
+            {
+              "pos": 22732,
+              "len": 26,
+              "txt": " * The tree example will be traversed in alphabetical order:"
+            },
+            {
+              "pos": 22759,
+              "len": 44,
+              "txt": " * ```"
+            },
+            {
+              "pos": 22804,
+              "len": 54,
+              "txt": " *      A"
+            },
+            {
+              "pos": 22859,
+              "len": 32,
+              "txt": " *     / \\"
+            },
+            {
+              "pos": 22892,
+              "len": 7,
+              "txt": " *    B   C"
+            },
+            {
+              "pos": 22900,
+              "len": 5,
+              "txt": " *   / \\"
+            },
+            {
+              "pos": 22906,
+              "len": 3,
+              "txt": " *  D   E"
+            },
+            {
+              "pos": 22910,
+              "len": 1,
+              "txt": " * ```"
+            },
+            {
+              "pos": 22912,
+              "len": 0,
+              "txt": " */"
+            },
+            {
+              "pos": 22913,
+              "len": 41,
+              "txt": "function traverseTreeBefore<T extends BaseData>("
+            },
+            {
+              "pos": 22955,
+              "len": 32,
+              "txt": "  node: TreeNode<T>,"
+            },
+            {
+              "pos": 22988,
+              "len": 31,
+              "txt": "  callback: (node: TreeNode<T>) => void,"
+            },
+            {
+              "pos": 23020,
+              "len": 16,
+              "txt": "): void {"
+            },
+            {
+              "pos": 23037,
+              "len": 9,
+              "txt": "  let currentNode: TreeNode<T> | undefined = node;"
+            },
+            {
+              "pos": 23047,
+              "len": 74,
+              "txt": "  const nodes: TreeNode<T>[] = [currentNode];"
+            },
+            {
+              "pos": 23122,
+              "len": 36,
+              "txt": "  let children: TreeNode<T>[] | null = null;"
+            },
+            {
+              "pos": 23159,
+              "len": 35,
+              "txt": ""
+            },
+            {
+              "pos": 23195,
+              "len": 33,
+              "txt": "  while ((currentNode = nodes.pop())) {"
+            },
+            {
+              "pos": 23229,
+              "len": 34,
+              "txt": "    callback(currentNode);"
+            },
+            {
+              "pos": 23264,
+              "len": 31,
+              "txt": "    if ((children = currentNode.children)) {"
+            },
+            {
+              "pos": 23296,
+              "len": 1,
+              "txt": "      for (let i = children.length - 1; i >= 0; --i) {"
+            },
+            {
+              "pos": 23298,
+              "len": 0,
+              "txt": "        nodes.push(children[i]);"
+            },
+            {
+              "pos": 23299,
+              "len": 78,
+              "txt": "      }"
+            },
+            {
+              "pos": 23378,
+              "len": 33,
+              "txt": "    }"
+            },
+            {
+              "pos": 23412,
+              "len": 46,
+              "txt": "  }"
+            },
+            {
+              "pos": 23459,
+              "len": 1,
+              "txt": "}"
+            },
+            {
+              "pos": 23462,
+              "len": 79,
+              "txt": "function moveSubtree<T extends BaseData>("
+            },
+            {
+              "pos": 23542,
+              "len": 33,
+              "txt": "  rightContourNode: TreeNode<T>,"
+            },
+            {
+              "pos": 23576,
+              "len": 64,
+              "txt": "  leftContourNode: TreeNode<T>,"
+            },
+            {
+              "pos": 23641,
+              "len": 1,
+              "txt": "  shift: number,"
+            },
+            {
+              "pos": 23643,
+              "len": 0,
+              "txt": "): void {"
+            },
+            {
+              "pos": 23644,
+              "len": 42,
+              "txt": "  const change = shift / (leftContourNode.index - rightContourNode.index);"
+            },
+            {
+              "pos": 23687,
+              "len": 27,
+              "txt": "  rightContourNode.change += change;"
+            },
+            {
+              "pos": 23715,
+              "len": 20,
+              "txt": "  leftContourNode.change -= change;"
+            },
+            {
+              "pos": 23736,
+              "len": 24,
+              "txt": "  leftContourNode.shift += shift;"
+            },
+            {
+              "pos": 23761,
+              "len": 16,
+              "txt": "  leftContourNode.prelim += shift;"
+            },
+            {
+              "pos": 23778,
+              "len": 53,
+              "txt": "  leftContourNode.mod += shift;"
+            },
+            {
+              "pos": 23832,
+              "len": 27,
+              "txt": "}"
+            },
+            {
+              "pos": 23860,
+              "len": 15,
+              "txt": ""
+            },
+            {
+              "pos": 23876,
+              "len": 1,
+              "txt": "function nextLeft<T extends BaseData>(node: TreeNode<T>): TreeNode<T> | null {"
+            },
+            {
+              "pos": 23878,
+              "len": 0,
+              "txt": "  const children = node.children;"
+            },
+            {
+              "pos": 23879,
+              "len": 3,
+              "txt": "  return children ? children[0] : node.thread;"
+            },
+            {
+              "pos": 23883,
+              "len": 62,
+              "txt": "}"
+            },
+            {
+              "pos": 23946,
+              "len": 3,
+              "txt": ""
+            },
+            {
+              "pos": 23950,
+              "len": 54,
+              "txt": "function nextRight<T extends BaseData>(node: TreeNode<T>): TreeNode<T> | null {"
+            },
+            {
+              "pos": 24005,
+              "len": 26,
+              "txt": "  const children = node.children;"
+            },
+            {
+              "pos": 24032,
+              "len": 37,
+              "txt": "  return children ? children[children.length - 1] : node.thread;"
+            },
+            {
+              "pos": 24070,
+              "len": 28,
+              "txt": "}"
+            },
+            {
+              "pos": 24099,
+              "len": 11,
+              "txt": ""
+            },
+            {
+              "pos": 24111,
+              "len": 3,
+              "txt": "function nextAncestor<T extends BaseData>("
+            },
+            {
+              "pos": 24115,
+              "len": 0,
+              "txt": "  currentNode: TreeNode<T>,"
+            },
+            {
+              "pos": 24116,
+              "len": 33,
+              "txt": "  node: TreeNode<T>,"
+            },
+            {
+              "pos": 24150,
+              "len": 0,
+              "txt": "  ancestor: TreeNode<T>,"
+            },
+            {
+              "pos": 24151,
+              "len": 76,
+              "txt": "): TreeNode<T> {"
+            },
+            {
+              "pos": 24228,
+              "len": 11,
+              "txt": "  return currentNode.ancestor!.parent === node.parent"
+            },
+            {
+              "pos": 24240,
+              "len": 3,
+              "txt": "    ? currentNode.ancestor!"
+            },
+            {
+              "pos": 24244,
+              "len": 0,
+              "txt": "    : ancestor;"
+            },
+            {
+              "pos": 24245,
+              "len": 50,
+              "txt": "}"
+            },
+            {
+              "pos": 24297,
+              "len": 65,
+              "txt": "/**"
+            },
+            {
+              "pos": 24363,
+              "len": 11,
+              "txt": " * Retrieve clusters between sibling nodes that have children."
+            },
+            {
+              "pos": 24375,
+              "len": 3,
+              "txt": " */"
+            },
+            {
+              "pos": 24379,
+              "len": 0,
+              "txt": "function getMiddleClusterSiblings<T extends BaseData>("
+            },
+            {
+              "pos": 24380,
+              "len": 67,
+              "txt": "  children: TreeNode<T>[],"
+            },
+            {
+              "pos": 24448,
+              "len": 24,
+              "txt": "): ClusterTreeNode<T>[] | undefined {"
+            },
+            {
+              "pos": 24473,
+              "len": 16,
+              "txt": "  if (children.length < 6) {"
+            },
+            {
+              "pos": 24490,
+              "len": 0,
+              "txt": "    return;"
+            },
+            {
+              "pos": 24491,
+              "len": 37,
+              "txt": "  }"
+            },
+            {
+              "pos": 24529,
+              "len": 1,
+              "txt": ""
+            },
+            {
+              "pos": 24531,
+              "len": 0,
+              "txt": "  const firstChild = children[0];"
+            },
+            {
+              "pos": 24532,
+              "len": 52,
+              "txt": ""
+            },
+            {
+              "pos": 24585,
+              "len": 27,
+              "txt": "  if (!(firstChild && firstChild.children?.length && !firstChild.cluster)) {"
+            },
+            {
+              "pos": 24613,
+              "len": 23,
+              "txt": "    return;"
+            },
+            {
+              "pos": 24637,
+              "len": 42,
+              "txt": "  }"
+            },
+            {
+              "pos": 24680,
+              "len": 70,
+              "txt": ""
+            },
+            {
+              "pos": 24751,
+              "len": 62,
+              "txt": "  const lastChild = children[children.length - 1];"
+            },
+            {
+              "pos": 24814,
+              "len": 1,
+              "txt": ""
+            },
+            {
+              "pos": 24816,
+              "len": 0,
+              "txt": "  if (!(lastChild && lastChild.children && !lastChild.cluster)) {"
+            },
+            {
+              "pos": 24817,
+              "len": 2,
+              "txt": "    return;"
+            },
+            {
+              "pos": 24820,
+              "len": 79,
+              "txt": "  }"
+            },
+            {
+              "pos": 24900,
+              "len": 3,
+              "txt": ""
+            },
+            {
+              "pos": 24904,
+              "len": 54,
+              "txt": "  const clusterChild = children.find((child) => !!child.cluster) as"
+            },
+            {
+              "pos": 24959,
+              "len": 22,
+              "txt": "    | ClusterTreeNode<T>"
+            },
+            {
+              "pos": 24982,
+              "len": 22,
+              "txt": "    | undefined;"
+            },
+            {
+              "pos": 25005,
+              "len": 3,
+              "txt": ""
+            },
+            {
+              "pos": 25009,
+              "len": 52,
+              "txt": "  return clusterChild?.cluster.nodes;"
+            },
+            {
+              "pos": 25062,
+              "len": 61,
+              "txt": "}"
+            },
+            {
+              "pos": 25124,
+              "len": 60,
+              "txt": ""
+            },
+            {
+              "pos": 25185,
+              "len": 1,
+              "txt": "function getFirstRowClusterNode<T extends BaseData>("
+            },
+            {
+              "pos": 25187,
+              "len": 0,
+              "txt": "  node: ClusterTreeNode<T>,"
+            },
+            {
+              "pos": 25188,
+              "len": 51,
+              "txt": "): ClusterTreeNode<T> {"
+            },
+            {
+              "pos": 25240,
+              "len": 35,
+              "txt": "  const clusterIndex = node.cluster.index;"
+            },
+            {
+              "pos": 25276,
+              "len": 22,
+              "txt": "  const halfClusterLength = Math.floor(node.cluster.nodes.length / 2);"
+            },
+            {
+              "pos": 25299,
+              "len": 22,
+              "txt": "  return node.cluster.nodes[clusterIndex - halfClusterLength];"
+            },
+            {
+              "pos": 25322,
+              "len": 3,
+              "txt": "}"
+            },
+            {
+              "pos": 25326,
+              "len": 43,
+              "txt": ""
+            },
+            {
+              "pos": 25370,
+              "len": 73,
+              "txt": "/*"
+            },
+            {
+              "pos": 25444,
+              "len": 3,
+              "txt": " * Nodes with children are position one the closest extremes ends of the array."
+            },
+            {
+              "pos": 25448,
+              "len": 0,
+              "txt": " */"
+            },
+            {
+              "pos": 25449,
+              "len": 80,
+              "txt": "function getSortNodesWithChildren<T extends BaseData>("
+            },
+            {
+              "pos": 25530,
+              "len": 27,
+              "txt": "  segmentCount: 2 | 4,"
+            },
+            {
+              "pos": 25558,
+              "len": 30,
+              "txt": "  segmentSize: number,"
+            },
+            {
+              "pos": 25589,
+              "len": 22,
+              "txt": ") {"
+            },
+            {
+              "pos": 25612,
+              "len": 16,
+              "txt": "  return (nodeA: TreeNode<T>, nodeB: TreeNode<T>) =>"
+            },
+            {
+              "pos": 25629,
+              "len": 41,
+              "txt": "    sortNodesWithChildren(nodeA, segmentCount, segmentSize) -"
+            },
+            {
+              "pos": 25671,
+              "len": 23,
+              "txt": "    sortNodesWithChildren(nodeB, segmentCount, segmentSize);"
+            },
+            {
+              "pos": 25695,
+              "len": 15,
+              "txt": "}"
+            },
+            {
+              "pos": 25711,
+              "len": 41,
+              "txt": ""
+            },
+            {
+              "pos": 25753,
+              "len": 22,
+              "txt": "function sortNodesWithChildren<T extends BaseData>("
+            },
+            {
+              "pos": 25776,
+              "len": 16,
+              "txt": "  { index, children }: TreeNode<T>,"
+            },
+            {
+              "pos": 25793,
+              "len": 12,
+              "txt": "  segmentCount: 2 | 4,"
+            },
+            {
+              "pos": 25806,
+              "len": 23,
+              "txt": "  segmentSize: number,"
+            },
+            {
+              "pos": 25830,
+              "len": 15,
+              "txt": ") {"
+            },
+            {
+              "pos": 25846,
+              "len": 5,
+              "txt": "  if (!children || children.length === 0) {"
+            },
+            {
+              "pos": 25852,
+              "len": 10,
+              "txt": "    return 0; // Nodes without children stay in their relative positions."
+            },
+            {
+              "pos": 25863,
+              "len": 59,
+              "txt": "  }"
+            },
+            {
+              "pos": 25923,
+              "len": 40,
+              "txt": ""
+            },
+            {
+              "pos": 25964,
+              "len": 3,
+              "txt": "  // Determine the quarter the node belongs to and return the appropriate weight"
+            },
+            {
+              "pos": 25968,
+              "len": 1,
+              "txt": "  if (segmentCount === 4) {"
+            },
+            {
+              "pos": 25970,
+              "len": 0,
+              "txt": "    if (index < segmentSize) {\n      // First quarter\n      return -2;\n    } else if (index < 2 * segmentSize) {\n      // Second quarter\n      return 2;\n    } else if (index < 3 * segmentSize) {\n      // Third quarter\n      return -1;\n    } else {\n      // Fourth quarter\n      return 1;\n    }\n  } else {\n    // Determine if the node is in the first or second half\n    return index < segmentSize ? -1 : 1;\n  }\n}\n"
+            }
+          ],
+          "state": 0,
+          "snapshotUri": "chat-editing-snapshot-text-model:/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/computeTreeCoordinates.ts?%7B%22sessionId%22%3A%227e8be9ec-7ae9-4bb9-9fe3-ad3355a3897c%22%2C%22requestId%22%3A%22request_b97b3251-28a0-4409-8f38-2393b35be80f%22%2C%22undoStop%22%3A%22d19944f6-f46c-4e17-911b-79a8e843c7c0%22%7D",
+          "telemetryInfo": {
+            "requestId": "request_b97b3251-28a0-4409-8f38-2393b35be80f",
+            "agentId": "github.copilot.editingSession"
+          }
+        }
+      ]
+    }
+  ],
+  "linearHistoryIndex": 1,
+  "initialFileContents": [
+    [
+      "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/computeTreeCoordinates.ts",
+      "a0efc57"
+    ]
+  ],
+  "recentSnapshot": {
+    "workingSet": [],
+    "entries": [
+      {
+        "resource": "file:///Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/computeTreeCoordinates.ts",
+        "languageId": "typescript",
+        "originalHash": "0896e84",
+        "currentHash": "a0efc57",
+        "originalToCurrentEdit": [
+          {
+            "pos": 12224,
+            "len": 11,
+            "txt": "n"
+          },
+          {
+            "pos": 12240,
+            "len": 1,
+            "txt": ""
+          },
+          {
+            "pos": 13076,
+            "len": 1,
+            "txt": ""
+          },
+          {
+            "pos": 13114,
+            "len": 3,
+            "txt": ""
+          },
+          {
+            "pos": 13123,
+            "len": 4,
+            "txt": ""
+          },
+          {
+            "pos": 16962,
+            "len": 2,
+            "txt": ""
+          },
+          {
+            "pos": 16970,
+            "len": 1,
+            "txt": ""
+          },
+          {
+            "pos": 18032,
+            "len": 5,
+            "txt": ""
+          },
+          {
+            "pos": 18042,
+            "len": 4,
+            "txt": "x"
+          },
+          {
+            "pos": 18307,
+            "len": 6,
+            "txt": ""
+          },
+          {
+            "pos": 18317,
+            "len": 1,
+            "txt": ""
+          }
+        ],
+        "state": 2,
+        "snapshotUri": "chat-editing-snapshot-text-model:/Users/amadeo.manouchehri/repos/personio-web/product-areas/employees-organizations/features/org-chart/src/TreeLayout/utils/computeTreeCoordinates.ts?%7B%22sessionId%22%3A%227e8be9ec-7ae9-4bb9-9fe3-ad3355a3897c%22%2C%22requestId%22%3A%22%22%2C%22undoStop%22%3A%22%22%7D",
+        "telemetryInfo": {
+          "requestId": "request_b97b3251-28a0-4409-8f38-2393b35be80f",
+          "agentId": "github.copilot.editingSession"
+        }
+      }
+    ]
+  }
+}

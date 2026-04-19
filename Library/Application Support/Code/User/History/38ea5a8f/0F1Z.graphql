@@ -1,0 +1,26 @@
+query ListEmploymentsByPersonIds(
+  $personIds: [String!]!
+  $companyId: Int!
+  $expand: [input_personandemployment_EmploymentExpand_v1!]! = [PERSON]
+  $includeDepartment: Boolean! = false
+  $includeTeam: Boolean! = false
+  $includeOffice: Boolean! = false
+  $includeLegalEntityDetails: Boolean! = false
+  $includeCostCenters: Boolean! = false
+  $includeTermination: Boolean! = false
+  $includeEmploymentDates: Boolean! = false
+  $includeCustomAttributes: Boolean! = false
+  $includeJob: Boolean! = false
+) {
+  employments: personandemployment_EmploymentService_ListEmployments_v1(
+    input: { personIds: { ids: $personIds }, expand: $expand }
+  ) {
+    items: employmentsList {
+      id
+      person {
+        id
+        profilePicUrls(path: { companyId: $companyId })
+      }
+    }
+  }
+}

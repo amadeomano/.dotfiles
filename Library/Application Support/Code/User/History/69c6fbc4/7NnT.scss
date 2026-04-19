@@ -1,0 +1,100 @@
+@use '@personio-web/design-system-tokens' as tokens;
+@use '../../../Card/mixins.module.scss' as mixins;
+
+$descriptionHeight: 34;
+$abbrLayerHeight: 20;
+$leadHeight: 48;
+$leadsMargin: 24;
+
+:export {
+  descriptionHeight: $descriptionHeight;
+  abbrLayerHeight: $abbrLayerHeight;
+  leadHeight: $leadHeight;
+  leadsMargin: $leadsMargin;
+}
+
+.orgUnitCard {
+  cursor: pointer;
+  @include mixins.card-states;
+}
+
+.name {
+  color: tokens.$colors-static-fg-accent-secondary;
+  border-bottom-color: transparent !important;
+  padding-bottom: 1px; // Enable second line underline on hover
+  margin: tokens.$primitive-spacing-3 tokens.$primitive-spacing-3pt5 0;
+  flex-shrink: 0;
+
+  @include tokens.typography-large;
+  font-weight: tokens.$font-weights-medium;
+  & > span:global(.ds-type-label-medium) {
+    font: inherit !important;
+  }
+
+  &:hover,
+  &:active {
+    color: tokens.$colors-static-fg-accent-secondary;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: tokens.$spacing-gap-small;
+  }
+
+  &:hover {
+    text-decoration-color: tokens.$colors-solid-bg-accent-hover;
+  }
+
+  &:active {
+    text-decoration-color: tokens.$colors-solid-bg-accent-default;
+  }
+}
+
+.description {
+  @include tokens.typography-meta;
+  margin: 0 tokens.$primitive-spacing-3pt5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  height: $descriptionHeight * 1px;
+}
+
+.abbreviation {
+  margin: tokens.$primitive-spacing-2 tokens.$primitive-spacing-3pt5 0;
+  font-size: tokens.$typography-text-default-font-size;
+  font-weight: tokens.$typography-text-default-font-weight;
+  line-height: tokens.$typography-text-default-line-height;
+  color: tokens.$color-text-tertiary;
+  height: $abbrLayerHeight * 1px;
+}
+
+.spanOfControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: tokens.$colors-static-fg-primary;
+  --DS-icon-color: #{tokens.$colors-static-fg-primary};
+  gap: tokens.$primitive-spacing-1;
+  margin-top: tokens.$primitive-spacing-3;
+  background-color: tokens.$color-light-surface;
+  border-top: solid 0.5px tokens.$color-surface-alpha;
+  font-weight: tokens.$font-weights-medium;
+  padding: tokens.$primitive-spacing-1pt5;
+  margin-top: auto;
+  height: 30px;
+
+  .isActive & {
+    background-color: tokens.$colors-solid-bg-accent-disabled;
+    color: tokens.$colors-static-fg-accent-primary;
+    --DS-icon-color: #{tokens.$colors-static-fg-accent-primary};
+  }
+
+  &.noSubCards {
+    opacity: 0.4;
+  }
+}
+
+.unmatched {
+  opacity: 0.5;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@personio-web/payroll-utils-navigation",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*"
+  }
+}

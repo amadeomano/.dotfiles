@@ -1,0 +1,12 @@
+import { type NextRouter, useRouter } from 'next/router';
+
+const PAY_RUN_KEY = 'active-run';
+
+const getActivePayRun = (router: NextRouter) => (): string | undefined => {
+  const activeRun = router.query[PAY_RUN_KEY];
+  return Array.isArray(activeRun) ? activeRun[0] : activeRun;
+};
+
+export const usePayRunNavigator = () => {
+  const router = useRouter();
+};

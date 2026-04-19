@@ -1,0 +1,32 @@
+@use '@personio-web/design-system-tokens' as tokens;
+
+.label {
+  margin-bottom: tokens.$spacing-2;
+  font-size: tokens.$font-sizes-3;
+  color: tokens.$color-gray-12;
+  font-weight: tokens.$font-weights-medium;
+}
+
+.select {
+  width: 100%;
+}
+
+.surface {
+  background-color: tokens.$color-surface;
+  padding: tokens.$spacing-gap-small;
+  border-radius: tokens.$radii-3;
+  /* follow-up report with DS */
+  [tabindex] {
+    background-color: white;
+    margin-bottom: tokens.$spacing-gap-small;
+    @include tokens.typography-large;
+  }
+}
+
+.tip {
+  padding: tokens.$spacing-gap-xlarge;
+}
+
+.groupSelector {
+  max-height: calc(100vh - tokens.$spacing-8);
+}

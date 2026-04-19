@@ -1,0 +1,63 @@
+import { MouseEvent } from 'react';
+import { useRouter, NextRouter } from 'next/router';
+import { Inline } from 'designSystem/component/layout';
+import { TertiaryNavigation } from 'designSystem/component/tertiary-navigation';
+import { DevelopmentHelperTab } from './ManageTab/DevelopmentHelperTab';
+import { PensionSchemasSettings } from './ManageTab/PensionSchemasSettings';
+
+const getHrefToSlug = (href: string) => {
+  const trimmedHref = href.replace(location.origin, '');
+  const slugs = trimmedHref.split('/').filter(Boolean);
+  return slugs;
+};
+
+const getActiveRoute = (
+  router: NextRouter,
+  boundary: Record<string, unknown>,
+) => {
+  const currentRoute = (router.query.slug as string[] | undefined)?.join('/');
+  if (!currentRoute) return undefined;
+  const matchedRoute =
+    boundary &&
+    Object.keys(boundary).find((route) => currentRoute.match(route));
+  return matchedRoute;
+};
+
+const routeComponents = {
+  'manage/dev': DevelopmentHelperTab,
+  'manage/pension': PensionSchemasSettings,
+};
+
+export const ManageTab = () => {
+  const router = useRouter();
+  const handleNavigation = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    router.push({
+      query: { ...router.query, slug: getHrefToSlug(e.currentTarget.href) },
+    });
+  };
+
+  return (
+    <Inline>
+      <TertiaryNavigation>
+        <TertiaryNavigation.Item
+          href="/manage/dev"
+          selected={getActiveRoute(router) === 'dev'}
+          onClick={handleNavigation}
+        >
+          Development helpers
+        </TertiaryNavigation.Item>
+        <TertiaryNavigation.Item
+          href="/manage/pension"
+          selected={getActiveRoute(router) === 'pension'}
+          onClick={handleNavigation}
+        >
+          Pension schemas
+        </TertiaryNavigation.Item>
+      </TertiaryNavigation>
+      <main>
+        {routeComponents[getActiveRoute(router, routeComponents) ?? 'dev']()}
+      </main>
+    </Inline>
+  );
+};

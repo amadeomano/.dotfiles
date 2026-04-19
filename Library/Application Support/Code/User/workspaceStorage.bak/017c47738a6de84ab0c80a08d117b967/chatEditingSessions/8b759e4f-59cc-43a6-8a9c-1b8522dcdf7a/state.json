@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "sessionId": "8b759e4f-59cc-43a6-8a9c-1b8522dcdf7a",
+  "linearHistory": [
+    {
+      "requestId": "request_07a3199c-28ba-47fc-a0ba-5f051727667c",
+      "stops": [
+        {
+          "workingSet": [],
+          "entries": []
+        }
+      ]
+    },
+    {
+      "requestId": "request_13026469-832d-47ee-8759-68e5e44e1605",
+      "stops": [
+        {
+          "workingSet": [],
+          "entries": []
+        }
+      ]
+    }
+  ],
+  "linearHistoryIndex": 2,
+  "initialFileContents": [],
+  "recentSnapshot": {
+    "workingSet": [],
+    "entries": []
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@personio-web/employee-header-frontend",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "private": true,
+  "dependencies": {
+    "@personio-web/design-system-tokens": "workspace:*",
+    "@personio-web/am-common": "workspace:*",
+    "@personio-web/amplitude-provider": "workspace:*",
+    "@personio-web/employee-header-integration": "workspace:*",
+    "@personio-web/eo-commons-ui": "workspace:*",
+    "@personio-web/eo-commons-org-chart-link": "workspace:*",
+    "@personio-web/global-constants": "workspace:*",
+    "@personio-web/i18n": "workspace:*",
+    "@personio-web/mfe-wrapper": "workspace:*",
+    "@personio-web/mocks": "workspace:*",
+    "@personio-web/orchestrator-common": "workspace:*",
+    "@personio-web/polyfills": "workspace:*",
+    "@personio-web/use-feature-flag-wrapper": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/personio-web__design-system-component-breadcrumb": "workspace:*",
+    "@types/personio-web__design-system-component-select": "workspace:*",
+    "@types/personio-web__design-system-component-dropdown-menu": "workspace:*",
+    "@types/personio-web__design-system-component-button": "workspace:*",
+    "@types/personio-web__employees-organizations-feature-employee-details": "workspace:*",
+    "@types/personio-web__employees-organizations-data-employment-attributes": "workspace:*",
+    "@types/personio-web__payroll-data-common": "workspace:*",
+    "@types/personio-web__employees-organizations-data-legal-entities": "workspace:*"
+  }
+}

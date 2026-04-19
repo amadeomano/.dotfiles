@@ -1,0 +1,21 @@
+import { renderHook, act } from '@testing-library/react-hooks';
+import { useTabNavigator } from './useTabsNavigator';
+import mockRouter from 'next-router-mock';
+
+jest.mock('next/router', () => require('next-router-mock'));
+
+const setRoute = (path: string) => {
+  const slug = path.split('/');
+  mockRouter.setCurrentUrl(path); // Set the current URL
+  mockRouter.query = { slug }; // Set the slug in query
+};
+
+describe('useTabNavigator', () => {
+  test('should return the correct tab component based on the slug in the router', () => {
+    mockRouter.replace({ query: { slug: ['process'] } });
+    const { result } = renderHook(() => useTabNavigator());
+
+    expect(result.current.currentTab).toBe('process');
+    expect(result.current.TabComponent).toBeDefined();
+  });
+});

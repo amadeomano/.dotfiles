@@ -1,0 +1,13 @@
+query ListEmploymentsByPersonIds($personIds: [String!]!, $companyId: Int!) {
+  employments: personandemployment_EmploymentService_ListEmployments_v1(
+    input: { personIds: { ids: $personIds }, expand: $expand }
+  ) {
+    items: employmentsList {
+      id
+      person {
+        id
+        profilePicUrls(path: { companyId: $companyId })
+      }
+    }
+  }
+}

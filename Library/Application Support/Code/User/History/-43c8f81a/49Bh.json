@@ -1,0 +1,11 @@
+{
+  "name": "@personio-web/payroll-mocks-gofer",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/design-system-utils": "workspace:*",
+    "@types/personio-web__payroll-data-gofer": "workspace:*"
+  }
+}

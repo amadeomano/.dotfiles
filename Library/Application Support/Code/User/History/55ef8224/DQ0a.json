@@ -1,0 +1,23 @@
+{
+  "name": "payroll-type-data-gofer",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "tags": [
+    "product-area:payroll",
+    "scope:public",
+    "type:lib",
+    "module-type:types"
+  ],
+  "targets": {
+    "static": {},
+    "lint": {},
+    "type-check": {},
+    "codegen-graphql": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx graphql-codegen",
+        "cwd": "product-areas/payroll/types/data/gofer"
+      }
+    }
+  }
+}

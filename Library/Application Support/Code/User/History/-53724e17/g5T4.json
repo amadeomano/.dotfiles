@@ -1,0 +1,40 @@
+{
+  "name": "@personio-web/workforce-planning-feature-positions-list",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@personio-web/auth-context": "workspace:^",
+    "@personio-web/design-system-tokens": "workspace:*",
+    "@personio-web/i18n": "workspace:*",
+    "@personio-web/workforce-planning-component-cycle-plan-person-cell": "workspace:*",
+    "@personio-web/workforce-planning-component-page-layout": "workspace:*",
+    "@personio-web/workforce-planning-component-position-status": "workspace:*",
+    "@personio-web/workforce-planning-data-jobs": "workspace:*",
+    "@personio-web/workforce-planning-data-person-employment": "workspace:*",
+    "@personio-web/workforce-planning-data-positions": "workspace:*",
+    "@personio-web/workforce-planning-feature-access-rights-context": "workspace:*",
+    "@personio-web/workforce-planning-feature-position-form": "workspace:*",
+    "@personio-web/workforce-planning-hook-persisted-table-config": "workspace:*",
+    "@personio-web/workforce-planning-hook-active-positions": "workspace:*",
+    "@personio-web/workforce-planning-util-common": "workspace:*",
+    "@personio-web/use-feature-flag-wrapper": "workspace:*",
+    "@personio-web/workforce-planning-util-domain": "workspace:*",
+    "@personio-web/workforce-planning-util-mappers": "workspace:*"
+  },
+  "devDependencies": {
+    "@personio-web/config-jest": "workspace:*",
+    "@personio-web/config-typescript": "workspace:*",
+    "@personio-web/workforce-planning-mocks-jobs": "workspace:*",
+    "@personio-web/workforce-planning-util-test-helpers": "workspace:*",
+    "@types/personio-web__design-system-component-hover-card": "workspace:*",
+    "@types/personio-web__design-system-component-icon": "workspace:*",
+    "@types/personio-web__design-system-component-page": "workspace:*",
+    "@types/personio-web__design-system-component-table": "workspace:*",
+    "@types/personio-web__design-system-component-control-bar": "workspace:*",
+    "@types/personio-web__design-system-component-dropdown-menu": "workspace:*",
+    "@types/personio-web__design-system-component-toaster": "workspace:*",
+    "@types/personio-web__employees-organizations-data-feature-access": "workspace:*",
+    "@types/personio-web__employees-organizations-hook-use-people-filter-config": "workspace:*"
+  }
+}

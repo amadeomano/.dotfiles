@@ -1,0 +1,39 @@
+{
+  "name": "employees-organizations-feature-about-me",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "tags": [
+    "product-area:employees-organizations",
+    "scope:private",
+    "module-type:feature"
+  ],
+  "targets": {
+    "static": {},
+    "lint": {},
+    "test": {},
+    "type-check": {},
+    "fui": {},
+    "fetch-translations": {
+      "executor": "@personio-web/nx-translations:generate",
+      "options": {
+        "namespaces": [
+          "global",
+          "help-widget",
+          "employees-organizations",
+          "employee-attributes",
+          "personal-information",
+          "terminate-employment-dialog",
+          "time-experiences",
+          "org-units"
+        ]
+      }
+    },
+    "verify-catalog": {},
+    "sonar": {},
+    "metadata": {
+      "e2e": {
+        "testIds": ["s9h-3kz-dm4", "xv1-xde-bh6", "d4r-wqg-voy"]
+      }
+    }
+  }
+}

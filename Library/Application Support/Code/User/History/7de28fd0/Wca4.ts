@@ -1,0 +1,39 @@
+import { useRouter } from 'next/router';
+
+export const usePayrollRunNavigation = () => {
+  const router = useRouter();
+
+  const navigateToEmployee = (employeeId: string) => {
+    router.push({
+      query: {
+        ...router.query,
+        slug: (router.query.slug as string[]).slice(0, 1).concat(employeeId),
+      },
+    });
+  };
+
+  const navigateToContributionGroupsList = (id: string) => {
+    router.push({
+      query: {
+        ...router.query,
+        slug: (router.query.slug as string[])
+          .slice(0, 2)
+          .concat([id, 'contribution-groups']),
+      },
+    });
+  };
+
+  const isInCreateRoute = router.query.slug?.at(2) === 'create';
+  const isSchemaActive = (id: string) => router.query.slug?.includes(id);
+  const isInContributionGroupsListRoute = router.query.slug?.includes(
+    'contribution-groups',
+  );
+
+  return {
+    navigateToCreate,
+    isInCreateRoute,
+    navigateToContributionGroupsList,
+    isSchemaActive,
+    isInContributionGroupsListRoute,
+  };
+};
