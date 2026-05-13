@@ -27,6 +27,7 @@ return {
       "xml",
       "yaml",
       "graphql",
+      "swift",
     },
   },
 }

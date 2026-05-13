@@ -10,6 +10,9 @@ return {
     servers = {
       tsserver = { enabled = false },
       vtsls = { enabled = false },
+      sourcekit = {
+        mason = false,
+      },
       tsgo = {
         cmd = { "tsgo", "--lsp", "--stdio" },
         filetypes = {

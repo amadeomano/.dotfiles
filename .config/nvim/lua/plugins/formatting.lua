@@ -3,6 +3,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
+        swift = { "swiftformat" },
         graphql = { "prettier" }, -- prettier for graphql formatting
         markdown = { "prettier" }, -- prettier for graphql formatting
       },
@@ -11,6 +12,7 @@ return {
           options = {
             ext_parsers = {
               query = "graphql", -- graphql parser for .query files
+              mutation = "graphql", -- graphql parser for .mutation files
             },
           },
         },
