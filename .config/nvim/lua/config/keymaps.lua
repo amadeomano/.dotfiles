@@ -47,3 +47,7 @@ vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true }
 vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+
+-- BufferLine tab reordering
+vim.keymap.set("n", "<A-H>", "<cmd>BufferLineMovePrev<CR>", { desc = "Move buffer left" })
+vim.keymap.set("n", "<A-L>", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right" })

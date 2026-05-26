@@ -10,6 +10,7 @@ return {
     servers = {
       tsserver = { enabled = false },
       vtsls = { enabled = false },
+      tailwindcss = { enabled = false },
       sourcekit = {
         mason = false,
       },
