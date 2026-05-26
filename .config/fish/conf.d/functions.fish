@@ -1,8 +1,3 @@
-function set_wallpaper -d "Set wallpaper"
-    echo "Setting to $argv"
-    osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$(pwd)/$argv\" as POSIX file"
-end
-
 function dot -d "git wrapper for dot files"
     git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $argv
 end
@@ -11,6 +6,13 @@ function lgdot -d "lazygit wrapper for dot files"
     set -lx GIT_DIR $HOME/.dotfiles
     set -lx GIT_WORK_TREE $HOME
     lazygit $argv
+end
+
+function claudio -d "Personal claude!"
+    set -lx CLAUDE_CONFIG_DIR $HOME/.config/claude-personal
+    echo -ne "\033]0;⟁ \007"
+    set -lx CLAUDE_CODE_DISABLE_TERMINAL_TITLE 1
+    claude $argv
 end
 
 function code -d "Neovide wrapper"
