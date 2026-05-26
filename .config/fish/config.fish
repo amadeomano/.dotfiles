@@ -8,7 +8,7 @@ source $HOME/.config/fish/conf.d/aliases.fish
 source $HOME/.config/fish/conf.d/functions.fish
 
 # load asdf runtime manager
-source $HOME/.asdf/asdf.fish
+set -gx PATH $HOME/.asdf/shims /opt/homebrew/bin $PATH
 
 # Init zoxide
 zoxide init fish | source
