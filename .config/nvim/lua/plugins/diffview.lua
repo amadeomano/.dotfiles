@@ -7,6 +7,13 @@ return {
       { "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File History" },
       { "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "Repo History" },
     },
+    opts = {
+      keymaps = {
+        file_panel = {
+          { "n", "<leader>l", "<C-w>l<C-w>l", { desc = "Focus changes window" } },
+        },
+      },
+    },
   },
   {
     "pwntester/octo.nvim",
