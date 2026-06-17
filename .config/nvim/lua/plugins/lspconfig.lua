@@ -9,7 +9,16 @@ return {
     },
     servers = {
       tsserver = { enabled = false },
-      vtsls = { enabled = false },
+      vtsls = {
+        enabled = true,
+        settings = {
+          typescript = {
+            tsserver = {
+              maxTsServerMemory = 8192,
+            },
+          },
+        },
+      },
       tailwindcss = { enabled = false },
       sourcekit = {
         mason = false,
@@ -24,8 +33,8 @@ return {
           "typescriptreact",
           "typescript.tsx",
         },
-        root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git", "tsconfig.base.json" },
-        enabled = true,
+        root_markers = { ".git", "tsconfig.base.json", "tsconfig.json", "jsconfig.json", "package.json" },
+        enabled = false,
       },
     },
   },
