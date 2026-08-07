@@ -36,6 +36,20 @@ return {
     layout = {
       min_width = { 30, 0.15 },
     },
+    keymaps = {
+      ["l"] = {
+        desc = "Expand the symbol if collapsed, otherwise scroll to it",
+        callback = function()
+          local bufdata = require("aerial.data").get_or_create(0)
+          local item = bufdata:item(vim.api.nvim_win_get_cursor(0)[1])
+          if item and bufdata:is_collapsable(item) and bufdata:is_collapsed(item) then
+            require("aerial").tree_open()
+          else
+            require("aerial").select({ jump = false })
+          end
+        end,
+      },
+    },
     -- Names the "[ ]" wrapper and its objects for the array-of-objects
     -- aerial rule in after/queries/{tsx,typescript}/aerial.scm: an object is
     -- named by its `id` field, else its first string-valued property, else
