@@ -76,11 +76,11 @@
 ; JSX elements
 (_
   (jsx_opening_element
-    (identifier) @name)
+    name: [(identifier) (member_expression)] @name)
   (#set! "kind" "Struct")) @symbol
 
 ; Self closing JSX elements
 (jsx_self_closing_element
-  name: (identifier) @name
+  name: [(identifier) (member_expression)] @name
   (#set! "kind" "Struct")) @symbol
 
