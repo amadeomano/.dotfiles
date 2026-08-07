@@ -42,6 +42,25 @@ end
 vim.keymap.set("n", "<leader>cp", function() vim.fn.setreg("+", vim.fn.expand("%:.")) end, { desc = "Copy relative path" })
 vim.keymap.set("n", "<leader>cP", function() vim.fn.setreg("+", vim.fn.expand("%:p")) end, { desc = "Copy absolute path" })
 
+-- Copy "@path" or "@path#Lstart-end" mention (like Claude Code's @-mention format) to clipboard
+local function copy_claude_mention(absolute, has_range)
+  local path = absolute and vim.fn.expand("%:p") or vim.fn.expand("%:.")
+  local mention = "@" .. path
+  if has_range then
+    local start_line = vim.fn.line("'<")
+    local end_line = vim.fn.line("'>")
+    local range = (start_line == end_line) and ("L" .. start_line) or ("L" .. start_line .. "-" .. end_line)
+    mention = mention .. "#" .. range
+  end
+  vim.fn.setreg("+", mention)
+  vim.notify("Copied " .. mention)
+end
+
+vim.keymap.set("n", "<leader>ap", function() copy_claude_mention(false, false) end, { desc = "Copy @relative/path" })
+vim.keymap.set("v", "<leader>ap", function() copy_claude_mention(false, true) end, { desc = "Copy @relative/path#Lrange" })
+vim.keymap.set("n", "<leader>aP", function() copy_claude_mention(true, false) end, { desc = "Copy @absolute/path" })
+vim.keymap.set("v", "<leader>aP", function() copy_claude_mention(true, true) end, { desc = "Copy @absolute/path#Lrange" })
+
 -- Allow clipboard copy paste in neovim
 vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
