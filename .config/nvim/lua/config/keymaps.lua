@@ -67,6 +67,13 @@ vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
 
+-- <leader>w1..w9 -> jump to window N in layout order (left-to-right, top-to-bottom).
+-- Overrides which-key's <leader>w expansion, which numbers windows alphabetically
+-- by buffer name and skips the current one.
+for i = 1, 9 do
+  vim.keymap.set("n", "<leader>w" .. i, i .. "<C-w>w", { desc = "Go to window " .. i })
+end
+
 -- BufferLine tab reordering
 vim.keymap.set("n", "<A-H>", "<cmd>BufferLineMovePrev<CR>", { desc = "Move buffer left" })
 vim.keymap.set("n", "<A-L>", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right" })

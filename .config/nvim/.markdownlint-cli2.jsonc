@@ -1,0 +1,6 @@
+{
+  "config": {
+    // MD025/single-title/single-h1: allow multiple top-level headings
+    "MD025": false
+  }
+}

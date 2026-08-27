@@ -57,6 +57,9 @@ return {
     -- "else" fallback without producing duplicate matches on the same
     -- object, so it's resolved here instead.
     post_parse_symbol = function(bufnr, item, ctx)
+      if not ctx.match then
+        return
+      end
       local node = ctx.match.symbol and ctx.match.symbol.node
       if not node then
         return
