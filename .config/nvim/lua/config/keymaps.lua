@@ -20,9 +20,12 @@ vim.keymap.set("n", "<leader>ud", function()
   end
 end, { desc = "Toggle Inline Diagnostics" })
 
+-- Save with Cmd+s. Works in Neovide natively, and in kitty via the CSI u
+-- passthrough configured in ~/.config/kitty/kitty.conf.
+vim.keymap.set({ "n", "i", "v" }, "<D-s>", "<Cmd>w<CR>", { desc = "Save" })
+
 -- Clipboard access in neovide
 if vim.g.neovide then
-  vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
   vim.keymap.set("v", "<D-c>", '"+y') -- Copy
   vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
   vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
@@ -64,7 +67,9 @@ vim.keymap.set("v", "<leader>aP", function() copy_claude_mention(true, true) end
 -- Allow clipboard copy paste in neovim
 vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+vim.keymap.set("t", "<D-v>", function()
+  vim.api.nvim_paste(vim.fn.getreg("+"), false, -1)
+end, { desc = "Paste clipboard", silent = true })
 vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
 
 -- <leader>w1..w9 -> jump to window N in layout order (left-to-right, top-to-bottom).

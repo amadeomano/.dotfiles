@@ -4,10 +4,14 @@ return {
     cmd = { "DiffviewOpen", "DiffviewFileHistory" },
     keys = {
       { "<leader>ge", "<cmd>DiffviewOpen<cr>", desc = "Git Explorer" },
+      { "<leader>gE", "<cmd>DiffviewOpen -uall<cr>", desc = "Git Explorer (Include Untracked)" },
       { "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File History" },
       { "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "Repo History" },
     },
     opts = {
+      default_args = {
+        DiffviewOpen = { "-uno" },
+      },
       keymaps = {
         file_panel = {
           { "n", "<leader>l", "<C-w>l<C-w>l", { desc = "Focus changes window" } },

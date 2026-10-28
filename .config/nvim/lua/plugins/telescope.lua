@@ -24,6 +24,13 @@ end
 
 return {
   "nvim-telescope/telescope.nvim",
+  keys = {
+    {
+      "<leader>gs",
+      function() require("config.git-status")() end,
+      desc = "Git Status",
+    },
+  },
   opts = {
     defaults = {
       dynamic_preview_title = true,

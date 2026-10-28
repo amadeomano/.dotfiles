@@ -9,32 +9,13 @@ return {
     },
     servers = {
       tsserver = { enabled = false },
-      vtsls = {
-        enabled = true,
-        settings = {
-          typescript = {
-            tsserver = {
-              maxTsServerMemory = 8192,
-            },
-          },
-        },
-      },
+      -- `vtsls` needs the legacy tsserver API. TS 7's native server is
+      -- exposed by the workspace `tsc --lsp` command instead.
+      vtsls = { enabled = false },
+      tsc = { enabled = true },
       tailwindcss = { enabled = false },
       sourcekit = {
         mason = false,
-      },
-      tsgo = {
-        cmd = { "tsgo", "--lsp", "--stdio" },
-        filetypes = {
-          "javascript",
-          "javascriptreact",
-          "javascript.jsx",
-          "typescript",
-          "typescriptreact",
-          "typescript.tsx",
-        },
-        root_markers = { ".git", "tsconfig.base.json", "tsconfig.json", "jsconfig.json", "package.json" },
-        enabled = false,
       },
     },
   },
