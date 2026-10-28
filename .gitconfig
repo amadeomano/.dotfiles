@@ -24,10 +24,13 @@
 	mnemonicPrefix = true
 	renames = true
 [core]
-  pager = diffnav
-  fsmonitor = true
-  untrackedcache = true
+	fsmonitor = true
+	untrackedcache = true
+	excludesfile = /Users/amadeo.manouchehri/.gitexclude
+[pager]
+  diff = diffnav
+  log = delta
 [delta]
   line-numbers = true
 [url "git@github.com:"]
-  insteadOf = https://github.com/
+	insteadOf = https://github.com/
